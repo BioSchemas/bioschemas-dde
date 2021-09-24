@@ -10,6 +10,16 @@ def get_raw_url(url):
         rawurl = url
     return(rawurl)
 
+def rename_namespace(spec_list,eachurl,rawtext):
+    tmpinfo = spec_list.loc[spec_list['url']==eachurl]
+    tmpnamespace = tmpinfo.iloc[0]['namespace']
+    if namespace!='bioschemas'
+        tmptext = '"@id": "'+tmpnamespace+':'
+        cleantext = rawtext.replace(tmptext,'"@id": "bioschemas:')
+    else:
+        cleantext = rawtext
+    return(cleantext)
+
 def merge_specs(spec_list):
     bioschemas_json = {}
     graphlist = []
@@ -17,7 +27,8 @@ def merge_specs(spec_list):
         rawurl = get_raw_url(eachurl)
         r = requests.get(rawurl)
         if r.status_code == 200:
-            spec_json = json.loads(r.text)
+            cleantext = rename_namespace(spec_list,eachurl,r.text)
+            spec_json = json.loads(cleantext)
             bioschemas_json['@context'] = spec_json['@context']
             for x in spec_json['@graph']:
                 if x not in graphlist:
