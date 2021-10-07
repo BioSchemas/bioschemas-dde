@@ -1,11 +1,16 @@
 import json
 import requests
 from pandas import read_csv
+import os
+import pathlib
 
 def get_raw_url(url):
     if 'raw' not in url:
         rawrawurl = url.replace('github.com','raw.githubusercontent.com')
-        rawurl = rawrawurl.replace('/blob/master/','/master/')
+        if 'master' in rawrawurl:
+            rawurl = rawrawurl.replace('/blob/master/','/master/')
+        elif 'main' in rawrawurl:
+            rawurl = rawrawurl.replace('/blob/main/','/main/')
     else:
         rawurl = url
     return(rawurl)
@@ -13,7 +18,7 @@ def get_raw_url(url):
 def rename_namespace(spec_list,eachurl,rawtext):
     tmpinfo = spec_list.loc[spec_list['url']==eachurl]
     tmpnamespace = tmpinfo.iloc[0]['namespace']
-    if namespace!='bioschemas'
+    if tmpnamespace!='bioschemas':
         tmptext = '"@id": "'+tmpnamespace+':'
         cleantext = rawtext.replace(tmptext,'"@id": "bioschemas:')
     else:
@@ -36,11 +41,13 @@ def merge_specs(spec_list):
     bioschemas_json['@graph']=graphlist
     return(bioschemas_json)
 
-def update_specs():
+def update_specs(script_path):
     spec_list = read_csv('specifications_list.txt',delimiter='\t',header=0)
     bioschemas_json = merge_specs(spec_list)
-    with open('bioschemas.json','wb') as outfile:
-        json.dump(bioschemas_json,outfile)
+    bioschemasfile = os.path.join(script_path,'bioschemas.json')
+    with open(bioschemasfile,'w') as outfile:
+        outfile.write(json.dumps(bioschemas_json))
 
 #### Main
-update_specs()
+script_path = pathlib.Path(__file__).parent.absolute()
+update_specs(script_path)
