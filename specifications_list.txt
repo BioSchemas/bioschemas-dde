@@ -2,3 +2,4 @@ namespace	name	type	version	url
 bioschemas	BioChemEntity	Type	v0.7-RELEASE-2019_06_19	https://github.com/BioSchemas/specifications/blob/master/BioChemEntity/BioChemEntity_current-RELEASE.json
 bioschemas	Taxon	Type	v0.3-RELEASE-2019_11_18	https://github.com/BioSchemas/specifications/blob/master/Taxon/Taxon_current-RELEASE.json
 bioschemas	MolecularEntity	Type	v0.3-RELEASE-2019_09_02	https://github.com/BioSchemas/specifications/blob/master/MolecularEntity/MolecularEntity_current-RELEASE.json
+bioschemas	Protein	Profile	v0.11-RELEASE-2020_04_07	https://github.com/BioSchemas/specifications/blob/master/Protein/Protein_current-RELEASE.json
