@@ -11,7 +11,7 @@ To update a specification,
 To add a new specification to the DDE Schema Playground:
  1. If using the DDE Schema Playground to create the new specification, you will not be able to use the `bioschemas` namespace. This is fine, as the aggregator has a function for handling this. Just be sure to include the temporary namespace in the specifications_list file.
  
- 2. add the new json schema file into an appropriate folder/directory within the Bioschemas Specifications repository and name it '{Class}_current-RELEASE.json'
+ 2. add the new json schema file into an appropriate folder/directory within the Bioschemas Specifications repository and name it '{Class}_{version}-RELEASE.json'
  
  3. IMPORTANT--This should step should be done AFTER the new json schema file has been created. Better yet, load it with the DDE schema viewer to ensure that it is working as expected. If everything is working, update the specifications_list file (in this repository) with the url to the json file and other requested information. Note that this file is tab-delimited
  
