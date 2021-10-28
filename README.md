@@ -4,10 +4,10 @@ This script pulls json schema/validation files from specifications as listed in 
 DO NOT EDIT the bioschemas.json file directly. Updates to this file will be over-written by the updates to the specification files listed in the specifications_list.txt file.
 
 ### To update a specification via github:
- 0. Fork the bioschemas specification repository
- 1. Go to the specification folder of interest
- 2. move the json file into the 'previous versions' folder 
- 3. add your updated json specification to the top level of the appropriate specification folder and  name it '{Class}_{version}-RELEASE.json'
+ 1. Fork the bioschemas specification repository
+ 2. Go to the specification folder of interest
+ 3. move the json file into the 'previous versions' folder 
+ 4. add your updated json specification to the top level of the appropriate specification folder and  name it '{Class}_{version}-RELEASE.json'
 
 ### To update a specification via the DDE:
  1. Go to https://discovery.biothings.io/registry
@@ -34,7 +34,7 @@ DO NOT EDIT the bioschemas.json file directly. Updates to this file will be over
  
  ## Caveats when working with the DDE Schema Playground:
  1. The DDE Schema Playground is strict when adhering to schema.org standards. Hence, properties must follow the schema.org naming conventions to work properly. You will be able to create properties which have non-standard names; HOWEVER, such properties will trigger errors when you try to view your schema in the schema viewer.
- 2. If the expected type is a bioschemas type or profile, you should manually enter "bioschemas:{type/profile}. This will allow the property to properly reference the expected class in the greater schema. That said, IF the type/profile being referenced is NOT yet available in the DDE, this will cause an error. You can bypass this issue by creating a dummy/placeholder class for the referenced class in your specification. The specification merger has a handler for tossing these dummy/placeholder classes prior to merging.
+ 2. If the expected type is a bioschemas type or profile, you should manually enter "bioschemas:{type/profile}". This will allow the property to properly reference the expected class in the greater schema. That said, IF the type/profile being referenced is NOT yet available in the DDE, it will occassionaly cause an error. If that happens, you can bypass this issue by creating a dummy/placeholder class for the referenced class in your specification. The specification merger has a handler for tossing these dummy/placeholder classes prior to merging.
  
  
  
