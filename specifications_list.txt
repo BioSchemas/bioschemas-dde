@@ -1,8 +1,8 @@
 namespace	name	subclassOf	type	version	url
 bioschemas	BioChemEntity	schema:Thing	Type	v0.7-RELEASE-2019_06_19	https://github.com/BioSchemas/specifications/blob/master/BioChemEntity/BioChemEntity_v0.7-RELEASE.json
+bioschemas	Gene	bioschemas:BioChemEntity	Profile	V1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Gene/Gene_v1.0-RELEASE.json
 bioschemas	Taxon	schema:Thing	Type	v0.3-RELEASE-2019_11_18	https://github.com/BioSchemas/specifications/blob/master/Taxon/Taxon_v0.3-RELEASE.json
 bioschemas	MolecularEntity	bioschemas:BioChemEntity 	Profile	v0.3-RELEASE-2019_09_02	https://github.com/BioSchemas/specifications/blob/master/MolecularEntity/MolecularEntity_v0.3-RELEASE.json
 bioschemas	Protein	bioschemas:BioChemEntity	Profile	v0.11-RELEASE-2020_04_07	https://github.com/BioSchemas/specifications/blob/master/Protein/Protein_v0.11-RELEASE.json
-bioschemas	Gene	bioschemas:BioChemEntity	Profile	V1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Gene/Gene_v1.0-RELEASE.json
 bioschemastest	FormalParameter	schema:Intangible	Profile	v1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/FormalParameter/FormalParameter_v1.0-RELEASE.json
 bioschemas	ComputationalTool	schema:SoftwareApplication	Profile	v1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/ComputationalTool/ComputationalTool_v1.0-RELEASE.json
