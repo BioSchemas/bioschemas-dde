@@ -35,6 +35,8 @@ DO NOT EDIT the bioschemas.json file directly. Updates to this file will be over
  ## Caveats when working with the DDE Schema Playground:
  1. The DDE Schema Playground is strict when adhering to schema.org standards. Hence, properties must follow the schema.org naming conventions to work properly. You will be able to create properties which have non-standard names; HOWEVER, such properties will trigger errors when you try to view your schema in the schema viewer.
  2. If the expected type is a bioschemas type or profile, you should manually enter "bioschemas:{type/profile}". This will allow the property to properly reference the expected class in the greater schema. That said, IF the type/profile being referenced is NOT yet available in the DDE, it will occassionaly cause an error. If that happens, you can bypass this issue by creating a dummy/placeholder class for the referenced class in your specification. The specification merger has a handler for tossing these dummy/placeholder classes prior to merging.
+ 3. Although Bioschemas specifies `@id`, `@type`, `@context` as minimally required properties, these are properties required by jsonld and do not follow schema.org property naming conventions. For this reason, although they are required for all profiles and types, they cannot be included/viewed as properties within the DDE as they are requirements inherited from jsonld formatting and not schema.org
+ 4. Bioschemas also specifies `dct:conformsTo` as a minimally required property as a class. This will be automatically added to all classes via the merging script, so it should be omitted when creating a new specification.
  
  
  

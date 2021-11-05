@@ -1,8 +1,8 @@
 namespace	name	subclassOf	type	version	url
-bioschemas	BioChemEntity	schema:Thing	Type	v0.7-RELEASE-2019_06_19	https://github.com/BioSchemas/specifications/blob/master/BioChemEntity/BioChemEntity_v0.7-RELEASE.json
-bioschemas	Gene	bioschemas:BioChemEntity	Profile	V1.0-RELEASE-202_04_07	https://github.com/BioSchemas/specifications/blob/master/Gene/Gene_v1.0-RELEASE.json
-bioschemas	Taxon	schema:Thing	Profile	v0.6-RELEASE-2020_04_07	https://github.com/BioSchemas/specifications/blob/master/Taxon/Taxon_v0.6-RELEASE.json
-bioschemas	MolecularEntity	bioschemas:BioChemEntity 	Profile	v0.5-RELEASE-2020_04_07	https://github.com/BioSchemas/specifications/blob/master/MolecularEntity/MolecularEntity_v0.5-RELEASE.json
-bioschemas	Protein	bioschemas:BioChemEntity	Profile	v0.11-RELEASE-2020_04_07	https://github.com/BioSchemas/specifications/blob/master/Protein/Protein_v0.11-RELEASE.json
-bioschemastest	FormalParameter	schema:Intangible	Profile	v1.0-RELEASE-2021_10_11	https://github.com/BioSchemas/specifications/blob/master/FormalParameter/FormalParameter_v1.0-RELEASE.json
-bioschemas	ComputationalTool	schema:SoftwareApplication	Profile	v1.0-RELEASE-2021_03_09	https://github.com/BioSchemas/specifications/blob/master/ComputationalTool/ComputationalTool_v1.0-RELEASE.json
+bioschemas	BioChemEntity	schema:Thing	Type	0.7-RELEASE	https://github.com/BioSchemas/specifications/blob/master/BioChemEntity/BioChemEntity_v0.7-RELEASE.json
+bioschemas	Gene	bioschemas:BioChemEntity	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Gene/Gene_v1.0-RELEASE.json
+bioschemas	Taxon	schema:Thing	Profile	0.6-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Taxon/Taxon_v0.6-RELEASE.json
+bioschemas	MolecularEntity	bioschemas:BioChemEntity 	Profile	0.5-RELEASE	https://github.com/BioSchemas/specifications/blob/master/MolecularEntity/MolecularEntity_v0.5-RELEASE.json
+bioschemas	Protein	bioschemas:BioChemEntity	Profile	0.11-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Protein/Protein_v0.11-RELEASE.json
+bioschemastest	FormalParameter	schema:Intangible	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/FormalParameter/FormalParameter_v1.0-RELEASE.json
+bioschemas	ComputationalTool	schema:SoftwareApplication	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/ComputationalTool/ComputationalTool_v1.0-RELEASE.json

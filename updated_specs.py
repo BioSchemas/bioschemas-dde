@@ -57,6 +57,62 @@ def clean_duplicate_classes(graphlist,classlist):
                         cleanclassgraph.append(x)
     return(cleanclassgraph)
 
+def add_conformsTo(spec_list,x):
+    spec_info = spec_list.loc[spec_list['name']==x['@id'].replace("bioschemas:","")]
+    spec_url = spec_info.iloc[0]['url']
+    conformsTodict = {
+            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: "+spec_url,
+            "$ref": "#/definitions/conformsDefinition"
+          }
+    conformdef={
+                "@type": "CreativeWork",
+                "type": "object",
+                "properties": {
+                  "identifier":{
+                    "description": "The url of the version bioschemas profile that was used. For jsonschema, set @id to the identifier",
+                    "oneOf": [
+                      {
+                        "enum": [spec_url] 
+                      },
+                      {
+                        "type": "string",
+                        "format": "uri"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "identifier"
+                ]              
+        }
+    x['$validation']['properties']['conformsTo'] = conformsTodict
+    requirementlist = x['$validation']['required']
+    requirementlist.append('conformsTo')
+    x['$validation']['required'] = requirementlist
+    try:
+        definitiondict = x['$validation']['definitions']
+    except:
+        definitiondict = {}
+    definitiondict["conformsDefinition"]=conformdef
+    x['$validation']['definitions']=definitiondict
+    return(x)
+
+def clean_duplicate_classes(spec_list,graphlist,classlist):
+    duplicates = [i for i in set(classlist) if classlist.count(i) > 1]
+    nondupes = [x for x in classlist if x not in duplicates]
+    if len(duplicates)>0:  ## There are duplicate classes to clean up
+        cleanclassgraph = []
+        for x in graphlist:
+            if x["@id"] in nondupes:
+                y = add_conformsTo(spec_list,x)
+                cleanclassgraph.append(y)
+            for eachclass in duplicates:
+                if x["@id"]==eachclass:
+                    if "$validation" in x.keys():
+                        y = add_conformsTo(spec_list,x)
+                        cleanclassgraph.append(y)
+    return(cleanclassgraph)
+
 def clean_duplicate_properties(graphlist, propertylist):            
     duplicates = [i for i in set(propertylist) if propertylist.count(i) > 1]
     nondupes = [x for x in propertylist if x not in duplicates]
@@ -85,7 +141,7 @@ def clean_duplicate_properties(graphlist, propertylist):
         for x in graphlist:
             if x["@id"] in nondupes:
                 cleanpropsgraph.append(x)
-    return(cleanpropsgraph)
+    return(cleanpropsgraph)   
 
 def merge_specs(spec_list):
     bioschemas_json = {}
@@ -105,15 +161,32 @@ def merge_specs(spec_list):
                     classlist.append(x["@id"])
                 if x["@type"]=="rdf:Property":
                     propertylist.append(x["@id"])
-    cleanclassgraph = clean_duplicate_classes(graphlist,classlist)
+    cleanclassgraph = clean_duplicate_classes(spec_list,graphlist,classlist)
     cleanpropsgraph = clean_duplicate_properties(graphlist, propertylist)
     cleangraph = []
     for z in cleanclassgraph:
         cleangraph.append(z)
     for a in cleanpropsgraph:
         cleangraph.append(a)
+    conformsTo = define_conformsTo(classlist)
+    cleangraph.append(conformsTo)
     bioschemas_json['@graph']=cleangraph
     return(bioschemas_json)
+
+def define_conformsTo(classlist):
+    uniqueclasses =  list(set(classlist))
+    classidlist = [{"@id":x} for x in classlist]
+    conformsTo = {
+      "@id": "dct:conformsTo",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Used to state the Bioschemas profile that the markup relates to. The versioned URL of the profile must be used. Note that we use a CURIE in the table here but the full URL for Dublin Core terms must be used in the markup (http://purl.org/dc/terms/conformsTo), see example.",
+      "rdfs:label": "conformsTo",
+      "schema:domainIncludes": classidlist,
+      "schema:rangeIncludes": [
+        {"@id": "schema:CreativeWork"},{"@id": "schema:Text"},{"@id": "schema:Thing"}
+      ]
+    }
+    return(conformsTo)
 
 def update_specs(script_path):
     spec_list = read_csv('specifications_list.txt',delimiter='\t',header=0)
