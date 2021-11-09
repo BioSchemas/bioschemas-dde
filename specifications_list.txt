@@ -8,3 +8,4 @@ bioschemastest	FormalParameter	schema:Intangible	Profile	1.0-RELEASE	https://git
 bioschemas	ComputationalTool	schema:SoftwareApplication	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/ComputationalTool/ComputationalTool_v1.0-RELEASE.json
 bioschemas	ChemicalSubstance	bioschemas:BioChemEntity	Profile	0.4-RELEASE	https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/ChemicalSubstance_v0.4-RELEASE.json
 bioschemas	ComputationalWorkflow	schema:SoftwareSourceCode	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/ComputationalWorkflow_v1.0-RELEASE.json
+bioschemas	DataCatalog	schema:DataCatalog	Profile	0.3-RELEASE	https://github.com/BioSchemas/specifications/blob/master/DataCatalog/DataCatalog_v0.3-RELEASE.json
