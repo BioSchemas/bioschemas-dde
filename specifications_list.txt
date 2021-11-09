@@ -6,3 +6,4 @@ bioschemas	MolecularEntity	bioschemas:BioChemEntity 	Profile	0.5-RELEASE	https:/
 bioschemas	Protein	bioschemas:BioChemEntity	Profile	0.11-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Protein/Protein_v0.11-RELEASE.json
 bioschemastest	FormalParameter	schema:Intangible	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/FormalParameter/FormalParameter_v1.0-RELEASE.json
 bioschemas	ComputationalTool	schema:SoftwareApplication	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/ComputationalTool/ComputationalTool_v1.0-RELEASE.json
+bioschemas	ChemicalSubstance	bioschemas:BioChemEntity	Profile	0.4-RELEASE	https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/ChemicalSubstance_v0.4-RELEASE.json
