@@ -1,5 +1,6 @@
 namespace	name	subclassOf	type	version	url
 bioschemas	BioChemEntity	schema:Thing	Type	0.7-RELEASE	https://github.com/BioSchemas/specifications/blob/master/BioChemEntity/BioChemEntity_v0.7-RELEASE.json
+bioschemas	ChemicalSubstance	bioschemas:BioChemEntity	Profile	0.4-RELEASE	https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/ChemicalSubstance_v0.4-RELEASE.json
 bioschemas	Gene	bioschemas:BioChemEntity	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Gene/Gene_v1.0-RELEASE.json
 bioschemas	Taxon	schema:Thing	Profile	0.6-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Taxon/Taxon_v0.6-RELEASE.json
 bioschemas	MolecularEntity	bioschemas:BioChemEntity 	Profile	0.5-RELEASE	https://github.com/BioSchemas/specifications/blob/master/MolecularEntity/MolecularEntity_v0.5-RELEASE.json
@@ -7,7 +8,6 @@ bioschemas	Protein	bioschemas:BioChemEntity	Profile	0.11-RELEASE	https://github.
 bioschemastest	FormalParameter	schema:Intangible	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/FormalParameter/FormalParameter_v1.0-RELEASE.json
 bioschemas	ComputationalTool	schema:SoftwareApplication	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/ComputationalTool/ComputationalTool_v1.0-RELEASE.json
 bioschemas	ComputationalWorkflow	schema:SoftwareSourceCode	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/ComputationalWorkflow_v1.0-RELEASE.json
-bioschemas	ChemicalSubstance	bioschemas:BioChemEntity	Profile	0.4-RELEASE	https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/ChemicalSubstance_v0.4-RELEASE.json
 bioschemas	DataCatalog	schema:DataCatalog	Profile	0.3-RELEASE	https://github.com/BioSchemas/specifications/blob/master/DataCatalog/DataCatalog_v0.3-RELEASE.json
 bioschemastemp	Dataset	schema:Dataset	Profile	0.3-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Dataset/Dataset_v0.3-RELEASE.json
 bioschemastemp	Sample	schema:Thing	Profile	0.2-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Sample/Sample_v0.2-RELEASE.json
