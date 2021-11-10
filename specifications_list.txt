@@ -11,4 +11,3 @@ bioschemas	ComputationalWorkflow	schema:SoftwareSourceCode	Profile	1.0-RELEASE	h
 bioschemas	DataCatalog	schema:DataCatalog	Profile	0.3-RELEASE	https://github.com/BioSchemas/specifications/blob/master/DataCatalog/DataCatalog_v0.3-RELEASE.json
 bioschemastemp	Dataset	schema:Dataset	Profile	0.3-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Dataset/Dataset_v0.3-RELEASE.json
 bioschemastemp	Sample	schema:Thing	Profile	0.2-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Sample/Sample_v0.2-RELEASE.json
-bioschemas	BioSample	bioschemas:BioChemEntity	Type	0.1-RELEASE	https://github.com/BioSchemas/specifications/blob/master/BioSample/BioSample_v0.1-RELEASE.json
