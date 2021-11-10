@@ -100,8 +100,8 @@ def add_conformsTo(spec_list,x):
 def clean_duplicate_classes(spec_list,graphlist,classlist):
     duplicates = [i for i in set(classlist) if classlist.count(i) > 1]
     nondupes = [x for x in classlist if x not in duplicates]
+    cleanclassgraph = []
     if len(duplicates)>0:  ## There are duplicate classes to clean up
-        cleanclassgraph = []
         for x in graphlist:
             if x["@id"] in nondupes:
                 y = add_conformsTo(spec_list,x)
@@ -111,6 +111,11 @@ def clean_duplicate_classes(spec_list,graphlist,classlist):
                     if "$validation" in x.keys():
                         y = add_conformsTo(spec_list,x)
                         cleanclassgraph.append(y)
+    else:  ## There are not duplicate classes to clean up
+        for x in graphlist:
+            if x["@id"] in nondupes:
+                y = add_conformsTo(spec_list,x)
+                cleanclassgraph.append(y)        
     return(cleanclassgraph)
 
 def clean_duplicate_properties(graphlist, propertylist):            
