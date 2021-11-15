@@ -97,6 +97,24 @@ def add_conformsTo(spec_list,x):
     x['$validation']['definitions']=definitiondict
     return(x)
 
+def add_schemaVersion(spec_list,x):
+    spec_info = spec_list.loc[spec_list['name']==x['@id'].replace("bioschemas:","")]
+    spec_url = spec_info.iloc[0]['url']
+    baseurl = "https://bioschemas.org/"
+    versionurl = baseurl+'/'+spec_info.iloc[0]['type']+'/'+spec_info.iloc[0]['name']+'/'+spec_info.iloc[0]['version']
+    try:
+        existingversions = x["schema:schemaVersion"]
+        if isinstance(schemaversions, list) == False:
+            schemaversions = existingversions.strip("[").strip("]").split(",")
+        else:
+            schemaversions = existingversions
+    except:
+        schemaversions = []
+    schemaversions.append(versionurl)
+    schemaversions.append(spec_url)
+    x["schema:schemaVersion"] = schemaversions
+    return(x)
+
 def clean_duplicate_classes(spec_list,graphlist,classlist):
     duplicates = [i for i in set(classlist) if classlist.count(i) > 1]
     nondupes = [x for x in classlist if x not in duplicates]
@@ -105,17 +123,20 @@ def clean_duplicate_classes(spec_list,graphlist,classlist):
         for x in graphlist:
             if x["@id"] in nondupes:
                 y = add_conformsTo(spec_list,x)
-                cleanclassgraph.append(y)
+                z = add_schemaVersion(spec_list,y)
+                cleanclassgraph.append(z)
             for eachclass in duplicates:
                 if x["@id"]==eachclass:
                     if "$validation" in x.keys():
                         y = add_conformsTo(spec_list,x)
-                        cleanclassgraph.append(y)
+                        z = add_schemaVersion(spec_list,y)
+                        cleanclassgraph.append(z)
     else:  ## There are not duplicate classes to clean up
         for x in graphlist:
             if x["@id"] in nondupes:
                 y = add_conformsTo(spec_list,x)
-                cleanclassgraph.append(y)        
+                z = add_schemaVersion(spec_list,y)
+                cleanclassgraph.append(z)        
     return(cleanclassgraph)
 
 def clean_duplicate_properties(graphlist, propertylist):            
