@@ -112,7 +112,7 @@ def add_schemaVersion(spec_list,x):
         schemaversions = []
     schemaversions.append(versionurl)
     schemaversions.append(spec_url)
-    x["schema:schemaVersion"] = schemaversions
+    x["schema:schemaVersion"] = x["schema:schemaVersion"] = list(set(schemaversions))
     return(x)
 
 def clean_duplicate_classes(spec_list,graphlist,classlist):
