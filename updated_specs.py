@@ -100,7 +100,7 @@ def add_conformsTo(spec_list,x):
 def add_schemaVersion(spec_list,x):
     spec_info = spec_list.loc[spec_list['name']==x['@id'].replace("bioschemas:","")]
     spec_url = spec_info.iloc[0]['url']
-    baseurl = "https://bioschemas.org/"
+    baseurl = "https://bioschemas.org"
     versionurl = baseurl+'/'+spec_info.iloc[0]['type']+'/'+spec_info.iloc[0]['name']+'/'+spec_info.iloc[0]['version']
     try:
         existingversions = x["schema:schemaVersion"]
