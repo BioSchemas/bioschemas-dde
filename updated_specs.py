@@ -101,7 +101,7 @@ def add_schemaVersion(spec_list,x):
     spec_info = spec_list.loc[spec_list['name']==x['@id'].replace("bioschemas:","")]
     spec_url = spec_info.iloc[0]['url']
     baseurl = "https://bioschemas.org"
-    versionurl = baseurl+'/'+spec_info.iloc[0]['type']+'/'+spec_info.iloc[0]['name']+'/'+spec_info.iloc[0]['version']
+    versionurl = baseurl+'/'+spec_info.iloc[0]['type'].lower()+'s/'+spec_info.iloc[0]['name']+'/'+spec_info.iloc[0]['version']
     try:
         existingversions = x["schema:schemaVersion"]
         if isinstance(schemaversions, list) == False:
@@ -112,7 +112,8 @@ def add_schemaVersion(spec_list,x):
         schemaversions = []
     schemaversions.append(versionurl)
     schemaversions.append(spec_url)
-    x["schema:schemaVersion"] = x["schema:schemaVersion"] = list(set(schemaversions))
+    ## Ensure uniqueness of elements
+    x["schema:schemaVersion"] = list(set(schemaversions))
     return(x)
 
 def clean_duplicate_classes(spec_list,graphlist,classlist):
