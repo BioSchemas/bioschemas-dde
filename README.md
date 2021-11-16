@@ -6,23 +6,23 @@ DO NOT EDIT the bioschemas.json file directly. Updates to this file will be over
 ### To update a specification via github:
  1. Fork the bioschemas specification repository
  2. Go to the specification folder of interest
- 3. move the json file into the 'previous versions' folder 
- 4. add your updated json specification to the top level of the appropriate specification folder and  name it '{Class}_{version}-RELEASE.json'
+ 4. add your updated json specification to the jsonld folder of the appropriate specification folder and  name it '{Class}_{version}-RELEASE.json' or '{Class}_{version}-Draft.json'
 
 ### To update a specification via the DDE:
  1. Go to https://discovery.biothings.io/registry
  2. Search for "bioschemas"
  3. Select the existing bioschema profile/type that you'd like to update
- 4. Click on the "extend" icon
+ 4. Click on the "extend" icon (note that you will have to use a temporary namespace, like 'bioschemastemp')
  5. Select all the properties that you'd like to keep
  6. Add new properties as needed
  7. Toggle the validation editor and add validation for any new properties. Also, edit validations for existing properties if there was a change in the cardinality, marginality, expected types, or allowed vocabularies
  8. Download/export your updated schema jsonld file to your desktop or to github
- 9. Move a copy of it into the appropriate bioschemas specification folder (see "To update a specification via github)
+ 9. If you'd like, you can use a simple text editor to do a simple find/replace and change your temporary namespace to 'bioschemas' (This is not necessary, as automated merging script can do this for you, but you will have to ensure you use the temporary namespace instead of 'bioschemas' if you do not follow this step)
+ 10. Move a copy of it into the appropriate bioschemas specification folder (see "To update a specification via github)
  
  ### To test a new or updated specification:
  1. Fork the bioschemas_DDE repository
- 2. Edit the specifications_list file (see below) <-- This will trigger the generation of the bioschemas.json file via github actions
+ 2. Edit the specifications_list file (see below) in your fork<-- This will trigger the generation of the bioschemas.json file via github actions in your fork of the repository (note that if your schema used a temporary namespace, you should use that namespace in the specification file, so the script does a proper replacement in the merged bioschemas.json)
  3. Go to https://discovery.biothings.io/schema-playground and click on "Register Schema" (don't worry, you won't be registering anything). Paste the link to YOUR generated bioschemas.json file into the schema viewer and click `Let's go`
  4. Click on the specification you updated to review how it appears in the DDE.
  5. Edit/iterate as needed. If you are satisfied with your specification, push your specifications_list file to the bioschemas_DDE repository

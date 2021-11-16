@@ -13,3 +13,4 @@ bioschemastemp	Dataset	schema:Dataset	Profile	0.3-RELEASE	https://github.com/Bio
 bioschemastemp	Sample	schema:Thing	Profile	0.2-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE.json
 bioschemas	Course	schema:Course	Profile	v0.9-DRAFT-2020_12_08	https://github.com/BioSchemas/specifications/blob/master/Course/jsonld/Course_v0.9-DRAFT-2020_12_08.json
 bioschemas	CourseInstance	schema:CourseInstance	Profile	v0.8-DRAFT-2020_10_06	https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v0.8-DRAFT-2020_10_06.json
+bioschemas	Event	schema:Event	Profile	Event_v0.2-DRAFT-2019_06_14	https://github.com/BioSchemas/specifications/blob/master/Event/jsonld/Event_v0.2-DRAFT-2019_06_14.json
