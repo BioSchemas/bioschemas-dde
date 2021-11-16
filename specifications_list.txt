@@ -15,3 +15,4 @@ bioschemas	Course	schema:Course	Profile	v0.9-DRAFT-2020_12_08	https://github.com
 bioschemas	CourseInstance	schema:CourseInstance	Profile	v0.8-DRAFT-2020_10_06	https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v0.8-DRAFT-2020_10_06.json
 bioschemas	Event	schema:Event	Profile	v0.2-DRAFT-2019_06_14	https://github.com/BioSchemas/specifications/blob/master/Event/jsonld/Event_v0.2-DRAFT-2019_06_14.json
 bioschemas	Journal	schema:CreativeWorkSeries	Profile	v0.2-DRAFT-2020_12_03	https://github.com/BioSchemas/specifications/blob/master/Journal/jsonld/Journal_v0.2-DRAFT-2020_12_03.json
+bioschemas	LabProtocol	schema:HowTo	Profile	v0.6-DRAFT-2020_12_08	https://github.com/BioSchemas/specifications/blob/master/LabProtocol/jsonld/LabProtocol_v0.6-DRAFT-2020_12_08.json
