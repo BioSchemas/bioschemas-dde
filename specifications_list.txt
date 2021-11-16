@@ -9,8 +9,8 @@ bioschemas	FormalParameter	schema:Intangible	Profile	1.0-RELEASE	https://github.
 bioschemas	ComputationalTool	schema:SoftwareApplication	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/ComputationalTool/jsonld/ComputationalTool_v1.0-RELEASE.json
 bioschemas	ComputationalWorkflow	schema:SoftwareSourceCode	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE.json
 bioschemas	DataCatalog	schema:DataCatalog	Profile	0.3-RELEASE	https://github.com/BioSchemas/specifications/blob/master/DataCatalog/jsonld/DataCatalog_v0.3-RELEASE.json
-bioschemastemp	Dataset	schema:Dataset	Profile	0.3-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v0.3-RELEASE.json
-bioschemastemp	Sample	schema:Thing	Profile	0.2-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE.json
+bioschemas	Dataset	schema:Dataset	Profile	0.3-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v0.3-RELEASE.json
+bioschemas	Sample	schema:Thing	Profile	0.2-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE.json
 bioschemas	Course	schema:Course	Profile	v0.9-DRAFT-2020_12_08	https://github.com/BioSchemas/specifications/blob/master/Course/jsonld/Course_v0.9-DRAFT-2020_12_08.json
 bioschemas	CourseInstance	schema:CourseInstance	Profile	v0.8-DRAFT-2020_10_06	https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v0.8-DRAFT-2020_10_06.json
 bioschemas	Event	schema:Event	Profile	v0.2-DRAFT-2019_06_14	https://github.com/BioSchemas/specifications/blob/master/Event/jsonld/Event_v0.2-DRAFT-2019_06_14.json
