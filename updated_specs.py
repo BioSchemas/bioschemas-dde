@@ -117,6 +117,21 @@ def add_schemaVersion(spec_list,x):
     x["schema:schemaVersion"] = list(set(schemaversions))
     return(x)
 
+def add_specification_type(spec_list,x):
+    spec_info = spec_list.loc[spec_list['name']==x['@id'].replace("bioschemas:","")]
+    if spec_info.iloc[0]['type']=='Type':
+        baseurl = 'https://bioschemas.org/types#nav-'
+    elif spec_info.iloc[0]['type']=='Profile':
+        baseurl = 'https://bioschemas.org/profiles#nav-'
+    if 'deprecated' in spec_info.iloc[0]['version'].lower():
+        typeurl = baseurl+'deprecated'
+    elif 'release' in spec_info.iloc[0]['version'].lower():
+        typeurl = baseurl+'release'
+    elif 'draft' in spec_info.iloc[0]['version'].lower():
+        typeurl = baseurl+'draft'
+    x['additional_type'] = typeurl
+    return(x)
+
 def clean_duplicate_classes(spec_list,graphlist,classlist):
     duplicates = [i for i in set(classlist) if classlist.count(i) > 1]
     nondupes = [x for x in classlist if x not in duplicates]
@@ -124,22 +139,26 @@ def clean_duplicate_classes(spec_list,graphlist,classlist):
     if len(duplicates)>0:  ## There are duplicate classes to clean up
         for x in graphlist:
             if x["@id"] in nondupes:
+                x = add_specification_type(spec_list,x)
+                x = add_schemaVersion(spec_list,x)
                 if "$validation" in x.keys():
-                    y = add_conformsTo(spec_list,x)
-                    z = add_schemaVersion(spec_list,y)
-                    cleanclassgraph.append(z)
+                    x = add_conformsTo(spec_list,x)
+                cleanclassgraph.append(x)
             for eachclass in duplicates:
                 if x["@id"]==eachclass:
+                    x = add_specification_type(spec_list,x)
+                    x = add_schemaVersion(spec_list,x)
                     if "$validation" in x.keys():
-                        y = add_conformsTo(spec_list,x)
-                        z = add_schemaVersion(spec_list,y)
-                        cleanclassgraph.append(z)
+                        x = add_conformsTo(spec_list,x)
+                    cleanclassgraph.append(x)
     else:  ## There are not duplicate classes to clean up
         for x in graphlist:
             if x["@id"] in nondupes:
-                y = add_conformsTo(spec_list,x)
-                z = add_schemaVersion(spec_list,y)
-                cleanclassgraph.append(z)        
+                x = add_specification_type(spec_list,x)
+                x = add_schemaVersion(spec_list,x)
+                if "$validation" in x.keys():
+                    x = add_conformsTo(spec_list,x)
+                cleanclassgraph.append(x)        
     return(cleanclassgraph)
 
 def clean_duplicate_properties(graphlist, propertylist):            
