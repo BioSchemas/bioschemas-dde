@@ -132,6 +132,19 @@ def add_specification_type(spec_list,x):
     x['additional_type'] = typeurl
     return(x)
 
+def remove_NaN_fields(propdef):
+    if isinstance(propdef,dict):
+        cleandict = {}
+        for k, v in propdef.items():
+            if k != "schema:sameAs":
+                cleandict[k]=v
+            elif k == "schema:sameAs": 
+                if isinstance(v,type(None))==False:
+                    cleandict[k]=v
+    if isinstance(propdef,str):
+        cleandict = propdef.replace('"schema:sameAs": NaN,','')
+    return(cleandict)
+
 def clean_duplicate_classes(spec_list,graphlist,classlist):
     duplicates = [i for i in set(classlist) if classlist.count(i) > 1]
     nondupes = [x for x in classlist if x not in duplicates]
@@ -169,8 +182,10 @@ def clean_duplicate_properties(graphlist, propertylist):
         dupepropsgraph = []
         for x in graphlist:
             if x["@id"] in nondupes:
+                x = remove_NaN_fields(x)
                 cleanpropsgraph.append(x)
             elif x["@id"] in duplicates:
+                x = remove_NaN_fields(x)
                 dupepropsgraph.append(x)
         #dupepropsgraph[0]["dummyProp"]={"@id":"dummyValue"} #### creates dummy property for testing only
         dupepropsdf = pd.DataFrame(dupepropsgraph)
@@ -188,8 +203,9 @@ def clean_duplicate_properties(graphlist, propertylist):
     else:
         for x in graphlist:
             if x["@id"] in nondupes:
+                x = remove_NaN_fields(x)
                 cleanpropsgraph.append(x)
-    return(cleanpropsgraph)   
+    return(cleanpropsgraph)     
 
 def merge_specs(spec_list):
     bioschemas_json = {}
@@ -240,8 +256,10 @@ def update_specs(script_path):
     spec_list = read_csv('specifications_list.txt',delimiter='\t',header=0)
     bioschemas_json = merge_specs(spec_list)
     bioschemasfile = os.path.join(script_path,'bioschemas.json')
+    jsonstring = json.dumps(bioschemas_json)
+    cleanstring = remove_NaN_fields(jsonstring)
     with open(bioschemasfile,'w') as outfile:
-        outfile.write(json.dumps(bioschemas_json))
+        outfile.write(cleanstring)
 
 #### Main
 script_path = pathlib.Path(__file__).parent.absolute()
