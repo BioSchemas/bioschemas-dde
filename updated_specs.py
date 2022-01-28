@@ -30,7 +30,7 @@ def check_context_url(spec_json):
     contextInfo = spec_json['@context']
     bioschemasUrl = "https://discovery.biothings.io/view/bioschemas/"
     contextInfo["bioschemas"]=bioschemasUrl
-    contextInfo["dct"]="https://dublincore.org/specifications/dublin-core/dcmi-terms/#"
+    contextInfo["dct"] = "http://purl.org/dc/terms/"
     return(contextInfo)
 
 def update_subclass(spec_list,eachurl,cleantext):
@@ -124,9 +124,10 @@ def clean_duplicate_classes(spec_list,graphlist,classlist):
     if len(duplicates)>0:  ## There are duplicate classes to clean up
         for x in graphlist:
             if x["@id"] in nondupes:
-                y = add_conformsTo(spec_list,x)
-                z = add_schemaVersion(spec_list,y)
-                cleanclassgraph.append(z)
+                if "$validation" in x.keys():
+                    y = add_conformsTo(spec_list,x)
+                    z = add_schemaVersion(spec_list,y)
+                    cleanclassgraph.append(z)
             for eachclass in duplicates:
                 if x["@id"]==eachclass:
                     if "$validation" in x.keys():
