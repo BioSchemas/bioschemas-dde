@@ -30,6 +30,7 @@ def check_context_url(spec_json):
     contextInfo = spec_json['@context']
     bioschemasUrl = "https://discovery.biothings.io/view/bioschemas/"
     contextInfo["bioschemas"]=bioschemasUrl
+    contextInfo["dct"]="https://dublincore.org/specifications/dublin-core/dcmi-terms/#"
     return(contextInfo)
 
 def update_subclass(spec_list,eachurl,cleantext):
