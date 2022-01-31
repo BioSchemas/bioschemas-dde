@@ -31,6 +31,7 @@ def check_context_url(spec_json):
     bioschemasUrl = "https://discovery.biothings.io/view/bioschemas/"
     contextInfo["bioschemas"]=bioschemasUrl
     contextInfo["dct"] = "http://purl.org/dc/terms/"
+    contextInfo["owl"] = "http://www.w3.org/2002/07/owl#"
     return(contextInfo)
 
 def update_subclass(spec_list,eachurl,cleantext):
