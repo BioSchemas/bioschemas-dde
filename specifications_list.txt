@@ -18,3 +18,4 @@ bioschemas	Event	schema:Event	Profile	v0.2-DRAFT-2019_06_14	https://github.com/B
 bioschemas	Journal	schema:CreativeWorkSeries	Profile	v0.2-DRAFT-2020_12_03	https://github.com/BioSchemas/specifications/blob/master/Journal/jsonld/Journal_v0.2-DRAFT-2020_12_03.json
 bioschemas	LabProtocol	schema:HowTo	Profile	v0.6-DRAFT-2020_12_08	https://github.com/BioSchemas/specifications/blob/master/LabProtocol/jsonld/LabProtocol_v0.6-DRAFT-2020_12_08.json
 bioschemas	Organization	schema:Organization	Profile	v0.2-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Organization/jsonld/Organization_v0.2-DRAFT-2019_07_19.json
+bioschemas	Person	schema:Person	Profile	Person_v0.2-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Person/jsonld/Person_v0.2-DRAFT-2019_07_19.json
