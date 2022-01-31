@@ -178,9 +178,9 @@ def clean_duplicate_classes(spec_list,graphlist,classlist):
 def clean_duplicate_properties(graphlist, propertylist):            
     duplicates = [i for i in set(propertylist) if propertylist.count(i) > 1]
     nondupes = [x for x in propertylist if x not in duplicates]
+    cleanpropsgraph = []
+    dupepropsgraph = []
     if len(duplicates)>0:  ## There are duplicate properties to clean up
-        cleanpropsgraph = []
-        dupepropsgraph = []
         for x in graphlist:
             if x["@id"] in nondupes:
                 x = remove_NaN_fields(x)
