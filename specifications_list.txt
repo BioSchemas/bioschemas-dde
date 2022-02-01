@@ -20,3 +20,5 @@ bioschemas	LabProtocol	schema:HowTo	Profile	v0.6-DRAFT-2020_12_08	https://github
 bioschemas	Organization	schema:Organization	Profile	v0.2-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Organization/jsonld/Organization_v0.2-DRAFT-2019_07_19.json
 bioschemas	Person	schema:Person	Profile	v0.2-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Person/jsonld/Person_v0.2-DRAFT-2019_07_19.json
 bioschemas	Phenotype	schema:Thing	Profile	v0.2-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Phenotype/jsonld/Phenotype_v0.2-DRAFT.json
+bioschemas	PublicationIssue	schema:PublicationIssue	Profile	v0.2-DRAFT	https://github.com/BioSchemas/specifications/blob/master/PublicationIssue/jsonld/PublicationIssue_v0.2-DRAFT-2020_12_03.json
+bioschemas	PublicationVolume	schema:PublicationVolume	Profile	v0.2-DRAFT	https://github.com/BioSchemas/specifications/blob/master/PublicationVolume/jsonld/PublicationVolume_v0.2-DRAFT-2020_12_03.json
