@@ -22,3 +22,5 @@ bioschemas	Person	schema:Person	Profile	v0.2-DRAFT	https://github.com/BioSchemas
 bioschemas	Phenotype	schema:Thing	Profile	v0.2-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Phenotype/jsonld/Phenotype_v0.2-DRAFT.json
 bioschemas	PublicationIssue	schema:PublicationIssue	Profile	v0.2-DRAFT	https://github.com/BioSchemas/specifications/blob/master/PublicationIssue/jsonld/PublicationIssue_v0.2-DRAFT-2020_12_03.json
 bioschemas	PublicationVolume	schema:PublicationVolume	Profile	v0.2-DRAFT	https://github.com/BioSchemas/specifications/blob/master/PublicationVolume/jsonld/PublicationVolume_v0.2-DRAFT-2020_12_03.json
+bioschemas	ScholarlyArticle	schema:ScholarlyArticle	Profile	v0.2-DRAFT	https://github.com/BioSchemas/specifications/blob/master/ScholarlyArticle/jsonld/ScholarlyArticle_v0.2-DRAFT-2020_12_03.json
+bioschemas	SemanticTextAnnotation	schema:CreativeWork	Profile	v0.2-DRAFT	https://github.com/BioSchemas/specifications/blob/master/SemanticTextAnnotation/jsonld/SemanticTextAnnotation_v0.2-DRAFT-2020_12_03.json
