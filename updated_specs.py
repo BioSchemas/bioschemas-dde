@@ -144,6 +144,7 @@ def remove_NaN_fields(propdef):
                     cleandict[k]=v
     if isinstance(propdef,str):
         cleandict = propdef.replace('"schema:sameAs": NaN,','')
+        cleandict = propdef.replace('"schema:sameAs": NaN','')
     return(cleandict)
 
 def clean_duplicate_classes(spec_list,graphlist,classlist):
