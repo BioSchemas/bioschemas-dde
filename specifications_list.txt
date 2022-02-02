@@ -24,4 +24,6 @@ bioschemas	PublicationIssue	schema:PublicationIssue	Profile	v0.2-DRAFT	https://g
 bioschemas	PublicationVolume	schema:PublicationVolume	Profile	v0.2-DRAFT	https://github.com/BioSchemas/specifications/blob/master/PublicationVolume/jsonld/PublicationVolume_v0.2-DRAFT-2020_12_03.json
 bioschemas	ScholarlyArticle	schema:ScholarlyArticle	Profile	v0.2-DRAFT	https://github.com/BioSchemas/specifications/blob/master/ScholarlyArticle/jsonld/ScholarlyArticle_v0.2-DRAFT-2020_12_03.json
 bioschemas	SemanticTextAnnotation	schema:CreativeWork	Profile	v0.2-DRAFT	https://github.com/BioSchemas/specifications/blob/master/SemanticTextAnnotation/jsonld/SemanticTextAnnotation_v0.2-DRAFT-2020_12_03.json
-bioschemas	TrainingMaterial	schema:LearningResource	Profile	v-0.9-DRAFT	https://github.com/BioSchemas/specifications/blob/master/TrainingMaterial/jsonld/TrainingMaterial_v0.9-DRAFT-2020_12_08.json
+bioschemas	TrainingMaterial	schema:LearningResource	Profile	v0.9-DRAFT	https://github.com/BioSchemas/specifications/blob/master/TrainingMaterial/jsonld/TrainingMaterial_v0.9-DRAFT-2020_12_08.json
+bioschemas	TaxonName	schema:CreativeWork	Profile	v0.1-DRAFT	https://github.com/BioSchemas/specifications/blob/master/TaxonName/jsonld/TaxonName_v0.1-DRAFT.json
+bioschemas	Study	schema:CreativeWork	Profile	v0.2-DRAFT	https://github.com/BioSchemas/specifications/blob/master/study/jsonld/Study_v0.2-DRAFT.json
