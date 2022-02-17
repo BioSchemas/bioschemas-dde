@@ -114,7 +114,10 @@ def add_conformsTo(spec_list,x):
     return(x)
 
 def add_schemaVersion(spec_list,x):
-    spec_info = spec_list.loc[spec_list['name']==x['@id'].replace("bioschemas:","")]
+    if spec_list.iloc[0]['type']=='Type':
+        spec_info = spec_list.loc[spec_list['name']==x['@id'].replace("bioschemastypes:","")]
+    if spec_list.iloc[0]['type']=='Profile':
+        spec_info = spec_list.loc[spec_list['name']==x['@id'].replace("bioschemas:","")]
     spec_url = spec_info.iloc[0]['url']
     baseurl = "https://bioschemas.org"
     versionurl = baseurl+'/'+spec_info.iloc[0]['type'].lower()+'s/'+spec_info.iloc[0]['name']+'/'+spec_info.iloc[0]['version']
@@ -133,10 +136,11 @@ def add_schemaVersion(spec_list,x):
     return(x)
 
 def add_specification_type(spec_list,x):
-    spec_info = spec_list.loc[spec_list['name']==x['@id'].replace("bioschemas:","")]
-    if spec_info.iloc[0]['type']=='Type':
+    if spec_list.iloc[0]['type']=='Type':
+        spec_info = spec_list.loc[spec_list['name']==x['@id'].replace("bioschemastypes:","")]
         baseurl = 'https://bioschemas.org/types#nav-'
-    elif spec_info.iloc[0]['type']=='Profile':
+    elif spec_list.iloc[0]['type']=='Profile':
+        spec_info = spec_list.loc[spec_list['name']==x['@id'].replace("bioschemas:","")]
         baseurl = 'https://bioschemas.org/profiles#nav-'
     if 'deprecated' in spec_info.iloc[0]['version'].lower():
         typeurl = baseurl+'deprecated'
@@ -148,8 +152,8 @@ def add_specification_type(spec_list,x):
     return(x)
 
 def remove_NaN_fields(propdef):
+    cleandict = {}
     if isinstance(propdef,dict):
-        cleandict = {}
         for k, v in propdef.items():
             if k != "schema:sameAs":
                 cleandict[k]=v
@@ -221,7 +225,7 @@ def clean_duplicate_properties(graphlist, propertylist):
             if x["@id"] in nondupes:
                 x = remove_NaN_fields(x)
                 cleanpropsgraph.append(x)
-    return(cleanpropsgraph)     
+    return(cleanpropsgraph)      
 
 def merge_specs(spec_list):
     bioschemas_json = {}
@@ -279,10 +283,10 @@ def update_specs(script_path):
         outfile.write(cleanstring)
     bioschemastype_json = remove_NaN_fields(merge_specs(spec_type))
     bioschemastypefile = os.path.join(script_path,'bioschemastypes.json')
-    jsonstring = json.dumps(bioschemas_json)
-    cleanstring = remove_NaN_fields(jsonstring)
-    with open(bioschemastypefile,'w') as outfile:
-        outfile.write(cleanstring)
+    typejsonstring = json.dumps(bioschemastype_json)
+    typecleanstring = remove_NaN_fields(typejsonstring)
+    with open(bioschemastypefile,'w') as typeoutfile:
+        typeoutfile.write(typecleanstring)
 
 #### Main
 script_path = pathlib.Path(__file__).parent.absolute()
