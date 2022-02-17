@@ -17,7 +17,7 @@ logging.basicConfig(
 # Define location to read DDE generated JSON files
 SCHEMA_SOURCE = "https://raw.githubusercontent.com/BioSchemas/specifications/master/"
 # Define location to write simplified JSON Schema files
-SCHEMA_TARGET = "../_data/schemas/"
+SCHEMA_TARGET = "schemas/"
 
 def replaceDotsInFilename(filename):
     # Replace `.` in filename with `-` except for final `.json`
@@ -82,9 +82,14 @@ def replaceJSONLDKey(data):
 def processProfiles(script_path):
     logging.debug('Entering processProfiles() with %s' % script_path)
     # Read profile details in from file
-    profiles = pandas.read_csv('specifications_list.txt',delimiter='\t',header=0)
+    profiles = pandas.read_csv('../specifications_list.txt',
+                delimiter='\t',
+                header=0,
+                usecols=["name","version"])
     # Process each profile in turn
-    for profile, release in profiles.items():
+    for index, row in profiles.iterrows():
+        profile = row['name']
+        release = row['version']
         logging.info('Processing %s release %s' % (profile, release))
         schema_file = profile + '_v' + release + '.json'
         url = SCHEMA_SOURCE + profile + "/jsonld/" + schema_file
