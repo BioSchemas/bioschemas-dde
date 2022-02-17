@@ -5,6 +5,11 @@ from pandas import read_csv
 import os
 import pathlib
 
+def sort_speclist(spec_list):
+    spec_type = spec_list.loc[spec_list['type']=='Type'].copy()
+    spec_profs = spec_list.loc[spec_list['type']=='Profile'].copy()
+    return(spec_type,spec_profs)
+
 def get_raw_url(url):
     if 'raw' not in url:
         rawrawurl = url.replace('github.com','raw.githubusercontent.com')
@@ -19,17 +24,24 @@ def get_raw_url(url):
 def rename_namespace(spec_list,eachurl,rawtext):
     tmpinfo = spec_list.loc[spec_list['url']==eachurl]
     tmpnamespace = tmpinfo.iloc[0]['namespace']
-    if tmpnamespace!='bioschemas':
-        tmptext = '"@id": "'+tmpnamespace+':'
-        cleantext = rawtext.replace(tmptext,'"@id": "bioschemas:')
-    else:
-        cleantext = rawtext
+    if tmpinfo.iloc[0]['type']=='Profile':
+        if tmpnamespace!='bioschemas':
+            tmptext = '"@id": "'+tmpnamespace+':'
+            cleantext = rawtext.replace(tmptext,'"@id": "bioschemas:')
+        else:
+            cleantext = rawtext
+    elif tmpinfo.iloc[0]['type']=='Type':
+        if tmpnamespace!='bioschemastypes':
+            tmptext = '"@id": "'+tmpnamespace+':'
+            cleantext = rawtext.replace(tmptext,'"@id": "bioschemastypes:')
+        else:
+            cleantext = rawtext        
     return(cleantext)
 
 def check_context_url(spec_json):
     contextInfo = spec_json['@context']
-    bioschemasUrl = "https://discovery.biothings.io/view/bioschemas/"
-    contextInfo["bioschemas"]=bioschemasUrl
+    contextInfo["bioschemas"]= "http://discovery.biothings.io/view/bioschemas/"
+    contextInfo["bioschemastypes"] = "http://discovery.biothings.io/view/bioschemastypes/"
     contextInfo["dct"] = "http://purl.org/dc/terms/"
     contextInfo["owl"] = "http://www.w3.org/2002/07/owl#"
     return(contextInfo)
@@ -42,6 +54,8 @@ def update_subclass(spec_list,eachurl,cleantext):
     truesubclass = {"@id": tmpsubclass}
     for x in spec_json['@graph']:
         if x['@id']=="bioschemas:"+classname:
+            x['rdfs:subClassOf']=truesubclass
+        if x['@id']=="bioschemastypes:"+classname:
             x['rdfs:subClassOf']=truesubclass
     return(spec_json)
 
@@ -256,11 +270,18 @@ def define_conformsTo(classlist):
 
 def update_specs(script_path):
     spec_list = read_csv('specifications_list.txt',delimiter='\t',header=0)
-    bioschemas_json = merge_specs(spec_list)
+    spec_type,spec_profs = sort_speclist(spec_list)
+    bioschemas_json = remove_NaN_fields(merge_specs(spec_profs))
     bioschemasfile = os.path.join(script_path,'bioschemas.json')
     jsonstring = json.dumps(bioschemas_json)
     cleanstring = remove_NaN_fields(jsonstring)
     with open(bioschemasfile,'w') as outfile:
+        outfile.write(cleanstring)
+    bioschemastype_json = remove_NaN_fields(merge_specs(spec_type))
+    bioschemastypefile = os.path.join(script_path,'bioschemastypes.json')
+    jsonstring = json.dumps(bioschemas_json)
+    cleanstring = remove_NaN_fields(jsonstring)
+    with open(bioschemastypefile,'w') as outfile:
         outfile.write(cleanstring)
 
 #### Main
