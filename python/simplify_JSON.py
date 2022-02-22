@@ -91,6 +91,7 @@ def replace_JSONLD_key(data):
                         'rdfs:comment': 'rdfs-comment',
                         'rdfs:label': 'rdfs-label',
                         'rdfs:subClassOf': 'rdfs-subClassOf',
+                        'schema:additionalType': 'schema-additionalType',
                         'schema:schemaVersion': 'schema-schemaVersion',
                         'schema:domainIncludes': 'schema-domainIncludes',
                         'schema:rangeIncludes': 'schema-rangeIncludes'}
@@ -98,6 +99,21 @@ def replace_JSONLD_key(data):
         data = replace_nested_json_key(data, k, v)
     logging.debug('Exiting replace_JSONLD_key() with ' + str(data))
     return data
+
+def add_profile_status(version):
+    """
+    Add whether the profile is draft, release, or deprecated 
+    """
+    logging.debug('Entering add_profile_status() with ' + version)
+    base_url = 'https://bioschemas.org/profiles#nav-'
+    if 'deprecated' in version.lower():
+        status = base_url + 'deprecated'
+    elif 'release' in version.lower():
+        status = base_url + 'release'
+    elif 'draft' in version.lower():
+        status = base_url + 'draft'
+    logging.debug('Exiting add_profile_status() with ' + status)
+    return status
 
 def add_schemaVersion(profile, version):
     """
@@ -116,6 +132,7 @@ def add_missing_properties(data, profile, version):
     graph_data = data["@graph"][0]
     # print(graph_data.keys())
     graph_data.update({'schema:schemaVersion': add_schemaVersion(profile, version)})
+    graph_data.update({'schema:additionalType': add_profile_status(version)})
     data["@graph"][0] = graph_data
     logging.debug('Exiting add_missing_properties() with ' + str(data))
     return data

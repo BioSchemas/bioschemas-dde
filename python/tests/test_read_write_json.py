@@ -53,6 +53,7 @@ class Test_Read_Write_JSON_file(unittest.TestCase):
                 "@graph":[
                     {
                         "schema:schemaVersion": "1.0-RELEASE",
+                        "schema:additionalType": "https://bioschemas.org/profiles#nav-release",
                         "@id":"bioschemas:ComputationalTool",
                         "@type":"rdfs:Class",
                         "rdfs:comment":"Some comment. Version 1.0-RELEASE.",
@@ -96,6 +97,7 @@ class Test_Read_Write_JSON_file(unittest.TestCase):
 
         graph_data = result.get('jsonld-graph')
         keyList = list(graph_data[0].keys())
+        self.assertTrue('schema-additionalType' in keyList, 'schema:additionalType needs to be converted')
         self.assertTrue('schema-schemaVersion' in keyList, 'schema:schemaVersion needs to be converted')
         self.assertTrue('jsonld-id' in keyList, 'jsonld-id not in keys')
         self.assertTrue('jsonld-type' in keyList, 'jsonld-type not in keys')
