@@ -90,7 +90,10 @@ def replace_JSONLD_key(data):
                         '$ref': 'jsonld-ref',
                         'rdfs:comment': 'rdfs-comment',
                         'rdfs:label': 'rdfs-label',
-                        'rdfs:subClassOf': 'rdfs-subClassOf'}
+                        'rdfs:subClassOf': 'rdfs-subClassOf',
+                        'schema:schemaVersion': 'schema-schemaVersion',
+                        'schema:domainIncludes': 'schema-domainIncludes',
+                        'schema:rangeIncludes': 'schema-rangeIncludes'}
     for k, v in replacement_strings.items():
         data = replace_nested_json_key(data, k, v)
     logging.debug('Exiting replace_JSONLD_key() with ' + str(data))
