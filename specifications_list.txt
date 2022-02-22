@@ -27,4 +27,3 @@ bioschemas	SemanticTextAnnotation	schema:CreativeWork	Profile	0.2-DRAFT-2020_12_
 bioschemas	TrainingMaterial	schema:LearningResource	Profile	0.9-DRAFT-2020_12_08	https://github.com/BioSchemas/specifications/blob/master/TrainingMaterial/jsonld/TrainingMaterial_v0.9-DRAFT-2020_12_08.json
 bioschemas	TaxonName	schema:CreativeWork	Profile	0.1-DRAFT	https://github.com/BioSchemas/specifications/blob/master/TaxonName/jsonld/TaxonName_v0.1-DRAFT.json
 bioschemas	Study	schema:CreativeWork	Profile	0.2-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Study/jsonld/Study_v0.2-DRAFT.json
-bioschemas	Dna	bioschemas:BioChemEntity	Type	0.2-DRAFT-2019_06_20.json	https://github.com/BioSchemas/specifications/blob/master/Dna/jsonld/Dna_0.2-DRAFT-2019_06_20.json
