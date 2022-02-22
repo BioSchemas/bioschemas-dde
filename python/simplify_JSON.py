@@ -1,3 +1,4 @@
+from curses.panel import version
 import json
 import logging
 import pandas
@@ -95,6 +96,27 @@ def replace_JSONLD_key(data):
     logging.debug('Exiting replace_JSONLD_key() with ' + str(data))
     return data
 
+def add_schemaVersion(profile, version):
+    """
+    Add the corresponding schema:schemaVersion property
+    """
+    logging.debug('Entering add_schemaVersion() with profile name %s and version number %s' % (profile, version))
+    version = "https://bioschemas.org/profiles/" + profile + '/' + version
+    logging.debug('Exiting add_schemaVersion() with ' + version)
+    return version
+
+def add_missing_properties(data, profile, version):
+    """
+    Add properties that are missing when JSON-Schema is written out by DDE
+    """
+    logging.debug('Entering add_missing_properies() with ' + str(data))
+    graph_data = data["@graph"][0]
+    # print(graph_data.keys())
+    graph_data.update({'schema:schemaVersion': add_schemaVersion(profile, version)})
+    data["@graph"][0] = graph_data
+    logging.debug('Exiting add_missing_properties() with ' + str(data))
+    return data
+
 def process_profiles(script_path):
     """
     Read the specifications_list file stored on GitHub. Iterate through each
@@ -116,6 +138,8 @@ def process_profiles(script_path):
         url = SCHEMA_SOURCE + profile + "/jsonld/" + schema_file
         logging.info('Retrieving file from %s' % url)
         json_data = read_JSON_file(url)
+        logging.info('Adding missing properties')
+        json_data = add_missing_properties(json_data, profile, release)
         logging.info('Replacing JSON-LD keys')
         json_data = replace_JSONLD_key(json_data)
         new_filename = SCHEMA_TARGET + rename_file(schema_file)
