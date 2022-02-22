@@ -14,7 +14,7 @@ This python code takes the output of the Data Discovery Engine and converts the 
 
 ## Source
 
-To run the script just type `python simplifyJSON.py`. This will process the hardcoded profile and save the resulting file in `/_data/schemas/`. Log messages are written to `simplifyJSON.log`.
+To run the script just type `python simplify_JSON.py`. This will process the configuration file found on GitHub and save the resulting files `/schemas/`. Log messages are written to `simplifyJSON.log`.
 
 ## Tests
 

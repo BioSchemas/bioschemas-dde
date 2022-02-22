@@ -1,19 +1,20 @@
 import unittest
 
-from simplifyJSON import replaceDotsInFilename
+from simplify_JSON import rename_file
 
-class TestReplaceDotsInFilename(unittest.TestCase):
-    def test_replaceDotsInFilename1(self):
+class Test_rename_file(unittest.TestCase):
+    def test_rename_file_1(self):
         """
         Test correct replacement of `.` with `-`
         """
-        result = replaceDotsInFilename("ComputationalTool_v1.0-RELEASE.json")
+        result = rename_file("ComputationalTool_v1.0-RELEASE.json")
         self.assertEqual(result, "ComputationalTool_v1-0-RELEASE.json")
-    def test_replaceDotsInFilename2(self):
+
+    def test_rename_file_2(self):
         """
         Test correct replacement of `.` with `-`
         """
-        result = replaceDotsInFilename("Computational.Tool.json_v1.0-RELEASE.json")
+        result = rename_file("Computational.Tool.json_v1.0-RELEASE.json")
         self.assertEqual(result, "Computational-Tool-json_v1-0-RELEASE.json")
 
 if __name__ == "__main__":

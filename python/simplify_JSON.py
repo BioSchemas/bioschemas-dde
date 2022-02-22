@@ -19,34 +19,45 @@ SCHEMA_SOURCE = "https://raw.githubusercontent.com/BioSchemas/specifications/mas
 # Define location to write simplified JSON Schema files
 SCHEMA_TARGET = "schemas/"
 
-def replaceDotsInFilename(filename):
+def rename_file(filename):
+    """
+    Rename the supplied filename so that any `.` in the filename are 
+    replaced with `-`. Need to leave the `.json` file ending unchanged. 
+    This will allow Jekyll to open the file.
+    """
+    logging.debug('Entering rename_file() with %s' % filename)
     # Replace `.` in filename with `-` except for final `.json`
     str = re.sub('\.(?!json$)', '-', filename)
+    logging.debug('Exiting rename_file() with %s' % str)
     return str
 
-def readJSONFile(url):
-    logging.debug('Entering readJSONFile from %s' % url)
+def read_JSON_file(url):
+    """
+    Read in the contents of the JSON file located at the supplied URL.    
+    """
+    logging.debug('Entering read_JSON_file from %s' % url)
     try:
         r = requests.get(url)
         if r.status_code == 200:
             data = json.loads(r.text)
-            logging.debug('Exiting readJSONFile – dictionary size %d' % len(data))
+            logging.debug('Exiting read_JSON_file – dictionary size %d' % len(data))
             return data
         else:
             logging.error('Got a %d error code from %s' % (r.status_code, url))
             raise Exception('Got a %d error code from %s' % (r.status_code, url))
     except requests.exceptions.RequestException as e:
+        logging.error('Bad request: ' + e)
         raise SystemExit(e)
 
-def writeJSONFile(data, filename):
-    logging.debug('Entering writeJSONFile() with dictionary size %d and filename %s' % (len(data), filename))
+def write_JSON_file(data, filename):
+    logging.debug('Entering write_JSON_file() with dictionary size %d and filename %s' % (len(data), filename))
     with open(filename, 'w') as f:
         json.dump(data, f, indent=4)
     f.close()
-    logging.debug('Exiting writeJSONFile')
+    logging.debug('Exiting write_JSON_file()')
 
 def replace_nested_json_key(obj, key, newkey):
-    """Recursively replace key/value in nested JSON."""
+    """Recursively replace key in nested JSON."""
     logging.debug("Entering replace_nested_json_key() with key: %s, newkey: %s, and dict:\n%s" % (key, newkey, str(obj)))
     if isinstance(obj, dict):
         for k, v in obj.items():
@@ -62,9 +73,14 @@ def replace_nested_json_key(obj, key, newkey):
     logging.debug("Exiting replace_nested_json_key() with key: %s, newkey: %s, and dict:\n%s" % (key, newkey, str(obj)))
     return obj
 
-def replaceJSONLDKey(data):
-    logging.debug('Entering replaceJSONLDKey() with ' + str(data))
-    replacementStrings = {'@context': 'jsonld-context',
+def replace_JSONLD_key(data):
+    """
+    Replace the JSONLD/JSON-Schema specific keys with values that 
+    Jekyll's JSON processor can handle. 
+    The set of replacements is defined in the replacement_strings dict
+    """
+    logging.debug('Entering replace_JSONLD_key() with ' + str(data))
+    replacement_strings = {'@context': 'jsonld-context',
                         '@graph': 'jsonld-graph',
                         '@id': 'jsonld-id',
                         '@type': 'jsonld-type',
@@ -74,13 +90,18 @@ def replaceJSONLDKey(data):
                         'rdfs:comment': 'rdfs-comment',
                         'rdfs:label': 'rdfs-label',
                         'rdfs:subClassOf': 'rdfs-subClassOf'}
-    for k, v in replacementStrings.items():
+    for k, v in replacement_strings.items():
         data = replace_nested_json_key(data, k, v)
-    logging.debug('Exiting replaceJSONLDKey() with ' + str(data))
+    logging.debug('Exiting replace_JSONLD_key() with ' + str(data))
     return data
 
-def processProfiles(script_path):
-    logging.debug('Entering processProfiles() with %s' % script_path)
+def process_profiles(script_path):
+    """
+    Read the specifications_list file stored on GitHub. Iterate through each
+    profile in the file and generate a new schema file that Jekyll's JSON
+    processor can handle.
+    """
+    logging.debug('Entering process_profiles() with %s' % script_path)
     # Read profile details in from file
     profiles = pandas.read_csv('../specifications_list.txt',
                 delimiter='\t',
@@ -94,16 +115,16 @@ def processProfiles(script_path):
         schema_file = profile + '_v' + release + '.json'
         url = SCHEMA_SOURCE + profile + "/jsonld/" + schema_file
         logging.info('Retrieving file from %s' % url)
-        json_data = readJSONFile(url)
+        json_data = read_JSON_file(url)
         logging.info('Replacing JSON-LD keys')
-        json_data = replaceJSONLDKey(json_data)
-        new_filename = SCHEMA_TARGET + replaceDotsInFilename(schema_file)
+        json_data = replace_JSONLD_key(json_data)
+        new_filename = SCHEMA_TARGET + rename_file(schema_file)
         logging.info('Writing data to %s' % new_filename)
-        writeJSONFile(json_data, new_filename)
-    logging.debug('Exiting processProfiles()')
+        write_JSON_file(json_data, new_filename)
+    logging.debug('Exiting process_profiles()')
 
 #### Main
 script_path = pathlib.Path(__file__).parent.absolute()
-processProfiles(script_path)
+process_profiles(script_path)
 print('SUCCESS! All profiles have been processed.\nCheck %s for the generated files.'
     % SCHEMA_TARGET)
