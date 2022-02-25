@@ -214,13 +214,14 @@ def merge_specs(spec_list):
     graphlist = []
     classlist = []
     propertylist = []
+    bioschemas_json['@context'] = {}
     for eachurl in spec_list['url']:
         rawurl = get_raw_url(eachurl)
         r = requests.get(rawurl)
         if r.status_code == 200:
             cleantext = rename_namespace(spec_list,eachurl,r.text)
             spec_json = json.loads(cleantext)
-            bioschemas_json['@context'] = check_context_url(spec_json)
+            bioschemas_json['@context'].update(check_context_url(spec_json))
             for x in spec_json['@graph']:
                 graphlist.append(x)
                 if x["@type"]=="rdfs:Class":
