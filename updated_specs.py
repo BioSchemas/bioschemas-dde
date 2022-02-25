@@ -258,7 +258,7 @@ def update_specs(script_path):
     spec_list = read_csv('specifications_list.txt',delimiter='\t',header=0)
     bioschemas_json = merge_specs(spec_list)
     bioschemasfile = os.path.join(script_path,'bioschemas.json')
-    jsonstring = json.dumps(bioschemas_json, indent=4)
+    jsonstring = json.dumps(bioschemas_json, indent=2)
     cleanstring = remove_NaN_fields(jsonstring)
     with open(bioschemasfile,'w') as outfile:
         outfile.write(cleanstring)
