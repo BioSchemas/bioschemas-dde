@@ -67,6 +67,7 @@ def generate_metadata(data):
                 'changes': None}
     data_values = data.get('@graph')[0]
     metadata.update({'name': data_values.get('rdfs:label')})
+    # Set status
     status = data_values.get('schema:additionalType')
     if status.endswith('-release'):
         metadata.update({'status': 'RELEASE'})
@@ -76,6 +77,8 @@ def generate_metadata(data):
         metadata.update({'status': 'DEPRECATED'})
     else:
         raise Exception('Unknown release status')
+    # Set description
+    metadata.update({'description': data_values.get('rdfs:comment')})
     logging.debug('Exiting generate_metadata() with ' + str(metadata))
     return metadata
 
