@@ -2,7 +2,7 @@ import unittest
 import unittest.mock as unitmock
 
 import os
-from simplify_JSON import read_JSON_file, write_YAML_file, replace_JSONLD_key
+from simplify_JSON import read_JSON_file, replace_JSONLD_key
 
 class Test_Read_Write_JSON_file(unittest.TestCase):
     @unitmock.patch('simplify_JSON.requests.get')
@@ -30,16 +30,6 @@ class Test_Read_Write_JSON_file(unittest.TestCase):
         keyList = list(result.keys())
         self.assertEqual(keyList[0], '@context')
         self.assertEqual(keyList[1], '@graph')
-
-    def test_write_YAML_file(self):
-        """
-        Test ability to write a YAML file
-        """
-        filename = 'OzWQr1VVB7.yml'
-        assert not os.path.exists(filename), "File test.yml already exists and would be removed by this test."
-        write_YAML_file({'A':'a', 'B':{'C':'c', 'D':'d', 'E':'e'}, 'F': [1,2,'3']}, filename)
-        self.assertTrue(os.path.exists(filename))
-        os.remove(filename)
 
     def test_replace_JSONLD_Key(self):
         """
