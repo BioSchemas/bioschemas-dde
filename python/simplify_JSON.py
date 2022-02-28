@@ -58,6 +58,12 @@ def write_YAML_file(data, filename):
     f.close()
     logging.debug('Exiting write_YAML_file()')
 
+def generate_metadata(data):
+    logging.debug('Entering generate_metadata() with ' + str(data))
+    metadata = {'layout': 'Profile'}
+    logging.debug('Exiting generate_metadata() with ' + str(metadata))
+    return metadata
+
 def replace_nested_json_key(obj, key, newkey):
     """Recursively replace key in nested JSON."""
     logging.debug("Entering replace_nested_json_key() with key: %s, newkey: %s, and dict:\n%s" % (key, newkey, str(obj)))
