@@ -58,6 +58,8 @@ class Test_generate_metadata(unittest.TestCase):
         self.assertIsNone(result.get('previous_version'), 'previous_version needs to be empty')
         self.assertTrue('previous_release' in result, 'previous_release needs to be set')
         self.assertIsNone(result.get('previous_release'), 'previous_release needs to be empty')
+        self.assertTrue('group' in result, 'group needs to be set')
+        self.assertIsNone(result.get('group'), 'previous_release needs to be empty')
 
 
 if __name__ == "__main__":
