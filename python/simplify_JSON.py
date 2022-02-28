@@ -1,5 +1,6 @@
 import json
 import logging
+import os
 import pandas
 import pathlib
 import re # regex library
@@ -20,16 +21,13 @@ SCHEMA_SOURCE = "https://raw.githubusercontent.com/BioSchemas/specifications/mas
 # Define location to write simplified JSON Schema files
 SCHEMA_TARGET = "schemas/"
 
-def rename_file(filename):
+def rename_file(profile, release):
     """
-    Rename the supplied filename so that any `.` in the filename are 
-    replaced with `-`. Replace the `.json` file ending with `.yml`. 
-    This will allow Jekyll to open the file.
+    Generate the filename to be used on the Bioschemas website in the form
+    {ProfileName}/{version}-{status}.html
     """
-    logging.debug('Entering rename_file() with %s' % filename)
-    # Replace `.` in filename with `-` except for final `.json`
-    str = re.sub('\.(?!json$)', '-', filename)
-    str = str.replace('.json', '.yml')
+    logging.debug('Entering rename_file() with profile %s, release %s' % (profile, release))
+    str = profile + '/' + release + '.html'
     logging.debug('Exiting rename_file() with %s' % str)
     return str
 
@@ -53,8 +51,11 @@ def read_JSON_file(url):
 
 def write_YAML_file(data, filename):
     logging.debug('Entering write_YAML_file() with dictionary size %d and filename %s' % (len(data), filename))
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
     with open(filename, 'w') as f:
+        f.write('---\n')
         yaml.dump(data, f, default_flow_style=False)
+        f.write('---')
     f.close()
     logging.debug('Exiting write_YAML_file()')
 
@@ -150,7 +151,7 @@ def process_profiles(script_path):
             json_data = add_missing_properties(json_data, profile, release)
             logging.info('Generating YAML properties')
             profile_data = generate_metadata(json_data)
-            new_filename = SCHEMA_TARGET + rename_file(schema_file)
+            new_filename = SCHEMA_TARGET + rename_file(profile, release)
             logging.info('Writing data to %s' % new_filename)
             write_YAML_file(profile_data, new_filename)
         else:
