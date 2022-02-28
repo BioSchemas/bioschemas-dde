@@ -4,9 +4,9 @@ import unittest.mock as unitmock
 import os
 from simplify_JSON import replace_JSONLD_key
 
-class Test_Read_Write_JSON_file(unittest.TestCase):
+class Test_Replase_JSONLD_Keys(unittest.TestCase):
 
-    def test_replace_JSONLD_Key(self):
+    def test_replace_JSONLD_Keys(self):
         """
         Test that json-ld strings are converted to regular keys
         """
