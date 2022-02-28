@@ -53,7 +53,7 @@ class Test_generate_metadata(unittest.TestCase):
                 ]}
 
         result = generate_metadata(data)
-        self.assertEqual(result.get('layout'), 'Profile', 'Layout needs to be set to `Profile`')
+        self.assertEqual(result.get('layout'), 'profile', 'Layout needs to be set to `Profile`')
         self.assertTrue('previous_version' in result, 'previous_version needs to be set')
         self.assertEqual(result.get('previous_version'), '', 'previous_version needs to be empty')
         self.assertTrue('previous_release' in result, 'previous_release needs to be set')
@@ -63,6 +63,7 @@ class Test_generate_metadata(unittest.TestCase):
         self.assertTrue('changes' in result, 'changes needs to be set')
         self.assertEqual(result.get('changes'), '', 'changes needs to be empty')
         self.assertEqual(result.get('name'), 'ComputationalTool', 'Name property has not been set correctly')
+        self.assertEqual(result.get('version'), '1.0-RELEASE', 'Version not set correctly')
         self.assertEqual(result.get('status'), 'RELEASE', 'Status has not been set correctly')
         self.assertEqual(result.get('description'), 'Some comment. Version 1.0-RELEASE.', 'Description not correctly set')
         self.assertEqual(result.get('schema_type'), 'schema:SoftwareApplication', 'schema_type not correctly set')
@@ -98,7 +99,7 @@ class Test_generate_metadata(unittest.TestCase):
                 ]}
 
         result = generate_metadata(data)
-        self.assertEqual(result.get('layout'), 'Profile', 'Layout needs to be set to `Profile`')
+        self.assertEqual(result.get('layout'), 'profile', 'Layout needs to be set to `Profile`')
         self.assertTrue('previous_version' in result, 'previous_version needs to be set')
         self.assertEqual(result.get('previous_version'), '', 'previous_version needs to be empty')
         self.assertTrue('previous_release' in result, 'previous_release needs to be set')
@@ -108,6 +109,7 @@ class Test_generate_metadata(unittest.TestCase):
         self.assertTrue('changes' in result, 'changes needs to be set')
         self.assertEqual(result.get('changes'), '', 'changes needs to be empty')
         self.assertEqual(result.get('name'), 'BioSample', 'Name property has not been set correctly')
+        self.assertEqual(result.get('version'), '0.2-DRAFT', 'Version not set correctly')
         self.assertEqual(result.get('status'), 'DRAFT', 'Status has not been set correctly')
         self.assertEqual(result.get('description'), 'Some comment. Version 0.2-DRAFT.', 'Description not correctly set')
         self.assertEqual(result.get('schema_type'), 'bioschemas:BioSample', 'schema_type not correctly set')

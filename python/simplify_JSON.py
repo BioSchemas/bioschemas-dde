@@ -62,14 +62,16 @@ def write_YAML_file(data, filename):
 def generate_metadata(data):
     logging.debug('Entering generate_metadata() with ' + str(data))
     # Set initial parameters
-    metadata = {'layout': 'Profile', 
+    metadata = {'layout': 'profile', 
                 'previous_version': '', 
                 'previous_release': '',
                 'group': '',
                 'changes': ''}
     data_values = data.get('@graph')[0]
-    # set name
+    # Set name
     metadata.update({'name': data_values.get('rdfs:label')})
+    # Set version
+    metadata.update({'version': data_values.get('schema:schemaVersion')})
     # Set status
     status = data_values.get('schema:additionalType')
     if status.endswith('-release'):
