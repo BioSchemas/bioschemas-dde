@@ -134,23 +134,27 @@ def process_profiles(script_path):
     profiles = pandas.read_csv('../specifications_list.txt',
                 delimiter='\t',
                 header=0,
-                usecols=["name","version"])
+                usecols=["name","type","version"])
     # Process each profile in turn
     for index, row in profiles.iterrows():
-        profile = row['name']
-        release = row['version']
-        logging.info('Processing %s release %s' % (profile, release))
-        schema_file = profile + '_v' + release + '.json'
-        url = SCHEMA_SOURCE + profile + "/jsonld/" + schema_file
-        logging.info('Retrieving file from %s' % url)
-        json_data = read_JSON_file(url)
-        logging.info('Adding missing properties')
-        json_data = add_missing_properties(json_data, profile, release)
-        logging.info('Replacing JSON-LD keys')
-        json_data = replace_JSONLD_key(json_data)
-        new_filename = SCHEMA_TARGET + rename_file(schema_file)
-        logging.info('Writing data to %s' % new_filename)
-        write_YAML_file(json_data, new_filename)
+        # Only process profile definitions
+        if row['type'].lower() == 'profile':
+            profile = row['name']
+            release = row['version']
+            logging.info('Processing %s release %s' % (profile, release))
+            schema_file = profile + '_v' + release + '.json'
+            url = SCHEMA_SOURCE + profile + "/jsonld/" + schema_file
+            logging.info('Retrieving file from %s' % url)
+            json_data = read_JSON_file(url)
+            logging.info('Adding missing properties')
+            json_data = add_missing_properties(json_data, profile, release)
+            logging.info('Generating YAML properties')
+            profile_data = generate_metadata(json_data)
+            new_filename = SCHEMA_TARGET + rename_file(schema_file)
+            logging.info('Writing data to %s' % new_filename)
+            write_YAML_file(profile_data, new_filename)
+        else:
+            logging.info('Ignoring non-profile specification: ' + row['name'])
     logging.debug('Exiting process_profiles()')
 
 #### Main
