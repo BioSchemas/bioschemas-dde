@@ -4,6 +4,7 @@ import pandas
 import pathlib
 import re # regex library
 import requests
+import yaml
 
 ## Logging configuration
 logging.basicConfig(
@@ -49,12 +50,12 @@ def read_JSON_file(url):
         logging.error('Bad request: ' + e)
         raise SystemExit(e)
 
-def write_JSON_file(data, filename):
-    logging.debug('Entering write_JSON_file() with dictionary size %d and filename %s' % (len(data), filename))
+def write_YAML_file(data, filename):
+    logging.debug('Entering write_YAML_file() with dictionary size %d and filename %s' % (len(data), filename))
     with open(filename, 'w') as f:
-        json.dump(data, f, indent=4)
+        yaml.dump(data, f, default_flow_style=False)
     f.close()
-    logging.debug('Exiting write_JSON_file()')
+    logging.debug('Exiting write_YAML_file()')
 
 def replace_nested_json_key(obj, key, newkey):
     """Recursively replace key in nested JSON."""
@@ -163,7 +164,7 @@ def process_profiles(script_path):
         json_data = replace_JSONLD_key(json_data)
         new_filename = SCHEMA_TARGET + rename_file(schema_file)
         logging.info('Writing data to %s' % new_filename)
-        write_JSON_file(json_data, new_filename)
+        write_YAML_file(json_data, new_filename)
     logging.debug('Exiting process_profiles()')
 
 #### Main
