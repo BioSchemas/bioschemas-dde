@@ -23,12 +23,13 @@ SCHEMA_TARGET = "schemas/"
 def rename_file(filename):
     """
     Rename the supplied filename so that any `.` in the filename are 
-    replaced with `-`. Need to leave the `.json` file ending unchanged. 
+    replaced with `-`. Replace the `.json` file ending with `.yml`. 
     This will allow Jekyll to open the file.
     """
     logging.debug('Entering rename_file() with %s' % filename)
     # Replace `.` in filename with `-` except for final `.json`
     str = re.sub('\.(?!json$)', '-', filename)
+    str = str.replace('.json', '.yml')
     logging.debug('Exiting rename_file() with %s' % str)
     return str
 
