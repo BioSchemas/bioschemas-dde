@@ -27,7 +27,7 @@ bioschemas	SemanticTextAnnotation	schema:CreativeWork	Profile	0.2-DRAFT-2020_12_
 bioschemas	TrainingMaterial	schema:LearningResource	Profile	0.9-DRAFT-2020_12_08	https://github.com/BioSchemas/specifications/blob/master/TrainingMaterial/jsonld/TrainingMaterial_v0.9-DRAFT-2020_12_08.json
 bioschemas	TaxonName	schema:CreativeWork	Profile	0.1-DRAFT	https://github.com/BioSchemas/specifications/blob/master/TaxonName/jsonld/TaxonName_v0.1-DRAFT.json
 bioschemas	Study	schema:CreativeWork	Profile	0.2-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Study/jsonld/Study_v0.2-DRAFT.json
-bioschemas	DNA	schema:BioChemEntity	Type	0.2-DRAFT-2019_06_20	https://github.com/BioSchemas/specifications/blob/master/DNA/jsonld/DNA_0.2-DRAFT-2019_06_20.json
+bioschemas	DNA	schema:BioChemEntity	Type	0.2-DRAFT-2019_06_20	https://github.com/BioSchemas/specifications/blob/master/DNA/jsonld/DNA_v0.2-DRAFT-2019_06_20.json
 bioschemas	SequenceRange	schema:BioChemEntity	Profile	0.1-DRAFT	https://github.com/BioSchemas/specifications/blob/master/SequenceRange/jsonld/SequenceRange_v0.1-DRAFT.json
 bioschemas	RNA	schema:BioChemEntity	Profile	0.1-DRAFT-2019_11_15	https://github.com/BioSchemas/specifications/blob/master/RNA/jsonld/RNA_v0.1-DRAFT-2019_11_15.json
 bioschemas	SequenceAnnotation	schema:BioChemEntity	Profile	0.7-DRAFT	https://github.com/BioSchemas/specifications/blob/master/SequenceAnnotation/jsonld/SequenceAnnotation_v0.7-DRAFT.json
