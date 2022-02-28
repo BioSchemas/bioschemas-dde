@@ -54,6 +54,10 @@ class Test_generate_metadata(unittest.TestCase):
 
         result = generate_metadata(data)
         self.assertEqual(result.get('layout'), 'Profile', 'Layout needs to be set to `Profile`')
+        self.assertTrue('previous_version' in result, 'previous_version needs to be set')
+        self.assertIsNone(result.get('previous_version'), 'previous_version needs to be empty')
+        self.assertTrue('previous_release' in result, 'previous_release needs to be set')
+        self.assertIsNone(result.get('previous_release'), 'previous_release needs to be empty')
 
 
 if __name__ == "__main__":

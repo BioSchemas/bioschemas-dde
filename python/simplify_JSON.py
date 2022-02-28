@@ -60,7 +60,7 @@ def write_YAML_file(data, filename):
 
 def generate_metadata(data):
     logging.debug('Entering generate_metadata() with ' + str(data))
-    metadata = {'layout': 'Profile'}
+    metadata = {'layout': 'Profile', 'previous_version': None, 'previous_release': None}
     logging.debug('Exiting generate_metadata() with ' + str(metadata))
     return metadata
 
