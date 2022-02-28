@@ -86,49 +86,6 @@ def generate_metadata(data):
     logging.debug('Exiting generate_metadata() with ' + str(metadata))
     return metadata
 
-def replace_nested_json_key(obj, key, newkey):
-    """Recursively replace key in nested JSON."""
-    logging.debug("Entering replace_nested_json_key() with key: %s, newkey: %s, and dict:\n%s" % (key, newkey, str(obj)))
-    if isinstance(obj, dict):
-        for k, v in obj.items():
-            if isinstance(v, (dict, list)):
-                replace_nested_json_key(v, key, newkey)
-        if key in obj:
-            logging.debug('Replacing %s with %s' % (key, newkey))
-            obj[newkey] = obj.pop(key)
-    elif isinstance(obj, list):
-        for item in obj:
-            replace_nested_json_key(item, key, newkey)
-
-    logging.debug("Exiting replace_nested_json_key() with key: %s, newkey: %s, and dict:\n%s" % (key, newkey, str(obj)))
-    return obj
-
-def replace_JSONLD_key(data):
-    """
-    Replace the JSONLD/JSON-Schema specific keys with values that 
-    Jekyll's JSON processor can handle. 
-    The set of replacements is defined in the replacement_strings dict
-    """
-    logging.debug('Entering replace_JSONLD_key() with ' + str(data))
-    replacement_strings = {'@context': 'jsonld-context',
-                        '@graph': 'jsonld-graph',
-                        '@id': 'jsonld-id',
-                        '@type': 'jsonld-type',
-                        '$validation': 'jsonld-validation',
-                        '$schema': 'jsonld-schema',
-                        '$ref': 'jsonld-ref',
-                        'rdfs:comment': 'rdfs-comment',
-                        'rdfs:label': 'rdfs-label',
-                        'rdfs:subClassOf': 'rdfs-subClassOf',
-                        'schema:additionalType': 'schema-additionalType',
-                        'schema:schemaVersion': 'schema-schemaVersion',
-                        'schema:domainIncludes': 'schema-domainIncludes',
-                        'schema:rangeIncludes': 'schema-rangeIncludes'}
-    for k, v in replacement_strings.items():
-        data = replace_nested_json_key(data, k, v)
-    logging.debug('Exiting replace_JSONLD_key() with ' + str(data))
-    return data
-
 def add_profile_status(version):
     """
     Add whether the profile is draft, release, or deprecated 
