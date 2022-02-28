@@ -214,13 +214,14 @@ def merge_specs(spec_list):
     graphlist = []
     classlist = []
     propertylist = []
+    bioschemas_json['@context'] = {}
     for eachurl in spec_list['url']:
         rawurl = get_raw_url(eachurl)
         r = requests.get(rawurl)
         if r.status_code == 200:
             cleantext = rename_namespace(spec_list,eachurl,r.text)
             spec_json = json.loads(cleantext)
-            bioschemas_json['@context'] = check_context_url(spec_json)
+            bioschemas_json['@context'].update(check_context_url(spec_json))
             for x in spec_json['@graph']:
                 graphlist.append(x)
                 if x["@type"]=="rdfs:Class":
@@ -256,12 +257,14 @@ def define_conformsTo(classlist):
 
 def update_specs(script_path):
     spec_list = read_csv('specifications_list.txt',delimiter='\t',header=0)
-    bioschemas_json = merge_specs(spec_list)
+    bioschemas_json = remove_NaN_fields(merge_specs(spec_list))
     bioschemasfile = os.path.join(script_path,'bioschemas.json')
     jsonstring = json.dumps(bioschemas_json)
     cleanstring = remove_NaN_fields(jsonstring)
+    cleandict = json.loads(cleanstring)
+    prettystring = json.dumps(cleandict, indent=2)
     with open(bioschemasfile,'w') as outfile:
-        outfile.write(cleanstring)
+        outfile.write(prettystring)
 
 #### Main
 script_path = pathlib.Path(__file__).parent.absolute()
