@@ -62,10 +62,10 @@ def generate_metadata(data):
     logging.debug('Entering generate_metadata() with ' + str(data))
     # Set initial parameters
     metadata = {'layout': 'Profile', 
-                'previous_version': None, 
-                'previous_release': None,
-                'group': None,
-                'changes': None}
+                'previous_version': '', 
+                'previous_release': '',
+                'group': '',
+                'changes': ''}
     data_values = data.get('@graph')[0]
     # set name
     metadata.update({'name': data_values.get('rdfs:label')})
