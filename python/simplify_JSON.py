@@ -65,7 +65,17 @@ def generate_metadata(data):
                 'previous_release': None,
                 'group': None,
                 'changes': None}
-    metadata.update({'name': data.get('@graph')[0].get('rdfs:label')})
+    data_values = data.get('@graph')[0]
+    metadata.update({'name': data_values.get('rdfs:label')})
+    status = data_values.get('schema:additionalType')
+    if status.endswith('-release'):
+        metadata.update({'status': 'RELEASE'})
+    elif status.endswith('-draft'):
+        metadata.update({'status': 'DRAFT'})
+    elif status.endswith('-deprecated'):
+        metadata.update({'status': 'DEPRECATED'})
+    else:
+        raise Exception('Unknown release status')
     logging.debug('Exiting generate_metadata() with ' + str(metadata))
     return metadata
 
