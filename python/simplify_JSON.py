@@ -168,7 +168,8 @@ def process_profiles(script_path):
     logging.debug('Exiting process_profiles()')
 
 #### Main
-script_path = pathlib.Path(__file__).parent.absolute()
-process_profiles(script_path)
-print('SUCCESS! All profiles have been processed.\nCheck %s for the generated files.'
-    % SCHEMA_TARGET)
+if __name__ == "__main__":
+    script_path = pathlib.Path(__file__).parent.absolute()
+    process_profiles(script_path)
+    print('SUCCESS! All profiles have been processed.\nCheck %s for the generated files.'
+        % SCHEMA_TARGET)
