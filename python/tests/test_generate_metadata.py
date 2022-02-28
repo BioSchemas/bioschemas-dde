@@ -65,6 +65,7 @@ class Test_generate_metadata(unittest.TestCase):
         self.assertEqual(result.get('name'), 'ComputationalTool', 'Name property has not been set correctly')
         self.assertEqual(result.get('status'), 'RELEASE', 'Status has not been set correctly')
         self.assertEqual(result.get('description'), 'Some comment. Version 1.0-RELEASE.', 'Description not correctly set')
+        self.assertEqual(result.get('schema_type'), 'schema:SoftwareApplication', 'schema_type not correctly set')
 
     def test_generate_profile_metadata_biosampe_draft(self):
         """
@@ -109,6 +110,7 @@ class Test_generate_metadata(unittest.TestCase):
         self.assertEqual(result.get('name'), 'BioSample', 'Name property has not been set correctly')
         self.assertEqual(result.get('status'), 'DRAFT', 'Status has not been set correctly')
         self.assertEqual(result.get('description'), 'Some comment. Version 0.2-DRAFT.', 'Description not correctly set')
+        self.assertEqual(result.get('schema_type'), 'bioschemas:BioSample', 'schema_type not correctly set')
 
 if __name__ == "__main__":
     unittest.main()

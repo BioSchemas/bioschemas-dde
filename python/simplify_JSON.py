@@ -60,12 +60,14 @@ def write_YAML_file(data, filename):
 
 def generate_metadata(data):
     logging.debug('Entering generate_metadata() with ' + str(data))
+    # Set initial parameters
     metadata = {'layout': 'Profile', 
                 'previous_version': None, 
                 'previous_release': None,
                 'group': None,
                 'changes': None}
     data_values = data.get('@graph')[0]
+    # set name
     metadata.update({'name': data_values.get('rdfs:label')})
     # Set status
     status = data_values.get('schema:additionalType')
@@ -79,6 +81,8 @@ def generate_metadata(data):
         raise Exception('Unknown release status')
     # Set description
     metadata.update({'description': data_values.get('rdfs:comment')})
+    # Set schema_type
+    metadata.update({'schema_type': data_values.get('rdfs:subClassOf').get('@id')})
     logging.debug('Exiting generate_metadata() with ' + str(metadata))
     return metadata
 
