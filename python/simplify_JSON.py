@@ -1,4 +1,3 @@
-from curses.panel import version
 import json
 import logging
 import pandas
