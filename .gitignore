@@ -1,4 +1,5 @@
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 /python/schemas/*.json
+/python/schemas/*.yml
 *.pyc
