@@ -63,7 +63,8 @@ def generate_metadata(data):
     metadata = {'layout': 'Profile', 
                 'previous_version': None, 
                 'previous_release': None,
-                'group': None}
+                'group': None,
+                'changes': None}
     logging.debug('Exiting generate_metadata() with ' + str(metadata))
     return metadata
 
