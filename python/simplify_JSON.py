@@ -65,6 +65,7 @@ def generate_metadata(data):
                 'previous_release': None,
                 'group': None,
                 'changes': None}
+    metadata.update({'name': data.get('@graph')[0].get('rdfs:label')})
     logging.debug('Exiting generate_metadata() with ' + str(metadata))
     return metadata
 
