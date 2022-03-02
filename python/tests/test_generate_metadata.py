@@ -52,10 +52,10 @@ class Test_generate_metadata(unittest.TestCase):
                     }
                 ]}
 
-        result = generate_metadata(data, 'Tools')
+        result = generate_metadata(data, 'Tools', '0.6-DRAFT')
         self.assertEqual(result.get('layout'), 'profile', 'Layout needs to be set to `Profile`')
         self.assertTrue('previous_version' in result, 'previous_version needs to be set')
-        self.assertEqual(result.get('previous_version'), '', 'previous_version needs to be empty')
+        self.assertEqual(result.get('previous_version'), '0.6-DRAFT', 'previous_version needs to be empty')
         self.assertTrue('previous_release' in result, 'previous_release needs to be set')
         self.assertEqual(result.get('previous_release'), '', 'previous_release needs to be empty')
         self.assertTrue('group' in result, 'group needs to be set')
@@ -98,7 +98,7 @@ class Test_generate_metadata(unittest.TestCase):
                     }
                 ]}
 
-        result = generate_metadata(data, 'Samples')
+        result = generate_metadata(data, 'Samples', '')
         self.assertEqual(result.get('layout'), 'profile', 'Layout needs to be set to `Profile`')
         self.assertTrue('previous_version' in result, 'previous_version needs to be set')
         self.assertEqual(result.get('previous_version'), '', 'previous_version needs to be empty')
