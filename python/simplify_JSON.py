@@ -63,13 +63,13 @@ def write_YAML_file(data, filename):
     f.close()
     logging.debug('Exiting write_YAML_file()')
 
-def generate_metadata(data):
-    logging.debug('Entering generate_metadata() with ' + str(data))
+def generate_metadata(data, group):
+    logging.debug('Entering generate_metadata() with %s and group %s' % (str(data), group))
     # Set initial parameters
     metadata = {'layout': 'profile', 
                 'previous_version': '', 
                 'previous_release': '',
-                'group': '',
+                'group': group,
                 'changes': ''}
     data_values = data.get('@graph')[0]
     # Set name
@@ -141,14 +141,15 @@ def process_profiles(script_path):
     profiles = pandas.read_csv('../specifications_list.txt',
                 delimiter='\t',
                 header=0,
-                usecols=["name","type","version"])
+                usecols=["name","group","type","version","previous_version","previous_release"])
     # Process each profile in turn
     for index, row in profiles.iterrows():
         # Only process profile definitions
         if row['type'].lower() == 'profile':
             profile = row['name']
             release = row['version']
-            logging.info('Processing %s release %s' % (profile, release))
+            group = row['group']
+            logging.info('Processing %s release %s from group %s' % (profile, release, group))
             schema_file = profile + '_v' + release + '.json'
             url = SCHEMA_SOURCE + profile + "/jsonld/" + schema_file
             logging.info('Retrieving file from %s' % url)
@@ -156,7 +157,7 @@ def process_profiles(script_path):
             logging.info('Adding missing properties')
             json_data = add_missing_properties(json_data, profile, release)
             logging.info('Generating YAML properties')
-            profile_data = generate_metadata(json_data)
+            profile_data = generate_metadata(json_data, group)
             new_filename = SCHEMA_TARGET + rename_file(profile, release)
             logging.info('Writing data to %s' % new_filename)
             write_YAML_file(profile_data, new_filename)

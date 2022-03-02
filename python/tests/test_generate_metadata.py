@@ -52,14 +52,14 @@ class Test_generate_metadata(unittest.TestCase):
                     }
                 ]}
 
-        result = generate_metadata(data)
+        result = generate_metadata(data, 'Tools')
         self.assertEqual(result.get('layout'), 'profile', 'Layout needs to be set to `Profile`')
         self.assertTrue('previous_version' in result, 'previous_version needs to be set')
         self.assertEqual(result.get('previous_version'), '', 'previous_version needs to be empty')
         self.assertTrue('previous_release' in result, 'previous_release needs to be set')
         self.assertEqual(result.get('previous_release'), '', 'previous_release needs to be empty')
         self.assertTrue('group' in result, 'group needs to be set')
-        self.assertEqual(result.get('group'), '', 'previous_release needs to be empty')
+        self.assertEqual(result.get('group'), 'Tools', 'Group value not set correctly')
         self.assertTrue('changes' in result, 'changes needs to be set')
         self.assertEqual(result.get('changes'), '', 'changes needs to be empty')
         self.assertEqual(result.get('name'), 'ComputationalTool', 'Name property has not been set correctly')
@@ -98,14 +98,14 @@ class Test_generate_metadata(unittest.TestCase):
                     }
                 ]}
 
-        result = generate_metadata(data)
+        result = generate_metadata(data, 'Samples')
         self.assertEqual(result.get('layout'), 'profile', 'Layout needs to be set to `Profile`')
         self.assertTrue('previous_version' in result, 'previous_version needs to be set')
         self.assertEqual(result.get('previous_version'), '', 'previous_version needs to be empty')
         self.assertTrue('previous_release' in result, 'previous_release needs to be set')
         self.assertEqual(result.get('previous_release'), '', 'previous_release needs to be empty')
         self.assertTrue('group' in result, 'group needs to be set')
-        self.assertEqual(result.get('group'), '', 'previous_release needs to be empty')
+        self.assertEqual(result.get('group'), 'Samples', 'Groups value not set correctly')
         self.assertTrue('changes' in result, 'changes needs to be set')
         self.assertEqual(result.get('changes'), '', 'changes needs to be empty')
         self.assertEqual(result.get('name'), 'BioSample', 'Name property has not been set correctly')
