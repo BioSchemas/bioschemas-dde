@@ -19,6 +19,7 @@ DO NOT EDIT the bioschemas.json file directly. Updates to this file will be over
  8. Download/export your updated schema jsonld file to your desktop or to github
  9. If you'd like, you can use a simple text editor to do a simple find/replace and change your temporary namespace to 'bioschemas' (This is not necessary, as automated merging script can do this for you, but you will have to ensure you use the temporary namespace instead of 'bioschemas' if you do not follow this step)
  10. Move a copy of it into the appropriate bioschemas specification folder (see "To update a specification via github)
+ 11. View your schema via the DDE. Visit: https://discovery.biothings.io/schema-playground and click on `Register Schema` enter the url for your jsonld schema file and click `Let's Go`. NOTE - You should do a find/replace to ensure that the namespace is `bioschemas` to see how it is expected to appear when it's integrated with the rest of bioschemas (step 9). Also, if you are using the DDE to update a draft by extending, you will want to change the parent class to match the parent class of what you extended from. Eg- If you are creating a new draft of `Dataset` from `bioschemas:Dataset`, the DDE will set the parent of your `Dataset` to be `bioschemas:Dataset`. If you're trying to update the current `bioschemas:Dataset`, then your parent class should actually be `schema:Dataset` which is the parent of `bioschemas:Dataset`.
  
  ### To test a new or updated specification:
  1. Fork the bioschemas_DDE repository
