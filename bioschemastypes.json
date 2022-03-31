@@ -1,1 +1,425 @@
-{"@context": {"schema": "http://schema.org/", "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", "rdfs": "http://www.w3.org/2000/01/rdf-schema#", "bioschemas": "http://discovery.biothings.io/view/bioschemas/", "bioschemastypes": "http://discovery.biothings.io/view/bioschemastypes/", "dct": "http://purl.org/dc/terms/", "owl": "http://www.w3.org/2002/07/owl#"}, "@graph": [{"@id": "bioschemastypes:BioChemEntity", "@type": "rdfs:Class", "rdfs:comment": "Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical.", "rdfs:label": "BioChemEntity", "schema:additionalType": "https://bioschemas.org/types#nav-release", "schema:schemaVersion": ["https://github.com/BioSchemas/specifications/blob/master/BioChemEntity/jsonld/BioChemEntity_v0.7-RELEASE.json", "https://bioschemas.org/types/BioChemEntity/0.7-RELEASE"], "rdfs:subClassOf": {"@id": "schema:Thing"}, "additional_type": "https://bioschemas.org/types#nav-release"}, {"@id": "bioschemastypes:BioSample", "@type": "rdfs:Class", "rdfs:comment": "A biological material entity that is representative of a whole.\nComments: Typically samples are intended to be representative of the whole or aspects thereof. Examples of samples include biomedical samples (blood, urine) and plant specimens held at herbaria. Version 0.1-RELEASE", "rdfs:label": "BioSample", "schema:additionalType": "https://bioschemas.org/types#nav-release", "schema:schemaVersion": ["https://bioschemas.org/types/BioSample/0.1-RELEASE", "https://github.com/BioSchemas/specifications/blob/master/BioSample/jsonld/BioSample_v0.1-RELEASE.json"], "rdfs:subClassOf": {"@id": "bioschemastypes:BioChemEntity"}, "additional_type": "https://bioschemas.org/types#nav-release"}, {"@id": "bioschemastypes:associatedDisease", "@type": "rdf:Property", "rdfs:comment": "Disease associated to this BioChemEntity. Such a disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.", "rdfs:label": "associatedDisease", "schema:domainIncludes": {"@id": "bioschemastypes:BioChemEntity"}, "schema:rangeIncludes": [{"@id": "schema:MedicalCondition"}, {"@id": "schema:URL"}, {"@id": "schema:PropertyValue"}]}, {"@id": "bioschemastypes:bioChemInteraction", "@type": "rdf:Property", "rdfs:comment": "A BioChemEntity that is know to interact with this item.", "rdfs:label": "bioChemInteraction", "schema:domainIncludes": {"@id": "bioschemastypes:BioChemEntity"}, "schema:rangeIncludes": [{"@id": "bioschemastypes:BioChemEntity"}]}, {"@id": "bioschemastypes:bioChemSimilarity", "@type": "rdf:Property", "rdfs:comment": "A similar molecular entity, e.g., obtained by fingerprint similarity algorithm.", "rdfs:label": "bioChemSimilarity", "schema:domainIncludes": {"@id": "bioschemastypes:BioChemEntity"}, "schema:rangeIncludes": [{"@id": "bioschemastypes:BioChemEntity"}]}, {"@id": "bioschemastypes:biogicalRole", "@type": "rdf:Property", "rdfs:comment": "A role played by the molecular entity within a biological context.", "rdfs:label": "biogicalRole", "schema:domainIncludes": {"@id": "bioschemastypes:BioChemEntity"}, "schema:rangeIncludes": [{"@id": "schema:DefinedTerm"}]}, {"@id": "bioschemastypes:hasBioChemEntityPart", "@type": "rdf:Property", "rdfs:comment": "Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. Inverse property: isPartOfBioChemEntity", "rdfs:label": "hasBioChemEntityPart", "schema:domainIncludes": {"@id": "bioschemastypes:BioChemEntity"}, "schema:rangeIncludes": [{"@id": "bioschemastypes:BioChemEntity"}]}, {"@id": "bioschemastypes:hasMolecularFunction", "@type": "rdf:Property", "rdfs:comment": "Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.", "rdfs:label": "hasMolecularFunction", "schema:domainIncludes": {"@id": "bioschemastypes:BioChemEntity"}, "schema:rangeIncludes": [{"@id": "schema:DefinedTerm"}, {"@id": "schema:PropertyValue"}, {"@id": "schema:URL"}]}, {"@id": "bioschemastypes:hasRepresentation", "@type": "rdf:Property", "rdfs:comment": "A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.", "rdfs:label": "hasRepresentation", "schema:domainIncludes": {"@id": "bioschemastypes:BioChemEntity"}, "schema:rangeIncludes": [{"@id": "bioschemastypes:BioChemEntity"}]}, {"@id": "bioschemastypes:isEncodedByBioChemEntity", "@type": "rdf:Property", "rdfs:comment": "Another BioChemEntity encoding this one. Inverse property: encodesBioChemEntity.", "rdfs:label": "isEncodedByBioChemEntity", "schema:domainIncludes": {"@id": "bioschemastypes:BioChemEntity"}, "schema:rangeIncludes": [{"@id": "bioschemastypes:Gene"}]}, {"@id": "bioschemastypes:isInvolvedInBiologicalProcess", "@type": "rdf:Property", "rdfs:comment": "Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.", "rdfs:label": "isInvolvedInBiologicalProcess", "schema:domainIncludes": {"@id": "bioschemastypes:BioChemEntity"}, "schema:rangeIncludes": [{"@id": "schema:DefinedTerm"}, {"@id": "schema:PropertyValue"}, {"@id": "schema:URL"}]}, {"@id": "bioschemastypes:isLocatedInSubcellularLocation", "@type": "rdf:Property", "rdfs:comment": "Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.", "rdfs:label": "isLocatedInSubcellularLocation", "schema:domainIncludes": {"@id": "bioschemastypes:BioChemEntity"}, "schema:rangeIncludes": [{"@id": "schema:DefinedTerm"}, {"@id": "schema:PropertyValue"}, {"@id": "schema:URL"}]}, {"@id": "bioschemastypes:isPartOfBioChemEntity", "@type": "rdf:Property", "rdfs:comment": "Indicates a BioChemEntity that is (in some sense) a part of this BioChemEntity. Inverse property: hasBioChemEntityPart", "rdfs:label": "isPartOfBioChemEntity", "schema:domainIncludes": {"@id": "bioschemastypes:BioChemEntity"}, "schema:rangeIncludes": [{"@id": "bioschemastypes:BioChemEntity"}]}, {"@id": "bioschemastypes:taxonomicRange", "@type": "rdf:Property", "rdfs:comment": "The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.", "rdfs:label": "taxonomicRange", "schema:domainIncludes": {"@id": "bioschemastypes:BioChemEntity"}, "schema:rangeIncludes": [{"@id": "schema:DefinedTerm"}, {"@id": "schema:PropertyValue"}, {"@id": "schema:URL"}, {"@id": "bioschemastypes:Taxon"}]}, {"@id": "bioschemastypes:additionalProperty", "@type": "rdf:Property", "rdfs:comment": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org. Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.", "rdfs:label": "additionalProperty", "schema:sameAs": {"@id": "schema:additionalProperty"}, "schema:domainIncludes": {"@id": "bioschemastypes:BioSample"}, "schema:rangeIncludes": [{"@id": "schema:PropertyValue"}]}, {"@id": "bioschemastypes:collector", "@type": "rdf:Property", "rdfs:comment": "The Person or Organization who collected the Sample. ", "rdfs:label": "collector", "schema:domainIncludes": {"@id": "bioschemastypes:BioSample"}, "schema:rangeIncludes": [{"@id": "schema:Organization"}, {"@id": "schema:Person"}]}, {"@id": "bioschemastypes:custodian", "@type": "rdf:Property", "rdfs:comment": "The Person or Organization who is responsible for the Sample.", "rdfs:label": "custodian", "schema:domainIncludes": {"@id": "bioschemastypes:BioSample"}, "schema:rangeIncludes": [{"@id": "schema:Organization"}, {"@id": "schema:Person"}]}, {"@id": "bioschemastypes:dateCreated", "@type": "rdf:Property", "rdfs:comment": "The date on which the CreativeWork was created or the item was added to a DataFeed. ", "rdfs:label": "dateCreated", "schema:sameAs": {"@id": "schema:dateCreated"}, "schema:domainIncludes": {"@id": "bioschemastypes:BioSample"}, "schema:rangeIncludes": [{"@id": "schema:Date"}]}, {"@id": "bioschemastypes:gender", "@type": "rdf:Property", "rdfs:comment": "Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender", "rdfs:label": "gender", "schema:sameAs": {"@id": "schema:gender"}, "schema:domainIncludes": {"@id": "bioschemastypes:BioSample"}, "schema:rangeIncludes": [{"@id": "schema:Text"}, {"@id": "schema:GenderType"}]}, {"@id": "bioschemastypes:isControl", "@type": "rdf:Property", "rdfs:comment": "Indicates whether the sample is being used as a normal control, may be in combination with another sample.", "rdfs:label": "isControl", "schema:domainIncludes": {"@id": "bioschemastypes:BioSample"}, "schema:rangeIncludes": [{"@id": "schema:Boolean"}]}, {"@id": "bioschemastypes:itemLocation", "@type": "rdf:Property", "rdfs:comment": "Current location of the item. ", "rdfs:label": "itemLocation", "schema:domainIncludes": {"@id": "bioschemastypes:BioSample"}, "schema:rangeIncludes": [{"@id": "schema:Place"}, {"@id": "schema:PostalAddress"}, {"@id": "schema:Text"}]}, {"@id": "bioschemastypes:locationCreated", "@type": "rdf:Property", "rdfs:comment": "The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork. ", "rdfs:label": "locationCreated", "schema:sameAs": {"@id": "schema:locationCreated"}, "schema:domainIncludes": {"@id": "bioschemastypes:BioSample"}, "schema:rangeIncludes": [{"@id": "schema:Place"}]}, {"@id": "bioschemastypes:samplingAge", "@type": "rdf:Property", "rdfs:comment": "The age of the object when the Sample was created. ", "rdfs:label": "samplingAge", "schema:domainIncludes": {"@id": "bioschemastypes:BioSample"}, "schema:rangeIncludes": [{"@id": "schema:Integer"}]}, {"@id": "dct:conformsTo", "@type": "rdf:Property", "rdfs:comment": "Used to state the Bioschemas profile that the markup relates to. The versioned URL of the profile must be used. Note that we use a CURIE in the table here but the full URL for Dublin Core terms must be used in the markup (http://purl.org/dc/terms/conformsTo), see example.", "rdfs:label": "conformsTo", "schema:domainIncludes": [{"@id": "bioschemastypes:BioChemEntity"}, {"@id": "bioschemastypes:BioSample"}], "schema:rangeIncludes": [{"@id": "schema:CreativeWork"}, {"@id": "schema:Text"}, {"@id": "schema:Thing"}]}]}
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bioschemas": "https://discovery.biothings.io/view/bioschemas/",
+    "bioschemasdrafts": "https://discovery.biothings.io/view/bioschemasdrafts/",
+    "bioschemastypes": "https://discovery.biothings.io/view/bioschemastypes/",
+    "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
+    "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
+    "dct": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#"
+  },
+  "@graph": [
+    {
+      "@id": "bioschemastypes:BioChemEntity",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical. Note, this version (0.7-RELEASE) is the version that is currently pending on schema.org",
+      "rdfs:label": "BioChemEntity",
+      "schema:additionalType": "https://bioschemas.org/types#nav-release",
+      "schema:schemaVersion": [
+        "https://bioschemas.org/types/BioChemEntity/0.7-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/BioChemEntity/jsonld/BioChemEntity_v0.7-RELEASE.json"
+      ],
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      },
+      "additional_type": "https://bioschemas.org/types#nav-release"
+    },
+    {
+      "@id": "bioschemastypes:BioSample",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A biological material entity that is representative of a whole.\nComments: Typically samples are intended to be representative of the whole or aspects thereof. Examples of samples include biomedical samples (blood, urine) and plant specimens held at herbaria. Version 0.1-RELEASE. Note, the parent class for this schema has been updated to a pending class in schema.org.",
+      "rdfs:label": "BioSample",
+      "schema:additionalType": "https://bioschemas.org/types#nav-release",
+      "schema:schemaVersion": [
+        "https://github.com/BioSchemas/specifications/blob/master/BioSample/jsonld/BioSample_v0.1-RELEASE.json",
+        "https://bioschemas.org/types/BioSample/0.1-RELEASE"
+      ],
+      "rdfs:subClassOf": {
+        "@id": "schema:BioChemEntity"
+      },
+      "additional_type": "https://bioschemas.org/types#nav-release"
+    },
+    {
+      "@id": "bioschemastypes:associatedDisease",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Disease associated to this BioChemEntity. Such a disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.",
+      "rdfs:label": "associatedDisease",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:BioChemEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:MedicalCondition"
+        },
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:bioChemInteraction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A BioChemEntity that is know to interact with this item.",
+      "rdfs:label": "bioChemInteraction",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:BioChemEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "bioschemastypes:BioChemEntity"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:bioChemSimilarity",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A similar molecular entity, e.g., obtained by fingerprint similarity algorithm.",
+      "rdfs:label": "bioChemSimilarity",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:BioChemEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "bioschemastypes:BioChemEntity"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:biologicalRole",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A role played by the molecular entity within a biological context.",
+      "rdfs:label": "biologicalRole",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:BioChemEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:hasBioChemEntityPart",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. Inverse property: isPartOfBioChemEntity",
+      "rdfs:label": "hasBioChemEntityPart",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:BioChemEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "bioschemastypes:BioChemEntity"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:hasMolecularFunction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.",
+      "rdfs:label": "hasMolecularFunction",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:BioChemEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:hasRepresentation",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.",
+      "rdfs:label": "hasRepresentation",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:BioChemEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "bioschemastypes:BioChemEntity"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:isEncodedByBioChemEntity",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Another BioChemEntity encoding this one. Inverse property: encodesBioChemEntity.",
+      "rdfs:label": "isEncodedByBioChemEntity",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:BioChemEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "bioschemastypes:Gene"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:isInvolvedInBiologicalProcess",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.",
+      "rdfs:label": "isInvolvedInBiologicalProcess",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:BioChemEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:isLocatedInSubcellularLocation",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.",
+      "rdfs:label": "isLocatedInSubcellularLocation",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:BioChemEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:isPartOfBioChemEntity",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a BioChemEntity that is (in some sense) a part of this BioChemEntity. Inverse property: hasBioChemEntityPart",
+      "rdfs:label": "isPartOfBioChemEntity",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:BioChemEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "bioschemastypes:BioChemEntity"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:taxonomicRange",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.",
+      "rdfs:label": "taxonomicRange",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:BioChemEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "bioschemastypes:Taxon"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:additionalProperty",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org. Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.",
+      "rdfs:label": "additionalProperty",
+      "schema:sameAs": {
+        "@id": "schema:additionalProperty"
+      },
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:BioSample"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:PropertyValue"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:collector",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The Person or Organization who collected the Sample. ",
+      "rdfs:label": "collector",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:BioSample"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:custodian",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The Person or Organization who is responsible for the Sample.",
+      "rdfs:label": "custodian",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:BioSample"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:dateCreated",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The date on which the CreativeWork was created or the item was added to a DataFeed. ",
+      "rdfs:label": "dateCreated",
+      "schema:sameAs": {
+        "@id": "schema:dateCreated"
+      },
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:BioSample"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:gender",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender",
+      "rdfs:label": "gender",
+      "schema:sameAs": {
+        "@id": "schema:gender"
+      },
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:BioSample"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:GenderType"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:isControl",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates whether the sample is being used as a normal control, may be in combination with another sample.",
+      "rdfs:label": "isControl",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:BioSample"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Boolean"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:itemLocation",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Current location of the item. ",
+      "rdfs:label": "itemLocation",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:BioSample"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:PostalAddress"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:locationCreated",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork. ",
+      "rdfs:label": "locationCreated",
+      "schema:sameAs": {
+        "@id": "schema:locationCreated"
+      },
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:BioSample"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Place"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:samplingAge",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The age of the object when the Sample was created. ",
+      "rdfs:label": "samplingAge",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:BioSample"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Integer"
+        }
+      ]
+    },
+    {
+      "@id": "dct:conformsTo",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Used to state the Bioschemas profile that the markup relates to. The versioned URL of the profile must be used. Note that we use a CURIE in the table here but the full URL for Dublin Core terms must be used in the markup (http://purl.org/dc/terms/conformsTo), see example.",
+      "rdfs:label": "conformsTo",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypes:BioChemEntity"
+        },
+        {
+          "@id": "bioschemastypes:BioSample"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:Thing"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bioschemas": "https://discovery.biothings.io/view/bioschemas/",
+    "bioschemasdrafts": "https://discovery.biothings.io/view/bioschemasdrafts/",
+    "bioschemastypes": "https://discovery.biothings.io/view/bioschemastypes/",
+    "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
+    "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
+    "dct": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#"
+  },
+  "@graph": [
+    {
+      "@id": "bioschemastypesdrafts:DNA",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "DNA\nVersion: 0.2-DRAFT-2019_06_20 (2019-06-20). Note, the parent class for this type has been updated to a pending class in schema.org.",
+      "rdfs:label": "DNA",
+      "rdfs:subClassOf": {
+        "@id": "schema:BioChemEntity"
+      },
+      "additional_type": "https://bioschemas.org/types#nav-draft",
+      "schema:schemaVersion": [
+        "https://bioschemas.org/types/DNA/0.2-DRAFT-2019_06_20",
+        "https://github.com/BioSchemas/specifications/blob/master/DNA/jsonld/DNA_v0.2-DRAFT-2019_06_20.json"
+      ]
+    },
+    {
+      "@id": "bioschemastypesdrafts:Enzyme",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Version: 0.1-DRAFT-2019_06_20 (2019-06-20). Note, the parent class for this type has been updated to a pending class in schema.org.",
+      "rdfs:label": "Enzyme",
+      "rdfs:subClassOf": {
+        "@id": "schema:BioChemEntity"
+      },
+      "additional_type": "https://bioschemas.org/types#nav-draft",
+      "schema:schemaVersion": [
+        "https://github.com/BioSchemas/specifications/blob/master/Enzyme/jsonld/Enzyme_v0.1-DRAFT-2019_06_20.json",
+        "https://bioschemas.org/types/Enzyme/0.1-DRAFT-2019_06_20"
+      ]
+    },
+    {
+      "@id": "bioschemastypesdrafts:encodesBioChemEntity",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Another BioChemEntity encoded by this one. Inverse property:isEncodedByBioChemEntity.",
+      "rdfs:label": "encodesBioChemEntity",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypesdrafts:DNA"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "bioschemastypesdrafts:SequenceAnnotation"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypesdrafts:hasSequence",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Nucleotide or amino acid sequence.",
+      "rdfs:label": "hasSequence",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypesdrafts:DNA"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypesdrafts:isMatchedBy",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A model matching this BioChemEntity.",
+      "rdfs:label": "isMatchedBy",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypesdrafts:Enzyme"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "bioschemastypesdrafts:SequenceMatchingModel"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypesdrafts:hasAssociatedBioChemEntity",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Used to define the actual protein or RNA.",
+      "rdfs:label": "hasAssociatedBioChemEntity",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypesdrafts:Enzyme"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Protein"
+        },
+        {
+          "@id": "bioschemastypesdrafts:Rna"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypesdrafts:hasCoenzyme",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Coenzymes helping this enzyme in turning substrates into products.",
+      "rdfs:label": "hasCoenzyme",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypesdrafts:Enzyme"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:BioChemEntity"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypesdrafts:hasCofactor",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Cofactor helping this enzyme to function.",
+      "rdfs:label": "hasCofactor",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypesdrafts:Enzyme"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:ChemicalSubstance"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypesdrafts:hasECNumber ",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Corresponding Enzyme Commission number.",
+      "rdfs:label": "hasECNumber ",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypesdrafts:Enzyme"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypesdrafts:hasKineticRate",
+      "@type": "rdf:Property",
+      "rdfs:comment": "missing description",
+      "rdfs:label": "hasKineticRate",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypesdrafts:Enzyme"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypesdrafts:optimalPH",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Optimal PHs.",
+      "rdfs:label": "optimalPH",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypesdrafts:Enzyme"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Number"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypesdrafts:optimalTemperature",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Optimal temperature in the form '<Number> <Temperature unit of measure>', for example '8 Celsius', at which this enzyme performs best.",
+      "rdfs:label": "optimalTemperature",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypesdrafts:Enzyme"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Quantity"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypesdrafts:hasSequenceAnnotation",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Pointer to a sequence annotation; please use PropertyValue if you want to include any evidence.",
+      "rdfs:label": "hasSequenceAnnotation",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypesdrafts:DNA"
+        },
+        {
+          "@id": "bioschemastypesdrafts:Enzyme"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "bioschemastypesdrafts:SequenceAnnotation"
+        }
+      ]
+    },
+    {
+      "@id": "dct:conformsTo",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Used to state the Bioschemas profile that the markup relates to. The versioned URL of the profile must be used. Note that we use a CURIE in the table here but the full URL for Dublin Core terms must be used in the markup (http://purl.org/dc/terms/conformsTo), see example.",
+      "rdfs:label": "conformsTo",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypesdrafts:DNA"
+        },
+        {
+          "@id": "bioschemastypesdrafts:Enzyme"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:Thing"
+        }
+      ]
+    }
+  ]
+}

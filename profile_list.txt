@@ -1,0 +1,3 @@
+namespace	name	subclassOf	type	version	url
+bioschemas	ChemicalSubstance	bioschemas:BioChemEntity	Profile	0.4-RELEASE	https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.4-RELEASE.json
+bioschemas	Gene	schema:Gene	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.0-RELEASE.json

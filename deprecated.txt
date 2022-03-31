@@ -1,0 +1,2 @@
+namespace	name	subclassOf	type	version	url
+bioschemasdeprecated	DataRecord	schema:CreativeWork	Type	0.3-DRAFT-2019_06_20-DEPRECATED	https://github.com/BioSchemas/specifications/blob/master/DataRecord/jsonld/DataRecord_v0.3-DRAFT-2019_06_20.json
