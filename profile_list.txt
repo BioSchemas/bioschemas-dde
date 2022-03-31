@@ -1,0 +1,12 @@
+namespace	name	subclassOf	type	version	url
+bioschemas	ChemicalSubstance	schema:ChemicalSubstance	Profile	0.4-RELEASE	https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.4-RELEASE.json
+bioschemas	Gene	schema:Gene	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.0-RELEASE.json
+bioschemas	Taxon	schema:Taxon	Profile	0.6-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.6-RELEASE.json
+bioschemas	MolecularEntity	schema:MolecularEntity	Profile	0.5-RELEASE	https://github.com/BioSchemas/specifications/blob/master/MolecularEntity/jsonld/MolecularEntity_v0.5-RELEASE.json
+bioschemas	Protein	schema:Protein	Profile	0.11-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/Protein_v0.11-RELEASE.json
+bioschemas	FormalParameter	schema:Intangible	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/FormalParameter_v1.0-RELEASE.json
+bioschemas	ComputationalTool	schema:SoftwareApplication	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/ComputationalTool/jsonld/ComputationalTool_v1.0-RELEASE.json
+bioschemas	ComputationalWorkflow	schema:SoftwareSourceCode	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE.json
+bioschemas	DataCatalog	schema:DataCatalog	Profile	0.3-RELEASE	https://github.com/BioSchemas/specifications/blob/master/DataCatalog/jsonld/DataCatalog_v0.3-RELEASE.json
+bioschemas	Dataset	schema:Dataset	Profile	0.3-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v0.3-RELEASE.json
+bioschemas	Sample	schema:Thing	Profile	0.2-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE.json

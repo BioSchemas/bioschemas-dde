@@ -1,0 +1,3 @@
+namespace	name	subclassOf	type	version	url
+bioschemas	BioChemEntity	schema:BioChemEntity	Type	0.7-RELEASE	https://github.com/BioSchemas/specifications/blob/master/BioChemEntity/jsonld/BioChemEntity_v0.7-RELEASE.json
+bioschemas	BioSample	schema:BioChemEntity	Type	0.1-RELEASE	https://github.com/BioSchemas/specifications/blob/master/BioSample/jsonld/BioSample_v0.1-RELEASE.json

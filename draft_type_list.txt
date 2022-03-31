@@ -1,0 +1,5 @@
+namespace	name	subclassOf	type	version	url
+bioschemas	DNA	schema:BioChemEntity	Type	0.2-DRAFT-2019_06_20	https://github.com/BioSchemas/specifications/blob/master/DNA/jsonld/DNA_v0.2-DRAFT-2019_06_20.json
+bioschemas	Enzyme	schema:BioChemEntity	Type	0.1-DRAFT-2019_06_20	https://github.com/BioSchemas/specifications/blob/master/Enzyme/jsonld/Enzyme_v0.1-DRAFT-2019_06_20.json
+bioschemas	BioChemStructure	schema:BioChemEntity	Type	0.1-DRAFT-2019_06_20	https://github.com/BioSchemas/specifications/blob/master/BioChemStructure/jsonld/BioChemStructure_v0.1-DRAFT-2019_06_20.json
+bioschemas	SequenceMatchingModel	schema:CreativeWork	Type	0.1-DRAFT-2019_06_21	https://github.com/BioSchemas/specifications/blob/master/SequenceMatchingModel/jsonld/SequenceMatchingModel_v0.1-DRAFT-2019_06_21.json
