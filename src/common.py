@@ -333,7 +333,7 @@ def check_for_updates(script_path,updateall=False):
         for eachfile in filelist:
             last_modified = datetime.fromtimestamp(os.path.getmtime(eachfile))
             timediff = checktime-last_modified
-            if timediff < timedelta(hours=3):
+            if timediff < timedelta(hours=24):
                 updatedlist.append(eachfile)
     if len(updatedlist)==0:
         updatedlist = False
