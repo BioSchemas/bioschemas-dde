@@ -3,3 +3,11 @@ bioschemas	DNA	schema:BioChemEntity	Type	0.2-DRAFT-2019_06_20	https://github.com
 bioschemas	Enzyme	schema:BioChemEntity	Type	0.1-DRAFT-2019_06_20	https://github.com/BioSchemas/specifications/blob/master/Enzyme/jsonld/Enzyme_v0.1-DRAFT-2019_06_20.json
 bioschemas	BioChemStructure	schema:BioChemEntity	Type	0.1-DRAFT-2019_06_20	https://github.com/BioSchemas/specifications/blob/master/BioChemStructure/jsonld/BioChemStructure_v0.1-DRAFT-2019_06_20.json
 bioschemas	SequenceMatchingModel	schema:CreativeWork	Type	0.1-DRAFT-2019_06_21	https://github.com/BioSchemas/specifications/blob/master/SequenceMatchingModel/jsonld/SequenceMatchingModel_v0.1-DRAFT-2019_06_21.json
+bioschemastypesdrafts	LabProtocol	schema:CreativeWork	Type	0.3-DRAFT-2020_06_20	https://github.com/BioSchemas/specifications/blob/master/LabProtocol/jsonld/LabProtocol_v0.3-DRAFT-2019_06_20.json
+bioschemastypesdrafts	Phenotype	schema:Thing	Type	0.3-DRAFT-2020_06_07	https://github.com/BioSchemas/specifications/blob/master/Phenotype/jsonld/Phenotype_v0.3-DRAFT-2020_06_07.json
+bioschemastypesdrafts	RNA	schema:BioChemEntity	Type	0.1-DRAFT-2019_06_21	https://github.com/BioSchemas/specifications/blob/master/RNA/jsonld/RNA_v0.1-DRAFT-2019_06_21.json
+bioschemastypesdrafts	Sample	schema:Sample	Type	0.2-DRAFT-2018_11_09	https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-DRAFT-2018_11_09.json
+bioschemastypesdrafts	SequenceAnnotation	schema:BioChemEntity	Type	0.1-DRAFT-2019_06_21	https://github.com/BioSchemas/specifications/blob/master/SequenceAnnotation/jsonld/SequenceAnnotation_v0.1-DRAFT-2019_06_21.json
+bioschemastypesdrafts	SequenceRange	schema:BioChemEntity	Type	0.1-DRAFT-2019_06_21	https://github.com/BioSchemas/specifications/blob/master/SequenceRange/jsonld/SequenceRange_v0.1-DRAFT-2019_06_21.json
+bioschemastypesdrafts	Study	schema:CreativeWork	Type	0.3-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Study/jsonld/Study_v0.3-DRAFT.json
+bioschemastypesdrafts	TaxonName	schema:CreativeWork	Type	0.1-DRAFT-TYPE	https://github.com/BioSchemas/specifications/blob/master/TaxonName/jsonld/TaxonName_v0.1-DRAFT-TYPE.json
