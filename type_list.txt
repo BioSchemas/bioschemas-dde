@@ -6,4 +6,5 @@ bioschemastypes	ComputationalWorkflow	schema:SoftwareSourceCode	Type	1.0-RELEASE
 bioschemastypes	FormalParameter	schema:Intangible	Type	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/FormalParameter_v1.0-RELEASE-type.json
 bioschemastypes	MolecularEntity	schema:BioChemEntity	Type	0.3-RELEASE-2019_09_02	https://github.com/BioSchemas/specifications/blob/master/MolecularEntity/jsonld/MolecularEntity_v0.3-RELEASE-2019_09_02.json
 bioschemastypes	Protein	schema:BioChemEntity	Type	0.3-RELEASE-2019_09_02	https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/Protein_v0.3-RELEASE-2019_09_02.json
-bioschemastypes	Taxon	schema:Thing	Type	Taxon_v0.3-RELEASE-2019_11_18	https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.3-RELEASE-2019_11_18.json
+bioschemastypes	Taxon	schema:Thing	Type	0.3-RELEASE-2019_11_18	https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.3-RELEASE-2019_11_18.json
+bioschemastypes	Gene	schema:BioChemEntity	Type	0.3-RELEASE-2019_09_02	https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v0.3-RELEASE-2019_09_02.json
