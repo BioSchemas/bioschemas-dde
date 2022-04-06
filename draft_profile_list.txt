@@ -17,3 +17,8 @@ bioschemas	Study	schema:CreativeWork	Profile	0.2-DRAFT	https://github.com/BioSch
 bioschemas	SequenceRange	schema:BioChemEntity	Profile	0.1-DRAFT	https://github.com/BioSchemas/specifications/blob/master/SequenceRange/jsonld/SequenceRange_v0.1-DRAFT.json
 bioschemas	RNA	schema:BioChemEntity	Profile	0.1-DRAFT-2019_11_15	https://github.com/BioSchemas/specifications/blob/master/RNA/jsonld/RNA_v0.1-DRAFT-2019_11_15.json
 bioschemas	SequenceAnnotation	schema:BioChemEntity	Profile	0.7-DRAFT	https://github.com/BioSchemas/specifications/blob/master/SequenceAnnotation/jsonld/SequenceAnnotation_v0.7-DRAFT.json
+bioschemas	Dataset	schema:Dataset	Profile	0.5-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v0.5-DRAFT.json
+bioschemasdrafts	Disease	schema:MedicalCondition	Profile	0.1-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Disease/jsonld/Disease_v0.1-DRAFT.json
+bioschemasdrafts	Gene	schema:Gene	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.1-DRAFT.json
+bioschemasdrafts	Protein	schema:Protein	Profile	0.12-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/Protein_v0.12-DRAFT.json
+bioschemasdrafts	ProteinStructure	schema:BioChemEntity	Profile	0.5-DRAFT-2018_08_15	https://github.com/BioSchemas/specifications/blob/master/ProteinStructure/jsonld/ProteinStructure_v0.5-DRAFT-2018_08_15.json
