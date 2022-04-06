@@ -19,8 +19,8 @@
       "rdfs:comment": "A DataRecord is a part of a Dataset. Not all datasets naturally fall into parts, and some kinds of datasets (eg. relational and tabular) can be mapped into different senses of \"data record\". Although data records can themselves be viewed as datasets, for simplicity we do not declare this explicitly; if this perspective is needed it can be added using multiple typing. Version: 0.3-DRAFT-2019_06_20 (2019-06-20). Note this is type has been DEPRECATED.\n\n",
       "rdfs:label": "DataRecord",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/DataRecord/0.3-DRAFT-2019_06_20-DEPRECATED",
-        "https://github.com/BioSchemas/specifications/blob/master/DataRecord/jsonld/DataRecord_v0.3-DRAFT-2019_06_20.json"
+        "https://github.com/BioSchemas/specifications/blob/master/DataRecord/jsonld/DataRecord_v0.3-DRAFT-2019_06_20.json",
+        "https://bioschemas.org/types/DataRecord/0.3-DRAFT-2019_06_20-DEPRECATED"
       ],
       "rdfs:subClassOf": {
         "@id": "schema:CreativeWork"
