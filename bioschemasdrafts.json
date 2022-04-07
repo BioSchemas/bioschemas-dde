@@ -1,15 +1,17 @@
 {
   "@context": {
     "schema": "http://schema.org/",
-    "rdf": "https://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "dct": "http://purl.org/dc/terms/",
-    "owl": "http://www.w3.org/2002/07/owl#",
-    "bioschemasdrafts": "https://discovery.biothings.io/view/bioschemasdrafts/",
-    "bioschemas": "https://discovery.biothings.io/view/bioschemas/",
     "bioschemastypes": "https://discovery.biothings.io/view/bioschemastypes/",
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
-    "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/"
+    "bioschemasdrafts": "https://discovery.biothings.io/view/bioschemasdrafts/",
+    "dwc": "http://rs.tdwg.org/dwc/terms/",
+    "bioschemas": "https://discovery.biothings.io/view/bioschemas/",
+    "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
+    "dct": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema:dateModified": "04/07/2022, 19:16:34"
   },
   "@graph": [
     {
@@ -757,8 +759,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Specification describing the instance of a course.  This specification can be used in tandem with a Course. A course is used to describe the broad, common aspects of a recurring training event - whereas a course instance is about the specific times and location of when that course is held. <h4>Summary of Changes</h4>    Changes since previous draft 0.7 of the CourseInstance profile:    <ul>     <li>Removed CourseInstance->mentions</li><li>Inserted CourseInstance->courseWorkLoad (it was missing)</li><li>Inserted Event->eventAttendanceMode</li><li>Inserted Event->eventSchedule</li><li>doorTime - added Time in Expected Type column (it was missing)</li><li>location - added VirtualLocation in Expected Type column (it was missing)</li><li>offers - added \"Demand or\" in Expected Type column (it was missing)</li><li>offers - modified Description column (it was not the same as in schema.org)</li><li>instructor - added BSC Description</li><li>duration - changed the BSC Description (changed timeRequired by duration, which was changed also in Course)</li><li>name - changed the BSC Description (made the description more explicit)</li><li>offers - changed the BSC Description (corrected wording)</li><li>description - extended the example</li><li>workFeatured - changed the BSC Description (extended the description)</li><li>Adjusted Authors: Patricia Palagi to editor; Niall Beard no longer editor</li> <li>Changes prepared by Patricia Palagi</li>    </ul> Version: 0.8-DRAFT-2020_10_06",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v0.8-DRAFT-2020_10_06.json",
-        "https://bioschemas.org/profiles/CourseInstance/0.8-DRAFT-2020_10_06"
+        "https://bioschemas.org/profiles/CourseInstance/0.8-DRAFT-2020_10_06",
+        "https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v0.8-DRAFT-2020_10_06.json"
       ],
       "rdfs:label": "CourseInstance",
       "rdfs:subClassOf": {
@@ -1330,8 +1332,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Specification for describing an event in the Life Sciences Specification for describing a Life Science event. This includes conferences, workshops, meetings, courses, receptions, networking and prizegivings.         Version: 0.2-DRAFT-2019_06_14",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Event/0.2-DRAFT-2019_06_14",
-        "https://github.com/BioSchemas/specifications/blob/master/Event/jsonld/Event_v0.2-DRAFT-2019_06_14.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Event/jsonld/Event_v0.2-DRAFT-2019_06_14.json",
+        "https://bioschemas.org/profiles/Event/0.2-DRAFT-2019_06_14"
       ],
       "rdfs:label": "Event",
       "rdfs:subClassOf": {
@@ -3567,8 +3569,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas specification for describing a Organization in the life-science. Provides a way to describe bioscience organizations on the World Wide Web. It defines metadata terms that can be used in the code of web pages and applications, and builds on top of existing technologies and standards. The goal of the specification is to make it easier to discover, exchange and integrate life science organization profiles across the Internet. Version: 0.2-DRAFT-2019_07_19",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Organization/0.2-DRAFT-2019_07_19",
-        "https://github.com/BioSchemas/specifications/blob/master/Organization/jsonld/Organization_v0.2-DRAFT-2019_07_19.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Organization/jsonld/Organization_v0.2-DRAFT-2019_07_19.json",
+        "https://bioschemas.org/profiles/Organization/0.2-DRAFT-2019_07_19"
       ],
       "rdfs:label": "Organization",
       "rdfs:subClassOf": {
@@ -4196,8 +4198,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A specification for describing people in life sciences The Life Science Person specification provides a way to describe bioscience events on the World Wide Web. It defines a set of metadata and vocabularies, built on top of existing technologies and standards, that can be used to represent the profile information of people in Web pages and applications. The goal of the specification is to make it easier to discover, life science profile information. Version: 0.2-DRAFT-2019_07_19",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Person/jsonld/Person_v0.2-DRAFT-2019_07_19.json",
-        "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19"
+        "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "https://github.com/BioSchemas/specifications/blob/master/Person/jsonld/Person_v0.2-DRAFT-2019_07_19.json"
       ],
       "rdfs:label": "Person",
       "rdfs:subClassOf": {
@@ -5804,8 +5806,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile, based on Biotea model, describing a PublicationVolume in Life Sciences. A PublicationVolume is a collection of publication issues, or scholarly articles, or possibly, although no commonly, any mix from those mentioned. It is commonly part of a Journal.<h4>Summary of Changes</h4>    Changes since previous draft 0.1 of the PublicationVolumen profile:    <ul>      <li>Add examples</li>      <li>Keywords range updated as per changes on schema.org</li>    </ul> Version: 0.2-DRAFT-2020_12_03",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/PublicationVolume/jsonld/PublicationVolume_v0.2-DRAFT-2020_12_03.json",
-        "https://bioschemas.org/profiles/PublicationVolume/0.2-DRAFT-2020_12_03"
+        "https://bioschemas.org/profiles/PublicationVolume/0.2-DRAFT-2020_12_03",
+        "https://github.com/BioSchemas/specifications/blob/master/PublicationVolume/jsonld/PublicationVolume_v0.2-DRAFT-2020_12_03.json"
       ],
       "rdfs:label": "PublicationVolume",
       "rdfs:subClassOf": {
@@ -6271,8 +6273,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile, based on Biotea model, describing a ScholarlyArticle in Life Sciences. A ScholarlyArticle is an article commonly reporting a scientific research, for instance a journal article or thesis. DOI is recommended as official idnetifier (e.g., \"@id\" in JSON-LD)<h4>Summary of Changes</h4>    Changes since previous draft 0.1 of the ScholarlyArticle profile:    <ul>      <li>Add examples</li>      <li>Updates identifier property to MANY so multiple identifiers can be included</li>      <li>Uses name for the title (as per schema.org examples) and keeps headline (optional) for compatibility purposes</li>      <li>Simplifies the profile by removing alternateName and alternativeHeadline as they are not commonly used</li>      <li>Changes sameAs so it is used only for machine-readable representations</li>      <li>Changes url so it is used for any (MANY) web page displaying this article</li>      <li>Changes about to link to SemanticTextAnnotation (rather than SemanticAnnotation as only those based on text are currently supported)</li>      <li>Uses abstract rather than backstory to store the article abstract</li>      <li>Simplifies the profile by removing copyrightHolder and copyrightYear are they are not commonly used</li>      <li>Adds correction so it is possible to link to corrections of this article</li>      <li>Adds editor and funder</li>      <li>Changes isAccessibleForFree to optional as license is more common and has more information</li>      <li>Changes isBasedOn to optional as it is not that common</li>      <li>Changes keywords to MANY as DefinedTerm and URL would require them to be separated in a list rather by only commas</li>      <li>Adds publisher as recommended (mandatory for Google Structured Data)</li>      <li>Removes version</li>      <li>Removes article section as it referes to sports, culture and so in a magazine</li>      <li>Makes pageStart and pageEnd optional</li>      <li>Removes wordCount as not that common</li>      <li>Double checks the property range as some has been updated in schema.org</li>      <li>Changes prepared by L. Garcia</li>    </ul> Version: 0.2-DRAFT-2020_12_03",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/ScholarlyArticle/0.2-DRAFT-2020_12_03",
-        "https://github.com/BioSchemas/specifications/blob/master/ScholarlyArticle/jsonld/ScholarlyArticle_v0.2-DRAFT-2020_12_03.json"
+        "https://github.com/BioSchemas/specifications/blob/master/ScholarlyArticle/jsonld/ScholarlyArticle_v0.2-DRAFT-2020_12_03.json",
+        "https://bioschemas.org/profiles/ScholarlyArticle/0.2-DRAFT-2020_12_03"
       ],
       "rdfs:label": "ScholarlyArticle",
       "rdfs:subClassOf": {
@@ -7105,8 +7107,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile, based on Biotea model, describing a semantic annotation associated to a piece of text in a ScholarlyArticle in Life Sciences. A SemanticTextAnnotation corresponds to an expression identified in a ScholarlyArticle and associated to an ontology term.<h4>Summary of Changes</h4>    Changes since previous draft 0.1 of the SemanticAnnotation profile:    <ul>      <li>Add examples</li>      <li>Updates name to SemanticTextAnnotation as currently only text-based annotations are supported, if needd a supperclass SemanticAnnotation can be created and then add support to, for instance, images or so</li>      <li>Changes commentCount to optional as sometimes calculation is also possible</li>      <li>Changes creator and dates to optional as they can also be provided at container/dataset level only</li>      <li>Adds datePublished as optional</li>      <li>Removes isAccessibleForFree and license (most likely to be found at container/dataset level)</li>      <li>Adds isPartOf as optional to link to the dataset or collection containing this annotation</li>      <li>Double checks the property range as some has been updated in schema.org</li>      <li>Changes prepared by L. Garcia</li>    </ul> Version: 0.2-DRAFT-2020_12_03",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/SemanticTextAnnotation/0.2-DRAFT-2020_12_03",
-        "https://github.com/BioSchemas/specifications/blob/master/SemanticTextAnnotation/jsonld/SemanticTextAnnotation_v0.2-DRAFT-2020_12_03.json"
+        "https://github.com/BioSchemas/specifications/blob/master/SemanticTextAnnotation/jsonld/SemanticTextAnnotation_v0.2-DRAFT-2020_12_03.json",
+        "https://bioschemas.org/profiles/SemanticTextAnnotation/0.2-DRAFT-2020_12_03"
       ],
       "rdfs:label": "SemanticTextAnnotation",
       "rdfs:subClassOf": {
@@ -7638,8 +7640,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A specification for describing training materials in life sciences. The Life Science Training Materials specification provides a way to describe bioscience training material on the World Wide Web. It defines a set of metadata and vocabularies, built on top of existing technologies and standards, that can be used to represent events in Web pages and applications. The goal of the specification is to make it easier to discover, exchange and integrate life science training material information across the Internet.<h4>Summary of Changes</h4>    Changes since previous draft 0.8 of the TrainingMaterials profile:    <ul>      <li>Adds competencyRequired which is now available</li>      <li>Updates range for keywords and learningResourceType to reflect changes on schema.org</li>      <li>Changes keywords to MANY as comma separation is not enough for DefinedTerm or URL (they need a list/array)</li>    </ul> Version: 0.9-DRAFT-2020_12_08",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/TrainingMaterial/jsonld/TrainingMaterial_v0.9-DRAFT-2020_12_08.json",
-        "https://bioschemas.org/profiles/TrainingMaterial/0.9-DRAFT-2020_12_08"
+        "https://bioschemas.org/profiles/TrainingMaterial/0.9-DRAFT-2020_12_08",
+        "https://github.com/BioSchemas/specifications/blob/master/TrainingMaterial/jsonld/TrainingMaterial_v0.9-DRAFT-2020_12_08.json"
       ],
       "rdfs:label": "TrainingMaterial",
       "rdfs:subClassOf": {
@@ -8432,8 +8434,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile for describing a name of a biological taxon, may it be valid (zoology) / accepted (botany) or not  This profile povides a way to denote the scientific names of a taxon. The taxon accepted/valid name is linked to the taxon with property scientificName while the synonyms are linked with property alternateScientificName. Version: 0.1-DRAFT",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/TaxonName/0.1-DRAFT",
-        "https://github.com/BioSchemas/specifications/blob/master/TaxonName/jsonld/TaxonName_v0.1-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/blob/master/TaxonName/jsonld/TaxonName_v0.1-DRAFT.json",
+        "https://bioschemas.org/profiles/TaxonName/0.1-DRAFT"
       ],
       "rdfs:label": "TaxonName",
       "rdfs:subClassOf": {
@@ -8802,8 +8804,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": " This Study profile presents the markup when describing a Study Version: 0.2-DRAFT",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Study/jsonld/Study_v0.2-DRAFT.json",
-        "https://bioschemas.org/profiles/Study/0.2-DRAFT"
+        "https://bioschemas.org/profiles/Study/0.2-DRAFT",
+        "https://github.com/BioSchemas/specifications/blob/master/Study/jsonld/Study_v0.2-DRAFT.json"
       ],
       "rdfs:label": "Study",
       "rdfs:subClassOf": {
@@ -9544,8 +9546,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": " Version: 0.1-DRAFT-2019_11_15. Note, the parent class for this type has been updated to a pending class in schema.org.",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/RNA/0.1-DRAFT-2019_11_15",
-        "https://github.com/BioSchemas/specifications/blob/master/RNA/jsonld/RNA_v0.1-DRAFT-2019_11_15.json"
+        "https://github.com/BioSchemas/specifications/blob/master/RNA/jsonld/RNA_v0.1-DRAFT-2019_11_15.json",
+        "https://bioschemas.org/profiles/RNA/0.1-DRAFT-2019_11_15"
       ],
       "rdfs:label": "RNA",
       "rdfs:subClassOf": {
@@ -10556,8 +10558,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": " A guide for how to describe datasets in the life-sciences using Schema.org-like annotation.<h3>Summary of Changes</h3><ul><li>Many: Other  <a href=\"https://github.com/BioSchemas/specifications/issues/473\">#473</a> \u2013 Updated properties used in the profile to be aligned with schema.org v12.0</li><li>keywords: Other  <a href=\"https://github.com/BioSchemas/specifications/issues/311\">#311</a> \u2013 Updated guidance</li><li>maintainer: Added \u2013 New property in schema.org that is of particular relevance for datasets</li><li>identifier: Other <a href=\"https://github.com/BioSchemas/specifications/issues/310\">#310</a> \u2013 Updated guidance and example</li><li>alternateName: Added  <a href=\"https://github.com/BioSchemas/specifications/issues/312\">#312</a> \u2013 Adding terms used by other recommendations such as Google or FigShare as optional</li><li>hasPart: Added  <a href=\"https://github.com/BioSchemas/specifications/issues/312\">#312</a> \u2013 Adding terms used by other recommendations such as Google or FigShare as optional</li><li>isPartOf: Added  <a href=\"https://github.com/BioSchemas/specifications/issues/312\">#312</a> \u2013 Adding terms used by other recommendations such as Google or FigShare as optional</li><li>license: Marginality Increase \u2013 Licenses are required to know what terms the dataset can be used under</li><li>isAccessibleForFree: Added  <a href=\"https://github.com/BioSchemas/specifications/issues/312\">#312</a> \u2013 Adding terms used by other recommendations such as Google or FigShare as optional</li><li>dateCreated: Added  <a href=\"https://github.com/BioSchemas/specifications/issues/312\">#312</a> \u2013 Adding terms used by other recommendations such as Google or FigShare as optional</li><li>dateModified: Added  <a href=\"https://github.com/BioSchemas/specifications/issues/312\">#312</a> \u2013 Adding terms used by other recommendations such as Google or FigShare as optional</li><li>datePublished: Added  <a href=\"https://github.com/BioSchemas/specifications/issues/312\">#312</a> \u2013 Adding terms used by other recommendations such as Google or FigShare as optional</li><li>publisher: Added  <a href=\"https://github.com/BioSchemas/specifications/issues/312\">#312</a> \u2013 Adding terms used by other recommendations such as Google or FigShare as optional</li><li>isBasedOn: Added  <a href=\"https://github.com/BioSchemas/specifications/issues/477\">#477</a> \u2013 Link a Dataset to a Study that produced it</li></ul> Version: 0.4-DRAFT",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v0.5-DRAFT.json",
-        "https://bioschemas.org/profiles/Dataset/0.5-DRAFT"
+        "https://bioschemas.org/profiles/Dataset/0.5-DRAFT",
+        "https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v0.5-DRAFT.json"
       ],
       "rdfs:label": "Dataset",
       "rdfs:subClassOf": {
@@ -12903,8 +12905,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "This profile specification presents the BioChemEntity usage when describing a Protein structure. Version: 0.5-DRAFT-2018_08_15",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/ProteinStructure/jsonld/ProteinStructure_v0.5-DRAFT-2018_08_15.json",
-        "https://bioschemas.org/profiles/ProteinStructure/0.5-DRAFT-2018_08_15"
+        "https://bioschemas.org/profiles/ProteinStructure/0.5-DRAFT-2018_08_15",
+        "https://github.com/BioSchemas/specifications/blob/master/ProteinStructure/jsonld/ProteinStructure_v0.5-DRAFT-2018_08_15.json"
       ],
       "rdfs:label": "ProteinStructure",
       "rdfs:subClassOf": {
@@ -13235,7 +13237,7 @@
             ]
           },
           "mainEntityOfPage": {
-            "description": "Link via DataRecord or [URL](http://schema.org/url) to the main Record representing this entity in a dataset.\n**Note:** Bioschemas has replaced CreativeWork with DataRecord in the Expected Types. Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.",
+            "description": "Link via DataRecord or [URL](http://schema.org/url) to the main Record representing this entity in a dataset.\n**Note:** Bioschemas has replaced DataRecord with CreativeWork in the Expected Types. Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.",
             "oneOf": [
               {
                 "type": "string",
@@ -13358,26 +13360,6 @@
               "unitText"
             ]
           },
-          "categorycode": {
-            "@type": "CategoryCode",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "codeValue": {
-                "type": "string"
-              },
-              "url": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "name",
-              "codeValue",
-              "url"
-            ]
-          },
           "biochementity": {
             "@type": "bioschemasdrafts:BioChemEntity",
             "type": "object",
@@ -13452,6 +13434,26 @@
             },
             "required": []
           },
+          "categorycode": {
+            "@type": "CategoryCode",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "codeValue": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "codeValue",
+              "url"
+            ]
+          },
           "place": {
             "@type": "Place",
             "type": "object",
@@ -13501,6 +13503,482 @@
                   {
                     "enum": [
                       "https://github.com/BioSchemas/specifications/blob/master/ProteinStructure/jsonld/ProteinStructure_v0.5-DRAFT-2018_08_15.json"
+                    ]
+                  },
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "identifier"
+            ]
+          }
+        }
+      },
+      "additional_type": "https://bioschemas.org/profiles#nav-draft"
+    },
+    {
+      "@id": "bioschemasdrafts:Taxon",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Bioschemas profile for describing a biological taxon This profile aims to denote a taxon by common properties such as its scientific name, taxonomic rank and vernacular names. It is also a means to link to existing taxonomic registers where each taxon has a URI. <br/>Changes in 0.7: <ul><li>Use of identifier to add the taxon id within well known authorities (NCBI id, GBIF id, EoL id etc.)</li><li>Add property isBasedOn</li><li>Add properties scientificName and alternateScientificName to link the Taxon to TaxonName instances</li></ul> Version: 0.7-DRAFT",
+      "schema:schemaVersion": [
+        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.7-DRAFT.json",
+        "https://bioschemas.org/profiles/Taxon/0.7-DRAFT"
+      ],
+      "rdfs:label": "Taxon",
+      "rdfs:subClassOf": {
+        "@id": "schema:Taxon"
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "additionalType": {
+            "description": "A Taxon type from a well known vocabulary, e.g. DarwinCore http://rs.tdwg.org/dwc/terms/Taxon or http://rs.tdwg.org/ontology/voc/TaxonConcept#TaxonConcept An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            ]
+          },
+          "alternateName": {
+            "description": "Scientific name, with authorship and date information if known, of a synonym of the currently valid (zoological) or accepted (botanical) name. An alias for the item.",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "alternateScientificName": {
+            "description": " A TaxonName representing a scientific name, with authorship and date information if known, of a synonym of the currently valid (zoological) or accepted (botanical) name",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/taxonname"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/taxonname"
+                }
+              }
+            ]
+          },
+          "childTaxon": {
+            "description": "Direct, most proximate lower-rank child taxa Closest child taxa of the taxon in question.\nInverse property: parentTaxon",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/taxon"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/taxon"
+                }
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            ]
+          },
+          "description": {
+            "description": " A description of the item.",
+            "type": "string"
+          },
+          "disambiguatingDescription": {
+            "description": "Can be used to specify the taxon circumscription retained in this description, e.g. by denoting the scientific works that assert the status of the accepted/valid name and synonyms. A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+            "type": "string"
+          },
+          "vernacularName": {
+            "description": "A vernacular (common) name of the taxon ",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "identifier": {
+            "description": "A PropertyValue should be used to relate the taxon with couterparts identifiers within well known authorities such as GBIF, WoRMS, EoL etc.\nWikidata properties may be used in this respect, e.g.:\nNCBI id (https://www.wikidata.org/entity/P685), \nGBIF id (https://www.wikidata.org/entity/P846),\nEoL id (https://www.wikidata.org/entity/P830), \niNaturalist id (https://www.wikidata.org/entity/P3151), \nWoRMS id (https://www.wikidata.org/entity/P850), \nFishbase id (https://www.wikidata.org/entity/P938),\nTAXREF id (https://www.wikidata.org/entity/P3186),\n...\n The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](http://schema.org/docs/datamodel.html#identifierBg) for more details.\n",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/propertyvalue"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ]
+          },
+          "image": {
+            "description": " An image of the item. This can be a URL or a fully described ImageObject.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/imageobject"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ]
+          },
+          "isBasedOn": {
+            "description": "A CreativeWork, such as a scholarly article, asserting the status of the accepted/valid name and synonyms, retained for the taxon circumscription A resource from which this work is derived or from which it is a modification or adaption. Supersedes, isBasedOnUrl. ",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/creativework"
+                }
+              }
+            ]
+          },
+          "mainEntityOfPage": {
+            "description": " Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.\nInverse property: mainEntity.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ]
+          },
+          "name": {
+            "description": "Currently valid (zoological) or accepted (botanical) name for that taxon, with authorship and date information if known. The name of the item.",
+            "type": "string"
+          },
+          "parentTaxon": {
+            "description": "Direct, most proximate higher-rank parent taxon Closest parent taxon of the taxon in question.\nInverse property: childTaxon",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/taxon"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ]
+          },
+          "sameAs": {
+            "description": "URL of third-party webpages describing the same taxon URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            ]
+          },
+          "scientificName": {
+            "description": " A TaxonName representing the currently valid (zoological) or accepted (botanical) name for that taxon",
+            "$ref": "#/definitions/taxonname"
+          },
+          "taxonRank": {
+            "description": " The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary (e.g. the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs)",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/propertyvalue"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/propertyvalue"
+                }
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            ]
+          },
+          "url": {
+            "description": "Link to the webpage associated to this taxon URL of the item.",
+            "type": "string",
+            "format": "uri"
+          },
+          "conformsTo": {
+            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.7-DRAFT.json",
+            "$ref": "#/definitions/conformsDefinition"
+          }
+        },
+        "required": [
+          "name",
+          "taxonRank",
+          "conformsTo"
+        ],
+        "recommended": [
+          "parentTaxon",
+          "scientificName",
+          "url"
+        ],
+        "optional": [
+          "additionalType",
+          "alternateName",
+          "alternateScientificName",
+          "childTaxon",
+          "description",
+          "disambiguatingDescription",
+          "vernacularName",
+          "identifier",
+          "image",
+          "isBasedOn",
+          "mainEntityOfPage",
+          "sameAs"
+        ],
+        "definitions": {
+          "taxonname": {
+            "@type": "bioschemastypesdrafts:TaxonName",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "taxon": {
+            "@type": "schema:Taxon",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "taxonRank": {
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/propertyvalue"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/propertyvalue"
+                    }
+                  },
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  }
+                ]
+              }
+            },
+            "required": [
+              "name",
+              "taxonRank"
+            ]
+          },
+          "propertyvalue": {
+            "@type": "schema:PropertyValue",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "value": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "number"
+                  }
+                ]
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "valuereference": {
+                "oneOf": [
+                  {
+                    "$ref": "#/definitions/categorycode"
+                  },
+                  {
+                    "type": "array",
+                    "items": [
+                      {
+                        "$ref": "#/definitions/categorycode"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "unitCode": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                ]
+              },
+              "unitText": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "value"
+            ],
+            "recommended": [
+              "valueReference"
+            ],
+            "optional": [
+              "unitCode",
+              "unitText"
+            ]
+          },
+          "categorycode": {
+            "@type": "schema:CategoryCode",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "codeValue": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "codeValue",
+              "url"
+            ]
+          },
+          "imageobject": {
+            "@type": "schema:ImageObject",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": []
+          },
+          "creativework": {
+            "@type": "schema:CreativeWork",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": []
+          },
+          "conformsDefinition": {
+            "@type": "CreativeWork",
+            "type": "object",
+            "properties": {
+              "identifier": {
+                "description": "The url of the version bioschemas profile that was used. For jsonschema, set @id to the identifier",
+                "oneOf": [
+                  {
+                    "enum": [
+                      "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.7-DRAFT.json"
                     ]
                   },
                   {
@@ -14249,26 +14727,6 @@
       ]
     },
     {
-      "@id": "bioschemasdrafts:taxonRank",
-      "rdfs:comment": "The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary \u2013 (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs). ",
-      "@type": "rdf:Property",
-      "rdfs:label": "taxonRank",
-      "schema:domainIncludes": {
-        "@id": "bioschemasdrafts:TaxonName"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
       "@id": "bioschemasdrafts:hasGrowthChamber",
       "rdfs:comment": "has growth facility The kind of growth facility used in a plant study",
       "@type": "rdf:Property",
@@ -14778,65 +15236,125 @@
       ]
     },
     {
-      "@id": "bioschemasdrafts:topic",
-      "rdfs:comment": " The scientific topic the event is about. Please use a term from [EDAM: Topic](http://edamontology.org/topic_0003).",
+      "@id": "bioschemasdrafts:alternateScientificName",
+      "rdfs:comment": "A TaxonName representing a scientific name, with authorship and date information if known, of a synonym of the currently valid (zoological) or accepted (botanical) name ",
       "@type": "rdf:Property",
-      "rdfs:label": "topic",
-      "schema:domainIncludes": [
+      "rdfs:label": "alternateScientificName",
+      "schema:domainIncludes": {
+        "@id": "bioschemasdrafts:Taxon"
+      },
+      "schema:rangeIncludes": [
         {
-          "@id": "bioschemasdrafts:Event"
+          "@id": "bioschemasdrafts:TaxonName"
+        }
+      ]
+    },
+    {
+      "@id": "dwc:vernacularName",
+      "rdfs:comment": " A vernacular (common) name of the taxon",
+      "@type": "rdf:Property",
+      "rdfs:label": "vernacularName",
+      "schema:domainIncludes": {
+        "@id": "bioschemasdrafts:Taxon"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemasdrafts:isBasedOn",
+      "rdfs:comment": "A CreativeWork, such as a scholarly article, asserting the status of the accepted/valid name and synonyms, retained for the taxon circumscription",
+      "@type": "rdf:Property",
+      "rdfs:label": "isBasedOn",
+      "schema:domainIncludes": {
+        "@id": "bioschemasdrafts:Taxon"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemasdrafts:parentTaxon",
+      "rdfs:comment": "Closest parent taxon of the taxon in question.\nInverse property: childTaxon Direct, most proximate higher-rank parent taxon",
+      "@type": "rdf:Property",
+      "rdfs:label": "parentTaxon",
+      "schema:domainIncludes": {
+        "@id": "bioschemasdrafts:Taxon"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "bioschemasdrafts:Taxon"
         },
         {
-          "@id": "bioschemasdrafts:Organization"
-        }
-      ],
-      "schema:rangeIncludes": [
+          "@id": "schema:Text"
+        },
         {
           "@id": "schema:URL"
         }
       ]
     },
     {
-      "@id": "bioschemasdrafts:attachment",
-      "rdfs:comment": " Any files or related websites which give more information about this event. e.g. flyers, third party sites handling tickets.",
+      "@id": "bioschemasdrafts:scientificName",
+      "rdfs:comment": "A TaxonName representing the currently valid (zoological) or accepted (botanical) name for that taxon ",
       "@type": "rdf:Property",
-      "rdfs:label": "attachment",
+      "rdfs:label": "scientificName",
+      "schema:domainIncludes": {
+        "@id": "bioschemasdrafts:Taxon"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "bioschemasdrafts:TaxonName"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemasdrafts:taxonRank",
+      "rdfs:comment": "The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary \u2013 (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs). ",
+      "@type": "rdf:Property",
+      "rdfs:label": "taxonRank",
       "schema:domainIncludes": [
         {
-          "@id": "bioschemasdrafts:Event"
+          "@id": "bioschemasdrafts:TaxonName"
         },
         {
-          "@id": "bioschemasdrafts:Organization"
+          "@id": "bioschemasdrafts:Taxon"
         }
       ],
       "schema:rangeIncludes": [
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:Text"
+        },
         {
           "@id": "schema:URL"
         }
       ]
     },
     {
-      "@id": "bioschemasdrafts:additionalProperty",
-      "rdfs:comment": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org. Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, \u2026) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.",
+      "@id": "bioschemasdrafts:valueReference",
+      "rdfs:comment": "A DefinedTerm in this code set.",
       "@type": "rdf:Property",
-      "rdfs:label": "additionalProperty",
+      "rdfs:label": "valueReference",
       "schema:sameAs": {
-        "@id": "schema:additionalProperty"
+        "@id": "schema:valueReference"
       },
       "schema:domainIncludes": [
         {
           "@id": "bioschemasdrafts:Phenotype"
         },
         {
-          "@id": "bioschemasdrafts:Study"
-        },
-        {
-          "@id": "bioschemasdrafts:ProteinStructure"
+          "@id": "bioschemasdrafts:SequenceAnnotation"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:DefinedTerm"
         }
       ]
     },
@@ -14894,6 +15412,25 @@
       ]
     },
     {
+      "@id": "bioschemasdrafts:topic",
+      "rdfs:comment": " The scientific topic the event is about. Please use a term from [EDAM: Topic](http://edamontology.org/topic_0003).",
+      "@type": "rdf:Property",
+      "rdfs:label": "topic",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemasdrafts:Event"
+        },
+        {
+          "@id": "bioschemasdrafts:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
       "@id": "bioschemasdrafts:hasSequenceAnnotation",
       "rdfs:comment": "Pointer to a sequence annotation; please use PropertyValue if you want to include any evidence.",
       "@type": "rdf:Property",
@@ -14919,28 +15456,6 @@
       ]
     },
     {
-      "@id": "bioschemasdrafts:valueReference",
-      "rdfs:comment": "A DefinedTerm in this code set.",
-      "@type": "rdf:Property",
-      "rdfs:label": "valueReference",
-      "schema:sameAs": {
-        "@id": "schema:valueReference"
-      },
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemasdrafts:Phenotype"
-        },
-        {
-          "@id": "bioschemasdrafts:SequenceAnnotation"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:DefinedTerm"
-        }
-      ]
-    },
-    {
       "@id": "bioschemasdrafts:socialMedia",
       "rdfs:comment": " Link to social media websites like twitter or facebook",
       "@type": "rdf:Property",
@@ -14956,6 +15471,50 @@
       "schema:rangeIncludes": [
         {
           "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemasdrafts:attachment",
+      "rdfs:comment": " Any files or related websites which give more information about this event. e.g. flyers, third party sites handling tickets.",
+      "@type": "rdf:Property",
+      "rdfs:label": "attachment",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemasdrafts:Event"
+        },
+        {
+          "@id": "bioschemasdrafts:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemasdrafts:additionalProperty",
+      "rdfs:comment": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org. Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, \u2026) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.",
+      "@type": "rdf:Property",
+      "rdfs:label": "additionalProperty",
+      "schema:sameAs": {
+        "@id": "schema:additionalProperty"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemasdrafts:Phenotype"
+        },
+        {
+          "@id": "bioschemasdrafts:Study"
+        },
+        {
+          "@id": "bioschemasdrafts:ProteinStructure"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -15033,6 +15592,9 @@
         },
         {
           "@id": "bioschemasdrafts:ProteinStructure"
+        },
+        {
+          "@id": "bioschemasdrafts:Taxon"
         }
       ],
       "schema:rangeIncludes": [
