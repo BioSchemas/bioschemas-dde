@@ -56,6 +56,7 @@ def rename_namespace(spec_list,eachurl,rawtext):
 
         
 def check_context_url(spec_json):
+    now = datetime.now()
     contextInfo = spec_json['@context']
     contextInfo["bioschemas"] = "https://discovery.biothings.io/view/bioschemas/"
     contextInfo["bioschemasdrafts"] = "https://discovery.biothings.io/view/bioschemasdrafts/"
@@ -64,6 +65,7 @@ def check_context_url(spec_json):
     contextInfo["bioschemasdeprecated"] = "https://discovery.biothings.io/view/bioschemasdeprecated/"
     contextInfo["dct"] = "http://purl.org/dc/terms/"
     contextInfo["owl"] = "http://www.w3.org/2002/07/owl#"
+    contextInfo["schema:dateModified"] = now.strftime("%m/%d/%Y, %H:%M:%S")
     return(contextInfo)
 
 
