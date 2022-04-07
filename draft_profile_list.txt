@@ -22,3 +22,4 @@ bioschemasdrafts	Disease	schema:MedicalCondition	Profile	0.1-DRAFT	https://githu
 bioschemasdrafts	Gene	schema:Gene	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.1-DRAFT.json
 bioschemasdrafts	Protein	schema:Protein	Profile	0.12-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/Protein_v0.12-DRAFT.json
 bioschemasdrafts	ProteinStructure	schema:BioChemEntity	Profile	0.5-DRAFT-2018_08_15	https://github.com/BioSchemas/specifications/blob/master/ProteinStructure/jsonld/ProteinStructure_v0.5-DRAFT-2018_08_15.json
+bioschemasdrafts	Taxon	schema:Taxon	Profile	0.7-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.7-DRAFT.json
