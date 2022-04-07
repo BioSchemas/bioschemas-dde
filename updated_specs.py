@@ -11,4 +11,4 @@ from src.common import *
 
 #### Main
 script_path = pathlib.Path(__file__).parent.absolute()
-run_update(script_path,True)
+run_update(script_path,False)

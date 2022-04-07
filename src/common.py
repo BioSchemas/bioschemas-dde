@@ -345,9 +345,8 @@ def run_update(script_path,updateall=False):
         updatedlist = check_for_updates(script_path,True)
     else:
         updatedlist = check_for_updates(script_path,False)
-    if updatedlist == False:
-        print("no updates pushed")
-    else:
+    print(updateall,updatedlist)
+    if updatedlist != False:
         for eachfile in updatedlist:
             speclist = read_csv(eachfile,delimiter='\t',header=0)
             bioschemas_json = remove_NaN_fields(merge_specs(speclist))
@@ -359,19 +358,21 @@ def run_update(script_path,updateall=False):
             if "deprecated" in eachfile:
                 ####treat as deprecated
                 bioschemasfile = os.path.join(script_path,'bioschemasdeprecated.json')
-            elif (("type" in eachfile) and ("draft" not in eachfile)):
-                ####treat as type
-                bioschemasfile = os.path.join(script_path,'bioschemastypes.json')
-            elif "type" and "draft" in eachfile:
-                #### draft type treat as type 
-                bioschemasfile = os.path.join(script_path,'bioschemastypesdrafts.json')
-            elif (("profile" in eachfile) and ("draft" not in eachfile)):
-                bioschemasfile = os.path.join(script_path,'bioschemas.json')
-            elif "profile and draft" in eachfile:
-                ####treat as draft profile
-                bioschemasfile = os.path.join(script_path,'bioschemasdrafts.json')
+            if "type" in eachfile:
+                if "draft" in eachfile:
+                    #### draft type treat as type 
+                    bioschemasfile = os.path.join(script_path,'bioschemastypesdrafts.json')
+                else:
+                    ####treat as type
+                    bioschemasfile = os.path.join(script_path,'bioschemastypes.json')
+            if "profile" in eachfile:
+                if "draft" in eachfile:
+                    ####treat as draft profile
+                    bioschemasfile = os.path.join(script_path,'bioschemasdrafts.json')
+                else:
+                    bioschemasfile = os.path.join(script_path,'bioschemas.json')
             with open(bioschemasfile,'w') as outfile:
                 outfile.write(prettystring)
-                
+
 
         
