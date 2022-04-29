@@ -1,18 +1,11 @@
-This python code takes the output of the Data Discovery Engine and converts the JSON-LD files into a form that Jekyll can process. Specifically, it
-- Renames the file: replacing `.` with `-`
-- Replaces the following sequences within the JSON file:
-    - `@id` → `jsonld-id`
-    - `@graph` → `jsonld-graph`
-    - `@context` → `jsonld-context`
-    - `@type` → `jsonld-type`
-    - `$validation` → `jsonld-validation`
-    - `$schema` → `jsonld-schema`
-    - `$ref` → `jsonld-ref`
-    - `rdfs:comment` → `rdfs-comment`
-    - `rdfs:label` → `rdfs-label`
-    - `rdfs:subClassOf` → `rdfs-subClassOf`
+This python code takes the `JSON` output of the Data Discovery Engine and converts the JSON-LD files into a form that Jekyll can process. The script generates `html` files that contain the `yaml` frontmatter to display the profile.
 
 ## Source
+
+To setup your environment run
+```sh
+pip install -r requirements.txt
+```
 
 To run the script just type `python simplify_JSON.py`. This will process the configuration file found on GitHub and save the resulting files `/schemas/`. Log messages are written to `simplifyJSON.log`.
 
