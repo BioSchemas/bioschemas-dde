@@ -7,7 +7,9 @@ To setup your environment run
 pip install -r requirements.txt
 ```
 
-To run the script just type `python simplify_JSON.py`. This will process the configuration file found on GitHub and save the resulting files `/schemas/`. Log messages are written to `simplifyJSON.log`.
+To run the script just type `python simplify_JSON.py`. This will process the configuration file found on GitHub and save the resulting files into subfolders under `/schemas/`. Log messages are written to `simplifyJSON.log`.
+
+The generated folders in the `/schemas` directory can be copied across to the `/pages/_profiles/` directory in the website. Note that only the versions configured in the [online csv file](https://raw.githubusercontent.com/BioSchemas/specifications/master/) will be processed.
 
 ## Tests
 
