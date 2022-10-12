@@ -1,3 +1,3 @@
 pandas==1.0.5
-requests==2.24.0
+requests==2.26.0
 git+https://github.com/biothings/biothings_schema.py#egg=biothings_schema
