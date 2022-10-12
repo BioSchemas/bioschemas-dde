@@ -9,8 +9,8 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "owl": "http://www.w3.org/2002/07/owl#",
-    "schema:dateModified": "04/07/2022, 19:16:30"
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "schema:dateModified": "10/12/2022, 09:08:20"
   },
   "@graph": [
     {
@@ -310,8 +310,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/ChemicalSubstance/0.4-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.4-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.4-RELEASE.json",
+        "https://bioschemas.org/profiles/ChemicalSubstance/0.4-RELEASE"
       ]
     },
     {
@@ -1224,8 +1224,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Taxon/0.6-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.6-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.6-RELEASE.json",
+        "https://bioschemas.org/profiles/Taxon/0.6-RELEASE"
       ]
     },
     {
@@ -2647,8 +2647,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Protein/0.11-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/Protein_v0.11-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/Protein_v0.11-RELEASE.json",
+        "https://bioschemas.org/profiles/Protein/0.11-RELEASE"
       ]
     },
     {
@@ -5865,10 +5865,10 @@
       ]
     },
     {
-      "@id": "bioschemas:input",
+      "@id": "bioschemas:output",
       "@type": "rdf:Property",
-      "rdfs:comment": "Specification of a consumed input.",
-      "rdfs:label": "input",
+      "rdfs:comment": "Specification of a produced output.",
+      "rdfs:label": "output",
       "schema:domainIncludes": [
         {
           "@id": "bioschemas:ComputationalTool"
@@ -5884,10 +5884,10 @@
       ]
     },
     {
-      "@id": "bioschemas:output",
+      "@id": "bioschemas:input",
       "@type": "rdf:Property",
-      "rdfs:comment": "Specification of a produced output.",
-      "rdfs:label": "output",
+      "rdfs:comment": "Specification of a consumed input.",
+      "rdfs:label": "input",
       "schema:domainIncludes": [
         {
           "@id": "bioschemas:ComputationalTool"

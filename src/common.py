@@ -6,6 +6,7 @@ import os
 import pathlib
 from datetime import datetime
 from datetime import timedelta
+from biothings_schema import Schema
 
 def get_raw_url(url):
     if 'raw' not in url:
@@ -64,7 +65,7 @@ def check_context_url(spec_json):
     contextInfo["bioschemastypesdrafts"] = "https://discovery.biothings.io/view/bioschemastypesdrafts/"
     contextInfo["bioschemasdeprecated"] = "https://discovery.biothings.io/view/bioschemasdeprecated/"
     contextInfo["dct"] = "http://purl.org/dc/terms/"
-    contextInfo["owl"] = "http://www.w3.org/2002/07/owl#"
+    contextInfo["owl"] = "http://www.w3.org/2002/07/owl/"
     contextInfo["schema:dateModified"] = now.strftime("%m/%d/%Y, %H:%M:%S")
     return(contextInfo)
 
@@ -373,6 +374,7 @@ def run_update(script_path,updateall=False):
                     bioschemasfile = os.path.join(script_path,'bioschemasdrafts.json')
                 else:
                     bioschemasfile = os.path.join(script_path,'bioschemas.json')
+            sc = Schema(cleandict, base_schema=["schema.org"])
             with open(bioschemasfile,'w') as outfile:
                 outfile.write(prettystring)
 
