@@ -4,13 +4,13 @@
     "rdf": "https://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
-    "owl": "http://www.w3.org/2002/07/owl#",
+    "owl": "http://www.w3.org/2002/07/owl/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "bioschemas": "https://discovery.biothings.io/view/bioschemas/",
     "bioschemasdrafts": "https://discovery.biothings.io/view/bioschemasdrafts/",
     "bioschemastypes": "https://discovery.biothings.io/view/bioschemastypes/",
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
-    "schema:dateModified": "04/07/2022, 19:16:39"
+    "schema:dateModified": "10/17/2022, 19:54:30"
   },
   "@graph": [
     {
@@ -784,8 +784,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/DataRecord/jsonld/DataRecord_v0.2-DRAFT-2019_06_14-DEPRECATED-profile.json",
-        "https://bioschemas.org/profiles/DataRecord/0.2-DRAFT-2019_06_14"
+        "https://bioschemas.org/profiles/DataRecord/0.2-DRAFT-2019_06_14",
+        "https://github.com/BioSchemas/specifications/blob/master/DataRecord/jsonld/DataRecord_v0.2-DRAFT-2019_06_14-DEPRECATED-profile.json"
       ]
     },
     {
@@ -794,8 +794,8 @@
       "owl:deprecated": "True",
       "rdfs:comment": "This profile specification presents the BioChemEntity usage when describing a Protein annotation. Version: 0.6-DRAFT. \nChanges since the previous release of the ProtainAnnotation Profile: \nalternateName demoted to Optional level \n contains replaced by hasBioChemEntityPart \nisContainedIn replaced by isPartOfBioChemEntity \nsubcellularLocation added as an Optional level property",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/ProteinAnnotation/jsonld/ProteinAnnotation_v0.6-DRAFT-DEPRECATED.json",
-        "https://bioschemas.org/profiles/ProteinAnnotation/0.6-DRAFT"
+        "https://bioschemas.org/profiles/ProteinAnnotation/0.6-DRAFT",
+        "https://github.com/BioSchemas/specifications/blob/master/ProteinAnnotation/jsonld/ProteinAnnotation_v0.6-DRAFT-DEPRECATED.json"
       ],
       "rdfs:label": "ProteinAnnotation",
       "rdfs:subClassOf": {
