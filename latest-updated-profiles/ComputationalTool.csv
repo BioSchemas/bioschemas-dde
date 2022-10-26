@@ -1,2 +1,2 @@
 namespace,name,subclassOf,typeversion,url
-bioschams,ComputationalTool,,0.5-DRAFT,https://github.com/BioSchemas/specifications/tree/master/ComputationalTool/jsonld/ComputationalTool_v0.5-DRAFT.json
+bioschams,ComputationalTool,ComputationalTool,0.5-DRAFT,https://github.com/BioSchemas/specifications/tree/master/ComputationalTool/jsonld/ComputationalTool_v0.5-DRAFT.json
