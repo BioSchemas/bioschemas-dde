@@ -374,7 +374,9 @@ def run_update(script_path,updateall=False):
                     bioschemasfile = os.path.join(script_path,'bioschemasdrafts.json')
                 else:
                     bioschemasfile = os.path.join(script_path,'bioschemas.json')
-            sc = Schema(cleandict, base_schema=["schema.org"])
+            sc = Schema(cleandict, base_schema=["schema.org","bioschemastypes","bioschemas",
+                                                "bioschemasdrafts","bioschemastypesdrafts",
+                                                "bioschemasdeprecated"])
             with open(bioschemasfile,'w') as outfile:
                 outfile.write(prettystring)
 
