@@ -9,8 +9,8 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "owl": "http://www.w3.org/2002/07/owl#",
-    "schema:dateModified": "04/07/2022, 19:16:36"
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "schema:dateModified": "10/27/2022, 19:23:00"
   },
   "@graph": [
     {
@@ -35,8 +35,8 @@
       "rdfs:label": "BioSample",
       "schema:additionalType": "https://bioschemas.org/types#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/BioSample/0.1-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/BioSample/jsonld/BioSample_v0.1-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/BioSample/jsonld/BioSample_v0.1-RELEASE.json",
+        "https://bioschemas.org/types/BioSample/0.1-RELEASE"
       ],
       "rdfs:subClassOf": {
         "@id": "schema:BioChemEntity"
@@ -76,8 +76,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A FormalParameter is an identified variable used to stand for the actual value(s) that are consumed/produced by a set of steps. Version: 1.0-RELEASE (09 March 2021) ",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/FormalParameter_v1.0-RELEASE-type.json",
-        "https://bioschemas.org/types/FormalParameter/1.0-RELEASE"
+        "https://bioschemas.org/types/FormalParameter/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/FormalParameter_v1.0-RELEASE-type.json"
       ],
       "rdfs:label": "FormalParameter",
       "rdfs:subClassOf": {
@@ -90,8 +90,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity. (Source: ChEBI:23367). Note, this version has been updated to a pending class in schema.org.",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/MolecularEntity/0.3-RELEASE-2019_09_02",
-        "https://github.com/BioSchemas/specifications/blob/master/MolecularEntity/jsonld/MolecularEntity_v0.3-RELEASE-2019_09_02.json"
+        "https://github.com/BioSchemas/specifications/blob/master/MolecularEntity/jsonld/MolecularEntity_v0.3-RELEASE-2019_09_02.json",
+        "https://bioschemas.org/types/MolecularEntity/0.3-RELEASE-2019_09_02"
       ],
       "rdfs:label": "MolecularEntity",
       "rdfs:subClassOf": {
@@ -104,8 +104,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Protein is here used in its widest possible definition, as classes of amino acid based molecules. Amyloid-beta Protein in human (UniProt P05067), eukaryota (e.g. an OrthoDB group) or even a single molecule that one can point to are all of type schema:Protein. A protein can thus be a subclass of another protein, e.g. schema:Protein as a UniProt record can have multiple isoforms inside it which would also be schema:Protein. They can be imagined, synthetic, hypothetical or naturally occurring. This version has been added to schema.org as a pending type.",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/Protein_v0.3-RELEASE-2019_09_02.json",
-        "https://bioschemas.org/types/Protein/0.3-RELEASE-2019_09_02"
+        "https://bioschemas.org/types/Protein/0.3-RELEASE-2019_09_02",
+        "https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/Protein_v0.3-RELEASE-2019_09_02.json"
       ],
       "rdfs:label": "Protein",
       "rdfs:subClassOf": {
@@ -132,8 +132,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A discrete unit of inheritance which affects one or more biological traits (Source: https://en.wikipedia.org/wiki/Gene). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype). Note, this version of the type has been added as a pending class in schema.org.",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v0.3-RELEASE-2019_09_02.json",
-        "https://bioschemas.org/types/Gene/0.3-RELEASE-2019_09_02"
+        "https://bioschemas.org/types/Gene/0.3-RELEASE-2019_09_02",
+        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v0.3-RELEASE-2019_09_02.json"
       ],
       "rdfs:label": "Gene",
       "rdfs:subClassOf": {
@@ -883,6 +883,25 @@
       ]
     },
     {
+      "@id": "bioschemastypes:chemicalRole",
+      "rdfs:comment": "A role played by the BioChemEntity within a chemical context. A role played by the molecular entity within a chemical context.",
+      "@type": "rdf:Property",
+      "rdfs:label": "chemicalRole",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypes:ChemicalSubstance"
+        },
+        {
+          "@id": "bioschemastypes:MolecularEntity"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ]
+    },
+    {
       "@id": "bioschemastypes:potentialUse",
       "rdfs:comment": "Intended use of the BioChemEntity by humans. ",
       "@type": "rdf:Property",
@@ -917,25 +936,6 @@
       "schema:rangeIncludes": [
         {
           "@id": "schema:Text"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypes:chemicalRole",
-      "rdfs:comment": "A role played by the BioChemEntity within a chemical context. A role played by the molecular entity within a chemical context.",
-      "@type": "rdf:Property",
-      "rdfs:label": "chemicalRole",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemastypes:ChemicalSubstance"
-        },
-        {
-          "@id": "bioschemastypes:MolecularEntity"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:DefinedTerm"
         }
       ]
     },
