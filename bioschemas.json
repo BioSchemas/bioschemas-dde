@@ -3,14 +3,14 @@
     "schema": "http://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemas": "https://discovery.biothings.io/view/bioschemas/",
-    "owl": "http://www.w3.org/2002/07/owl/",
     "bioschemasdrafts": "https://discovery.biothings.io/view/bioschemasdrafts/",
     "bioschemastypes": "https://discovery.biothings.io/view/bioschemastypes/",
+    "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "schema:dateModified": "10/27/2022, 19:22:48"
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "schema:dateModified": "10/17/2022, 19:54:22"
   },
   "@graph": [
     {
@@ -37,13 +37,11 @@
                   "$ref": "#/definitions/definedTerm"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "chemicalComposition": {
             "description": "The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance. For substances this often cannot be accurately determined, an approximation is acceptable.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "chemicalRole": {
             "description": "A role played by the BioChemEntity or molecular entity within a chemical context.",
@@ -57,8 +55,7 @@
                   "$ref": "#/definitions/definedTerm"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "bioChemInteraction": {
             "description": "A BioChemEntity that is know to interact with this item.",
@@ -72,8 +69,7 @@
                   "$ref": "#/definitions/bioChemEntity"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "bioChemSimilarity": {
             "description": "A similar molecular entity, e.g., obtained by fingerprint similarity algorithm.",
@@ -87,8 +83,7 @@
                   "$ref": "#/definitions/bioChemEntity"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "biologicalRole": {
             "description": "A role played by the molecular entity within a biological context.",
@@ -102,8 +97,7 @@
                   "$ref": "#/definitions/definedTerm"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "hasBioChemEntityPart": {
             "description": "Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. Inverse property: isPartOfBioChemEntity",
@@ -117,8 +111,7 @@
                   "$ref": "#/definitions/bioChemEntity"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "alternateName": {
             "description": "An alias for the item.",
@@ -132,18 +125,15 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "description": {
             "description": "A description of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "disambiguatingDescription": {
             "description": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "identifier": {
             "description": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
@@ -158,8 +148,7 @@
                 "type": "string",
                 "format": "uri"
               }
-            ],
-            "owl:cardinality": "one"
+            ]
           },
           "image": {
             "description": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
@@ -175,13 +164,11 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "name": {
             "description": "The name of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "sameAs": {
             "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
@@ -197,8 +184,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "url": {
             "description": "URL of the item.",
@@ -214,8 +200,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "conformsTo": {
             "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.4-RELEASE.json",
@@ -325,8 +310,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.4-RELEASE.json",
-        "https://bioschemas.org/profiles/ChemicalSubstance/0.4-RELEASE"
+        "https://bioschemas.org/profiles/ChemicalSubstance/0.4-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.4-RELEASE.json"
       ]
     },
     {
@@ -354,18 +339,15 @@
                 "type": "string",
                 "format": "uri"
               }
-            ],
-            "owl:cardinality": "one"
+            ]
           },
           "name": {
             "description": "The name of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "description": {
             "description": "A description of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "encodesBioChemEntity": {
             "description": "For genes, this property is used to express in a generic way gene products encoded by this gene, for instance RNA or Protein",
@@ -379,8 +361,7 @@
                   "$ref": "#/definitions/bioChemEntity"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "isPartOfBioChemEntity": {
             "description": "Indicates a BioChemEntity that is (in some sense) a part of this BioChemEntity. Inverse property: hasBioChemEntityPart. For genes, it is recommended to at least specify the DNA/chromosome containing this gene.",
@@ -394,14 +375,12 @@
                   "$ref": "#/definitions/bioChemEntity"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "url": {
             "description": "URL of the item.",
             "type": "string",
-            "format": "uri",
-            "owl:cardinality": "one"
+            "format": "uri"
           },
           "alternateName": {
             "description": "An alias for the item.",
@@ -415,8 +394,7 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "alternativeOf": {
             "description": "Is variant of. Use this property to express when a gene is a variant of any other gene.",
@@ -430,8 +408,7 @@
                   "$ref": "#/definitions/gene"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "associatedDisease": {
             "description": "Disease associated to this BioChemEntity. Such a disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.",
@@ -465,8 +442,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "expressedIn": {
             "description": "Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.",
@@ -498,8 +474,7 @@
                   "$ref": "#/definitions/anatomicalPart"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "hasBioChemEntityPart": {
             "description": "Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. Inverse property: isPartOfBioChemEntity",
@@ -513,13 +488,11 @@
                   "$ref": "#/definitions/bioChemEntity"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "hasBioPolymerSequence": {
             "description": "Schema:  A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "hasMolecularFunction": {
             "description": "Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.",
@@ -553,8 +526,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "hasRepresentation": {
             "description": "A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.",
@@ -588,8 +560,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "hasStatus": {
             "description": "Schema:  One of pseudogene, dead, killed, live, predicted, suppressed.",
@@ -601,14 +572,12 @@
               "live",
               "predicted",
               "suppressed"
-            ],
-            "owl:cardinality": "one"
+            ]
           },
           "image": {
             "description": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
             "type": "string",
-            "format": "uri",
-            "owl:cardinality": "one"
+            "format": "uri"
           },
           "isInvolvedInBiologicalProcess": {
             "description": "Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.",
@@ -642,8 +611,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "isLocatedInSubcellularLocation": {
             "description": "Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.",
@@ -677,20 +645,17 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "mainEntityOfPage": {
             "description": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
             "type": "string",
-            "format": "uri",
-            "owl:cardinality": "one"
+            "format": "uri"
           },
           "sameAs": {
             "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
             "type": "string",
-            "format": "uri",
-            "owl:cardinality": "one"
+            "format": "uri"
           },
           "taxonomicRange": {
             "description": "The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.",
@@ -733,8 +698,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "conformsTo": {
             "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.0-RELEASE.json",
@@ -962,8 +926,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Gene/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.0-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.0-RELEASE.json",
+        "https://bioschemas.org/profiles/Gene/1.0-RELEASE"
       ]
     },
     {
@@ -990,8 +954,7 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "childTaxon": {
             "description": "Closest child taxa of the taxon in question. Inverse property: parentTaxon",
@@ -1025,8 +988,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "parentTaxon": {
             "description": "Closest parent taxon of the taxon in question. Inverse property: childTaxon",
@@ -1060,8 +1022,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "taxonRank": {
             "description": "The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary \u2013 (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).",
@@ -1095,8 +1056,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "additionalType": {
             "description": "A Taxon type from a well known vocabulary, e.g. DarwinCore http://rs.tdwg.org/dwc/terms/Taxon or http://rs.tdwg.org/ontology/voc/TaxonConcept#TaxonConcept.",
@@ -1112,8 +1072,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "alternateName": {
             "description": "Scientific name, with authorship and date information if known, of a synonym of the currently valid (zoological) or accepted (botanical) name.",
@@ -1127,13 +1086,11 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "name": {
             "description": "Currently valid (zoological) or accepted (botanical) name for that taxon, with authorship and date information if known.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "sameAs": {
             "description": "URL of third-party webpages describing the same taxon",
@@ -1149,14 +1106,12 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "url": {
             "description": "URL of the item.",
             "type": "string",
-            "format": "uri",
-            "owl:cardinality": "one"
+            "format": "uri"
           },
           "conformsTo": {
             "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.6-RELEASE.json",
@@ -1269,8 +1224,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Taxon/0.6-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.6-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.6-RELEASE.json",
+        "https://bioschemas.org/profiles/Taxon/0.6-RELEASE"
       ]
     },
     {
@@ -1287,23 +1242,19 @@
         "properties": {
           "inChI": {
             "description": "Non-proprietary identifier for molecular entity that can be used in printed and electronic data sources thus enabling easier linking of diverse data compilations.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "inChIKey": {
             "description": "InChIKey is a hashed version of the full InChI (using the SHA-256 algorithm).",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "iupacName": {
             "description": "Systematic method of naming chemical compounds as recommended by the International Union of Pure and Applied Chemistry (IUPAC).",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "molecularFormula": {
             "description": "The empirical formula is the simplest whole number ratio of all the atoms in a molecule.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "molecularWeight": {
             "description": "This is the molecular weight of the entity being described, not of the parent. Units should be included in the form \u2018 ', for example '12 amu' or as '.",
@@ -1314,8 +1265,7 @@
               {
                 "type": "string"
               }
-            ],
-            "owl:cardinality": "one"
+            ]
           },
           "smiles": {
             "description": "A specification in form of a line notation for describing the structure of chemical species using short ASCII strings. Double bond stereochemistry \\ indicators may need to be escaped in the string in formats where the backslash is an escape character.",
@@ -1329,8 +1279,7 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "chemicalRole": {
             "description": "A role played by the BioChemEntity within a chemical context.",
@@ -1344,8 +1293,7 @@
                   "$ref": "#/definitions/definedTerm"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "monoisotopicMolecularWeight": {
             "description": "The monoisotopic mass is the sum of the masses of the atoms in a molecule using the unbound, ground-state, rest mass of the principal (most abundant) isotope for each element instead of the isotopic average mass. Please include the units the form \u2018 ', for example '770.230488 g/mol' or as '.",
@@ -1356,8 +1304,7 @@
               {
                 "type": "string"
               }
-            ],
-            "owl:cardinality": "one"
+            ]
           },
           "potentialUse": {
             "description": "Intended use of the BioChemEntity by humans.",
@@ -1371,8 +1318,7 @@
                   "$ref": "#/definitions/definedTerm"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "associatedDisease": {
             "description": "Disease associated to this BioChemEntity. Such a disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.",
@@ -1406,8 +1352,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "bioChemInteraction": {
             "description": "A BioChemEntity that is know to interact with this item.",
@@ -1421,8 +1366,7 @@
                   "$ref": "#/definitions/bioChemEntity"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "bioChemSimilarity": {
             "description": "A similar molecular entity, e.g., obtained by fingerprint similarity algorithm.",
@@ -1436,8 +1380,7 @@
                   "$ref": "#/definitions/bioChemEntity"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "biologicalRole": {
             "description": "A role played by the molecular entity within a biological context.",
@@ -1451,8 +1394,7 @@
                   "$ref": "#/definitions/definedTerm"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "hasBioChemEntityPart": {
             "description": "Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. Inverse property: isPartOfBioChemEntity",
@@ -1466,8 +1408,7 @@
                   "$ref": "#/definitions/bioChemEntity"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "hasMolecularFunction": {
             "description": "Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.",
@@ -1510,8 +1451,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "hasRepresentation": {
             "description": "A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.",
@@ -1554,8 +1494,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "isEncodedByBioChemEntity": {
             "description": "Another BioChemEntity encoding this one. Inverse property: encodesBioChemEntity.",
@@ -1569,8 +1508,7 @@
                   "$ref": "#/definitions/gene"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "isInvolvedInBiologicalProcess": {
             "description": "Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.",
@@ -1613,8 +1551,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "isLocatedInSubcellularLocation": {
             "description": "Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.",
@@ -1657,8 +1594,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "isPartOfBioChemEntity": {
             "description": "Indicates a BioChemEntity that is (in some sense) a part of this BioChemEntity. Inverse property: hasBioChemEntityPart",
@@ -1672,8 +1608,7 @@
                   "$ref": "#/definitions/bioChemEntity"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "taxonomicRange": {
             "description": "The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.",
@@ -1716,8 +1651,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "alternateName": {
             "description": "An alias for the item.",
@@ -1731,18 +1665,15 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "description": {
             "description": "A description of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "disambiguatingDescription": {
             "description": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "identifier": {
             "description": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
@@ -1760,8 +1691,7 @@
                 "type": "string",
                 "format": "uri"
               }
-            ],
-            "owl:cardinality": "one"
+            ]
           },
           "image": {
             "description": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
@@ -1777,13 +1707,11 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "name": {
             "description": "The name of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "sameAs": {
             "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
@@ -1799,8 +1727,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "url": {
             "description": "URL of the item.",
@@ -1816,8 +1743,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "conformsTo": {
             "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/MolecularEntity/jsonld/MolecularEntity_v0.5-RELEASE.json",
@@ -2057,8 +1983,7 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "associatedDisease": {
             "description": "Disease associated to this protein, if any.",
@@ -2092,8 +2017,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "bioChemInteraction": {
             "description": "A BioChemEntity that is know to interact with this item.",
@@ -2107,8 +2031,7 @@
                   "$ref": "#/definitions/bioChemEntity"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "bioChemSimilarity": {
             "description": "A similar molecular entity, e.g., obtained by fingerprint similarity algorithm.",
@@ -2122,8 +2045,7 @@
                   "$ref": "#/definitions/bioChemEntity"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "hasBioChemEntityPart": {
             "description": "Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. Inverse property: isPartOfBioChemEntity",
@@ -2148,8 +2070,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "hasMolecularFunction": {
             "description": "GO term corresponding to the Molecular Function branch of the GO ontology.",
@@ -2183,8 +2104,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "hasRepresentation": {
             "description": "Bioschemas Protein: This property could be used, for instance, to link to a page containing the corresponding sequence protein. If you want to better define the nature of the representation, use a PropertyValue as described in additionalProperty.",
@@ -2218,8 +2138,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "isEncodedByBioChemEntity": {
             "description": "Another BioChemEntity encoding this one. Inverse property: encodesBioChemEntity.",
@@ -2251,8 +2170,7 @@
                   "$ref": "#/definitions/rna"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "isInvolvedInBiologicalProcess": {
             "description": "Functional term corresponding to the biological process (typically the Biological Process branch of the GO ontology).",
@@ -2286,8 +2204,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "isLocatedInSubcellularLocation": {
             "description": "Functional term corresponding to the subcellular location (typically the Subcellular Location branch of the GO ontology).",
@@ -2321,8 +2238,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "isPartOfBioChemEntity": {
             "description": "For proteins, it can be used to link to protein sequence annotations such as domains, sites, regions, etc.",
@@ -2336,8 +2252,7 @@
                   "$ref": "#/definitions/bioChemEntity"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "taxonomicRange": {
             "description": "For proteins, it is recommended to use this property to specify the taxon/organism corresponding to a genome including a expressed gene that can be translated to this protein. For taxon/organism, it is a good practice to use hasCategoryCode to point to a controlled vacabulary such as NCBI taxon or UniProt Taxonomy..",
@@ -2380,18 +2295,15 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "alternateName": {
             "description": "An alias for the item.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "description": {
             "description": "Protein function. We recommend to start the description with \u201cFunction: [\u2026]\u201d.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "identifier": {
             "description": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
@@ -2406,8 +2318,7 @@
                 "type": "string",
                 "format": "uri"
               }
-            ],
-            "owl:cardinality": "one"
+            ]
           },
           "image": {
             "description": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
@@ -2421,19 +2332,16 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "mainEntityOfPage": {
             "description": "Link to the main DataRecord representing this entity in a dataset.",
             "type": "string",
-            "format": "uri",
-            "owl:cardinality": "one"
+            "format": "uri"
           },
           "name": {
             "description": "The name of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "sameAs": {
             "description": "Link to any resource other than the Record and the official webpage, for instance a Wikipedia page.",
@@ -2449,14 +2357,12 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "url": {
             "description": "Link to the official webpage associated to this entity.",
             "type": "string",
-            "format": "uri",
-            "owl:cardinality": "one"
+            "format": "uri"
           },
           "conformsTo": {
             "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/Protein_v0.11-RELEASE.json",
@@ -2741,8 +2647,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/Protein_v0.11-RELEASE.json",
-        "https://bioschemas.org/profiles/Protein/0.11-RELEASE"
+        "https://bioschemas.org/profiles/Protein/0.11-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/Protein_v0.11-RELEASE.json"
       ]
     },
     {
@@ -2751,7 +2657,7 @@
       "rdfs:comment": "Bioschemas specification for describing a formal parameter in the Life Sciences. Version: 1.0-RELEASE (09 March 2021) ",
       "rdfs:label": "FormalParameter",
       "rdfs:subClassOf": {
-        "@id": "bioschemastypes:FormalParameter"
+        "@id": "schema:Intangible"
       },
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
@@ -2766,13 +2672,11 @@
               {
                 "type": "string"
               }
-            ],
-            "owl:cardinality": "one"
+            ]
           },
           "valueRequired": {
             "description": "If the FormalParameter must be specified. This is commonly only used for Inputs",
-            "type": "boolean",
-            "owl:cardinality": "one"
+            "type": "boolean"
           },
           "encodingFormat": {
             "description": "URLs to accepted formats.  It is strongly recommented that this be specified. If it is not specified, then nothing should be assumed about the encoding formats of the FormalParameter.",
@@ -2786,8 +2690,7 @@
                   "$ref": "#/definitions/edmoformats"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "additionalType": {
             "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
@@ -2803,13 +2706,11 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "name": {
             "description": "The name of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "identifier": {
             "description": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
@@ -2843,13 +2744,11 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "description": {
             "description": "A description of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "conformsTo": {
             "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/FormalParameter_v1.0-RELEASE.json",
@@ -2975,7 +2874,7 @@
     {
       "@id": "bioschemas:ComputationalTool",
       "@type": "rdfs:Class",
-      "rdfs:comment": "The Life Science Tools specification provides a way to describe bioscience tools and software on the World Wide Web. It defines a set of metadata and vocabularies, built on top of existing technologies and standards, that can be used to represent such tools in Web pages and applications. The goal of the specification is to make it easier to discover. Version 1.0-RELEASE.<h3>Summary of Changes</h3> <p>Changes since the 0.6-DRAFT</p> <ul> <li>additionalType property deprecated and replaced by applicationCategory.</li><li>example added for the name property.</li></ul>",
+      "rdfs:comment": "The Life Science Tools specification provides a way to describe bioscience tools and software on the World Wide Web. It defines a set of metadata and vocabularies, built on top of existing technologies and standards, that can be used to represent such tools in Web pages and applications. The goal of the specification is to make it easier to discover. Version 1.0-RELEASE.",
       "rdfs:label": "ComputationalTool",
       "rdfs:subClassOf": {
         "@id": "schema:SoftwareApplication"
@@ -2998,8 +2897,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "input": {
             "description": "Specification of a consumed input.",
@@ -3013,8 +2911,7 @@
                   "$ref": "#/definitions/formalParameter"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "output": {
             "description": "Specification of a produced output.",
@@ -3028,8 +2925,7 @@
                   "$ref": "#/definitions/formalParameter"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "programmingLanguage": {
             "description": "The main programming language(s) used to build or execute the tool. Please use terms from the \u2018Programming language\u2019 table in the Bio.Tools documentation",
@@ -3052,8 +2948,7 @@
                   "$ref": "#/definitions/computerLanguage"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "downloadUrl": {
             "description": "Link(s) to the downloadable(s).",
@@ -3069,8 +2964,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "applicationSubCategory": {
             "description": "Subcategory of the application, e.g. 'Arcade Game'. Use an EDAM:Topic to describe the category of application",
@@ -3084,8 +2978,7 @@
                   "$ref": "#/definitions/edamTopic"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "applicationCategory": {
             "description": "Type of software application, e.g. 'Game, Multimedia'. Please use terms from the 'Tool type' table in the biotools documentation.",
@@ -3110,8 +3003,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "softwareVersion": {
             "description": "Version(s) of the tool, which this information is valid for. Can also be a comma-delimited list and include hyphen-separated ranges of versions.",
@@ -3125,8 +3017,7 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "featureList": {
             "description": "Features or modules provided by this application (and possibly required by other applications). Functionality provided by the tool. Note: Bioschemas have removed Text from the Expected Types.",
@@ -3151,8 +3042,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "applicationSuite": {
             "description": "A suite of tools, to which the tool belongs. The name of the application suite to which the application belongs (e.g. Excel belongs to Office).",
@@ -3166,8 +3056,7 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "softwareHelp": {
             "description": "A documentation of the tool.",
@@ -3181,8 +3070,7 @@
                   "$ref": "#/definitions/creativeWork"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "softwareAddOn": {
             "description": "Additional sub-tools (add-ons, plug-ins, tools in a suite, etc.) that are included in the tool or workflow. Additional content for a software application.",
@@ -3196,8 +3084,7 @@
                   "$ref": "#/definitions/softwareApplication"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "operatingSystem": {
             "description": "Operating systems on which the tool can be used (without additional wrapping). Operating systems supported (Windows 7, OSX 10.6, Android 1.6). Please use terms from the \u2018Operating systems\u2019 table in the biotools documentation",
@@ -3211,13 +3098,11 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "description": {
             "description": "A short description of the tool.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "identifier": {
             "description": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
@@ -3251,19 +3136,16 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "name": {
             "description": "The name of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "url": {
             "description": "Homepage of the tool. URL of the item.",
             "type": "string",
-            "format": "uri",
-            "owl:cardinality": "one"
+            "format": "uri"
           },
           "author": {
             "description": "The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.",
@@ -3286,8 +3168,7 @@
                   "$ref": "#/definitions/person"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "citation": {
             "description": "Publication about this tool. A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.",
@@ -3301,8 +3182,7 @@
                   "$ref": "#/definitions/citation"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "contributor": {
             "description": "A secondary contributor to the CreativeWork or Event.",
@@ -3325,8 +3205,7 @@
                   "$ref": "#/definitions/person"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "discussionUrl": {
             "description": "A link to the page containing the comments of the CreativeWork.",
@@ -3342,8 +3221,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "funder": {
             "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
@@ -3366,8 +3244,7 @@
                   "$ref": "#/definitions/person"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "hasPart": {
             "description": "Indicates any software dependency. Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).",
@@ -3381,13 +3258,11 @@
                   "$ref": "#/definitions/creativeWork"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "isAccessibleForFree": {
             "description": "A flag to signal that the tool or the service are available to be used for free.",
-            "type": "boolean",
-            "owl:cardinality": "one"
+            "type": "boolean"
           },
           "isBasedOn": {
             "description": "A tool or another work which this tool is based on, or is an extension, distribution, or deployment of.  A resource from which this work is derived or from which it is a modification or adaption.",
@@ -3421,8 +3296,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "isPartOf": {
             "description": "A collection, other than a suite of tools, to which the tool belongs.. Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.",
@@ -3436,8 +3310,7 @@
                   "$ref": "#/definitions/creativeWork"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "keywords": {
             "description": "Additional keywords or tags important for this tool. Multiple entries are delimited by commas. Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
@@ -3451,8 +3324,7 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "license": {
             "description": "The license of a software, curated dataset, etc. A license document that applies to this content, typically indicated by URL. Use SPDX list of licenses in form https://spdx.org/licenses/",
@@ -3477,8 +3349,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "provider": {
             "description": "The provider organization of a web application, database portal, web service, etc. Note: Bioschemas have removed Person from the Expected Types. The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
@@ -3492,14 +3363,12 @@
                   "$ref": "#/definitions/organization"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "thumbnailUrl": {
             "description": "A small image representing the tool, such as an icon. A thumbnail image relevant to the Thing.",
             "type": "string",
-            "format": "uri",
-            "owl:cardinality": "one"
+            "format": "uri"
           },
           "conformsTo": {
             "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/ComputationalTool/jsonld/ComputationalTool_v1.0-RELEASE.json",
@@ -3830,7 +3699,7 @@
       "rdfs:comment": "A computational workflow consists of an orchestrated and repeatable pattern of activity enabled by the systematic organization of resources into processes that transform materials, provide services, or process information (source Wikipedia.org). It is executed by a computational process and is thus distinct from laboratory or business workflows. version 1.0-RELEASE",
       "rdfs:label": "ComputationalWorkflow",
       "rdfs:subClassOf": {
-        "@id": "bioschemastypes:ComputationalWorkflow"
+        "@id": "schema:SoftwareSourceCode"
       },
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
@@ -3848,8 +3717,7 @@
                   "$ref": "#/definitions/formalParameter"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "output": {
             "description": "An output produced by the workflow",
@@ -3863,8 +3731,7 @@
                   "$ref": "#/definitions/formalParameter"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "creativeWorkStatus": {
             "description": "The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.",
@@ -3887,8 +3754,7 @@
                   "$ref": "#/definitions/definedTerm"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "documentation": {
             "description": "Documentation describing the ComputationalWorkflow and its use.",
@@ -3913,8 +3779,7 @@
                   "$ref": "#/definitions/creativeWork"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "funding": {
             "description": "The funding for the workflow",
@@ -3928,8 +3793,7 @@
                   "$ref": "#/definitions/grant"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "maintainer": {
             "description": " maintainer of a Dataset, software package (SoftwareApplication), or other Project. A maintainer is a Person or Organization that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on \u201cupstream\u201d sources. When maintainer is applied to a specific version of something e.g. a particular version or packaging of a Dataset, it is always possible that the upstream source has a different maintainer. The isBasedOn property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.",
@@ -3952,8 +3816,7 @@
                   "$ref": "#/definitions/organization"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "softwareRequirements": {
             "description": "Renaming schema.org/requirements as softwareRequirements. Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime). Supersedes requirements. ",
@@ -3978,13 +3841,11 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "conditionsOfAccess": {
             "description": "Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an ArchiveComponent held by an ArchiveOrganization. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.  For example \u201cAvailable by appointment from the Reading Room\u201d or \u201cAccessible only from logged-in accounts \u201c.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "targetProduct": {
             "description": "Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.",
@@ -3998,8 +3859,7 @@
                   "$ref": "#/definitions/softwareApplication"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "programmingLanguage": {
             "description": "The computer programming language.",
@@ -4022,8 +3882,7 @@
                   "$ref": "#/definitions/computerLanguage"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "runtimePlatform": {
             "description": "Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).",
@@ -4037,8 +3896,7 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "alternateName": {
             "description": "An alias for the item.",
@@ -4052,13 +3910,11 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "description": {
             "description": "A description of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "identifier": {
             "description": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
@@ -4092,8 +3948,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "image": {
             "description": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
@@ -4118,19 +3973,16 @@
                   "$ref": "#/definitions/imageObject"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "name": {
             "description": "The name of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "url": {
             "description": "URL of the item.",
             "type": "string",
-            "format": "uri",
-            "owl:cardinality": "one"
+            "format": "uri"
           },
           "citation": {
             "description": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.",
@@ -4153,8 +4005,7 @@
                   "$ref": "#/definitions/creativeWork"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "contributor": {
             "description": "A secondary contributor to the CreativeWork or Event.",
@@ -4177,8 +4028,7 @@
                   "$ref": "#/definitions/organization"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "creator": {
             "description": "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
@@ -4201,26 +4051,22 @@
                   "$ref": "#/definitions/organization"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "dateCreated": {
             "description": "The date on which the CreativeWork was created or the item was added to a DataFeed.",
             "format": "date",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "dateModified": {
             "description": "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.",
             "format": "date",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "datePublished": {
             "description": "Date of first broadcast/publication.",
             "format": "date",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "encodingFormat": {
             "description": "Media type typically expressed using a MIME format (see <a href=\"http://www.iana.org/assignments/media-types/media-types.xhtml\">IANA site</a> and <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types\">MDN reference</a>) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).<br/><br/>\n\nIn cases where a <a class=\"localLink\" href=\"http://schema.org/CreativeWork\">CreativeWork</a> has several media type representations, <a class=\"localLink\" href=\"http://schema.org/encoding\">encoding</a> can be used to indicate each <a class=\"localLink\" href=\"http://schema.org/MediaObject\">MediaObject</a> alongside particular <a class=\"localLink\" href=\"http://schema.org/encodingFormat\">encodingFormat</a> information.<br/><br/>\n\nUnregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.",
@@ -4245,8 +4091,7 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "hasPart": {
             "description": "Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).",
@@ -4260,8 +4105,7 @@
                   "$ref": "#/definitions/creativeWork"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "isBasedOn": {
             "description": "A resource from which this work is derived or from which it is a modification or adaption.",
@@ -4276,8 +4120,7 @@
                 "type": "string",
                 "format": "uri"
               }
-            ],
-            "owl:cardinality": "one"
+            ]
           },
           "keywords": {
             "description": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
@@ -4291,8 +4134,7 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "license": {
             "description": "A license document that applies to this content, typically indicated by URL.",
@@ -4317,8 +4159,7 @@
                   "$ref": "#/definitions/creativeWork"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "producer": {
             "description": "The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).",
@@ -4341,8 +4182,7 @@
                   "$ref": "#/definitions/organization"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "publisher": {
             "description": "The publisher of the creative work.",
@@ -4365,8 +4205,7 @@
                   "$ref": "#/definitions/organization"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "sdPublisher": {
             "description": "Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The\n<a class=\"localLink\" href=\"http://schema.org/sdPublisher\">sdPublisher</a> property helps make such practices more explicit.",
@@ -4389,8 +4228,7 @@
                   "$ref": "#/definitions/organization"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "version": {
             "description": "The version of the CreativeWork embodied by a specified resource.",
@@ -4401,8 +4239,7 @@
               {
                 "type": "number"
               }
-            ],
-            "owl:cardinality": "one"
+            ]
           },
           "conformsTo": {
             "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE.json",
@@ -4737,8 +4574,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE.json",
-        "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
+        "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE.json"
       ]
     },
     {
@@ -4765,8 +4602,7 @@
                   "$ref": "#/definitions/datasetObject"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "alternateName": {
             "description": "An alias for the item.",
@@ -4780,13 +4616,11 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "description": {
             "description": "A description of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "identifier": {
             "description": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
@@ -4820,24 +4654,20 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "name": {
             "description": "The name of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "url": {
             "description": "URL of the item.",
             "type": "string",
-            "format": "uri",
-            "owl:cardinality": "one"
+            "format": "uri"
           },
           "about": {
             "description": "The subject matter of the content.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "citation": {
             "description": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.",
@@ -4860,20 +4690,17 @@
                   "$ref": "#/definitions/creativeWork"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "dateCreated": {
             "description": "The date on which the CreativeWork was created or the item was added to a DataFeed.",
             "format": "date",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "dateModified": {
             "description": "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.",
             "format": "date",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "encodingFormat": {
             "description": "Media type typically expressed using a MIME format (see <a href=\"http://www.iana.org/assignments/media-types/media-types.xhtml\">IANA site</a> and <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types\">MDN reference</a>) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).<br/><br/>\n\nIn cases where a <a class=\"localLink\" href=\"http://schema.org/CreativeWork\">CreativeWork</a> has several media type representations, <a class=\"localLink\" href=\"http://schema.org/encoding\">encoding</a> can be used to indicate each <a class=\"localLink\" href=\"http://schema.org/MediaObject\">MediaObject</a> alongside particular <a class=\"localLink\" href=\"http://schema.org/encodingFormat\">encodingFormat</a> information.<br/><br/>\n\nUnregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.",
@@ -4898,8 +4725,7 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "keywords": {
             "description": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
@@ -4913,8 +4739,7 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "license": {
             "description": "A license document that applies to this content, typically indicated by URL.",
@@ -4926,8 +4751,7 @@
               {
                 "$ref": "#/definitions/creativeWork"
               }
-            ],
-            "owl:cardinality": "one"
+            ]
           },
           "provider": {
             "description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
@@ -4950,8 +4774,7 @@
                   "$ref": "#/definitions/organization"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "sourceOrganization": {
             "description": "The Organization on whose behalf the creator was working.",
@@ -4965,8 +4788,7 @@
                   "$ref": "#/definitions/organization"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "conformsTo": {
             "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/DataCatalog/jsonld/DataCatalog_v0.3-RELEASE.json",
@@ -5167,8 +4989,7 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "includedInDataCatalog": {
             "description": "A data catalog which contains this dataset.",
@@ -5182,8 +5003,7 @@
                   "$ref": "#/definitions/dataCatalogObject"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "measurementTechnique": {
             "description": "A technique or technology used in a <a class=\"localLink\" href=\"http://schema.org/Dataset\">Dataset</a> (or <a class=\"localLink\" href=\"http://schema.org/DataDownload\">DataDownload</a>, <a class=\"localLink\" href=\"http://schema.org/DataCatalog\">DataCatalog</a>),\ncorresponding to the method used for measuring the corresponding variable(s) (described using <a class=\"localLink\" href=\"http://schema.org/variableMeasured\">variableMeasured</a>). This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but rather as a high level summary for dataset discovery.<br/><br/>\n\nFor example, if <a class=\"localLink\" href=\"http://schema.org/variableMeasured\">variableMeasured</a> is: molecule concentration, <a class=\"localLink\" href=\"http://schema.org/measurementTechnique\">measurementTechnique</a> could be: \"mass spectrometry\" or \"nmr spectroscopy\" or \"colorimetry\" or \"immunofluorescence\".<br/><br/>\n\nIf the <a class=\"localLink\" href=\"http://schema.org/variableMeasured\">variableMeasured</a> is \"depression rating\", the <a class=\"localLink\" href=\"http://schema.org/measurementTechnique\">measurementTechnique</a> could be \"Zung Scale\" or \"HAM-D\" or \"Beck Depression Inventory\".<br/><br/>\n\nIf there are several <a class=\"localLink\" href=\"http://schema.org/variableMeasured\">variableMeasured</a> properties recorded for some given data object, use a <a class=\"localLink\" href=\"http://schema.org/PropertyValue\">PropertyValue</a> for each <a class=\"localLink\" href=\"http://schema.org/variableMeasured\">variableMeasured</a> and attach the corresponding <a class=\"localLink\" href=\"http://schema.org/measurementTechnique\">measurementTechnique</a>.",
@@ -5208,18 +5028,15 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "distribution": {
             "description": "A downloadable form of this dataset, at a specific location, in a specific format.",
-            "$ref": "#/definitions/dataDownload",
-            "owl:cardinality": "one"
+            "$ref": "#/definitions/dataDownload"
           },
           "description": {
             "description": "A description of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "identifier": {
             "description": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
@@ -5253,19 +5070,16 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "name": {
             "description": "The name of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "url": {
             "description": "URL of the item.",
             "type": "string",
-            "format": "uri",
-            "owl:cardinality": "one"
+            "format": "uri"
           },
           "citation": {
             "description": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.",
@@ -5288,8 +5102,7 @@
                   "$ref": "#/definitions/creativeWork"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "creator": {
             "description": "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
@@ -5312,8 +5125,7 @@
                   "$ref": "#/definitions/organization"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "keywords": {
             "description": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
@@ -5327,8 +5139,7 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "license": {
             "description": "A license document that applies to this content, typically indicated by URL.",
@@ -5339,8 +5150,7 @@
               {
                 "$ref": "#/definitions/creativeWork"
               }
-            ],
-            "owl:cardinality": "one"
+            ]
           },
           "version": {
             "description": "The version of the CreativeWork embodied by a specified resource.",
@@ -5351,8 +5161,7 @@
               {
                 "type": "number"
               }
-            ],
-            "owl:cardinality": "one"
+            ]
           },
           "conformsTo": {
             "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v0.3-RELEASE.json",
@@ -5551,8 +5360,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Dataset/0.3-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v0.3-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v0.3-RELEASE.json",
+        "https://bioschemas.org/profiles/Dataset/0.3-RELEASE"
       ]
     },
     {
@@ -5561,7 +5370,7 @@
       "rdfs:comment": "To deliver on the identified use cases for samples, we have identified a minimal set of properties to encapsulate identification, linking, and metadata descriptions. Some of these properties are existing standard schema.org properties, others require Bioschemas extensions. Table 1 outlines the minimal set of properties for the \u2018Sample\u2019 concept and Table 2 shows our recommendations for use of the \u2018PropertyValue\u2019 concept to markup additional characteristics of a sample described within a sample page. We also propose a new concept, \u2018Biomedical Code\u2019, which is a generalisation of the existing \u2018Medical Code\u2019 concept defined in the health-lifesci.schema.org extension.",
       "rdfs:label": "Sample",
       "rdfs:subClassOf": {
-        "@id": "bioschemastypesdrafts:Sample"
+        "@id": "schema:Thing"
       },
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
@@ -5579,14 +5388,12 @@
                   "$ref": "#/definitions/propertyValue"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "url": {
             "description": "URL of the item.",
             "type": "string",
-            "format": "uri",
-            "owl:cardinality": "one"
+            "format": "uri"
           },
           "name": {
             "description": "The name of the item.",
@@ -5600,8 +5407,7 @@
                   "type": "string"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "identifier": {
             "description": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
@@ -5635,8 +5441,7 @@
                   "format": "uri"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "subjectOf": {
             "description": "A CreativeWork or Event about this Thing..",
@@ -5650,13 +5455,11 @@
                   "$ref": "#/definitions/creativeWork"
                 }
               }
-            ],
-            "owl:cardinality": "many"
+            ]
           },
           "description": {
             "description": "A description of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
+            "type": "string"
           },
           "conformsTo": {
             "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE.json",
@@ -5806,17 +5609,121 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE.json",
-        "https://bioschemas.org/profiles/Sample/0.2-RELEASE"
+        "https://bioschemas.org/profiles/Sample/0.2-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE.json"
       ]
     },
     {
-      "@id": "dwc:vernacularName",
-      "rdfs:comment": "A vernacular (common) name of the taxon.",
+      "@id": "bioschemas:potentialUse",
       "@type": "rdf:Property",
+      "rdfs:comment": "Intended use of the BioChemEntity by humans.",
+      "rdfs:label": "potentialUse",
+      "schema:domainIncludes": {
+        "@id": "bioschemas:ChemicalSubstance"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemas:chemicalComposition",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance. For substances this often cannot be accurately determined, an approximation is acceptable.",
+      "rdfs:label": "chemicalComposition",
+      "schema:domainIncludes": {
+        "@id": "bioschemas:ChemicalSubstance"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemas:hasStatus",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Schema:  One of pseudogene, dead, killed, live, predicted, suppressed.",
+      "rdfs:label": "hasStatus",
+      "schema:domainIncludes": {
+        "@id": "bioschemas:Gene"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemas:vernacularName",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A vernacular (common) name of the taxon",
       "rdfs:label": "vernacularName",
       "schema:domainIncludes": {
         "@id": "bioschemas:Taxon"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemas:defaultValue",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The default value for the FormalParameter. This is commonly only used for Inputs.",
+      "rdfs:label": "defaultValue",
+      "schema:domainIncludes": {
+        "@id": "bioschemas:FormalParameter"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:Thing"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemas:valueRequired",
+      "@type": "rdf:Property",
+      "rdfs:comment": "If the FormalParameter must be specified. This is commonly only used for Inputs",
+      "rdfs:label": "valueRequired",
+      "schema:domainIncludes": {
+        "@id": "bioschemas:FormalParameter"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Boolean"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemas:encodingFormat",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URLs to accepted formats.  It is strongly recommented that this be specified. If it is not specified, then nothing should be assumed about the encoding formats of the FormalParameter. Recommended ontology: http://edamontology.org/format_1915",
+      "rdfs:label": "encodingFormat",
+      "schema:domainIncludes": {
+        "@id": "bioschemas:FormalParameter"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemas:codeRepository",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Link to the source code repository of the tool.",
+      "rdfs:label": "codeRepository",
+      "schema:domainIncludes": {
+        "@id": "bioschemas:ComputationalTool"
       },
       "schema:rangeIncludes": [
         {
@@ -5825,51 +5732,9 @@
       ]
     },
     {
-      "@id": "bioschemas:codeRepository",
-      "rdfs:comment": "Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).",
-      "@type": "rdf:Property",
-      "rdfs:label": "codeRepository",
-      "schema:domainIncludes": {
-        "@id": "bioschemas:ComputationalTool"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemas:input",
-      "rdfs:comment": "Specification of a consumed input.",
-      "@type": "rdf:Property",
-      "rdfs:label": "input",
-      "schema:domainIncludes": {
-        "@id": "bioschemas:ComputationalTool"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "bioschemas:FormalParameter"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemas:output",
-      "rdfs:comment": "Specification of a produced output.",
-      "@type": "rdf:Property",
-      "rdfs:label": "output",
-      "schema:domainIncludes": {
-        "@id": "bioschemas:ComputationalTool"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "bioschemas:FormalParameter"
-        }
-      ]
-    },
-    {
       "@id": "bioschemas:programmingLanguage",
-      "rdfs:comment": "The computer programming language.",
       "@type": "rdf:Property",
+      "rdfs:comment": "The main programming language(s) used to build or execute the tool. Please use terms from the \u2018Programming language\u2019 table in the Bio.Tools documentation",
       "rdfs:label": "programmingLanguage",
       "schema:domainIncludes": {
         "@id": "bioschemas:ComputationalTool"
@@ -5877,6 +5742,163 @@
       "schema:rangeIncludes": [
         {
           "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:ComputerLanguage"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemas:creativeWorkStatus",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.",
+      "rdfs:label": "creativeWorkStatus",
+      "schema:domainIncludes": {
+        "@id": "bioschemas:ComputationalWorkflow"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemas:documentation",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Documentation describing the ComputationalWorkflow and its use.",
+      "rdfs:label": "documentation",
+      "schema:domainIncludes": {
+        "@id": "bioschemas:ComputationalWorkflow"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemas:funding",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The funding for the workflow",
+      "rdfs:label": "funding",
+      "schema:sameAs": {
+        "@id": "schema:funding"
+      },
+      "schema:domainIncludes": {
+        "@id": "bioschemas:ComputationalWorkflow"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Grant"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemas:maintainer",
+      "@type": "rdf:Property",
+      "rdfs:comment": " maintainer of a Dataset, software package (SoftwareApplication), or other Project. A maintainer is a Person or Organization that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on \u201cupstream\u201d sources. When maintainer is applied to a specific version of something e.g. a particular version or packaging of a Dataset, it is always possible that the upstream source has a different maintainer. The isBasedOn property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.",
+      "rdfs:label": "maintainer",
+      "schema:domainIncludes": {
+        "@id": "bioschemas:ComputationalWorkflow"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemas:softwareRequirements",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Renaming schema.org/requirements as softwareRequirements. Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime). Supersedes requirements. ",
+      "rdfs:label": "softwareRequirements",
+      "schema:sameAs": {
+        "@id": "schema:softwareRequirements"
+      },
+      "schema:domainIncludes": {
+        "@id": "bioschemas:ComputationalWorkflow"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemas:conditionsOfAccess",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an ArchiveComponent held by an ArchiveOrganization. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.  For example \u201cAvailable by appointment from the Reading Room\u201d or \u201cAccessible only from logged-in accounts \u201c.",
+      "rdfs:label": "conditionsOfAccess",
+      "schema:domainIncludes": {
+        "@id": "bioschemas:ComputationalWorkflow"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemas:additionalProperty",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A property-value pair representing an additional characteristics of the entity, e.g. \u201cOrganism: Homo sapiens\u201d or \u201ctissue type: leaf\u201d. For details of how to use PropertyValue see below.",
+      "rdfs:label": "additionalProperty",
+      "schema:domainIncludes": {
+        "@id": "bioschemas:Sample"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:PropertyValue"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemas:output",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Specification of a produced output.",
+      "rdfs:label": "output",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemas:ComputationalTool"
+        },
+        {
+          "@id": "bioschemas:ComputationalWorkflow"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "bioschemas:FormalParameter"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemas:input",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Specification of a consumed input.",
+      "rdfs:label": "input",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemas:ComputationalTool"
+        },
+        {
+          "@id": "bioschemas:ComputationalWorkflow"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "bioschemas:FormalParameter"
         }
       ]
     },

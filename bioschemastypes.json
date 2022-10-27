@@ -10,7 +10,7 @@
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
     "owl": "http://www.w3.org/2002/07/owl/",
-    "schema:dateModified": "10/27/2022, 19:23:00"
+    "schema:dateModified": "10/17/2022, 19:54:25"
   },
   "@graph": [
     {
@@ -20,8 +20,8 @@
       "rdfs:label": "BioChemEntity",
       "schema:additionalType": "https://bioschemas.org/types#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/BioChemEntity/jsonld/BioChemEntity_v0.7-RELEASE.json",
-        "https://bioschemas.org/types/BioChemEntity/0.7-RELEASE"
+        "https://bioschemas.org/types/BioChemEntity/0.7-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/BioChemEntity/jsonld/BioChemEntity_v0.7-RELEASE.json"
       ],
       "rdfs:subClassOf": {
         "@id": "schema:Thing"
@@ -62,8 +62,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A computational workflow consists of an orchestrated and repeatable pattern of activity enabled by the systematic organization of resources into processes that transform materials, provide services, or process information (source Wikipedia.org). It is executed by a computational process and is thus distinct from laboratory or business workflows. version 1.0-RELEASE",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE-Type.json",
-        "https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE"
+        "https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE-Type.json"
       ],
       "rdfs:label": "ComputationalWorkflow",
       "rdfs:subClassOf": {
@@ -118,8 +118,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A set of organisms asserted to represent a natural cohesive biological unit. Version: 0.3-RELEASE-2019_11_18. Note that this version of the Taxon type has been added as a pending class to schema.org.",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/Taxon/0.3-RELEASE-2019_11_18",
-        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.3-RELEASE-2019_11_18.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.3-RELEASE-2019_11_18.json",
+        "https://bioschemas.org/types/Taxon/0.3-RELEASE-2019_11_18"
       ],
       "rdfs:label": "Taxon",
       "rdfs:subClassOf": {
@@ -132,8 +132,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A discrete unit of inheritance which affects one or more biological traits (Source: https://en.wikipedia.org/wiki/Gene). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype). Note, this version of the type has been added as a pending class in schema.org.",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/Gene/0.3-RELEASE-2019_09_02",
-        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v0.3-RELEASE-2019_09_02.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v0.3-RELEASE-2019_09_02.json",
+        "https://bioschemas.org/types/Gene/0.3-RELEASE-2019_09_02"
       ],
       "rdfs:label": "Gene",
       "rdfs:subClassOf": {
@@ -883,21 +883,21 @@
       ]
     },
     {
-      "@id": "bioschemastypes:chemicalRole",
-      "rdfs:comment": "A role played by the BioChemEntity within a chemical context. A role played by the molecular entity within a chemical context.",
+      "@id": "bioschemastypes:hasBioPolymerSequence",
+      "rdfs:comment": "A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.",
       "@type": "rdf:Property",
-      "rdfs:label": "chemicalRole",
+      "rdfs:label": "hasBioPolymerSequence",
       "schema:domainIncludes": [
         {
-          "@id": "bioschemastypes:ChemicalSubstance"
+          "@id": "bioschemastypes:Protein"
         },
         {
-          "@id": "bioschemastypes:MolecularEntity"
+          "@id": "bioschemastypes:Gene"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DefinedTerm"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -921,21 +921,21 @@
       ]
     },
     {
-      "@id": "bioschemastypes:hasBioPolymerSequence",
-      "rdfs:comment": "A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.",
+      "@id": "bioschemastypes:chemicalRole",
+      "rdfs:comment": "A role played by the BioChemEntity within a chemical context. A role played by the molecular entity within a chemical context.",
       "@type": "rdf:Property",
-      "rdfs:label": "hasBioPolymerSequence",
+      "rdfs:label": "chemicalRole",
       "schema:domainIncludes": [
         {
-          "@id": "bioschemastypes:Protein"
+          "@id": "bioschemastypes:ChemicalSubstance"
         },
         {
-          "@id": "bioschemastypes:Gene"
+          "@id": "bioschemastypes:MolecularEntity"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:DefinedTerm"
         }
       ]
     },
