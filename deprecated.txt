@@ -1,4 +1,4 @@
-namespace	name	subclassOf	type	version	url
+namespace	name	subClassOf	type	version	url
 bioschemasdeprecated	Beacon	schema:DataCatalog	Profile	0.2-DRAFT-2018_04_23	https://github.com/BioSchemas/specifications/blob/master/Beacon/jsonld/Beacon_v0.2-DRAFT-2018_04_23-DEPRECATED.json
 bioschemasdeprecated	DataRecord	schema:CreativeWork	Profile	0.2-DRAFT-2019_06_14	https://github.com/BioSchemas/specifications/blob/master/DataRecord/jsonld/DataRecord_v0.2-DRAFT-2019_06_14-DEPRECATED-profile.json
 bioschemasdeprecated	ProteinAnnotation	schema:BioChemEntity	Profile	0.6-DRAFT	https://github.com/BioSchemas/specifications/blob/master/ProteinAnnotation/jsonld/ProteinAnnotation_v0.6-DRAFT-DEPRECATED.json

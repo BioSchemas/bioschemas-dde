@@ -73,7 +73,7 @@ def check_context_url(spec_json):
 def update_subclass(spec_list,eachurl,cleantext):
     spec_json = json.loads(cleantext)
     tmpinfo = spec_list.loc[spec_list['url']==eachurl]
-    tmpsubclass = tmpinfo.iloc[0]['subclassOf']
+    tmpsubclass = tmpinfo.iloc[0]['subClassOf']
     classname = tmpinfo.iloc[0]['name']
     truesubclass = {"@id": tmpsubclass}
     for x in spec_json['@graph']:
