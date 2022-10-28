@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "10/28/2022, 15:20:32"
+    "@dateModified": "10/28/2022, 22:23:41"
   },
   "@graph": [
     {
@@ -48,8 +48,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A chemical substance is 'a portion of matter of constant composition, composed of molecular entities of the same type or of different types' (source: ChEBI:59999). Version: 0.3-RELEASE-2019_09_02. This version is was released as a pending class as of schema.org version 13",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.3-RELEASE-2019_09_02.json",
-        "https://bioschemas.org/types/ChemicalSubstance/0.3-RELEASE-2019_09_02"
+        "https://bioschemas.org/types/ChemicalSubstance/0.3-RELEASE-2019_09_02",
+        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.3-RELEASE-2019_09_02.json"
       ],
       "rdfs:label": "ChemicalSubstance",
       "rdfs:subClassOf": {
@@ -118,8 +118,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A set of organisms asserted to represent a natural cohesive biological unit. Version: 0.3-RELEASE-2019_11_18. Note that this version of the Taxon type has been added as a pending class to schema.org.",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.3-RELEASE-2019_11_18.json",
-        "https://bioschemas.org/types/Taxon/0.3-RELEASE-2019_11_18"
+        "https://bioschemas.org/types/Taxon/0.3-RELEASE-2019_11_18",
+        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.3-RELEASE-2019_11_18.json"
       ],
       "rdfs:label": "Taxon",
       "rdfs:subClassOf": {
@@ -902,10 +902,10 @@
       ]
     },
     {
-      "@id": "bioschemastypes:chemicalRole",
-      "rdfs:comment": "A role played by the BioChemEntity within a chemical context. A role played by the molecular entity within a chemical context.",
+      "@id": "bioschemastypes:potentialUse",
+      "rdfs:comment": "Intended use of the BioChemEntity by humans. ",
       "@type": "rdf:Property",
-      "rdfs:label": "chemicalRole",
+      "rdfs:label": "potentialUse",
       "schema:domainIncludes": [
         {
           "@id": "bioschemastypes:ChemicalSubstance"
@@ -921,10 +921,10 @@
       ]
     },
     {
-      "@id": "bioschemastypes:potentialUse",
-      "rdfs:comment": "Intended use of the BioChemEntity by humans. ",
+      "@id": "bioschemastypes:chemicalRole",
+      "rdfs:comment": "A role played by the BioChemEntity within a chemical context. A role played by the molecular entity within a chemical context.",
       "@type": "rdf:Property",
-      "rdfs:label": "potentialUse",
+      "rdfs:label": "chemicalRole",
       "schema:domainIncludes": [
         {
           "@id": "bioschemastypes:ChemicalSubstance"
