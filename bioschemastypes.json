@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "schema:dateModified": "10/28/2022, 12:48:39"
+    "@dateModified": "10/28/2022, 13:07:16"
   },
   "@graph": [
     {
@@ -35,8 +35,8 @@
       "rdfs:label": "BioSample",
       "schema:additionalType": "https://bioschemas.org/types#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/BioSample/0.1-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/BioSample/jsonld/BioSample_v0.1-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/BioSample/jsonld/BioSample_v0.1-RELEASE.json",
+        "https://bioschemas.org/types/BioSample/0.1-RELEASE"
       ],
       "rdfs:subClassOf": {
         "@id": "schema:BioChemEntity"
@@ -883,10 +883,10 @@
       ]
     },
     {
-      "@id": "bioschemastypes:chemicalRole",
-      "rdfs:comment": "A role played by the BioChemEntity within a chemical context. A role played by the molecular entity within a chemical context.",
+      "@id": "bioschemastypes:potentialUse",
+      "rdfs:comment": "Intended use of the BioChemEntity by humans. ",
       "@type": "rdf:Property",
-      "rdfs:label": "chemicalRole",
+      "rdfs:label": "potentialUse",
       "schema:domainIncludes": [
         {
           "@id": "bioschemastypes:ChemicalSubstance"
@@ -902,10 +902,10 @@
       ]
     },
     {
-      "@id": "bioschemastypes:potentialUse",
-      "rdfs:comment": "Intended use of the BioChemEntity by humans. ",
+      "@id": "bioschemastypes:chemicalRole",
+      "rdfs:comment": "A role played by the BioChemEntity within a chemical context. A role played by the molecular entity within a chemical context.",
       "@type": "rdf:Property",
-      "rdfs:label": "potentialUse",
+      "rdfs:label": "chemicalRole",
       "schema:domainIncludes": [
         {
           "@id": "bioschemastypes:ChemicalSubstance"

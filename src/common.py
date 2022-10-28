@@ -74,11 +74,11 @@ def generate_base_context():
 def check_context_url(allcontext,spec_json,tmpnamespace):
     now = datetime.now()
     contextInfo = spec_json['@context']
-    allcontext["schema:dateModified"] = now.strftime("%m/%d/%Y, %H:%M:%S")
     for key in list(contextInfo.keys()):
         if key != tmpnamespace: 
             if key not in list(allcontext.keys()):
                 allcontext[key] = contextInfo[key]
+    allcontext["@dateModified"] = now.strftime("%m/%d/%Y, %H:%M:%S")
     return allcontext
 
 
