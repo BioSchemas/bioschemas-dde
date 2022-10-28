@@ -1,4 +1,4 @@
-namespace	name	subclassOf	type	version	url
+namespace	name	subClassOf	type	version	url
 bioschemas	Course	schema:Course	Profile	0.9-DRAFT-2020_12_08	https://github.com/BioSchemas/specifications/blob/master/Course/jsonld/Course_v0.9-DRAFT-2020_12_08.json
 bioschemas	CourseInstance	schema:CourseInstance	Profile	0.8-DRAFT-2020_10_06	https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v0.8-DRAFT-2020_10_06.json
 bioschemas	Event	schema:Event	Profile	0.2-DRAFT-2019_06_14	https://github.com/BioSchemas/specifications/blob/master/Event/jsonld/Event_v0.2-DRAFT-2019_06_14.json
