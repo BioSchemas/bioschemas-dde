@@ -3,14 +3,14 @@
     "schema": "http://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "bioschemastypes": "https://discovery.biothings.io/view/bioschemastypes/",
+    "owl": "http://www.w3.org/2002/07/owl/",
     "bioschemas": "https://discovery.biothings.io/view/bioschemas/",
     "bioschemasdrafts": "https://discovery.biothings.io/view/bioschemasdrafts/",
+    "bioschemastypes": "https://discovery.biothings.io/view/bioschemastypes/",
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "owl": "http://www.w3.org/2002/07/owl/",
-    "schema:dateModified": "10/27/2022, 19:23:00"
+    "schema:dateModified": "10/28/2022, 12:48:39"
   },
   "@graph": [
     {
@@ -35,8 +35,8 @@
       "rdfs:label": "BioSample",
       "schema:additionalType": "https://bioschemas.org/types#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/BioSample/jsonld/BioSample_v0.1-RELEASE.json",
-        "https://bioschemas.org/types/BioSample/0.1-RELEASE"
+        "https://bioschemas.org/types/BioSample/0.1-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/BioSample/jsonld/BioSample_v0.1-RELEASE.json"
       ],
       "rdfs:subClassOf": {
         "@id": "schema:BioChemEntity"
@@ -48,8 +48,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A chemical substance is 'a portion of matter of constant composition, composed of molecular entities of the same type or of different types' (source: ChEBI:59999). Version: 0.3-RELEASE-2019_09_02. This version is was released as a pending class as of schema.org version 13",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/ChemicalSubstance/0.3-RELEASE-2019_09_02",
-        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.3-RELEASE-2019_09_02.json"
+        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.3-RELEASE-2019_09_02.json",
+        "https://bioschemas.org/types/ChemicalSubstance/0.3-RELEASE-2019_09_02"
       ],
       "rdfs:label": "ChemicalSubstance",
       "rdfs:subClassOf": {
@@ -62,8 +62,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A computational workflow consists of an orchestrated and repeatable pattern of activity enabled by the systematic organization of resources into processes that transform materials, provide services, or process information (source Wikipedia.org). It is executed by a computational process and is thus distinct from laboratory or business workflows. version 1.0-RELEASE",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE-Type.json",
-        "https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE"
+        "https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE-Type.json"
       ],
       "rdfs:label": "ComputationalWorkflow",
       "rdfs:subClassOf": {
@@ -76,8 +76,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A FormalParameter is an identified variable used to stand for the actual value(s) that are consumed/produced by a set of steps. Version: 1.0-RELEASE (09 March 2021) ",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/FormalParameter/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/FormalParameter_v1.0-RELEASE-type.json"
+        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/FormalParameter_v1.0-RELEASE-type.json",
+        "https://bioschemas.org/types/FormalParameter/1.0-RELEASE"
       ],
       "rdfs:label": "FormalParameter",
       "rdfs:subClassOf": {
@@ -118,8 +118,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A set of organisms asserted to represent a natural cohesive biological unit. Version: 0.3-RELEASE-2019_11_18. Note that this version of the Taxon type has been added as a pending class to schema.org.",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/Taxon/0.3-RELEASE-2019_11_18",
-        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.3-RELEASE-2019_11_18.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.3-RELEASE-2019_11_18.json",
+        "https://bioschemas.org/types/Taxon/0.3-RELEASE-2019_11_18"
       ],
       "rdfs:label": "Taxon",
       "rdfs:subClassOf": {
@@ -132,8 +132,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A discrete unit of inheritance which affects one or more biological traits (Source: https://en.wikipedia.org/wiki/Gene). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype). Note, this version of the type has been added as a pending class in schema.org.",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/Gene/0.3-RELEASE-2019_09_02",
-        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v0.3-RELEASE-2019_09_02.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v0.3-RELEASE-2019_09_02.json",
+        "https://bioschemas.org/types/Gene/0.3-RELEASE-2019_09_02"
       ],
       "rdfs:label": "Gene",
       "rdfs:subClassOf": {
