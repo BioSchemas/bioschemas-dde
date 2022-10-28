@@ -17,7 +17,7 @@ def get_raw_url(url):
             rawurl = rawrawurl.replace('/blob/main/','/main/')
     else:
         rawurl = url
-    return(rawurl)
+    return rawurl
 
 def rename_namespace(spec_list,eachurl,rawtext):
     tmpinfo = spec_list.loc[spec_list['url']==eachurl]
@@ -52,22 +52,34 @@ def rename_namespace(spec_list,eachurl,rawtext):
             cleantext = rawtext.replace(tmptext,'"@id": "bioschemastypesdrafts:')
         else:
             cleantext = rawtext
-    return(cleantext)
-
+    return(cleantext, tmpnamespace)
 
         
-def check_context_url(spec_json):
+def generate_base_context():
+    allcontext = {
+        "schema": "http://schema.org/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "owl":"http://www.w3.org/2002/07/owl/",
+        "bioschemas":"https://discovery.biothings.io/view/bioschemas/",
+        "bioschemasdrafts":"https://discovery.biothings.io/view/bioschemasdrafts/",
+        "bioschemastypes":"https://discovery.biothings.io/view/bioschemastypes/",
+        "bioschemastypesdrafts":"https://discovery.biothings.io/view/bioschemastypesdrafts/",
+        "bioschemasdeprecated":"https://discovery.biothings.io/view/bioschemasdeprecated/",
+        "dct":"http://purl.org/dc/terms/"
+    }
+    return allcontext
+
+
+def check_context_url(allcontext,spec_json,tmpnamespace):
     now = datetime.now()
     contextInfo = spec_json['@context']
-    contextInfo["bioschemas"] = "https://discovery.biothings.io/view/bioschemas/"
-    contextInfo["bioschemasdrafts"] = "https://discovery.biothings.io/view/bioschemasdrafts/"
-    contextInfo["bioschemastypes"] = "https://discovery.biothings.io/view/bioschemastypes/"
-    contextInfo["bioschemastypesdrafts"] = "https://discovery.biothings.io/view/bioschemastypesdrafts/"
-    contextInfo["bioschemasdeprecated"] = "https://discovery.biothings.io/view/bioschemasdeprecated/"
-    contextInfo["dct"] = "http://purl.org/dc/terms/"
-    contextInfo["owl"] = "http://www.w3.org/2002/07/owl/"
-    contextInfo["schema:dateModified"] = now.strftime("%m/%d/%Y, %H:%M:%S")
-    return(contextInfo)
+    for key in list(contextInfo.keys()):
+        if key != tmpnamespace: 
+            if key not in list(allcontext.keys()):
+                allcontext[key] = contextInfo[key]
+    allcontext["@dateModified"] = now.strftime("%m/%d/%Y, %H:%M:%S")
+    return allcontext
 
 
 def update_subclass(spec_list,eachurl,cleantext):
@@ -87,7 +99,7 @@ def update_subclass(spec_list,eachurl,cleantext):
             x['rdfs:subClassOf']=truesubclass
         if x['@id']=="bioschemasdeprecated:"+classname:
             x['rdfs:subClassOf']=truesubclass
-    return(spec_json)
+    return spec_json
 
 def clean_duplicate_classes(graphlist,classlist):
     duplicates = [i for i in set(classlist) if classlist.count(i) > 1]
@@ -116,7 +128,7 @@ def deletenamespace(x):
         cleanname = oldname.replace("bioschemasdeprecated:","")
     elif "bioschemas" in oldname:
         cleanname = oldname.replace("bioschemas:","")
-    return(cleanname)
+    return cleanname
 
 
 def add_conformsTo(spec_list,x):
@@ -158,7 +170,7 @@ def add_conformsTo(spec_list,x):
         definitiondict = {}
     definitiondict["conformsDefinition"]=conformdef
     x['$validation']['definitions']=definitiondict
-    return(x)
+    return x
 
 
 def add_schemaVersion(spec_list,x):
@@ -179,7 +191,7 @@ def add_schemaVersion(spec_list,x):
     schemaversions.append(spec_url)
     ## Ensure uniqueness of elements
     x["schema:schemaVersion"] = list(set(schemaversions))
-    return(x)
+    return x
 
 
 def add_specification_type(spec_list,x):
@@ -196,7 +208,7 @@ def add_specification_type(spec_list,x):
     elif 'draft' in spec_info.iloc[0]['version'].lower():
         typeurl = baseurl+'draft'
     x['additional_type'] = typeurl
-    return(x)
+    return x
 
 
 def remove_NaN_fields(propdef):
@@ -211,7 +223,8 @@ def remove_NaN_fields(propdef):
     if isinstance(propdef,str):
         cleandict = propdef.replace(', "schema:sameAs": NaN','')
         cleandict = cleandict.replace('"schema:sameAs": NaN, ','')
-    return(cleandict)
+    return cleandict
+
 
 def clean_duplicate_classes(spec_list,graphlist,classlist):
     duplicates = [i for i in set(classlist) if classlist.count(i) > 1]
@@ -240,7 +253,8 @@ def clean_duplicate_classes(spec_list,graphlist,classlist):
                 if "$validation" in x.keys():
                     x = add_conformsTo(spec_list,x)
                 cleanclassgraph.append(x)        
-    return(cleanclassgraph)
+    return cleanclassgraph
+
 
 def clean_duplicate_properties(graphlist, propertylist):            
     duplicates = [i for i in set(propertylist) if propertylist.count(i) > 1]
@@ -273,20 +287,22 @@ def clean_duplicate_properties(graphlist, propertylist):
             if x["@id"] in nondupes:
                 x = remove_NaN_fields(x)
                 cleanpropsgraph.append(x)
-    return(cleanpropsgraph)      
+    return cleanpropsgraph      
+
 
 def merge_specs(spec_list):
     bioschemas_json = {}
     graphlist = []
     classlist = []
     propertylist = []
+    allcontext = generate_base_context()
     for eachurl in spec_list['url']:
         rawurl = get_raw_url(eachurl)
         r = requests.get(rawurl)
         if r.status_code == 200:
-            cleantext = rename_namespace(spec_list,eachurl,r.text)
+            cleantext,tmpnamespace = rename_namespace(spec_list,eachurl,r.text)
             spec_json = json.loads(cleantext)
-            bioschemas_json['@context'] = check_context_url(spec_json)
+            allcontext = check_context_url(allcontext,spec_json,tmpnamespace)
             for x in spec_json['@graph']:
                 graphlist.append(x)
                 if x["@type"]=="rdfs:Class":
@@ -302,8 +318,10 @@ def merge_specs(spec_list):
         cleangraph.append(a)
     conformsTo = define_conformsTo(classlist)
     cleangraph.append(conformsTo)
+    bioschemas_json['@context'] = check_context_url(allcontext,spec_json,tmpnamespace)
     bioschemas_json['@graph']=cleangraph
-    return(bioschemas_json)
+    return bioschemas_json
+
 
 def define_conformsTo(classlist):
     uniqueclasses =  list(set(classlist))
@@ -318,7 +336,7 @@ def define_conformsTo(classlist):
         {"@id": "schema:CreativeWork"},{"@id": "schema:Text"},{"@id": "schema:Thing"}
       ]
     }
-    return(conformsTo)
+    return conformsTo
 
 
 def check_for_updates(script_path,updateall=False):
@@ -340,7 +358,7 @@ def check_for_updates(script_path,updateall=False):
                 updatedlist.append(eachfile)
     if len(updatedlist)==0:
         updatedlist = False
-    return(updatedlist)
+    return updatedlist
 
 
 def run_update(script_path,updateall=False):
