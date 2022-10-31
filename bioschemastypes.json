@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "10/28/2022, 22:23:41"
+    "@dateModified": "10/31/2022, 15:48:23"
   },
   "@graph": [
     {
@@ -20,8 +20,8 @@
       "rdfs:label": "BioChemEntity",
       "schema:additionalType": "https://bioschemas.org/types#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/BioChemEntity/0.7-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/BioChemEntity/jsonld/BioChemEntity_v0.7-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/BioChemEntity/jsonld/BioChemEntity_v0.7-RELEASE.json",
+        "https://bioschemas.org/types/BioChemEntity/0.7-RELEASE"
       ],
       "rdfs:subClassOf": {
         "@id": "schema:Thing"
@@ -48,8 +48,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A chemical substance is 'a portion of matter of constant composition, composed of molecular entities of the same type or of different types' (source: ChEBI:59999). Version: 0.3-RELEASE-2019_09_02. This version is was released as a pending class as of schema.org version 13",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/ChemicalSubstance/0.3-RELEASE-2019_09_02",
-        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.3-RELEASE-2019_09_02.json"
+        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.3-RELEASE-2019_09_02.json",
+        "https://bioschemas.org/types/ChemicalSubstance/0.3-RELEASE-2019_09_02"
       ],
       "rdfs:label": "ChemicalSubstance",
       "rdfs:subClassOf": {
@@ -62,8 +62,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A computational workflow consists of an orchestrated and repeatable pattern of activity enabled by the systematic organization of resources into processes that transform materials, provide services, or process information (source Wikipedia.org). It is executed by a computational process and is thus distinct from laboratory or business workflows. version 1.0-RELEASE",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE-Type.json",
-        "https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE"
+        "https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE-Type.json"
       ],
       "rdfs:label": "ComputationalWorkflow",
       "rdfs:subClassOf": {
@@ -76,8 +76,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A FormalParameter is an identified variable used to stand for the actual value(s) that are consumed/produced by a set of steps. Version: 1.0-RELEASE (09 March 2021) ",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/FormalParameter_v1.0-RELEASE-type.json",
-        "https://bioschemas.org/types/FormalParameter/1.0-RELEASE"
+        "https://bioschemas.org/types/FormalParameter/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/FormalParameter_v1.0-RELEASE-type.json"
       ],
       "rdfs:label": "FormalParameter",
       "rdfs:subClassOf": {
@@ -90,8 +90,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity. (Source: ChEBI:23367). Note, this version has been updated to a pending class in schema.org.",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/MolecularEntity/jsonld/MolecularEntity_v0.3-RELEASE-2019_09_02.json",
-        "https://bioschemas.org/types/MolecularEntity/0.3-RELEASE-2019_09_02"
+        "https://bioschemas.org/types/MolecularEntity/0.3-RELEASE-2019_09_02",
+        "https://github.com/BioSchemas/specifications/blob/master/MolecularEntity/jsonld/MolecularEntity_v0.3-RELEASE-2019_09_02.json"
       ],
       "rdfs:label": "MolecularEntity",
       "rdfs:subClassOf": {
@@ -132,8 +132,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A discrete unit of inheritance which affects one or more biological traits (Source: https://en.wikipedia.org/wiki/Gene). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype). Note, this version of the type has been added as a pending class in schema.org.",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/Gene/0.3-RELEASE-2019_09_02",
-        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v0.3-RELEASE-2019_09_02.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v0.3-RELEASE-2019_09_02.json",
+        "https://bioschemas.org/types/Gene/0.3-RELEASE-2019_09_02"
       ],
       "rdfs:label": "Gene",
       "rdfs:subClassOf": {
@@ -883,6 +883,25 @@
       ]
     },
     {
+      "@id": "bioschemastypes:chemicalRole",
+      "rdfs:comment": "A role played by the BioChemEntity within a chemical context. A role played by the molecular entity within a chemical context.",
+      "@type": "rdf:Property",
+      "rdfs:label": "chemicalRole",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypes:ChemicalSubstance"
+        },
+        {
+          "@id": "bioschemastypes:MolecularEntity"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ]
+    },
+    {
       "@id": "bioschemastypes:hasBioPolymerSequence",
       "rdfs:comment": "A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.",
       "@type": "rdf:Property",
@@ -906,25 +925,6 @@
       "rdfs:comment": "Intended use of the BioChemEntity by humans. ",
       "@type": "rdf:Property",
       "rdfs:label": "potentialUse",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemastypes:ChemicalSubstance"
-        },
-        {
-          "@id": "bioschemastypes:MolecularEntity"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:DefinedTerm"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypes:chemicalRole",
-      "rdfs:comment": "A role played by the BioChemEntity within a chemical context. A role played by the molecular entity within a chemical context.",
-      "@type": "rdf:Property",
-      "rdfs:label": "chemicalRole",
       "schema:domainIncludes": [
         {
           "@id": "bioschemastypes:ChemicalSubstance"
