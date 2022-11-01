@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "10/31/2022, 15:48:16",
+    "@dateModified": "11/01/2022, 15:56:35",
     "dwc": "http://rs.tdwg.org/dwc/terms/"
   },
   "@graph": [
@@ -326,8 +326,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/ChemicalSubstance/0.4-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.4-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.4-RELEASE.json",
+        "https://bioschemas.org/profiles/ChemicalSubstance/0.4-RELEASE"
       ]
     },
     {
@@ -1270,8 +1270,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Taxon/0.6-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.6-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.6-RELEASE.json",
+        "https://bioschemas.org/profiles/Taxon/0.6-RELEASE"
       ]
     },
     {
@@ -2030,8 +2030,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/MolecularEntity/jsonld/MolecularEntity_v0.5-RELEASE.json",
-        "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE"
+        "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/MolecularEntity/jsonld/MolecularEntity_v0.5-RELEASE.json"
       ]
     },
     {
@@ -2969,8 +2969,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/FormalParameter_v1.0-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/FormalParameter_v1.0-RELEASE.json",
+        "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
       ]
     },
     {
@@ -4738,8 +4738,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE.json",
-        "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
+        "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE.json"
       ]
     },
     {
@@ -5131,8 +5131,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/DataCatalog/0.3-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/DataCatalog/jsonld/DataCatalog_v0.3-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/DataCatalog/jsonld/DataCatalog_v0.3-RELEASE.json",
+        "https://bioschemas.org/profiles/DataCatalog/0.3-RELEASE"
       ]
     },
     {
@@ -5552,8 +5552,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Dataset/0.3-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v0.3-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v0.3-RELEASE.json",
+        "https://bioschemas.org/profiles/Dataset/0.3-RELEASE"
       ]
     },
     {
@@ -5807,8 +5807,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Sample/0.2-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE.json",
+        "https://bioschemas.org/profiles/Sample/0.2-RELEASE"
       ]
     },
     {

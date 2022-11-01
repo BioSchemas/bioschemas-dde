@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "10/31/2022, 15:48:21",
+    "@dateModified": "11/01/2022, 15:56:46",
     "ppeo:hasGrowthChamber": "http://purl.org/ppeo/PPEO.owl#growth_facility",
     "dwc": "http://rs.tdwg.org/dwc/terms/"
   },
@@ -20,8 +20,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Specification describing a course.  This specification must be used in tandem with a courseInstance. A course is used to describe the broad, common aspects of a recurring training event - whereas a course instance is about the specific times and location of when that course is held. <h4>Summary of Changes</h4>    Changes since previous draft 0.8 of the Course profile:    <ul>      <li>Update ranges as per latest version of schema.org</li>         </ul> Version: 0.9-DRAFT-2020_12_08",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Course/jsonld/Course_v0.9-DRAFT-2020_12_08.json",
-        "https://bioschemas.org/profiles/Course/0.9-DRAFT-2020_12_08"
+        "https://bioschemas.org/profiles/Course/0.9-DRAFT-2020_12_08",
+        "https://github.com/BioSchemas/specifications/blob/master/Course/jsonld/Course_v0.9-DRAFT-2020_12_08.json"
       ],
       "rdfs:label": "Course",
       "rdfs:subClassOf": {
@@ -4889,8 +4889,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile describing a Phenotype in Life Sciences This Phenotype type specification presents the markup for describing a Phenotype.<h3>Changes from Previous Version</h3><ul><li>isAssociatedWith BioChemEntity switch to recommended and renamed as bioChemAssociation with an improved description</li><li>taxonomicRange switch to recommended</li><li>image switch to optional and many</li><li>additionalType dropped</li><li>additionalProperty description changed</li><li>new property: associatedDisease</li><li>new properties for GO associations: hasMolecularFunction, isInvolvedInBiologicalProcess and isLocatedInSubcellularLocation</li></ul> Version: 0.2-DRAFT",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Phenotype/0.2-DRAFT",
-        "https://github.com/BioSchemas/specifications/blob/master/Phenotype/jsonld/Phenotype_v0.2-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Phenotype/jsonld/Phenotype_v0.2-DRAFT.json",
+        "https://bioschemas.org/profiles/Phenotype/0.2-DRAFT"
       ],
       "rdfs:label": "Phenotype",
       "rdfs:subClassOf": {
@@ -5517,8 +5517,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile, based on Biotea model, describing a PublicationIssue in Life Sciences. A PublicationIssue is a collection of publication scholarly articles published as a collection in a publication volume or a journal.<h4>Summary of Changes</h4>    Changes since previous draft 0.1 of the PublicationIssue profile:    <ul>      <li>Add examples</li>      <li>Keywords range updated as per changes on schema.org</li>    </ul> Version: 0.2-DRAFT-2020_12_03",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/PublicationIssue/jsonld/PublicationIssue_v0.2-DRAFT-2020_12_03.json",
-        "https://bioschemas.org/profiles/PublicationIssue/0.2-DRAFT-2020_12_03"
+        "https://bioschemas.org/profiles/PublicationIssue/0.2-DRAFT-2020_12_03",
+        "https://github.com/BioSchemas/specifications/blob/master/PublicationIssue/jsonld/PublicationIssue_v0.2-DRAFT-2020_12_03.json"
       ],
       "rdfs:label": "PublicationIssue",
       "rdfs:subClassOf": {
@@ -6007,8 +6007,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile, based on Biotea model, describing a PublicationVolume in Life Sciences. A PublicationVolume is a collection of publication issues, or scholarly articles, or possibly, although no commonly, any mix from those mentioned. It is commonly part of a Journal.<h4>Summary of Changes</h4>    Changes since previous draft 0.1 of the PublicationVolumen profile:    <ul>      <li>Add examples</li>      <li>Keywords range updated as per changes on schema.org</li>    </ul> Version: 0.2-DRAFT-2020_12_03",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/PublicationVolume/jsonld/PublicationVolume_v0.2-DRAFT-2020_12_03.json",
-        "https://bioschemas.org/profiles/PublicationVolume/0.2-DRAFT-2020_12_03"
+        "https://bioschemas.org/profiles/PublicationVolume/0.2-DRAFT-2020_12_03",
+        "https://github.com/BioSchemas/specifications/blob/master/PublicationVolume/jsonld/PublicationVolume_v0.2-DRAFT-2020_12_03.json"
       ],
       "rdfs:label": "PublicationVolume",
       "rdfs:subClassOf": {
@@ -9092,8 +9092,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": " This Study profile presents the markup when describing a Study Version: 0.2-DRAFT",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Study/jsonld/Study_v0.2-DRAFT.json",
-        "https://bioschemas.org/profiles/Study/0.2-DRAFT"
+        "https://bioschemas.org/profiles/Study/0.2-DRAFT",
+        "https://github.com/BioSchemas/specifications/blob/master/Study/jsonld/Study_v0.2-DRAFT.json"
       ],
       "rdfs:label": "Study",
       "rdfs:subClassOf": {
@@ -9850,8 +9850,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/SequenceRange/0.1-DRAFT",
-        "https://github.com/BioSchemas/specifications/blob/master/SequenceRange/jsonld/SequenceRange_v0.1-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/blob/master/SequenceRange/jsonld/SequenceRange_v0.1-DRAFT.json",
+        "https://bioschemas.org/profiles/SequenceRange/0.1-DRAFT"
       ]
     },
     {
@@ -10912,8 +10912,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": " A guide for how to describe datasets in the life-sciences using Schema.org-like annotation.<h3>Summary of Changes</h3><ul><li>Many: Other  <a href=\"https://github.com/BioSchemas/specifications/issues/473\">#473</a> \u2013 Updated properties used in the profile to be aligned with schema.org v12.0</li><li>keywords: Other  <a href=\"https://github.com/BioSchemas/specifications/issues/311\">#311</a> \u2013 Updated guidance</li><li>maintainer: Added \u2013 New property in schema.org that is of particular relevance for datasets</li><li>identifier: Other <a href=\"https://github.com/BioSchemas/specifications/issues/310\">#310</a> \u2013 Updated guidance and example</li><li>alternateName: Added  <a href=\"https://github.com/BioSchemas/specifications/issues/312\">#312</a> \u2013 Adding terms used by other recommendations such as Google or FigShare as optional</li><li>hasPart: Added  <a href=\"https://github.com/BioSchemas/specifications/issues/312\">#312</a> \u2013 Adding terms used by other recommendations such as Google or FigShare as optional</li><li>isPartOf: Added  <a href=\"https://github.com/BioSchemas/specifications/issues/312\">#312</a> \u2013 Adding terms used by other recommendations such as Google or FigShare as optional</li><li>license: Marginality Increase \u2013 Licenses are required to know what terms the dataset can be used under</li><li>isAccessibleForFree: Added  <a href=\"https://github.com/BioSchemas/specifications/issues/312\">#312</a> \u2013 Adding terms used by other recommendations such as Google or FigShare as optional</li><li>dateCreated: Added  <a href=\"https://github.com/BioSchemas/specifications/issues/312\">#312</a> \u2013 Adding terms used by other recommendations such as Google or FigShare as optional</li><li>dateModified: Added  <a href=\"https://github.com/BioSchemas/specifications/issues/312\">#312</a> \u2013 Adding terms used by other recommendations such as Google or FigShare as optional</li><li>datePublished: Added  <a href=\"https://github.com/BioSchemas/specifications/issues/312\">#312</a> \u2013 Adding terms used by other recommendations such as Google or FigShare as optional</li><li>publisher: Added  <a href=\"https://github.com/BioSchemas/specifications/issues/312\">#312</a> \u2013 Adding terms used by other recommendations such as Google or FigShare as optional</li><li>isBasedOn: Added  <a href=\"https://github.com/BioSchemas/specifications/issues/477\">#477</a> \u2013 Link a Dataset to a Study that produced it</li></ul> Version: 0.4-DRAFT",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v0.5-DRAFT.json",
-        "https://bioschemas.org/profiles/Dataset/0.5-DRAFT"
+        "https://bioschemas.org/profiles/Dataset/0.5-DRAFT",
+        "https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v0.5-DRAFT.json"
       ],
       "rdfs:label": "Dataset",
       "rdfs:subClassOf": {
@@ -11883,8 +11883,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Disease/0.1-DRAFT",
-        "https://github.com/BioSchemas/specifications/blob/master/Disease/jsonld/Disease_v0.1-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Disease/jsonld/Disease_v0.1-DRAFT.json",
+        "https://bioschemas.org/profiles/Disease/0.1-DRAFT"
       ]
     },
     {
@@ -12567,8 +12567,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.1-DRAFT.json",
-        "https://bioschemas.org/profiles/Gene/1.1-DRAFT"
+        "https://bioschemas.org/profiles/Gene/1.1-DRAFT",
+        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.1-DRAFT.json"
       ]
     },
     {
@@ -13326,8 +13326,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/Protein_v0.12-DRAFT.json",
-        "https://bioschemas.org/profiles/Protein/0.12-DRAFT"
+        "https://bioschemas.org/profiles/Protein/0.12-DRAFT",
+        "https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/Protein_v0.12-DRAFT.json"
       ]
     },
     {
@@ -13335,8 +13335,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "This profile specification presents the BioChemEntity usage when describing a Protein structure. Version: 0.5-DRAFT-2018_08_15",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/ProteinStructure/0.5-DRAFT-2018_08_15",
-        "https://github.com/BioSchemas/specifications/blob/master/ProteinStructure/jsonld/ProteinStructure_v0.5-DRAFT-2018_08_15.json"
+        "https://github.com/BioSchemas/specifications/blob/master/ProteinStructure/jsonld/ProteinStructure_v0.5-DRAFT-2018_08_15.json",
+        "https://bioschemas.org/profiles/ProteinStructure/0.5-DRAFT-2018_08_15"
       ],
       "rdfs:label": "ProteinStructure",
       "rdfs:subClassOf": {
@@ -13973,8 +13973,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile for describing a biological taxon This profile aims to denote a taxon by common properties such as its scientific name, taxonomic rank and vernacular names. It is also a means to link to existing taxonomic registers where each taxon has a URI. <br/>Changes in 0.7: <ul><li>Use of identifier to add the taxon id within well known authorities (NCBI id, GBIF id, EoL id etc.)</li><li>Add property isBasedOn</li><li>Add properties scientificName and alternateScientificName to link the Taxon to TaxonName instances</li></ul> Version: 0.7-DRAFT",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.7-DRAFT.json",
-        "https://bioschemas.org/profiles/Taxon/0.7-DRAFT"
+        "https://bioschemas.org/profiles/Taxon/0.7-DRAFT",
+        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.7-DRAFT.json"
       ],
       "rdfs:label": "Taxon",
       "rdfs:subClassOf": {
@@ -15241,28 +15241,6 @@
       ]
     },
     {
-      "@id": "bioschemasdrafts:dateModified",
-      "rdfs:comment": "The date on which the CreativeWork was most recently modified or when the item\u2019s entry was modified within a DataFeed. \n NOTE: Keywords is not part of Event.",
-      "@type": "rdf:Property",
-      "rdfs:label": "dateModified",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemasdrafts:Event"
-        },
-        {
-          "@id": "bioschemasdrafts:Organization"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Date"
-        },
-        {
-          "@id": "schema:DateTime"
-        }
-      ]
-    },
-    {
       "@id": "bioschemasdrafts:keywords",
       "rdfs:comment": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas. \n NOTE: Keywords is not part of Event.",
       "@type": "rdf:Property",
@@ -15278,6 +15256,25 @@
       "schema:rangeIncludes": [
         {
           "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemasdrafts:socialMedia",
+      "rdfs:comment": "Link to social media websites like twitter or facebook.",
+      "@type": "rdf:Property",
+      "rdfs:label": "socialMedia",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemasdrafts:Event"
+        },
+        {
+          "@id": "bioschemasdrafts:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
         }
       ]
     },
@@ -15307,10 +15304,10 @@
       ]
     },
     {
-      "@id": "rdf:type",
-      "rdfs:comment": "This is used by validation tools to indentify the profile used. You must use the value specified in the Controlled Vocabulary column. This is used by validation tools to indentify the profile used. You must use the value specified in the Controlled Vocabulary column.",
+      "@id": "bioschemasdrafts:dateModified",
+      "rdfs:comment": "The date on which the CreativeWork was most recently modified or when the item\u2019s entry was modified within a DataFeed. \n NOTE: Keywords is not part of Event.",
       "@type": "rdf:Property",
-      "rdfs:label": "type",
+      "rdfs:label": "dateModified",
       "schema:domainIncludes": [
         {
           "@id": "bioschemasdrafts:Event"
@@ -15321,15 +15318,18 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Date"
+        },
+        {
+          "@id": "schema:DateTime"
         }
       ]
     },
     {
-      "@id": "bioschemasdrafts:socialMedia",
-      "rdfs:comment": "Link to social media websites like twitter or facebook.",
+      "@id": "rdf:type",
+      "rdfs:comment": "This is used by validation tools to indentify the profile used. You must use the value specified in the Controlled Vocabulary column. This is used by validation tools to indentify the profile used. You must use the value specified in the Controlled Vocabulary column.",
       "@type": "rdf:Property",
-      "rdfs:label": "socialMedia",
+      "rdfs:label": "type",
       "schema:domainIncludes": [
         {
           "@id": "bioschemasdrafts:Event"

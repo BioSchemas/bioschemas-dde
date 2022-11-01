@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "10/31/2022, 15:48:23"
+    "@dateModified": "11/01/2022, 15:56:50"
   },
   "@graph": [
     {
@@ -35,8 +35,8 @@
       "rdfs:label": "BioSample",
       "schema:additionalType": "https://bioschemas.org/types#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/BioSample/jsonld/BioSample_v0.1-RELEASE.json",
-        "https://bioschemas.org/types/BioSample/0.1-RELEASE"
+        "https://bioschemas.org/types/BioSample/0.1-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/BioSample/jsonld/BioSample_v0.1-RELEASE.json"
       ],
       "rdfs:subClassOf": {
         "@id": "schema:BioChemEntity"
@@ -48,8 +48,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A chemical substance is 'a portion of matter of constant composition, composed of molecular entities of the same type or of different types' (source: ChEBI:59999). Version: 0.3-RELEASE-2019_09_02. This version is was released as a pending class as of schema.org version 13",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.3-RELEASE-2019_09_02.json",
-        "https://bioschemas.org/types/ChemicalSubstance/0.3-RELEASE-2019_09_02"
+        "https://bioschemas.org/types/ChemicalSubstance/0.3-RELEASE-2019_09_02",
+        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.3-RELEASE-2019_09_02.json"
       ],
       "rdfs:label": "ChemicalSubstance",
       "rdfs:subClassOf": {
@@ -104,8 +104,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Protein is here used in its widest possible definition, as classes of amino acid based molecules. Amyloid-beta Protein in human (UniProt P05067), eukaryota (e.g. an OrthoDB group) or even a single molecule that one can point to are all of type schema:Protein. A protein can thus be a subclass of another protein, e.g. schema:Protein as a UniProt record can have multiple isoforms inside it which would also be schema:Protein. They can be imagined, synthetic, hypothetical or naturally occurring. This version has been added to schema.org as a pending type.",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/Protein_v0.3-RELEASE-2019_09_02.json",
-        "https://bioschemas.org/types/Protein/0.3-RELEASE-2019_09_02"
+        "https://bioschemas.org/types/Protein/0.3-RELEASE-2019_09_02",
+        "https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/Protein_v0.3-RELEASE-2019_09_02.json"
       ],
       "rdfs:label": "Protein",
       "rdfs:subClassOf": {
@@ -902,25 +902,6 @@
       ]
     },
     {
-      "@id": "bioschemastypes:hasBioPolymerSequence",
-      "rdfs:comment": "A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.",
-      "@type": "rdf:Property",
-      "rdfs:label": "hasBioPolymerSequence",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemastypes:Protein"
-        },
-        {
-          "@id": "bioschemastypes:Gene"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        }
-      ]
-    },
-    {
       "@id": "bioschemastypes:potentialUse",
       "rdfs:comment": "Intended use of the BioChemEntity by humans. ",
       "@type": "rdf:Property",
@@ -936,6 +917,25 @@
       "schema:rangeIncludes": [
         {
           "@id": "schema:DefinedTerm"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:hasBioPolymerSequence",
+      "rdfs:comment": "A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.",
+      "@type": "rdf:Property",
+      "rdfs:label": "hasBioPolymerSequence",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypes:Protein"
+        },
+        {
+          "@id": "bioschemastypes:Gene"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
         }
       ]
     },

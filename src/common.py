@@ -131,6 +131,19 @@ def deletenamespace(x):
     return cleanname
 
 
+def remove_conformsTo(x):
+    if 'conformsTo' in list(x['$validation']['properties'].keys()):
+        del x['$validation']['properties']['conformsTo']
+        requirementlist = [i for i in x['$validation']['required'] if i!='conformsTo']
+        x['$validation']['required'] = requirementlist
+    if 'definitions' in list(x['$validation']):
+        if 'conformsTo' in list(x['$validation']['definitions'].keys()):
+            del x['$validation']['definitions']['conformsTo']
+        if 'conformsDefinition' in list(x['$validation']['definitions'].keys()):
+             del x['$validation']['definitions']['conformsDefinition']
+    return x
+
+
 def add_conformsTo(spec_list,x):
     cleanname = deletenamespace(x)
     spec_info = spec_list.loc[spec_list['name'] == cleanname]
@@ -236,6 +249,7 @@ def clean_duplicate_classes(spec_list,graphlist,classlist):
                 x = add_specification_type(spec_list,x)
                 x = add_schemaVersion(spec_list,x)
                 if "$validation" in x.keys():
+                    x = remove_conformsTo(x)
                     x = add_conformsTo(spec_list,x)
                 cleanclassgraph.append(x)
             for eachclass in duplicates:
@@ -243,6 +257,7 @@ def clean_duplicate_classes(spec_list,graphlist,classlist):
                     x = add_specification_type(spec_list,x)
                     x = add_schemaVersion(spec_list,x)
                     if "$validation" in x.keys():
+                        x = remove_conformsTo(x)
                         x = add_conformsTo(spec_list,x)
                     cleanclassgraph.append(x)
     else:  ## There are no duplicate classes to clean up
@@ -251,12 +266,17 @@ def clean_duplicate_classes(spec_list,graphlist,classlist):
                 x = add_specification_type(spec_list,x)
                 x = add_schemaVersion(spec_list,x)
                 if "$validation" in x.keys():
+                    x = remove_conformsTo(x)
                     x = add_conformsTo(spec_list,x)
                 cleanclassgraph.append(x)        
     return cleanclassgraph
 
 
-def clean_duplicate_properties(graphlist, propertylist):            
+def clean_duplicate_properties(graphlist, propertylist):
+    if 'conformsTo' in propertylist:
+        propertylist.remove('conformsTo')
+    if 'dct:conformsTo' in propertylist:
+        propertylist.remove('dct:conformsTo')
     duplicates = [i for i in set(propertylist) if propertylist.count(i) > 1]
     nondupes = [x for x in propertylist if x not in duplicates]
     cleanpropsgraph = []

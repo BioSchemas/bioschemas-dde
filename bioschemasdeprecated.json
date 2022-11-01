@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "10/31/2022, 15:48:26"
+    "@dateModified": "11/01/2022, 15:56:56"
   },
   "@graph": [
     {
@@ -812,8 +812,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/DataRecord/0.2-DRAFT-2019_06_14",
-        "https://github.com/BioSchemas/specifications/blob/master/DataRecord/jsonld/DataRecord_v0.2-DRAFT-2019_06_14-DEPRECATED-profile.json"
+        "https://github.com/BioSchemas/specifications/blob/master/DataRecord/jsonld/DataRecord_v0.2-DRAFT-2019_06_14-DEPRECATED-profile.json",
+        "https://bioschemas.org/profiles/DataRecord/0.2-DRAFT-2019_06_14"
       ]
     },
     {
