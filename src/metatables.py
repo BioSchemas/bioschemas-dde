@@ -124,7 +124,8 @@ def update_spec_table(eachfile,spec_updated_df):
                     newdf = pd.concat((newdf,updateversiondf),ignore_index=True)
                 else :
                     newdf = pd.concat((newdf,oldversiondf),ignore_index=True)
-        newdf.to_csv(os.path.join(script_path,eachfile),sep='\t',header=True,index=False)
+        ordereddf = newdf[['namespace','name','subClassOf','type','version','url']].copy()
+        ordereddf.to_csv(os.path.join(script_path,eachfile),sep='\t',header=True,index=False)
 
 
 def update_tables(script_path):
