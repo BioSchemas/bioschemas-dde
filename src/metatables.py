@@ -104,7 +104,7 @@ def compare_versions(a,b):
     return latest_version
 
 
-def update_spec_table(eachfile,spec_updated_df):
+def update_spec_table(script_path,eachfile,spec_updated_df):
     original_df = pd.read_csv(os.path.join(script_path,eachfile),delimiter='\t',header=0,
                               usecols=['name','subClassOf','version','url'])
     update_needed = check_for_updates(spec_updated_df,original_df)
@@ -141,18 +141,18 @@ def update_tables(script_path):
     for eachfile in filelist:
         if 'deprecated' in eachfile:
             spec_updated_df = deprecated
-            update_spec_table(eachfile,spec_updated_df)
+            update_spec_table(script_path,eachfile,spec_updated_df)
         elif 'profile' in eachfile:
             if 'draft' in eachfile:
                 spec_updated_df = draft_profile
-                update_spec_table(eachfile,spec_updated_df)
+                update_spec_table(script_path,eachfile,spec_updated_df)
             else:
                 spec_updated_df = released_profile
-                update_spec_table(eachfile,spec_updated_df)
+                update_spec_table(script_path,eachfile,spec_updated_df)
         else:
             if 'draft' in eachfile:
                 spec_updated_df = draft_type
-                update_spec_table(eachfile,spec_updated_df)
+                update_spec_table(script_path,eachfile,spec_updated_df)
             else:
                 spec_updated_df = released_type
-                update_spec_table(eachfile,spec_updated_df)
+                update_spec_table(script_path,eachfile,spec_updated_df)
