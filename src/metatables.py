@@ -2,7 +2,6 @@ import os
 import json
 import pandas as pd
 import requests
-
 def convert_to_raw(githuburl): ## Converts a github url to a raw github url
     githubrawurl = githuburl.replace('github.com','raw.githubusercontent.com').replace('blob/','').replace('tree/','')
     return githubrawurl
@@ -44,7 +43,7 @@ def generate_base_update_table(script_path):
     for eachfile in latest_updates:
         filepath = os.path.join(updated_specs_folder,eachfile)
         tmpdf = pd.read_csv(filepath, header=0)
-        version = tmpdf.iloc[0]['typeversion']
+        version = tmpdf.iloc[0]['version']
         url = tmpdf.iloc[0]['url']
         tmpdict = parse_info_from_json(url,parent_source_options)
         updated_list.append(tmpdict)
@@ -114,13 +113,16 @@ def update_spec_table(eachfile,spec_updated_df):
             updateversiondf = spec_updated_df.loc[spec_updated_df['name']==eachclass]
             updateversion = updateversiondf.iloc[0]['version']
             oldversiondf = original_df.loc[original_df['name']==eachclass]
-            oldversion = oldversiondf.iloc[0]['version']
-            latestversion = compare_versions(updateversion,oldversion)
-            if latestversion == updateversion:
-                newdf = pd.concat((newdf,updateversiondf),ignore_index=True)
-            else :
-                newdf = pd.concat((newdf,oldversiondf),ignore_index=True)
-        newdf.to_csv(os.path.join(script_path,eachfile),delimiter='\t',header=0,index=False)
+            if len(oldversiondf)<=0:
+                latestversion = updateversion
+            else:
+                oldversion = oldversiondf.iloc[0]['version']
+                latestversion = compare_versions(updateversion,oldversion)
+                if latestversion == updateversion:
+                    newdf = pd.concat((newdf,updateversiondf),ignore_index=True)
+                else :
+                    newdf = pd.concat((newdf,oldversiondf),ignore_index=True)
+        newdf.to_csv(os.path.join(script_path,eachfile),sep='\t',header=0,index=False)
 
 
 def update_tables(script_path):
