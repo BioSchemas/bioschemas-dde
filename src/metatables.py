@@ -2,6 +2,7 @@ import os
 import json
 import pandas as pd
 import requests
+
 def convert_to_raw(githuburl): ## Converts a github url to a raw github url
     githubrawurl = githuburl.replace('github.com','raw.githubusercontent.com').replace('blob/','').replace('tree/','')
     return githubrawurl
@@ -104,7 +105,8 @@ def compare_versions(a,b):
 
 
 def update_spec_table(eachfile,spec_updated_df):
-    original_df = pd.read_csv(os.path.join(script_path,eachfile),delimiter='\t',header=0)
+    original_df = pd.read_csv(os.path.join(script_path,eachfile),delimiter='\t',header=0,
+                              usecols=['name','subClassOf','version','url'])
     update_needed = check_for_updates(spec_updated_df,original_df)
     if update_needed == True:
         classes_to_update = spec_updated_df['name'].to_list()
@@ -122,7 +124,7 @@ def update_spec_table(eachfile,spec_updated_df):
                     newdf = pd.concat((newdf,updateversiondf),ignore_index=True)
                 else :
                     newdf = pd.concat((newdf,oldversiondf),ignore_index=True)
-        newdf.to_csv(os.path.join(script_path,eachfile),sep='\t',header=0,index=False)
+        newdf.to_csv(os.path.join(script_path,eachfile),sep='\t',header=True,index=False)
 
 
 def update_tables(script_path):
