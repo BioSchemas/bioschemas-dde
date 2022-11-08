@@ -1,2 +1,2 @@
-namespace,name,subclassOf,typeversion,url
+namespace,name,subclassOf,version,url
 bioschams,Event,Event,0.1-DRAFT-2018_03_10,https://github.com/BioSchemas/specifications/tree/master/Event/jsonld/Event_v0.1-DRAFT-2018_03_10.json
