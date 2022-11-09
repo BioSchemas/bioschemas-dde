@@ -12,3 +12,4 @@ bioschemastypesdrafts	SequenceRange	schema:BioChemEntity	Type	0.1-DRAFT-2019_06_
 bioschemastypesdrafts	Study	schema:CreativeWork	Type	0.3-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Study/jsonld/Study_v0.3-DRAFT.json
 bioschemastypesdrafts	TaxonName	schema:CreativeWork	Type	0.1-DRAFT-TYPE	https://github.com/BioSchemas/specifications/blob/master/TaxonName/jsonld/TaxonName_v0.1-DRAFT-TYPE.json
 bioschemastypesdrafts	Taxon	schema:Thing	Type	0.4-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.4-DRAFT.json
+issue542	BioChemEntity	schema:BioChemEntity	Type	0.8-DRAFT	https://github.com/BioSchemas/specifications/blob/master/BioChemEntity/jsonld/BioChemEntity_v0.8-DRAFT.jsonld
