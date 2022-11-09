@@ -76,7 +76,7 @@ def check_for_updates(spec_updated_df,original_df):
                 update_needed = False
         else:
             update_needed = False
-    return(update_needed)
+    return update_needed
 
 
 def compare_versions(a,b):
@@ -106,7 +106,7 @@ def compare_versions(a,b):
 
 def update_spec_table(script_path,eachfile,spec_updated_df):
     original_df = pd.read_csv(os.path.join(script_path,eachfile),delimiter='\t',header=0,
-                              usecols=['name','subClassOf','version','url'])
+                              usecols=['name','namespace','subClassOf','type','version','url'])
     update_needed = check_for_updates(spec_updated_df,original_df)
     if update_needed == True:
         classes_to_update = spec_updated_df['name'].to_list()
