@@ -79,28 +79,33 @@ def check_for_updates(spec_updated_df,original_df):
     return update_needed
 
 
+def parse_version_number(version_number):
+    clean_number = version_number.split('-')
+    clean_version = clean_number[0]
+    return clean_version
+
+
 def compare_versions(a,b):
-    greaterlist = ['0.10','0.11','0.12','0.13','0.14','0.15']
-    lesserlist = ['0.2','0.3','0.4','0.5','0.6','0.7','0.8','0.9']
-    latest_version = None
-    if a > b:
+    version_a = parse_version_number(a).split('.')
+    version_b = parse_version_number(b).split('.')
+    if int(version_a[0]) > int(version_b[0]):
+        ## The whole number of version a is greater than version b
         latest_version = a
+    elif int(version_a[0]) < int(version_b[0]): 
+        ## The whole number of version b is greater than version a
+        latest_version = b
     else:
-        for x in greaterlist:
-            if x in a:
-                weirdversion = True
-                break
-            else:
-                weirdversion = False
-        if weirdversion == False:
+        ## The whole numbers of version a and b are the same, check the decimal value
+        if int(version_a[1]) > int(version_b[1]):
+            ## The decimal value of version a is greater than version b
+            latest_version = a
+        elif int(version_a[1]) < int(version_b[1]):
+            ## The decimal value of version b is greater than version a
             latest_version = b
         else:
-            for y in lesserlist:
-                if y in b:
-                    latest_version = a
-                    break
-                else:
-                    latest_version = b    
+            ## The versions are the same pick the new version
+            latest_version = a
+      
     return latest_version
 
 
