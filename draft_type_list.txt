@@ -9,7 +9,7 @@ bioschemastypesdrafts	RNA	schema:BioChemEntity	Type	0.1-DRAFT-2019_06_21	https:/
 bioschemastypesdrafts	Sample	schema:Sample	Type	0.2-DRAFT-2018_11_09	https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-DRAFT-2018_11_09.json
 bioschemastypesdrafts	SequenceAnnotation	schema:BioChemEntity	Type	0.1-DRAFT-2019_06_21	https://github.com/BioSchemas/specifications/blob/master/SequenceAnnotation/jsonld/SequenceAnnotation_v0.1-DRAFT-2019_06_21.json
 bioschemastypesdrafts	SequenceRange	schema:BioChemEntity	Type	0.1-DRAFT-2019_06_21	https://github.com/BioSchemas/specifications/blob/master/SequenceRange/jsonld/SequenceRange_v0.1-DRAFT-2019_06_21.json
-bioschemastypesdrafts	Study	schema:CreativeWork	Type	0.3-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Study/jsonld/Study_v0.3-DRAFT.json
 bioschemastypesdrafts	TaxonName	schema:CreativeWork	Type	0.1-DRAFT-TYPE	https://github.com/BioSchemas/specifications/blob/master/TaxonName/jsonld/TaxonName_v0.1-DRAFT-TYPE.json
 bioschemastypesdrafts	Taxon	schema:Thing	Type	0.4-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.4-DRAFT.json
 issue542	BioChemEntity	schema:BioChemEntity	Type	0.8-DRAFT	https://github.com/BioSchemas/specifications/blob/master/BioChemEntity/jsonld/BioChemEntity_v0.8-DRAFT.jsonld
+bioschemastypesdrafts	Study	schema:CreativeWork	Type	0.3-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Study/jsonld/Study_v0.3-DRAFT-Type.json
