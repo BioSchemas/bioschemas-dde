@@ -1,2 +1,2 @@
 time,namespace,name,subclassOf,version,url
-603fa38a-6043-11ed-948c-df89e85e5464,bioschams,SemanticTextAnnotation,schema:CreativeWork,v0.3-DRAFT,https://github.com/BioSchemas/specifications/tree/master/SemanticTextAnnotation/jsonld/SemanticTextAnnotation_v0.3-DRAFT.json
+83c78324-6046-11ed-90a1-f10ec14d25d6,bioschams,SemanticTextAnnotation,schema:CreativeWork,v0.3-DRAFT,https://github.com/BioSchemas/specifications/tree/master/SemanticTextAnnotation/jsonld/SemanticTextAnnotation_v0.3-DRAFT.json
