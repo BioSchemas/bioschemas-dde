@@ -1,2 +1,2 @@
 time,namespace,name,subclassOf,version,url
-df521151-60e6-11ed-ba94-3be261bd1175,bioschams,SequenceRange,bioschemastypes:SequenceStructure,v0.2-DRAFT,https://github.com/BioSchemas/specifications/tree/master/SequenceRange/jsonld/SequenceRange_v0.2-DRAFT.json
+d64fbe1f-60f9-11ed-9d85-13ac1a71195f,bioschams,SequenceRange,bioschemastypes:SequenceStructure,v0.2-DRAFT,https://github.com/BioSchemas/specifications/tree/master/SequenceRange/jsonld/SequenceRange_v0.2-DRAFT.json
