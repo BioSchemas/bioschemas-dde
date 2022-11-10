@@ -1,2 +1,2 @@
 time,namespace,name,subclassOf,version,url
-83c78320-6046-11ed-90a1-f10ec14d25d6,bioschams,PublicationVolume,schema:PublicationVolume,v0.3-DRAFT,https://github.com/BioSchemas/specifications/tree/master/PublicationVolume/jsonld/PublicationVolume_v0.3-DRAFT.json
+df52114c-60e6-11ed-ba94-3be261bd1175,bioschams,PublicationVolume,schema:PublicationVolume,v0.3-DRAFT,https://github.com/BioSchemas/specifications/tree/master/PublicationVolume/jsonld/PublicationVolume_v0.3-DRAFT.json

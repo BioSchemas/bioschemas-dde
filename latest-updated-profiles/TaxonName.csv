@@ -1,2 +1,2 @@
 time,namespace,name,subclassOf,version,url
-83c78327-6046-11ed-90a1-f10ec14d25d6,bioschams,TaxonName,bioschemastypes:TaxonName,v0.2-DRAFT,https://github.com/BioSchemas/specifications/tree/master/TaxonName/jsonld/TaxonName_v0.2-DRAFT.json
+df521153-60e6-11ed-ba94-3be261bd1175,bioschams,TaxonName,bioschemastypes:TaxonName,v0.2-DRAFT,https://github.com/BioSchemas/specifications/tree/master/TaxonName/jsonld/TaxonName_v0.2-DRAFT.json
