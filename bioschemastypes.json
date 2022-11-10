@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "11/01/2022, 23:10:42"
+    "@dateModified": "11/10/2022, 12:24:36"
   },
   "@graph": [
     {
@@ -20,7 +20,7 @@
       "rdfs:label": "BioChemEntity",
       "schema:additionalType": "https://bioschemas.org/types#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/BioChemEntity/jsonld/BioChemEntity_v0.7-RELEASE.json",
+        "https://github.com/BioSchemas/specifications/tree/master/BioChemEntity/jsonld/type/BioChemEntity_v0.7-RELEASE.json",
         "https://bioschemas.org/types/BioChemEntity/0.7-RELEASE"
       ],
       "rdfs:subClassOf": {
@@ -35,8 +35,8 @@
       "rdfs:label": "BioSample",
       "schema:additionalType": "https://bioschemas.org/types#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/BioSample/jsonld/BioSample_v0.1-RELEASE.json",
-        "https://bioschemas.org/types/BioSample/0.1-RELEASE"
+        "https://bioschemas.org/types/BioSample/0.1-RELEASE",
+        "https://github.com/BioSchemas/specifications/tree/master/BioSample/jsonld/type/BioSample_v0.1-RELEASE.json"
       ],
       "rdfs:subClassOf": {
         "@id": "schema:BioChemEntity"
@@ -48,7 +48,7 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A chemical substance is 'a portion of matter of constant composition, composed of molecular entities of the same type or of different types' (source: ChEBI:59999). Version: 0.3-RELEASE-2019_09_02. This version is was released as a pending class as of schema.org version 13",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.3-RELEASE-2019_09_02.json",
+        "https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/type/ChemicalSubstance_v0.3-RELEASE-2019_09_02.json",
         "https://bioschemas.org/types/ChemicalSubstance/0.3-RELEASE-2019_09_02"
       ],
       "rdfs:label": "ChemicalSubstance",
@@ -58,30 +58,16 @@
       "additional_type": "https://bioschemas.org/types#nav-release"
     },
     {
-      "@id": "bioschemastypes:ComputationalWorkflow",
+      "@id": "bioschemastypes:Gene",
       "@type": "rdfs:Class",
-      "rdfs:comment": "A computational workflow consists of an orchestrated and repeatable pattern of activity enabled by the systematic organization of resources into processes that transform materials, provide services, or process information (source Wikipedia.org). It is executed by a computational process and is thus distinct from laboratory or business workflows. version 1.0-RELEASE",
+      "rdfs:comment": "A discrete unit of inheritance which affects one or more biological traits (Source: https://en.wikipedia.org/wiki/Gene). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype). Note, this version of the type has been added as a pending class in schema.org.",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE-Type.json",
-        "https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE"
+        "https://github.com/BioSchemas/specifications/tree/master/Gene/jsonld/type/Gene_v0.3-RELEASE-2019_09_02.json",
+        "https://bioschemas.org/types/Gene/0.3-RELEASE-2019_09_02"
       ],
-      "rdfs:label": "ComputationalWorkflow",
+      "rdfs:label": "Gene",
       "rdfs:subClassOf": {
-        "@id": "schema:SoftwareSourceCode"
-      },
-      "additional_type": "https://bioschemas.org/types#nav-release"
-    },
-    {
-      "@id": "bioschemastypes:FormalParameter",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "A FormalParameter is an identified variable used to stand for the actual value(s) that are consumed/produced by a set of steps. Version: 1.0-RELEASE (09 March 2021) ",
-      "schema:schemaVersion": [
-        "https://bioschemas.org/types/FormalParameter/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/FormalParameter_v1.0-RELEASE-type.json"
-      ],
-      "rdfs:label": "FormalParameter",
-      "rdfs:subClassOf": {
-        "@id": "schema:Intangible"
+        "@id": "schema:BioChemEntity"
       },
       "additional_type": "https://bioschemas.org/types#nav-release"
     },
@@ -90,8 +76,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity. (Source: ChEBI:23367). Note, this version has been updated to a pending class in schema.org.",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/MolecularEntity/jsonld/MolecularEntity_v0.3-RELEASE-2019_09_02.json",
-        "https://bioschemas.org/types/MolecularEntity/0.3-RELEASE-2019_09_02"
+        "https://bioschemas.org/types/MolecularEntity/0.3-RELEASE-2019_09_02",
+        "https://github.com/BioSchemas/specifications/tree/master/MolecularEntity/jsonld/type/MolecularEntity_v0.3-RELEASE-2019_09_02.json"
       ],
       "rdfs:label": "MolecularEntity",
       "rdfs:subClassOf": {
@@ -104,38 +90,10 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Protein is here used in its widest possible definition, as classes of amino acid based molecules. Amyloid-beta Protein in human (UniProt P05067), eukaryota (e.g. an OrthoDB group) or even a single molecule that one can point to are all of type schema:Protein. A protein can thus be a subclass of another protein, e.g. schema:Protein as a UniProt record can have multiple isoforms inside it which would also be schema:Protein. They can be imagined, synthetic, hypothetical or naturally occurring. This version has been added to schema.org as a pending type.",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/Protein/0.3-RELEASE-2019_09_02",
-        "https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/Protein_v0.3-RELEASE-2019_09_02.json"
+        "https://github.com/BioSchemas/specifications/tree/master/Protein/jsonld/type/Protein_v0.3-RELEASE-2019_09_02.json",
+        "https://bioschemas.org/types/Protein/0.3-RELEASE-2019_09_02"
       ],
       "rdfs:label": "Protein",
-      "rdfs:subClassOf": {
-        "@id": "schema:BioChemEntity"
-      },
-      "additional_type": "https://bioschemas.org/types#nav-release"
-    },
-    {
-      "@id": "bioschemastypes:Taxon",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "A set of organisms asserted to represent a natural cohesive biological unit. Version: 0.3-RELEASE-2019_11_18. Note that this version of the Taxon type has been added as a pending class to schema.org.",
-      "schema:schemaVersion": [
-        "https://bioschemas.org/types/Taxon/0.3-RELEASE-2019_11_18",
-        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.3-RELEASE-2019_11_18.json"
-      ],
-      "rdfs:label": "Taxon",
-      "rdfs:subClassOf": {
-        "@id": "schema:Thing"
-      },
-      "additional_type": "https://bioschemas.org/types#nav-release"
-    },
-    {
-      "@id": "bioschemastypes:Gene",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "A discrete unit of inheritance which affects one or more biological traits (Source: https://en.wikipedia.org/wiki/Gene). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype). Note, this version of the type has been added as a pending class in schema.org.",
-      "schema:schemaVersion": [
-        "https://bioschemas.org/types/Gene/0.3-RELEASE-2019_09_02",
-        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v0.3-RELEASE-2019_09_02.json"
-      ],
-      "rdfs:label": "Gene",
       "rdfs:subClassOf": {
         "@id": "schema:BioChemEntity"
       },
@@ -510,132 +468,67 @@
       ]
     },
     {
-      "@id": "bioschemastypes:input",
+      "@id": "bioschemastypes:hasStatus",
       "@type": "rdf:Property",
-      "rdfs:comment": "An input required to use the computational workflow (eg. Excel spreadsheet, BAM file)",
-      "rdfs:label": "input",
+      "rdfs:comment": "Schema:  One of pseudogene, dead, killed, live, predicted, suppressed.",
+      "rdfs:label": "hasStatus",
       "schema:domainIncludes": {
-        "@id": "bioschemastypes:ComputationalWorkflow"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "bioschemastypes:FormalParameter"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypes:output",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An output produced by the workflow",
-      "rdfs:label": "output",
-      "schema:domainIncludes": {
-        "@id": "bioschemastypes:ComputationalWorkflow"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "bioschemastypes:FormalParameter"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypes:documentation",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Documentation describing the ComputationalWorkflow and its use.",
-      "rdfs:label": "documentation",
-      "schema:domainIncludes": {
-        "@id": "bioschemastypes:ComputationalWorkflow"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypes:funding",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The funding for the workflow",
-      "rdfs:label": "funding",
-      "schema:sameAs": {
-        "@id": "schema:funding"
-      },
-      "schema:domainIncludes": {
-        "@id": "bioschemastypes:ComputationalWorkflow"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Grant"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypes:softwareRequirements",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Renaming schema.org/requirements as softwareRequirements. Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime). Supersedes requirements. ",
-      "rdfs:label": "softwareRequirements",
-      "schema:sameAs": {
-        "@id": "schema:softwareRequirements"
-      },
-      "schema:domainIncludes": {
-        "@id": "bioschemastypes:ComputationalWorkflow"
+        "@id": "bioschemastypes:Gene"
       },
       "schema:rangeIncludes": [
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
     },
     {
-      "@id": "bioschemastypes:defaultValue",
+      "@id": "bioschemastypes:alternativeOf",
       "@type": "rdf:Property",
-      "rdfs:comment": "The default value for the FormalParameter. This is commonly only used for Inputs.",
-      "rdfs:label": "defaultValue",
+      "rdfs:comment": "Another gene which is a variation of this one.",
+      "rdfs:label": "alternativeOf",
       "schema:domainIncludes": {
-        "@id": "bioschemastypes:FormalParameter"
+        "@id": "bioschemastypes:Gene"
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:Thing"
+          "@id": "schema:Gene"
         }
       ]
     },
     {
-      "@id": "bioschemastypes:valueRequired",
+      "@id": "bioschemastypes:encodesBioChemEntity",
       "@type": "rdf:Property",
-      "rdfs:comment": "If the FormalParameter must be specified. This is commonly only used for Inputs",
-      "rdfs:label": "valueRequired",
+      "rdfs:comment": "Another BioChemEntity encoded by this one. Inverse property: isEncodedByBioChemEntity.",
+      "rdfs:label": "encodesBioChemEntity",
       "schema:domainIncludes": {
-        "@id": "bioschemastypes:FormalParameter"
+        "@id": "bioschemastypes:Gene"
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Boolean"
+          "@id": "schema:BioChemEntity"
         }
       ]
     },
     {
-      "@id": "bioschemastypes:encodingFormat",
+      "@id": "bioschemastypes:expressedIn",
       "@type": "rdf:Property",
-      "rdfs:comment": "URLs to accepted formats.  It is strongly recommented that this be specified. If it is not specified, then nothing should be assumed about the encoding formats of the FormalParameter. Recommended ontology: http://edamontology.org/format_1915",
-      "rdfs:label": "encodingFormat",
+      "rdfs:comment": "Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.",
+      "rdfs:label": "expressedIn",
       "schema:domainIncludes": {
-        "@id": "bioschemastypes:FormalParameter"
+        "@id": "bioschemastypes:Gene"
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:AnatomicalStructure"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:AnatomicalSystem"
+        },
+        {
+          "@id": "schema:BioChemEntity"
+        },
+        {
+          "@id": "schema:DefinedTerm"
         }
       ]
     },
@@ -744,160 +637,21 @@
       ]
     },
     {
-      "@id": "bioschemastypes:parentTaxon",
-      "rdfs:comment": "Closest parent taxon of the taxon in question.\nInverse property: childTaxon Direct, most proximate higher-rank parent taxon",
+      "@id": "bioschemastypes:potentialUse",
+      "rdfs:comment": "Intended use of the BioChemEntity by humans. ",
       "@type": "rdf:Property",
-      "rdfs:label": "parentTaxon",
-      "schema:domainIncludes": {
-        "@id": "bioschemastypes:Taxon"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Taxon"
-        },
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypes:childTaxon",
-      "rdfs:comment": "Closest child taxa of the taxon in question. Inverse property: parentTaxon",
-      "@type": "rdf:Property",
-      "rdfs:label": "childTaxon",
-      "schema:domainIncludes": {
-        "@id": "bioschemastypes:Taxon"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Taxon"
-        },
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypes:hasDefinedTerm",
-      "rdfs:comment": "A TaxonName representing the currently valid (zoological) or accepted (botanical) name for that taxon ",
-      "@type": "rdf:Property",
-      "rdfs:label": "hasDefinedTerm",
-      "schema:domainIncludes": {
-        "@id": "bioschemastypes:Taxon"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:DefinedTerm"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypes:taxonRank",
-      "rdfs:comment": "The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary (e.g. the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs) ",
-      "@type": "rdf:Property",
-      "rdfs:label": "taxonRank",
-      "schema:domainIncludes": {
-        "@id": "bioschemastypes:Taxon"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypes:hasStatus",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Schema:  One of pseudogene, dead, killed, live, predicted, suppressed.",
-      "rdfs:label": "hasStatus",
-      "schema:domainIncludes": {
-        "@id": "bioschemastypes:Gene"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypes:alternativeOf",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Another gene which is a variation of this one.",
-      "rdfs:label": "alternativeOf",
-      "schema:domainIncludes": {
-        "@id": "bioschemastypes:Gene"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Gene"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypes:encodesBioChemEntity",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Another BioChemEntity encoded by this one. Inverse property: isEncodedByBioChemEntity.",
-      "rdfs:label": "encodesBioChemEntity",
-      "schema:domainIncludes": {
-        "@id": "bioschemastypes:Gene"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:BioChemEntity"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypes:expressedIn",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.",
-      "rdfs:label": "expressedIn",
-      "schema:domainIncludes": {
-        "@id": "bioschemastypes:Gene"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:AnatomicalStructure"
-        },
-        {
-          "@id": "schema:AnatomicalSystem"
-        },
-        {
-          "@id": "schema:BioChemEntity"
-        },
-        {
-          "@id": "schema:DefinedTerm"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypes:hasBioPolymerSequence",
-      "rdfs:comment": "A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.",
-      "@type": "rdf:Property",
-      "rdfs:label": "hasBioPolymerSequence",
+      "rdfs:label": "potentialUse",
       "schema:domainIncludes": [
         {
-          "@id": "bioschemastypes:Protein"
+          "@id": "bioschemastypes:ChemicalSubstance"
         },
         {
-          "@id": "bioschemastypes:Gene"
+          "@id": "bioschemastypes:MolecularEntity"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:DefinedTerm"
         }
       ]
     },
@@ -921,21 +675,21 @@
       ]
     },
     {
-      "@id": "bioschemastypes:potentialUse",
-      "rdfs:comment": "Intended use of the BioChemEntity by humans. ",
+      "@id": "bioschemastypes:hasBioPolymerSequence",
+      "rdfs:comment": "A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.",
       "@type": "rdf:Property",
-      "rdfs:label": "potentialUse",
+      "rdfs:label": "hasBioPolymerSequence",
       "schema:domainIncludes": [
         {
-          "@id": "bioschemastypes:ChemicalSubstance"
+          "@id": "bioschemastypes:Gene"
         },
         {
-          "@id": "bioschemastypes:MolecularEntity"
+          "@id": "bioschemastypes:Protein"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DefinedTerm"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -955,22 +709,13 @@
           "@id": "bioschemastypes:ChemicalSubstance"
         },
         {
-          "@id": "bioschemastypes:ComputationalWorkflow"
-        },
-        {
-          "@id": "bioschemastypes:FormalParameter"
+          "@id": "bioschemastypes:Gene"
         },
         {
           "@id": "bioschemastypes:MolecularEntity"
         },
         {
           "@id": "bioschemastypes:Protein"
-        },
-        {
-          "@id": "bioschemastypes:Taxon"
-        },
-        {
-          "@id": "bioschemastypes:Gene"
         }
       ],
       "schema:rangeIncludes": [
