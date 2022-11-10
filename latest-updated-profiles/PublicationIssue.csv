@@ -1,2 +1,2 @@
 time,namespace,name,subclassOf,version,url
-eb71890a-6103-11ed-a7ef-f3fd3e8574bb,bioschams,PublicationIssue,schema:PublicationIssue,v0.3-DRAFT,https://github.com/BioSchemas/specifications/tree/master/PublicationIssue/jsonld/PublicationIssue_v0.3-DRAFT.json
+251c7acc-6107-11ed-9841-19a704f678f1,bioschams,PublicationIssue,schema:PublicationIssue,v0.3-DRAFT,https://github.com/BioSchemas/specifications/tree/master/PublicationIssue/jsonld/PublicationIssue_v0.3-DRAFT.json
