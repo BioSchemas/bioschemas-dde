@@ -1,2 +1,2 @@
 time,namespace,name,subclassOf,version,url
-3041cd30-5f6f-11ed-ac8c-d3555d7c739e,bioschams,ChemicalSubstance,schema:ChemicalSubstance,ChemicalSubstance,https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.5-DRAFT.json
+9f53b9cc-6108-11ed-94e3-751afaf52cd9,bioschams,ChemicalSubstance,schema:ChemicalSubstance,v0.3-RELEASE-2019,https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/type/ChemicalSubstance_v0.3-RELEASE-2019_09_02.json
