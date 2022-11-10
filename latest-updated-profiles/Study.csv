@@ -1,2 +1,2 @@
 time,namespace,name,subclassOf,version,url
-d64fbe20-60f9-11ed-9d85-13ac1a71195f,bioschams,Study,bioschemastypes:Study,v0.3-DRAFT,https://github.com/BioSchemas/specifications/tree/master/Study/jsonld/Study_v0.3-DRAFT.json
+eb718916-6103-11ed-a7ef-f3fd3e8574bb,bioschams,Study,bioschemastypes:Study,v0.3-DRAFT-type,https://github.com/BioSchemas/specifications/tree/master/Study/jsonld/type/Study_v0.3-DRAFT-type.json

@@ -1,0 +1,2 @@
+time,namespace,name,subclassOf,version,url
+eb718909-6103-11ed-a7ef-f3fd3e8574bb,bioschams,Protein,schema:Protein,v0.3-RELEASE-2019,https://github.com/BioSchemas/specifications/tree/master/Protein/jsonld/type/Protein_v0.3-RELEASE-2019_09_02.json
