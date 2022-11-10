@@ -12,9 +12,9 @@ def get_raw_url(url):
     if 'raw' not in url:
         rawrawurl = url.replace('github.com','raw.githubusercontent.com')
         if 'master' in rawrawurl:
-            rawurl = rawrawurl.replace('/blob/master/','/master/')
+            rawurl = rawrawurl.replace('/blob/master/','/master/').replace('/tree/master/','/master/')
         elif 'main' in rawrawurl:
-            rawurl = rawrawurl.replace('/blob/main/','/main/')
+            rawurl = rawrawurl.replace('/blob/main/','/main/').replace('/tree/master/','/master/')
     else:
         rawurl = url
     return rawurl
@@ -338,7 +338,7 @@ def merge_specs(spec_list):
         cleangraph.append(a)
     conformsTo = define_conformsTo(classlist)
     cleangraph.append(conformsTo)
-    bioschemas_json['@context'] = check_context_url(allcontext,spec_json,tmpnamespace)
+    bioschemas_json['@context'] = allcontext
     bioschemas_json['@graph']=cleangraph
     return bioschemas_json
 
