@@ -1,0 +1,2 @@
+time,namespace,name,subclassOf,version,url
+76ebb361-5f86-11ed-9f74-59f771d69c44,bioschams,Event,schema:Event,Event,https://github.com/BioSchemas/specifications/tree/master/Event/jsonld/Event_v0.3-DRAFT.json

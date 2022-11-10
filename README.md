@@ -6,9 +6,17 @@ DO NOT EDIT the bioschemas.json file directly. Updates to this file will be over
 ### To update a specification via github:
  1. Fork the bioschemas specification repository
  2. Go to the specification folder of interest
- 4. add your updated json specification to the jsonld folder of the appropriate specification folder and  name it '{Class}_{version}-RELEASE.json' or '{Class}_{version}-DRAFT.json'. Deprecated specifications should be named '{Class}_{version}-DEPRECATED.json'.
+ 3. add your updated json specification to the jsonld folder of the appropriate specification folder and  name it '{Class}_{version}-RELEASE.json' or '{Class}_{version}-DRAFT.json'. Deprecated specifications should be named '{Class}_{version}-DEPRECATED.json'.
 
-### To update a specification via the DDE:
+### Automated updates
+Note that this repository automatically receives updates from Sahar's script for converting the jsonld files in the Specifications Repository into the bioschemas website pages. These updates trigger the following scripts so that manual updates should NOT be needed these updates include:
+ 1. Identifying the files updated from Sahar's script
+ 2. Checking if these updated files are the newest versions of specifications stored in the DDE
+ 3. Automatically updating the the specification in the DDE
+
+If you do not see your updated specification in the DDE, you may need to manually override the appropriate table (see below)
+
+### To manually update a specification via the DDE:
  1. Go to https://discovery.biothings.io/registry
  2. Search for "bioschemas". There are several version of bioschemas in the DDE. Be sure to start with the one that's most appropriate for your purpose:
     * `bioschemas` - Will give you the most recent RELEASED version of a PROFILE
