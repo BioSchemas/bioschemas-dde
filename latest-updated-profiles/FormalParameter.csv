@@ -1,2 +1,2 @@
 time,namespace,name,subclassOf,version,url
-76ebb362-5f86-11ed-9f74-59f771d69c44,bioschams,FormalParameter,bioschemastypes:FormalParameter,FormalParameter,https://github.com/BioSchemas/specifications/tree/master/FormalParameter/jsonld/FormalParameter_v1.1-DRAFT.json
+75ebb59c-61b0-11ed-9434-512f57bb93d8,bioschams,FormalParameter,bioschemastypes:FormalParameter,v1.1-DRAFT,https://github.com/BioSchemas/specifications/tree/master/FormalParameter/jsonld/FormalParameter_v1.1-DRAFT.json
