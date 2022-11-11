@@ -25,28 +25,15 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         python update_repo_tables.py
+        python time.sleep(30)
+        python updated_specs.py
     - name: Commit files
-      id: commit_csvs
+      id: commit
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "github-actions"
         git add --all
         git commit -m "update csv data" -a
-    - name: push changes
-      uses: ad-m/github-push-action@v0.6.0
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: main 
-    - name: Install dependencies
-      run: |
-        python updated_specs.py
-    - name: Commit files
-      id: commit_json
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "github-actions"
-        git add --all
-        git commit -m "update json data" -a
     - name: push changes
       uses: ad-m/github-push-action@v0.6.0
       with:
