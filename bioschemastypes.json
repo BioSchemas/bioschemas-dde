@@ -10,9 +10,23 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "11/10/2022, 12:24:36"
+    "@dateModified": "11/16/2022, 06:41:52"
   },
   "@graph": [
+    {
+      "@id": "bioschemastypes:Taxon",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A set of organisms asserted to represent a natural cohesive biological unit. Version: 0.3-RELEASE-2019_11_18. Note that this version of the Taxon type has been added as a pending class to schema.org.",
+      "schema:schemaVersion": [
+        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/type/Taxon_v0.3-RELEASE-2019_11_18.json",
+        "https://bioschemas.org/types/Taxon/0.3-RELEASE-2019_11_18"
+      ],
+      "rdfs:label": "Taxon",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      },
+      "additional_type": "https://bioschemas.org/types#nav-release"
+    },
     {
       "@id": "bioschemastypes:BioChemEntity",
       "@type": "rdfs:Class",
@@ -20,8 +34,8 @@
       "rdfs:label": "BioChemEntity",
       "schema:additionalType": "https://bioschemas.org/types#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/BioChemEntity/jsonld/type/BioChemEntity_v0.7-RELEASE.json",
-        "https://bioschemas.org/types/BioChemEntity/0.7-RELEASE"
+        "https://bioschemas.org/types/BioChemEntity/0.7-RELEASE",
+        "https://github.com/BioSchemas/specifications/tree/master/BioChemEntity/jsonld/type/BioChemEntity_v0.7-RELEASE.json"
       ],
       "rdfs:subClassOf": {
         "@id": "schema:Thing"
@@ -35,8 +49,8 @@
       "rdfs:label": "BioSample",
       "schema:additionalType": "https://bioschemas.org/types#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/BioSample/0.1-RELEASE",
-        "https://github.com/BioSchemas/specifications/tree/master/BioSample/jsonld/type/BioSample_v0.1-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/tree/master/BioSample/jsonld/type/BioSample_v0.1-RELEASE.json",
+        "https://bioschemas.org/types/BioSample/0.1-RELEASE"
       ],
       "rdfs:subClassOf": {
         "@id": "schema:BioChemEntity"
@@ -76,8 +90,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity. (Source: ChEBI:23367). Note, this version has been updated to a pending class in schema.org.",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/MolecularEntity/0.3-RELEASE-2019_09_02",
-        "https://github.com/BioSchemas/specifications/tree/master/MolecularEntity/jsonld/type/MolecularEntity_v0.3-RELEASE-2019_09_02.json"
+        "https://github.com/BioSchemas/specifications/tree/master/MolecularEntity/jsonld/type/MolecularEntity_v0.3-RELEASE-2019_09_02.json",
+        "https://bioschemas.org/types/MolecularEntity/0.3-RELEASE-2019_09_02"
       ],
       "rdfs:label": "MolecularEntity",
       "rdfs:subClassOf": {
@@ -90,14 +104,102 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Protein is here used in its widest possible definition, as classes of amino acid based molecules. Amyloid-beta Protein in human (UniProt P05067), eukaryota (e.g. an OrthoDB group) or even a single molecule that one can point to are all of type schema:Protein. A protein can thus be a subclass of another protein, e.g. schema:Protein as a UniProt record can have multiple isoforms inside it which would also be schema:Protein. They can be imagined, synthetic, hypothetical or naturally occurring. This version has been added to schema.org as a pending type.",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/Protein/jsonld/type/Protein_v0.3-RELEASE-2019_09_02.json",
-        "https://bioschemas.org/types/Protein/0.3-RELEASE-2019_09_02"
+        "https://bioschemas.org/types/Protein/0.3-RELEASE-2019_09_02",
+        "https://github.com/BioSchemas/specifications/tree/master/Protein/jsonld/type/Protein_v0.3-RELEASE-2019_09_02.json"
       ],
       "rdfs:label": "Protein",
       "rdfs:subClassOf": {
         "@id": "schema:BioChemEntity"
       },
       "additional_type": "https://bioschemas.org/types#nav-release"
+    },
+    {
+      "@id": "bioschemastypes:FormalParameter",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A FormalParameter is an identified variable used to stand for the actual value(s) that are consumed/produced by a set of steps. Version: 1.0-RELEASE (09 March 2021) ",
+      "schema:schemaVersion": [
+        "https://bioschemas.org/types/FormalParameter/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/type/FormalParameter_v1.0-RELEASE.json"
+      ],
+      "rdfs:label": "FormalParameter",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
+      },
+      "additional_type": "https://bioschemas.org/types#nav-release"
+    },
+    {
+      "@id": "bioschemastypes:parentTaxon",
+      "rdfs:comment": "Closest parent taxon of the taxon in question.\nInverse property: childTaxon Direct, most proximate higher-rank parent taxon",
+      "@type": "rdf:Property",
+      "rdfs:label": "parentTaxon",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:Taxon"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Taxon"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:childTaxon",
+      "rdfs:comment": "Closest child taxa of the taxon in question. Inverse property: parentTaxon",
+      "@type": "rdf:Property",
+      "rdfs:label": "childTaxon",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:Taxon"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Taxon"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:hasDefinedTerm",
+      "rdfs:comment": "A TaxonName representing the currently valid (zoological) or accepted (botanical) name for that taxon ",
+      "@type": "rdf:Property",
+      "rdfs:label": "hasDefinedTerm",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:Taxon"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:taxonRank",
+      "rdfs:comment": "The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary (e.g. the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs) ",
+      "@type": "rdf:Property",
+      "rdfs:label": "taxonRank",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:Taxon"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
     },
     {
       "@id": "bioschemastypes:associatedDisease",
@@ -637,40 +739,50 @@
       ]
     },
     {
-      "@id": "bioschemastypes:potentialUse",
-      "rdfs:comment": "Intended use of the BioChemEntity by humans. ",
+      "@id": "bioschemastypes:defaultValue",
       "@type": "rdf:Property",
-      "rdfs:label": "potentialUse",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemastypes:ChemicalSubstance"
-        },
-        {
-          "@id": "bioschemastypes:MolecularEntity"
-        }
-      ],
+      "rdfs:comment": "The default value for the FormalParameter. This is commonly only used for Inputs.",
+      "rdfs:label": "defaultValue",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:FormalParameter"
+      },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DefinedTerm"
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:Thing"
         }
       ]
     },
     {
-      "@id": "bioschemastypes:chemicalRole",
-      "rdfs:comment": "A role played by the BioChemEntity within a chemical context. A role played by the molecular entity within a chemical context.",
+      "@id": "bioschemastypes:valueRequired",
       "@type": "rdf:Property",
-      "rdfs:label": "chemicalRole",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemastypes:ChemicalSubstance"
-        },
-        {
-          "@id": "bioschemastypes:MolecularEntity"
-        }
-      ],
+      "rdfs:comment": "If the FormalParameter must be specified. This is commonly only used for Inputs",
+      "rdfs:label": "valueRequired",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:FormalParameter"
+      },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DefinedTerm"
+          "@id": "schema:Boolean"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:encodingFormat",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URLs to accepted formats.  It is strongly recommented that this be specified. If it is not specified, then nothing should be assumed about the encoding formats of the FormalParameter. Recommended ontology: http://edamontology.org/format_1915",
+      "rdfs:label": "encodingFormat",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:FormalParameter"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
         }
       ]
     },
@@ -694,11 +806,52 @@
       ]
     },
     {
+      "@id": "bioschemastypes:chemicalRole",
+      "rdfs:comment": "A role played by the BioChemEntity within a chemical context. A role played by the molecular entity within a chemical context.",
+      "@type": "rdf:Property",
+      "rdfs:label": "chemicalRole",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypes:ChemicalSubstance"
+        },
+        {
+          "@id": "bioschemastypes:MolecularEntity"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:potentialUse",
+      "rdfs:comment": "Intended use of the BioChemEntity by humans. ",
+      "@type": "rdf:Property",
+      "rdfs:label": "potentialUse",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypes:ChemicalSubstance"
+        },
+        {
+          "@id": "bioschemastypes:MolecularEntity"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ]
+    },
+    {
       "@id": "dct:conformsTo",
       "@type": "rdf:Property",
       "rdfs:comment": "Used to state the Bioschemas profile that the markup relates to. The versioned URL of the profile must be used. Note that we use a CURIE in the table here but the full URL for Dublin Core terms must be used in the markup (http://purl.org/dc/terms/conformsTo), see example.",
       "rdfs:label": "conformsTo",
       "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypes:Taxon"
+        },
         {
           "@id": "bioschemastypes:BioChemEntity"
         },
@@ -716,6 +869,9 @@
         },
         {
           "@id": "bioschemastypes:Protein"
+        },
+        {
+          "@id": "bioschemastypes:FormalParameter"
         }
       ],
       "schema:rangeIncludes": [
