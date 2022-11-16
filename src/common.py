@@ -366,7 +366,7 @@ def check_for_updates(script_path,updateall=False):
     type_file = os.path.join(script_path,'type_list.txt')
     type_draft_file = os.path.join(script_path,'draft_type_list.txt')
     deprecated = os.path.join(script_path,'deprecated.txt')
-    filelist = [profile_file,profile_draft_file,type_file,type_draft_file,deprecated]
+    filelist = [type_file,type_draft_file,profile_file,profile_draft_file,deprecated]
     updatedlist = []
     if updateall==True:
         updatedlist = filelist
