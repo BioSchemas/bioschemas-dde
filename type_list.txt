@@ -1,5 +1,4 @@
 namespace	name	subClassOf	type	version	url
-bioschemastypes	ComputationalWorkflow	schema:SoftwareSourceCode	Type	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/type/ComputationalWorkflow_v1.0-RELEASE.json
 bioschemastypes	Taxon	schema:Thing	Type	0.3-RELEASE-2019_11_18	https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/type/Taxon_v0.3-RELEASE-2019_11_18.json
 bioschemas	BioChemEntity	schema:BioChemEntity	Type	0.7-RELEASE	https://github.com/BioSchemas/specifications/tree/master/BioChemEntity/jsonld/type/BioChemEntity_v0.7-RELEASE.json
 bioschemas	BioSample	schema:BioChemEntity	Type	0.1-RELEASE	https://github.com/BioSchemas/specifications/tree/master/BioSample/jsonld/type/BioSample_v0.1-RELEASE.json
@@ -8,3 +7,4 @@ bioschemastypes	Gene	schema:BioChemEntity	Type	0.3-RELEASE-2019_09_02	https://gi
 bioschemastypes	MolecularEntity	schema:BioChemEntity	Type	0.3-RELEASE-2019_09_02	https://github.com/BioSchemas/specifications/tree/master/MolecularEntity/jsonld/type/MolecularEntity_v0.3-RELEASE-2019_09_02.json
 bioschemastypes	Protein	schema:BioChemEntity	Type	0.3-RELEASE-2019_09_02	https://github.com/BioSchemas/specifications/tree/master/Protein/jsonld/type/Protein_v0.3-RELEASE-2019_09_02.json
 bioschemastypes	FormalParameter	schema:Intangible	Type	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/type/FormalParameter_v1.0-RELEASE.json
+bioschemastypes	ComputationalWorkflow	schema:SoftwareSourceCode	Type	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/type/ComputationalWorkflow_v1.0-RELEASE.json
