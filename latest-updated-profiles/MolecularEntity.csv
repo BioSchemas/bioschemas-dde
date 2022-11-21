@@ -1,2 +1,2 @@
 time,namespace,name,subclassOf,version,url
-9f53b9d7-6108-11ed-94e3-751afaf52cd9,bioschams,MolecularEntity,schema:MolecularEntity,v0.3-RELEASE-2019,https://github.com/BioSchemas/specifications/tree/master/MolecularEntity/jsonld/type/MolecularEntity_v0.3-RELEASE-2019_09_02.json
+31fc6ac2-69b0-11ed-accd-cb35c2e4a4e1,bioschams,MolecularEntity,schema:MolecularEntity,v0.6-DRAFT,https://github.com/BioSchemas/specifications/tree/master/MolecularEntity/jsonld/MolecularEntity_v0.6-DRAFT.json

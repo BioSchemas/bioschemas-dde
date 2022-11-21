@@ -1,2 +1,2 @@
 time,namespace,name,subclassOf,version,url
-50e11e62-6111-11ed-a2c0-7f8a8109e90b,bioschams,TrainingMaterial,schema:LearningResource,v0.10-DRAFT,https://github.com/BioSchemas/specifications/tree/master/TrainingMaterial/jsonld/TrainingMaterial_v0.10-DRAFT.json
+377ebeea-69b3-11ed-9174-e3b17bc3e8a9,bioschams,TrainingMaterial,schema:LearningResource,v0.10-DRAFT,https://github.com/BioSchemas/specifications/tree/master/TrainingMaterial/jsonld/TrainingMaterial_v0.10-DRAFT.json
