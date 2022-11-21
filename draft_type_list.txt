@@ -4,12 +4,12 @@ bioschemastypesdrafts	SequenceRange	schema:BioChemEntity	Type	0.1-DRAFT-2019_06_
 bioschemastypesdrafts	TaxonName	schema:CreativeWork	Type	0.1-DRAFT-TYPE	https://github.com/BioSchemas/specifications/blob/master/TaxonName/jsonld/type/TaxonName_v0.1-DRAFT.json
 issue542	BioChemEntity	schema:BioChemEntity	Type	0.8-DRAFT	https://github.com/BioSchemas/specifications/blob/master/BioChemEntity/jsonld/type/BioChemEntity_v0.8-DRAFT.jsonld
 bioschemastypesdrafts	Study	schema:CreativeWork	Type	0.3-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Study/jsonld/type/Study_v0.3-DRAFT.json
+bioschemastypesdrafts	LabProtocol	schema:CreativeWork	Type	0.3-DRAFT-2019_06_20	https://github.com/BioSchemas/specifications/tree/master/LabProtocol/jsonld/type/LabProtocol_v0.3-DRAFT-2019_06_20.json
+bioschemastypesdrafts	Phenotype	schema:Thing	Type	0.3-DRAFT-2020_06_07	https://github.com/BioSchemas/specifications/tree/master/Phenotype/jsonld/type/Phenotype_v0.3-DRAFT-2020_06_07.json
+bioschemastypesdrafts	SequenceAnnotation	schema:BioChemEntity	Type	0.1-DRAFT-2019_06_21	https://github.com/BioSchemas/specifications/tree/master/SequenceAnnotation/jsonld/type/SequenceAnnotation_v0.1-DRAFT-2019_06_21.json
+bioschemastypesdrafts	Taxon	schema:Thing	Type	0.4-DRAFT	https://github.com/BioSchemas/specifications/tree/master/Taxon/jsonld/type/Taxon_v0.4-DRAFT.json
 bioschemas	BioChemStructure	schema:BioChemEntity	Type	0.1-DRAFT-2019_06_20	https://github.com/BioSchemas/specifications/tree/master/BioChemStructure/jsonld/type/BioChemStructure_v0.1-DRAFT-2019_06_20.json
 bioschemas	DNA	schema:BioChemEntity	Type	0.2-DRAFT-2019_06_20	https://github.com/BioSchemas/specifications/tree/master/DNA/jsonld/type/DNA_v0.2-DRAFT-2019_06_20.json
 bioschemas	Enzyme	schema:BioChemEntity	Type	0.1-DRAFT-2019_06_20	https://github.com/BioSchemas/specifications/tree/master/Enzyme/jsonld/type/Enzyme_v0.1-DRAFT-2019_06_20.json
-bioschemastypesdrafts	LabProtocol	schema:CreativeWork	Type	0.3-DRAFT-2019_06_20	https://github.com/BioSchemas/specifications/tree/master/LabProtocol/jsonld/type/LabProtocol_v0.3-DRAFT-2019_06_20.json
-bioschemastypesdrafts	Phenotype	schema:Thing	Type	0.3-DRAFT-2020_06_07	https://github.com/BioSchemas/specifications/tree/master/Phenotype/jsonld/type/Phenotype_v0.3-DRAFT-2020_06_07.json
 bioschemastypesdrafts	Sample	schema:Sample	Type	0.2-DRAFT-2018_11_09	https://github.com/BioSchemas/specifications/tree/master/Sample/jsonld/type/Sample_v0.2-DRAFT-2018_11_09.json
-bioschemastypesdrafts	SequenceAnnotation	schema:BioChemEntity	Type	0.1-DRAFT-2019_06_21	https://github.com/BioSchemas/specifications/tree/master/SequenceAnnotation/jsonld/type/SequenceAnnotation_v0.1-DRAFT-2019_06_21.json
 bioschemas	SequenceMatchingModel	schema:CreativeWork	Type	0.1-DRAFT-2019_06_21	https://github.com/BioSchemas/specifications/tree/master/SequenceMatchingModel/jsonld/type/SequenceMatchingModel_v0.1-DRAFT-2019_06_21.json
-bioschemastypesdrafts	Taxon	schema:Thing	Type	0.4-DRAFT	https://github.com/BioSchemas/specifications/tree/master/Taxon/jsonld/type/Taxon_v0.4-DRAFT.json
