@@ -1,2 +1,2 @@
 time,namespace,name,subclassOf,version,url
-940a1f9c-69b1-11ed-9a8d-f501e1d52649,bioschams,Gene,schema:Gene,v1.1-DRAFT,https://github.com/BioSchemas/specifications/tree/master/Gene/jsonld/Gene_v1.1-DRAFT.json
+86bfe0b8-69b8-11ed-9ea3-ed2e8ec20c96,bioschams,Gene,schema:Gene,v1.0-RELEASE,https://github.com/BioSchemas/specifications/tree/master/Gene/jsonld/Gene_v1.0-RELEASE.json
