@@ -27,7 +27,6 @@ jobs:
     - name: run table updates
       run: |
         python update_repo_tables.py
-        python time.sleep(30)
     - name: Commit files
       id: commit_tables
       run: |
@@ -42,6 +41,7 @@ jobs:
         branch: main
     - name: Run spec updates
       run: |
+        sleep 30
         python updated_specs.py
     - name: Commit files
       id: commit_son
