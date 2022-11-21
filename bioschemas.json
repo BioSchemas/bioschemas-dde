@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "11/10/2022, 12:24:27",
+    "@dateModified": "11/21/2022, 16:57:59",
     "dwc": "http://rs.tdwg.org/dwc/terms/"
   },
   "@graph": [
@@ -326,8 +326,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.4-RELEASE.json",
-        "https://bioschemas.org/profiles/ChemicalSubstance/0.4-RELEASE"
+        "https://bioschemas.org/profiles/ChemicalSubstance/0.4-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.4-RELEASE.json"
       ]
     },
     {
@@ -491,12 +491,21 @@
                 }
               },
               {
-                "$ref": "#/definitions/anatomicalPart"
+                "$ref": "#/definitions/anatomicalStructure"
               },
               {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/anatomicalPart"
+                  "$ref": "#/definitions/anatomicalStructure"
+                }
+              },
+              {
+                "$ref": "#/definitions/anatomicalSystem"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/anatomicalSystem"
                 }
               }
             ],
@@ -912,29 +921,15 @@
             },
             "required": []
           },
-          "anatomicalPart": {
-            "anyOf": [
-              {
-                "@type": "AnatomicalStructure",
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "required": []
-              },
-              {
-                "@type": "AnatomicalSystem",
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "required": []
+          "anatomicalStructure": {
+            "@type": "AnatomicalSystem",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
               }
-            ]
+            },
+            "required": []
           },
           "conformsDefinition": {
             "@type": "CreativeWork",
@@ -963,8 +958,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Gene/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.0-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.0-RELEASE.json",
+        "https://bioschemas.org/profiles/Gene/1.0-RELEASE"
       ]
     },
     {
@@ -2969,8 +2964,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/FormalParameter_v1.0-RELEASE.json",
-        "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+        "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/FormalParameter_v1.0-RELEASE.json"
       ]
     },
     {
@@ -4738,8 +4733,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE.json",
+        "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
       ]
     },
     {
@@ -5807,8 +5802,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Sample/0.2-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE.json",
+        "https://bioschemas.org/profiles/Sample/0.2-RELEASE"
       ]
     },
     {
