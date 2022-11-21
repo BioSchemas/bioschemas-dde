@@ -1,0 +1,2 @@
+time,namespace,name,subclassOf,version,url
+52f07638-69b5-11ed-8631-f568d808c712,bioschams,ProteinStructure,schema:BioChemEntity,v0.6-DRAFT,https://github.com/BioSchemas/specifications/tree/master/ProteinStructure/jsonld/ProteinStructure_v0.6-DRAFT.json
