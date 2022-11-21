@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "11/16/2022, 08:02:12"
+    "@dateModified": "11/21/2022, 08:49:55"
   },
   "@graph": [
     {
@@ -18,8 +18,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A set of organisms asserted to represent a natural cohesive biological unit. Version: 0.3-RELEASE-2019_11_18. Note that this version of the Taxon type has been added as a pending class to schema.org.",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/Taxon/0.3-RELEASE-2019_11_18",
-        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/type/Taxon_v0.3-RELEASE-2019_11_18.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/type/Taxon_v0.3-RELEASE-2019_11_18.json",
+        "https://bioschemas.org/types/Taxon/0.3-RELEASE-2019_11_18"
       ],
       "rdfs:label": "Taxon",
       "rdfs:subClassOf": {
@@ -34,8 +34,8 @@
       "rdfs:label": "BioChemEntity",
       "schema:additionalType": "https://bioschemas.org/types#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/BioChemEntity/jsonld/type/BioChemEntity_v0.7-RELEASE.json",
-        "https://bioschemas.org/types/BioChemEntity/0.7-RELEASE"
+        "https://bioschemas.org/types/BioChemEntity/0.7-RELEASE",
+        "https://github.com/BioSchemas/specifications/tree/master/BioChemEntity/jsonld/type/BioChemEntity_v0.7-RELEASE.json"
       ],
       "rdfs:subClassOf": {
         "@id": "schema:Thing"
@@ -49,8 +49,8 @@
       "rdfs:label": "BioSample",
       "schema:additionalType": "https://bioschemas.org/types#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/BioSample/0.1-RELEASE",
-        "https://github.com/BioSchemas/specifications/tree/master/BioSample/jsonld/type/BioSample_v0.1-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/tree/master/BioSample/jsonld/type/BioSample_v0.1-RELEASE.json",
+        "https://bioschemas.org/types/BioSample/0.1-RELEASE"
       ],
       "rdfs:subClassOf": {
         "@id": "schema:BioChemEntity"
@@ -62,8 +62,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A chemical substance is 'a portion of matter of constant composition, composed of molecular entities of the same type or of different types' (source: ChEBI:59999). Version: 0.3-RELEASE-2019_09_02. This version is was released as a pending class as of schema.org version 13",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/type/ChemicalSubstance_v0.3-RELEASE-2019_09_02.json",
-        "https://bioschemas.org/types/ChemicalSubstance/0.3-RELEASE-2019_09_02"
+        "https://bioschemas.org/types/ChemicalSubstance/0.3-RELEASE-2019_09_02",
+        "https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/type/ChemicalSubstance_v0.3-RELEASE-2019_09_02.json"
       ],
       "rdfs:label": "ChemicalSubstance",
       "rdfs:subClassOf": {
@@ -104,8 +104,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Protein is here used in its widest possible definition, as classes of amino acid based molecules. Amyloid-beta Protein in human (UniProt P05067), eukaryota (e.g. an OrthoDB group) or even a single molecule that one can point to are all of type schema:Protein. A protein can thus be a subclass of another protein, e.g. schema:Protein as a UniProt record can have multiple isoforms inside it which would also be schema:Protein. They can be imagined, synthetic, hypothetical or naturally occurring. This version has been added to schema.org as a pending type.",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/Protein/jsonld/type/Protein_v0.3-RELEASE-2019_09_02.json",
-        "https://bioschemas.org/types/Protein/0.3-RELEASE-2019_09_02"
+        "https://bioschemas.org/types/Protein/0.3-RELEASE-2019_09_02",
+        "https://github.com/BioSchemas/specifications/tree/master/Protein/jsonld/type/Protein_v0.3-RELEASE-2019_09_02.json"
       ],
       "rdfs:label": "Protein",
       "rdfs:subClassOf": {
@@ -132,8 +132,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A computational workflow consists of an orchestrated and repeatable pattern of activity enabled by the systematic organization of resources into processes that transform materials, provide services, or process information (source Wikipedia.org). It is executed by a computational process and is thus distinct from laboratory or business workflows. version 1.0-RELEASE",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/type/ComputationalWorkflow_v1.0-RELEASE.json",
-        "https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE"
+        "https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/type/ComputationalWorkflow_v1.0-RELEASE.json"
       ],
       "rdfs:label": "ComputationalWorkflow",
       "rdfs:subClassOf": {
@@ -902,25 +902,6 @@
       ]
     },
     {
-      "@id": "bioschemastypes:potentialUse",
-      "rdfs:comment": "Intended use of the BioChemEntity by humans. ",
-      "@type": "rdf:Property",
-      "rdfs:label": "potentialUse",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemastypes:ChemicalSubstance"
-        },
-        {
-          "@id": "bioschemastypes:MolecularEntity"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:DefinedTerm"
-        }
-      ]
-    },
-    {
       "@id": "bioschemastypes:hasBioPolymerSequence",
       "rdfs:comment": "A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.",
       "@type": "rdf:Property",
@@ -936,6 +917,25 @@
       "schema:rangeIncludes": [
         {
           "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:potentialUse",
+      "rdfs:comment": "Intended use of the BioChemEntity by humans. ",
+      "@type": "rdf:Property",
+      "rdfs:label": "potentialUse",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypes:ChemicalSubstance"
+        },
+        {
+          "@id": "bioschemastypes:MolecularEntity"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
         }
       ]
     },
