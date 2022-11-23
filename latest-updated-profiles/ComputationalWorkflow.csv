@@ -1,2 +1,2 @@
 time,namespace,name,subclassOf,version,url
-393a171e-6b39-11ed-ba39-b33d794bcb96,bioschams,ComputationalWorkflow,bioschemastypes:ComputationalWorkflow,v2.0-DRAFT,https://github.com/BioSchemas/specifications/tree/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v2.0-DRAFT.json
+ee594c0c-6b3c-11ed-b6ba-7f0dc321a22e,bioschams,ComputationalWorkflow,bioschemastypes:ComputationalWorkflow,v2.0-DRAFT,https://github.com/BioSchemas/specifications/tree/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v2.0-DRAFT.json
