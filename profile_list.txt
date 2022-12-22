@@ -10,3 +10,6 @@ bioschemas	ComputationalWorkflow	bioschemastypes:ComputationalWorkflow	Profile	1
 bioschemas	DataCatalog	schema:DataCatalog	Profile	0.3-RELEASE	https://github.com/BioSchemas/specifications/blob/master/DataCatalog/jsonld/DataCatalog_v0.3-RELEASE.json
 bioschemas	Dataset	schema:Dataset	Profile	0.3-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v0.3-RELEASE.json
 bioschemas	Sample	bioschemastypes:Sample	Profile	0.2-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE.json
+bioschemas	Course	schema:Course	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Course/jsonld/Course_v1.0-RELEASE.json
+bioschemas	CourseInstance	schema:CourseInstance	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v1.0-RELEASE.json
+bioschemas	TrainingMaterial	schema:LearningResource	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/TrainingMaterial/jsonld/TrainingMaterial_v1.0-RELEASE.json

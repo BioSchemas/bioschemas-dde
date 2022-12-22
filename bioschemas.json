@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "11/21/2022, 17:46:12",
+    "@dateModified": "12/22/2022, 09:57:50",
     "dwc": "http://rs.tdwg.org/dwc/terms/"
   },
   "@graph": [
@@ -2025,8 +2025,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/MolecularEntity/jsonld/MolecularEntity_v0.5-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/MolecularEntity/jsonld/MolecularEntity_v0.5-RELEASE.json",
+        "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE"
       ]
     },
     {
@@ -5807,6 +5807,2192 @@
       ]
     },
     {
+      "@id": "bioschemas:Course",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Specification describing a course.  This specification must be used in tandem with a courseInstance. A course is used to describe the broad, common aspects of a recurring training event - whereas a course instance is about the specific times and location of when that course is held. <h4>Summary of Changes</h4>    No changes since 0.10-DRAFT of the Course profile.</li>         </ul> Version: 1.0-RELEASE (13 September 2022) ",
+      "schema:schemaVersion": [
+        "https://github.com/BioSchemas/specifications/blob/master/Course/jsonld/Course_v1.0-RELEASE.json",
+        "https://bioschemas.org/profiles/Course/1.0-RELEASE"
+      ],
+      "rdfs:label": "Course",
+      "rdfs:subClassOf": {
+        "@id": "schema:Course"
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "about": {
+            "description": "The subject of this Course. \nUse the DefinedTerm type to add a controlled vocabulary term to categorise the course (such as using the [EDAM Topic ontology](https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0003)). The subject matter of the content.\nInverse property: subjectOf.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/thing"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/thing"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "abstract": {
+            "description": "An abstract is a short description that summarizes a Course An abstract is a short description that summarizes a CreativeWork",
+            "type": "string",
+            "owl:cardinality": "one"
+          },
+          "accessibilitySummary": {
+            "description": "A human-readable summary of specific accessibility features or deficiencies within the course. A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as \"short descriptions are present but long descriptions will be needed for non-visual users\" or \"short descriptions are present and no long descriptions are needed.\"",
+            "type": "string",
+            "owl:cardinality": "one"
+          },
+          "aggregateRating": {
+            "description": " The overall rating, based on a collection of reviews or ratings, of the item.",
+            "$ref": "#/definitions/aggregaterating",
+            "owl:cardinality": "one"
+          },
+          "alternateName": {
+            "description": " An alias for the item.",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "audience": {
+            "description": "The type of audience intended for your course. A succinct description of the attendees.  An intended audience, i.e. a group for whom something was created. Supersedes serviceAudience.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/audience"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/audience"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "citation": {
+            "description": " A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/creativework"
+                }
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "comment": {
+            "description": " Comments, typically from users.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/comment"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/comment"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "commentCount": {
+            "description": " The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.",
+            "type": "integer",
+            "owl:cardinality": "one"
+          },
+          "courseCode": {
+            "description": " The identifier for the Course used by the course provider (e.g. CS101 or 6.001).",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "coursePrerequisites": {
+            "description": " Requirements for taking the Course. May be completion of another Course or a textual description like \"permission of instructor\". Requirements may be a pre-requisite competency, referenced using AlignmentObject.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/course"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/course"
+                }
+              },
+              {
+                "$ref": "#/definitions/alignmentobject"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/alignmentobject"
+                }
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "creator": {
+            "description": "The creator/author of the course. Note, this may be different from the instructor who delivers it (descibed in CourseInstance), or the author who created the training materials used. The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "dateCreated": {
+            "description": " The date on which the CreativeWork was created or the item was added to a DataFeed.",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "$ref": "#/definitions/datetime"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "dateModified": {
+            "description": " The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.",
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "date"
+                }
+              },
+              {
+                "$ref": "#/definitions/datetime"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/datetime"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "description": {
+            "description": " A description of the item.",
+            "type": "string",
+            "owl:cardinality": "one"
+          },
+          "educationalCredentialAwarded": {
+            "description": "Strongly recommended if exists. A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course. A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/educationaloccupationalcredential"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "educationalLevel": {
+            "description": "The level expected to be able to participate in the course. Examples of educational levels include 'beginner', 'intermediate' or 'advanced'. The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/definedterm"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "hasCourseInstance": {
+            "description": "A course may be ran multiple times in different locations or at different times. Use hasCourseInstance to list the offerings of this Course.\n\nPlease see the [Course Instance specification](https://bioschemas.org/specifications/CourseInstance) for the full list of properties. An offering of the course at a specific time and place or through specific media or mode of study or to a specific section of students.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/courseinstance"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/courseinstance"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "hasPart": {
+            "description": "A training material used in a course such as an exercise, handouts, or slides. \n\nInverse property: isPartOf.\n\nIf this varies in a CourseInstance, use workFeatutred to override this property value.  Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).\nInverse property: isPartOf.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/creativework"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "image": {
+            "description": " An image of the item. This can be a URL or a fully described ImageObject.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/imageobject"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "isBasedOn": {
+            "description": "A course, book or other resource on which this Course is based. A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html. Supersedes isBasedOnUrl.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/creativework"
+                }
+              },
+              {
+                "$ref": "#/definitions/product"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/product"
+                }
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "keywords": {
+            "description": "Free text keywords delimited by commas describing the Course content. Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/definedterm"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "license": {
+            "description": "If the Course has an open-source license, include the short URL, as found in OSI. Otherwise use CreativeWork to describe your custom license. A license document that applies to this content, typically indicated by URL.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "mentions": {
+            "description": "Datasets, tools, technologies, entities etc, which are actively used by and/or referred to by this course.\n\nIf this varies in a *CourseInstance*, use the *CourseInstance* version of _mentions_ to override this mentions. Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/thing"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/thing"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "name": {
+            "description": " The name of the item.",
+            "type": "string",
+            "owl:cardinality": "one"
+          },
+          "provider": {
+            "description": "The organization responsible for providing the educational input for the course, e.g. content, assessments, accreditation etc.\nNote: providing a course goes beyond creating it as it implies some degree of academic responsibility for accrediting the content of the course, perhaps running assessments etc. The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller. Supersedes carrier.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "teaches": {
+            "description": "Statements that describe what knowledge, skills or abilities students should acquire on completion of this Course The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/definedterm"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/definedterm"
+                }
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "thumbnailUrl": {
+            "description": " A thumbnail image relevant to the Thing.",
+            "type": "string",
+            "format": "uri",
+            "owl:cardinality": "one"
+          },
+          "timeRequired": {
+            "description": "Approximate or typical time it takes to work through this learning resource for the typical intended target audience, e.g. 'P30M', 'P1H25M'. This should use the ISO 8601 duration format. \n\nIf this varies in a *CourseInstance*, use _duration_ in *CourseInstance* to override timeRequired. Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'P30M', 'P1H25M'.",
+            "$ref": "#/definitions/duration",
+            "owl:cardinality": "one"
+          },
+          "url": {
+            "description": "The preferred URL of the course page. You must provide this value if it is known. URL of the item.",
+            "type": "string",
+            "format": "uri",
+            "owl:cardinality": "one"
+          },
+          "conformsTo": {
+            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/Course/jsonld/Course_v1.0-RELEASE.json",
+            "$ref": "#/definitions/conformsDefinition"
+          }
+        },
+        "required": [
+          "description",
+          "keywords",
+          "name",
+          "conformsTo"
+        ],
+        "recommended": [
+          "about",
+          "abstract",
+          "aggregateRating",
+          "citation",
+          "coursePrerequisites",
+          "educationalLevel",
+          "hasCourseInstance",
+          "license",
+          "mentions",
+          "provider",
+          "teaches",
+          "timeRequired",
+          "url"
+        ],
+        "optional": [
+          "accessibilitySummary",
+          "alternateName",
+          "audience",
+          "comment",
+          "commentCount",
+          "courseCode",
+          "creator",
+          "dateCreated",
+          "dateModified",
+          "educationalCredentialAwarded",
+          "hasPart",
+          "image",
+          "isBasedOn",
+          "thumbnailUrl"
+        ],
+        "definitions": {
+          "thing": {
+            "@type": "schema:Thing",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "aggregaterating": {
+            "@type": "schema:AggregateRating",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "audience": {
+            "@type": "schema:Audience",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "creativework": {
+            "@type": "CreativeWork",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": []
+          },
+          "comment": {
+            "@type": "schema:Comment",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "course": {
+            "@type": "bioschemas:Course",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "alignmentobject": {
+            "@type": "schema:AlignmentObject",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "organization": {
+            "@type": "Organization",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "legalName": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "sameAs": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          },
+          "person": {
+            "@type": "Person",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "mainEntityOfPage": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  },
+                  {
+                    "$ref": "#/definitions/creativework"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/creativework"
+                    }
+                  }
+                ]
+              }
+            },
+            "required": [
+              "name"
+            ]
+          },
+          "datetime": {
+            "@type": "schema:DateTime",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "educationaloccupationalcredential": {
+            "@type": "schema:EducationalOccupationalCredential",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "definedterm": {
+            "@type": "DefinedTerm",
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "name": {
+                "type": "string"
+              },
+              "termCode": {
+                "type": "string"
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "inDefinedTermSet": {
+                "$ref": "#/definitions/definedtermset"
+              }
+            },
+            "required": []
+          },
+          "definedtermset": {
+            "@type": "DefinedTermSet",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": []
+          },
+          "courseinstance": {
+            "@type": "bioschemas:CourseInstance",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "imageobject": {
+            "@type": "ImageObject",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": []
+          },
+          "product": {
+            "@type": "schema:Product",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "duration": {
+            "@type": "schema:Duration",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "conformsDefinition": {
+            "@type": "CreativeWork",
+            "type": "object",
+            "properties": {
+              "identifier": {
+                "description": "The url of the version bioschemas profile that was used. For jsonschema, set @id to the identifier",
+                "oneOf": [
+                  {
+                    "enum": [
+                      "https://github.com/BioSchemas/specifications/blob/master/Course/jsonld/Course_v1.0-RELEASE.json"
+                    ]
+                  },
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "identifier"
+            ]
+          }
+        }
+      },
+      "additional_type": "https://bioschemas.org/profiles#nav-release"
+    },
+    {
+      "@id": "bioschemas:CourseInstance",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Specification describing the instance of a course.  This specification can be used in tandem with a Course. A course is used to describe the broad, common aspects of a recurring training event - whereas a course instance is about the specific times and location of when that course is held. <h4>Summary of Changes</h4>    No changes since 0.9-DRAFT of the CourseInstance profile. Version: 1.0-RELEASE (13 September 2022)",
+      "schema:schemaVersion": [
+        "https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v1.0-RELEASE.json",
+        "https://bioschemas.org/profiles/CourseInstance/1.0-RELEASE"
+      ],
+      "rdfs:label": "CourseInstance",
+      "rdfs:subClassOf": {
+        "@id": "schema:CourseInstance"
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "alternateName": {
+            "description": " An alias for the item.",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "contributor": {
+            "description": "Contributors are those who made non-authorship contributions: e.g., critical review, commentary or revision. A secondary contributor to the CreativeWork or Event.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "courseMode": {
+            "description": "The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. 'online', 'onsite' or 'blended'; 'synchronous' or 'asynchronous'; 'full-time' or 'part-time') or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ). \n The medium, means or pace of delivery of the course instance or the mode of study, either as a text label (e.g. 'online', 'onsite', 'hybrid' or 'blended'; 'synchronous' or 'asynchronous'; 'full-time' or 'part-time') or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ). \n Another example of a Glossary of terms as defined by the Bioschemas Training community and published in Zenodo in 2016: https://zenodo.org/record/166378#.YrHnEi8iu-o.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "description": {
+            "description": "A description of the Course Instance. \n\n(courseInstance) description can be used to override (course) description for specific course instances. A description of the item.",
+            "type": "string",
+            "owl:cardinality": "one"
+          },
+          "duration": {
+            "description": "(CourseInstance) duration can be used to override (Course) duration for specific course instances. The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
+            "$ref": "#/definitions/duration",
+            "owl:cardinality": "one"
+          },
+          "endDate": {
+            "description": " The end date and time of the item (in ISO 8601 date format).",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "$ref": "#/definitions/datetime"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "eventStatus": {
+            "description": "An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled. \n An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled. Used as text label (e.g. 'postponed', 'cancelled', 'date TBC', 'application open' or 'registration closed').",
+            "$ref": "#/definitions/eventstatustype",
+            "owl:cardinality": "one"
+          },
+          "funder": {
+            "description": " A person or organization that supports (sponsors) something through some kind of financial contribution.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "image": {
+            "description": " An image of the item. This can be a URL or a fully described ImageObject.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/imageobject"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "inLanguage": {
+            "description": " The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage. Supersedes language.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/language"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "instructor": {
+            "description": "An instructor can be the main teacher or trainer, as well as a training assistant, or a helper. A person assigned to instruct or provide instructional assistance for the CourseInstance.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "location": {
+            "description": "Location of the Course Instance. If the Course Instance is online, add the connection details as text The location of for example where the event is happening, an organization is located, or where an action takes place.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/place"
+              },
+              {
+                "$ref": "#/definitions/postaladdress"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "$ref": "#/definitions/virtuallocation"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "maximumAttendeeCapacity": {
+            "description": " The total number of individuals that may attend an event or venue.",
+            "type": "integer",
+            "owl:cardinality": "one"
+          },
+          "name": {
+            "description": "The name of the course.\n\nCourse instance name can be used to override Course name for variations in specific Course instances. Use name from Course unless the Course instance has a different name from the course. The name of the item.",
+            "type": "string",
+            "owl:cardinality": "one"
+          },
+          "offers": {
+            "description": "An offer to provide this item\u2014for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer. Inverse property: itemOffered. \n Bioschemas: The price an attendee would pay to attend this CourseInstance. The price currency can be for instance in 'GBP' (pound sterling) or 'CHF' (Swiss francs).",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/demand"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/demand"
+                }
+              },
+              {
+                "$ref": "#/definitions/offer"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/offer"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "organizer": {
+            "description": " An organizer of an Event.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "startDate": {
+            "description": " The start date and time of the item (in ISO 8601 date format).",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "$ref": "#/definitions/datetime"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "subEvent": {
+            "description": "For events within events e.g. guest lecture within a workshop event An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference. Supersedes subEvents.\nInverse property: superEvent.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/event"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/event"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "superEvent": {
+            "description": "Use to describe the event a course instance takes place within. e.g. Galaxy Workshop during the ISMB Conference.  An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.\nInverse property: subEvent.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/event"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/event"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "url": {
+            "description": "The preferred URL of this course instance. You must provide this value if it is known URL of the item.",
+            "type": "string",
+            "format": "uri",
+            "owl:cardinality": "one"
+          },
+          "workFeatured": {
+            "description": "A work featured in some event, e.g. exhibited in an ExhibitionEvent. Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent). \n The training material used in this specific course instance, or produced for this course instance. If this is the same for all Course Instances, use hasPart and/or mentions in Course instead",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/creativework"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "conformsTo": {
+            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v1.0-RELEASE.json",
+            "$ref": "#/definitions/conformsDefinition"
+          }
+        },
+        "required": [
+          "courseMode",
+          "location",
+          "conformsTo"
+        ],
+        "recommended": [
+          "endDate",
+          "inLanguage",
+          "instructor",
+          "offers",
+          "startDate",
+          "url"
+        ],
+        "optional": [
+          "alternateName",
+          "contributor",
+          "description",
+          "duration",
+          "eventStatus",
+          "funder",
+          "image",
+          "maximumAttendeeCapacity",
+          "name",
+          "organizer",
+          "subEvent",
+          "superEvent",
+          "workFeatured"
+        ],
+        "definitions": {
+          "organization": {
+            "@type": "Organization",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "legalName": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "sameAs": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          },
+          "person": {
+            "@type": "Person",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "mainEntityOfPage": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  },
+                  {
+                    "$ref": "#/definitions/creativework"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/creativework"
+                    }
+                  }
+                ]
+              }
+            },
+            "required": [
+              "name"
+            ]
+          },
+          "creativework": {
+            "@type": "CreativeWork",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": []
+          },
+          "duration": {
+            "@type": "schema:Duration",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "datetime": {
+            "@type": "schema:DateTime",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "eventstatustype": {
+            "@type": "schema:EventStatusType",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "imageobject": {
+            "@type": "ImageObject",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": []
+          },
+          "language": {
+            "@type": "schema:Language",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "place": {
+            "@type": "Place",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "address": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "$ref": "#/definitions/postaladdress"
+                  }
+                ]
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          },
+          "postaladdress": {
+            "@type": "PostalAddress",
+            "type": "object",
+            "properties": {
+              "addressCountry": {
+                "type": "string"
+              },
+              "addressLocality": {
+                "type": "string"
+              },
+              "addressRegion": {
+                "type": "string"
+              },
+              "postOfficeBoxNumber": {
+                "type": "string"
+              },
+              "postalCode": {
+                "type": "string"
+              },
+              "streetAddress": {
+                "type": "string"
+              }
+            }
+          },
+          "virtuallocation": {
+            "@type": "schema:VirtualLocation",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "demand": {
+            "@type": "schema:Demand",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "offer": {
+            "@type": "schema:Offer",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "event": {
+            "@type": "bioschemas:Event",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "conformsDefinition": {
+            "@type": "CreativeWork",
+            "type": "object",
+            "properties": {
+              "identifier": {
+                "description": "The url of the version bioschemas profile that was used. For jsonschema, set @id to the identifier",
+                "oneOf": [
+                  {
+                    "enum": [
+                      "https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v1.0-RELEASE.json"
+                    ]
+                  },
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "identifier"
+            ]
+          }
+        }
+      },
+      "additional_type": "https://bioschemas.org/profiles#nav-release"
+    },
+    {
+      "@id": "bioschemas:TrainingMaterial",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A specification for describing training materials in life sciences. The Life Science Training Materials specification provides a way to describe bioscience training material on the World Wide Web. It defines a set of metadata and vocabularies, built on top of existing technologies and standards, that can be used to represent events in Web pages and applications. The goal of the specification is to make it easier to discover, exchange and integrate life science training material information across the Internet.<h4>Summary of Changes</h4> No changes since 0.9-DRAFT of the TrainingMaterials profile. Version: 1.0-RELEASE",
+      "schema:schemaVersion": [
+        "https://github.com/BioSchemas/specifications/blob/master/TrainingMaterial/jsonld/TrainingMaterial_v1.0-RELEASE.json",
+        "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE"
+      ],
+      "rdfs:label": "TrainingMaterial",
+      "rdfs:subClassOf": {
+        "@id": "schema:LearningResource"
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "about": {
+            "description": "The subject of this Training Material. Use the DefinedTerm type to add a\n controlled vocabulary term to describe the topic (such as from the EDAM\n ontology) The subject matter of the content.\n Inverse property: subjectOf.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/thing"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/thing"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "abstract": {
+            "description": " An abstract is a short description that summarizes a CreativeWork.",
+            "type": "string",
+            "owl:cardinality": "one"
+          },
+          "accessibilitySummary": {
+            "description": " A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as \"short descriptions are present but long descriptions will be needed for non-visual users\" or \"short descriptions are present and no long descriptions are needed.\"",
+            "type": "string",
+            "owl:cardinality": "one"
+          },
+          "audience": {
+            "description": "A succinct description of the intended target audience for your materials: e.g., graduates, postgraduates, clinicians. An intended audience, i.e. a group for whom something was created. Supersedes serviceAudience.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/audience"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/audience"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "author": {
+            "description": " Those involved in the preparation, creation and/or presentation of the published work, specifically writing the initial draft The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "competencyRequired": {
+            "description": " Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/definedterm"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/definedterm"
+                }
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "contributor": {
+            "description": "Contributors are those that made non-authorship contributions e.g. critical review, commentary or revision A secondary contributor to the CreativeWork or Event.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "creativeWorkStatus": {
+            "description": "The status of a training material. If this is not filled in it will be regarded as Active.\n\nOptions are 'Active', 'Under development', and 'Archived'. The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/definedterm"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "dateCreated": {
+            "description": " The date on which the CreativeWork was created or the item was added to a DataFeed.",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "$ref": "#/definitions/datetime"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "dateModified": {
+            "description": " The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "$ref": "#/definitions/datetime"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "datePublished": {
+            "description": " Date of first broadcast/publication.",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "$ref": "#/definitions/datetime"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "description": {
+            "description": " A description of the item.",
+            "type": "string",
+            "owl:cardinality": "one"
+          },
+          "educationalLevel": {
+            "description": "The students level of ability in the topic being taught. Examples of skill levels include 'beginner', 'intermediate' or 'advanced'. The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/definedterm"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "hasPart": {
+            "description": "A sub-training material or externally referenced training material\n Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).\n Inverse property: isPartOf.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/creativework"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "identifier": {
+            "description": "An identifier for this resource such as a DOI or compact URI\n The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/propertyvalue"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/propertyvalue"
+                }
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "inLanguage": {
+            "description": "Defaults to English if not specified. Please choose a value from [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).\nYou can add multiple languages if the Training Material offers different translations The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage. Supersedes language.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/language"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/language"
+                }
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "isPartOf": {
+            "description": "The Course this Training Material was/will be used in. Or a training material this training material is a part of (for example, if this is a module in a book, isPartOf can describe the book).\n\nInverse property: hasPart\n\nIf this varies in CourseInstances, use the workFeatured property  Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.\n Inverse property: hasPart.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/creativework"
+                }
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "keywords": {
+            "description": " Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/definedterm"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/definedterm"
+                }
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "learningResourceType": {
+            "description": "This may include things such as video lecture, e-Learning module, or tutorial. The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/definedterm"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/definedterm"
+                }
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "license": {
+            "description": "If there is a licence it must be added. A license document that applies to this content, typically indicated by URL.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/creativework"
+                }
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "mentions": {
+            "description": "Datasets, tools, technologies, entities etc, which are referred to by this training material or actively used in this training material. Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/thing"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/thing"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "name": {
+            "description": " The name of the item.",
+            "type": "string",
+            "owl:cardinality": "one"
+          },
+          "recordedAt": {
+            "description": "The course instance or event where this training material was or will be featured. \n\nUse isPartOf to refer to a Course, unless this training material is unique to a specific Course Instance. The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.\nInverse property: recordedIn.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/event"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/event"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "teaches": {
+            "description": " The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/definedterm"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/definedterm"
+                }
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "timeRequired": {
+            "description": "The estimated time it takes to work through this resource.\n\nPlease specify in [ISO 8601 duration format](https://en.wikipedia.org/wiki/ISO_8601). Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.",
+            "$ref": "#/definitions/duration",
+            "owl:cardinality": "one"
+          },
+          "url": {
+            "description": "The preferred URL of the Training Material. You must provide this value if it is known. URL of the item.",
+            "type": "string",
+            "format": "uri",
+            "owl:cardinality": "one"
+          },
+          "version": {
+            "description": "If this training material is versioned, its strongly recommended you use this property to list the version being displayed The version of the CreativeWork embodied by a specified resource.",
+            "oneOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "workTranslation": {
+            "description": " A work that is a translation of the content of this work. e.g. \u897f\u904a\u8a18 has an English workTranslation \u201cJourney to the West\u201d,a German workTranslation \u201cMonkeys Pilgerfahrt\u201d and a Vietnamese translation T\u00e2y du k\u00fd b\u00ecnh kh\u1ea3o.\nInverse property: translationOfWork.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/creativework"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "conformsTo": {
+            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/TrainingMaterial/jsonld/TrainingMaterial_v1.0-RELEASE.json",
+            "$ref": "#/definitions/conformsDefinition"
+          }
+        },
+        "required": [
+          "description",
+          "keywords",
+          "name",
+          "conformsTo"
+        ],
+        "recommended": [
+          "about",
+          "abstract",
+          "audience",
+          "author",
+          "competencyRequired",
+          "educationalLevel",
+          "identifier",
+          "inLanguage",
+          "learningResourceType",
+          "license",
+          "mentions",
+          "teaches",
+          "timeRequired",
+          "url"
+        ],
+        "optional": [
+          "accessibilitySummary",
+          "contributor",
+          "creativeWorkStatus",
+          "dateCreated",
+          "dateModified",
+          "datePublished",
+          "hasPart",
+          "isPartOf",
+          "recordedAt",
+          "version",
+          "workTranslation"
+        ],
+        "definitions": {
+          "thing": {
+            "@type": "schema:Thing",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "audience": {
+            "@type": "schema:Audience",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "organization": {
+            "@type": "Organization",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "legalName": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "sameAs": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          },
+          "person": {
+            "@type": "Person",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "mainEntityOfPage": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  },
+                  {
+                    "$ref": "#/definitions/creativework"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/creativework"
+                    }
+                  }
+                ]
+              }
+            },
+            "required": [
+              "name"
+            ]
+          },
+          "creativework": {
+            "@type": "CreativeWork",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": []
+          },
+          "definedterm": {
+            "@type": "DefinedTerm",
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "name": {
+                "type": "string"
+              },
+              "termCode": {
+                "type": "string"
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "inDefinedTermSet": {
+                "$ref": "#/definitions/definedtermset"
+              }
+            },
+            "required": []
+          },
+          "definedtermset": {
+            "@type": "DefinedTermSet",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": []
+          },
+          "datetime": {
+            "@type": "schema:DateTime",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "propertyvalue": {
+            "@type": "PropertyValue",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "value": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "number"
+                  }
+                ]
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "valuereference": {
+                "oneOf": [
+                  {
+                    "$ref": "#/definitions/categorycode"
+                  },
+                  {
+                    "type": "array",
+                    "items": [
+                      {
+                        "$ref": "#/definitions/categorycode"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "unitCode": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                ]
+              },
+              "unitText": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "value"
+            ],
+            "recommended": [
+              "valueReference"
+            ],
+            "optional": [
+              "unitCode",
+              "unitText"
+            ]
+          },
+          "categorycode": {
+            "@type": "CategoryCode",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "codeValue": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "codeValue",
+              "url"
+            ]
+          },
+          "language": {
+            "@type": "schema:Language",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "event": {
+            "@type": "bioschemas:Event",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "duration": {
+            "@type": "schema:Duration",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "conformsDefinition": {
+            "@type": "CreativeWork",
+            "type": "object",
+            "properties": {
+              "identifier": {
+                "description": "The url of the version bioschemas profile that was used. For jsonschema, set @id to the identifier",
+                "oneOf": [
+                  {
+                    "enum": [
+                      "https://github.com/BioSchemas/specifications/blob/master/TrainingMaterial/jsonld/TrainingMaterial_v1.0-RELEASE.json"
+                    ]
+                  },
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "identifier"
+            ]
+          }
+        }
+      },
+      "additional_type": "https://bioschemas.org/profiles#nav-release"
+    },
+    {
       "@id": "bioschemas:hasStatus",
       "rdfs:comment": "One of pseudogene, dead, killed, live, predicted, suppressed.",
       "@type": "rdf:Property",
@@ -5928,6 +8114,15 @@
         },
         {
           "@id": "bioschemas:Sample"
+        },
+        {
+          "@id": "bioschemas:Course"
+        },
+        {
+          "@id": "bioschemas:CourseInstance"
+        },
+        {
+          "@id": "bioschemas:TrainingMaterial"
         }
       ],
       "schema:rangeIncludes": [
