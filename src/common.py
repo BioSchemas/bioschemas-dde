@@ -413,6 +413,7 @@ def run_update(script_path,updateall=False):
                 else:
                     bioschemasfile = os.path.join(script_path,'bioschemas.json')
             sc = Schema(cleandict)
+            sc.validation
             with open(bioschemasfile,'w') as outfile:
                 outfile.write(prettystring)
 

@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "12/22/2022, 18:51:09",
+    "@dateModified": "12/22/2022, 11:40:36",
     "dwc": "http://rs.tdwg.org/dwc/terms/"
   },
   "@graph": [
@@ -326,8 +326,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/ChemicalSubstance/0.4-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.4-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.4-RELEASE.json",
+        "https://bioschemas.org/profiles/ChemicalSubstance/0.4-RELEASE"
       ]
     },
     {
@@ -922,6 +922,16 @@
             "required": []
           },
           "anatomicalStructure": {
+            "@type": "AnatomicalStructure",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "anatomicalSystem": {
             "@type": "AnatomicalSystem",
             "type": "object",
             "properties": {
@@ -3816,8 +3826,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/ComputationalTool/jsonld/ComputationalTool_v1.0-RELEASE.json",
-        "https://bioschemas.org/profiles/ComputationalTool/1.0-RELEASE"
+        "https://bioschemas.org/profiles/ComputationalTool/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/ComputationalTool/jsonld/ComputationalTool_v1.0-RELEASE.json"
       ]
     },
     {
@@ -4733,8 +4743,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE.json",
-        "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
+        "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE.json"
       ]
     },
     {
@@ -5126,8 +5136,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/DataCatalog/jsonld/DataCatalog_v0.3-RELEASE.json",
-        "https://bioschemas.org/profiles/DataCatalog/0.3-RELEASE"
+        "https://bioschemas.org/profiles/DataCatalog/0.3-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/DataCatalog/jsonld/DataCatalog_v0.3-RELEASE.json"
       ]
     },
     {
@@ -5802,8 +5812,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Sample/0.2-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE.json",
+        "https://bioschemas.org/profiles/Sample/0.2-RELEASE"
       ]
     },
     {
@@ -5811,8 +5821,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Specification describing a course.  This specification must be used in tandem with a courseInstance. A course is used to describe the broad, common aspects of a recurring training event - whereas a course instance is about the specific times and location of when that course is held. <h4>Summary of Changes</h4>    No changes since 0.10-DRAFT of the Course profile.</li>         </ul> Version: 1.0-RELEASE (13 September 2022) ",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Course/jsonld/Course_v1.0-RELEASE.json",
-        "https://bioschemas.org/profiles/Course/1.0-RELEASE"
+        "https://bioschemas.org/profiles/Course/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/Course/jsonld/Course_v1.0-RELEASE.json"
       ],
       "rdfs:label": "Course",
       "rdfs:subClassOf": {
