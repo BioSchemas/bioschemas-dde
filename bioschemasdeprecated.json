@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "11/21/2022, 17:46:16"
+    "@dateModified": "12/22/2022, 18:51:19"
   },
   "@graph": [
     {
@@ -19,8 +19,8 @@
       "owl:deprecated": "True",
       "rdfs:comment": "This profile specification presents the BioChemEntity usage when describing a Protein annotation. Version: 0.6-DRAFT. \nChanges since the previous release of the ProtainAnnotation Profile: \nalternateName demoted to Optional level \n contains replaced by hasBioChemEntityPart \nisContainedIn replaced by isPartOfBioChemEntity \nsubcellularLocation added as an Optional level property",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/ProteinAnnotation/0.6-DRAFT",
-        "https://github.com/BioSchemas/specifications/blob/master/ProteinAnnotation/jsonld/ProteinAnnotation_v0.6-DRAFT-DEPRECATED.json"
+        "https://github.com/BioSchemas/specifications/blob/master/ProteinAnnotation/jsonld/ProteinAnnotation_v0.6-DRAFT-DEPRECATED.json",
+        "https://bioschemas.org/profiles/ProteinAnnotation/0.6-DRAFT"
       ],
       "rdfs:label": "ProteinAnnotation",
       "rdfs:subClassOf": {

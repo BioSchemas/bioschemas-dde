@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "11/21/2022, 17:46:05"
+    "@dateModified": "12/22/2022, 18:50:57"
   },
   "@graph": [
     {
@@ -62,8 +62,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A chemical substance is 'a portion of matter of constant composition, composed of molecular entities of the same type or of different types' (source: ChEBI:59999). Version: 0.3-RELEASE-2019_09_02. This version is was released as a pending class as of schema.org version 13",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/type/ChemicalSubstance_v0.3-RELEASE-2019_09_02.json",
-        "https://bioschemas.org/types/ChemicalSubstance/0.3-RELEASE-2019_09_02"
+        "https://bioschemas.org/types/ChemicalSubstance/0.3-RELEASE-2019_09_02",
+        "https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/type/ChemicalSubstance_v0.3-RELEASE-2019_09_02.json"
       ],
       "rdfs:label": "ChemicalSubstance",
       "rdfs:subClassOf": {
@@ -90,8 +90,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity. (Source: ChEBI:23367). Note, this version has been updated to a pending class in schema.org.",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/MolecularEntity/0.3-RELEASE-2019_09_02",
-        "https://github.com/BioSchemas/specifications/tree/master/MolecularEntity/jsonld/type/MolecularEntity_v0.3-RELEASE-2019_09_02.json"
+        "https://github.com/BioSchemas/specifications/tree/master/MolecularEntity/jsonld/type/MolecularEntity_v0.3-RELEASE-2019_09_02.json",
+        "https://bioschemas.org/types/MolecularEntity/0.3-RELEASE-2019_09_02"
       ],
       "rdfs:label": "MolecularEntity",
       "rdfs:subClassOf": {
@@ -132,8 +132,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A computational workflow consists of an orchestrated and repeatable pattern of activity enabled by the systematic organization of resources into processes that transform materials, provide services, or process information (source Wikipedia.org). It is executed by a computational process and is thus distinct from laboratory or business workflows. version 1.0-RELEASE",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/type/ComputationalWorkflow_v1.0-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/type/ComputationalWorkflow_v1.0-RELEASE.json",
+        "https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE"
       ],
       "rdfs:label": "ComputationalWorkflow",
       "rdfs:subClassOf": {

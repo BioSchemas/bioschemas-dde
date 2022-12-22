@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "12/22/2022, 09:57:50",
+    "@dateModified": "12/22/2022, 18:51:09",
     "dwc": "http://rs.tdwg.org/dwc/terms/"
   },
   "@graph": [
@@ -958,8 +958,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Gene/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.0-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.0-RELEASE.json",
+        "https://bioschemas.org/profiles/Gene/1.0-RELEASE"
       ]
     },
     {
@@ -1265,8 +1265,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.6-RELEASE.json",
-        "https://bioschemas.org/profiles/Taxon/0.6-RELEASE"
+        "https://bioschemas.org/profiles/Taxon/0.6-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.6-RELEASE.json"
       ]
     },
     {
@@ -4733,8 +4733,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE.json",
+        "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
       ]
     },
     {
@@ -5802,8 +5802,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE.json",
-        "https://bioschemas.org/profiles/Sample/0.2-RELEASE"
+        "https://bioschemas.org/profiles/Sample/0.2-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE.json"
       ]
     },
     {
@@ -6581,8 +6581,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Specification describing the instance of a course.  This specification can be used in tandem with a Course. A course is used to describe the broad, common aspects of a recurring training event - whereas a course instance is about the specific times and location of when that course is held. <h4>Summary of Changes</h4>    No changes since 0.9-DRAFT of the CourseInstance profile. Version: 1.0-RELEASE (13 September 2022)",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v1.0-RELEASE.json",
-        "https://bioschemas.org/profiles/CourseInstance/1.0-RELEASE"
+        "https://bioschemas.org/profiles/CourseInstance/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v1.0-RELEASE.json"
       ],
       "rdfs:label": "CourseInstance",
       "rdfs:subClassOf": {
@@ -7175,8 +7175,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A specification for describing training materials in life sciences. The Life Science Training Materials specification provides a way to describe bioscience training material on the World Wide Web. It defines a set of metadata and vocabularies, built on top of existing technologies and standards, that can be used to represent events in Web pages and applications. The goal of the specification is to make it easier to discover, exchange and integrate life science training material information across the Internet.<h4>Summary of Changes</h4> No changes since 0.9-DRAFT of the TrainingMaterials profile. Version: 1.0-RELEASE",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/TrainingMaterial/jsonld/TrainingMaterial_v1.0-RELEASE.json",
-        "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE"
+        "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/TrainingMaterial/jsonld/TrainingMaterial_v1.0-RELEASE.json"
       ],
       "rdfs:label": "TrainingMaterial",
       "rdfs:subClassOf": {
