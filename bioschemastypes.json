@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "12/22/2022, 18:50:57"
+    "@dateModified": "01/12/2023, 16:06:09"
   },
   "@graph": [
     {
@@ -18,8 +18,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A set of organisms asserted to represent a natural cohesive biological unit. Version: 0.3-RELEASE-2019_11_18. Note that this version of the Taxon type has been added as a pending class to schema.org.",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/type/Taxon_v0.3-RELEASE-2019_11_18.json",
-        "https://bioschemas.org/types/Taxon/0.3-RELEASE-2019_11_18"
+        "https://bioschemas.org/types/Taxon/0.3-RELEASE-2019_11_18",
+        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/type/Taxon_v0.3-RELEASE-2019_11_18.json"
       ],
       "rdfs:label": "Taxon",
       "rdfs:subClassOf": {
@@ -34,8 +34,8 @@
       "rdfs:label": "BioChemEntity",
       "schema:additionalType": "https://bioschemas.org/types#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/BioChemEntity/jsonld/type/BioChemEntity_v0.7-RELEASE.json",
-        "https://bioschemas.org/types/BioChemEntity/0.7-RELEASE"
+        "https://bioschemas.org/types/BioChemEntity/0.7-RELEASE",
+        "https://github.com/BioSchemas/specifications/tree/master/BioChemEntity/jsonld/type/BioChemEntity_v0.7-RELEASE.json"
       ],
       "rdfs:subClassOf": {
         "@id": "schema:Thing"
@@ -49,8 +49,8 @@
       "rdfs:label": "BioSample",
       "schema:additionalType": "https://bioschemas.org/types#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/BioSample/jsonld/type/BioSample_v0.1-RELEASE.json",
-        "https://bioschemas.org/types/BioSample/0.1-RELEASE"
+        "https://bioschemas.org/types/BioSample/0.1-RELEASE",
+        "https://github.com/BioSchemas/specifications/tree/master/BioSample/jsonld/type/BioSample_v0.1-RELEASE.json"
       ],
       "rdfs:subClassOf": {
         "@id": "schema:BioChemEntity"
@@ -62,8 +62,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A chemical substance is 'a portion of matter of constant composition, composed of molecular entities of the same type or of different types' (source: ChEBI:59999). Version: 0.3-RELEASE-2019_09_02. This version is was released as a pending class as of schema.org version 13",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/ChemicalSubstance/0.3-RELEASE-2019_09_02",
-        "https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/type/ChemicalSubstance_v0.3-RELEASE-2019_09_02.json"
+        "https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/type/ChemicalSubstance_v0.3-RELEASE-2019_09_02.json",
+        "https://bioschemas.org/types/ChemicalSubstance/0.3-RELEASE-2019_09_02"
       ],
       "rdfs:label": "ChemicalSubstance",
       "rdfs:subClassOf": {
@@ -76,8 +76,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A discrete unit of inheritance which affects one or more biological traits (Source: https://en.wikipedia.org/wiki/Gene). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype). Note, this version of the type has been added as a pending class in schema.org.",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/Gene/0.3-RELEASE-2019_09_02",
-        "https://github.com/BioSchemas/specifications/tree/master/Gene/jsonld/type/Gene_v0.3-RELEASE-2019_09_02.json"
+        "https://github.com/BioSchemas/specifications/tree/master/Gene/jsonld/type/Gene_v0.3-RELEASE-2019_09_02.json",
+        "https://bioschemas.org/types/Gene/0.3-RELEASE-2019_09_02"
       ],
       "rdfs:label": "Gene",
       "rdfs:subClassOf": {
@@ -118,8 +118,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A FormalParameter is an identified variable used to stand for the actual value(s) that are consumed/produced by a set of steps. Version: 1.0-RELEASE (09 March 2021) ",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/type/FormalParameter_v1.0-RELEASE.json",
-        "https://bioschemas.org/types/FormalParameter/1.0-RELEASE"
+        "https://bioschemas.org/types/FormalParameter/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/type/FormalParameter_v1.0-RELEASE.json"
       ],
       "rdfs:label": "FormalParameter",
       "rdfs:subClassOf": {
@@ -883,6 +883,25 @@
       ]
     },
     {
+      "@id": "bioschemastypes:potentialUse",
+      "rdfs:comment": "Intended use of the BioChemEntity by humans. ",
+      "@type": "rdf:Property",
+      "rdfs:label": "potentialUse",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypes:ChemicalSubstance"
+        },
+        {
+          "@id": "bioschemastypes:MolecularEntity"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ]
+    },
+    {
       "@id": "bioschemastypes:chemicalRole",
       "rdfs:comment": "A role played by the BioChemEntity within a chemical context. A role played by the molecular entity within a chemical context.",
       "@type": "rdf:Property",
@@ -917,25 +936,6 @@
       "schema:rangeIncludes": [
         {
           "@id": "schema:Text"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypes:potentialUse",
-      "rdfs:comment": "Intended use of the BioChemEntity by humans. ",
-      "@type": "rdf:Property",
-      "rdfs:label": "potentialUse",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemastypes:ChemicalSubstance"
-        },
-        {
-          "@id": "bioschemastypes:MolecularEntity"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:DefinedTerm"
         }
       ]
     },
