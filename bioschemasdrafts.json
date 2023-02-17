@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "02/17/2023, 09:45:28",
+    "@dateModified": "02/17/2023, 18:22:16",
     "ppeo:hasGrowthFacility": "http://purl.org/ppeo/PPEO.owl#hasGrowthFacility",
     "dwc": "http://rs.tdwg.org/dwc/terms/"
   },
@@ -2911,7 +2911,7 @@
     {
       "@id": "bioschemasdrafts:ChemicalSubstance",
       "@type": "rdfs:Class",
-      "rdfs:comment": "This profile describes a ChemicalSubstance which is 'a portion of matter of constant composition, composed of molecular entities of the same type or of different types' (source: ChEBI:59999). Note, the parent class for this profile has been updated to a pending class in schema.org. Version 0.5-DRAFT. <h3>Summary of Changes</h3> Changes since 0.4-RELEASE<ul><li>added sameAs property as recommended. </li></ul>",
+      "rdfs:comment": "This profile describes a ChemicalSubstance which is 'a portion of matter of constant composition, composed of molecular entities of the same type or of different types' (source: ChEBI:59999). Note, the parent class for this profile has been updated to a pending class in schema.org. Version 0.5-DRAFT. <h3>Summary of Changes</h3> Changes since 0.4-RELEASE<ul><li>added sameAs property as recommended.</li></ul>",
       "rdfs:label": "ChemicalSubstance",
       "rdfs:subClassOf": {
         "@id": "schema:ChemicalSubstance"
@@ -3113,7 +3113,7 @@
             "owl:cardinality": "many"
           },
           "conformsTo": {
-            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.5-DRAFT.json",
+            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.5-DRAFT.json",
             "$ref": "#/definitions/conformsDefinition"
           }
         },
@@ -3202,7 +3202,7 @@
                 "oneOf": [
                   {
                     "enum": [
-                      "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.5-DRAFT.json"
+                      "https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.5-DRAFT.json"
                     ]
                   },
                   {
@@ -3220,8 +3220,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/ChemicalSubstance/0.5-DRAFT",
-        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.5-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.5-DRAFT.json",
+        "https://bioschemas.org/profiles/ChemicalSubstance/0.5-DRAFT"
       ]
     },
     {
@@ -4501,8 +4501,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/DataCatalog/jsonld/DataCatalog_v0.4-DRAFT.json",
-        "https://bioschemas.org/profiles/DataCatalog/0.4-DRAFT"
+        "https://bioschemas.org/profiles/DataCatalog/0.4-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/DataCatalog/jsonld/DataCatalog_v0.4-DRAFT.json"
       ]
     },
     {
@@ -4510,8 +4510,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A guide for how to describe datasets in the life-sciences using Schema.org-like annotation. Version 1.1-DRAFT. <h3>Summary of Changes</h3> <br>Key changes since 1.0-RELEASE:<ul><li>sameAs now recommended.</li></ul>",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/Dataset/jsonld/Dataset_v1.1-DRAFT.json",
-        "https://bioschemas.org/profiles/Dataset/1.1-DRAFT"
+        "https://bioschemas.org/profiles/Dataset/1.1-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/Dataset/jsonld/Dataset_v1.1-DRAFT.json"
       ],
       "rdfs:label": "Dataset",
       "rdfs:subClassOf": {
@@ -5519,8 +5519,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Specification for describing an event in the Life Sciences Specification for describing a Life Science event. This includes conferences, workshops, meetings, courses, receptions, networking and prizegivings. Version 0.3-DRAFT. <h3>Summary of Changes</h3> Changes since 0.2-DRAFT-2019_06_14<ul><li>added sameAs property as recommended</li></ul>",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/Event/jsonld/Event_v0.3-DRAFT.json",
-        "https://bioschemas.org/profiles/Event/0.3-DRAFT"
+        "https://bioschemas.org/profiles/Event/0.3-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/Event/jsonld/Event_v0.3-DRAFT.json"
       ],
       "rdfs:label": "Event",
       "rdfs:subClassOf": {
@@ -6344,8 +6344,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile, based on Biotea model, describing a Journal in Life Sciences. A Journal is a collection of publication issues, publication volumes or scholarly articles, or possibly, although no commonly, any mix from those mentioned. Version 0.3-DRAFT<h3>Summary of Changes</h3><br>Changes since previous draft 0.2 Journal profile: <ul><li>added sameAs property as recommended</li></ul>",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/Journal/jsonld/Journal_v0.3-DRAFT.json",
-        "https://bioschemas.org/profiles/Journal/0.3-DRAFT"
+        "https://bioschemas.org/profiles/Journal/0.3-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/Journal/jsonld/Journal_v0.3-DRAFT.json"
       ],
       "rdfs:label": "Journal",
       "rdfs:subClassOf": {
@@ -8655,8 +8655,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/MolecularEntity/jsonld/MolecularEntity_v0.7-DRAFT.json",
-        "https://bioschemas.org/profiles/MolecularEntity/0.7-DRAFT"
+        "https://bioschemas.org/profiles/MolecularEntity/0.7-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/MolecularEntity/jsonld/MolecularEntity_v0.7-DRAFT.json"
       ]
     },
     {
@@ -8664,8 +8664,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas specification for describing a Organization in the life-science. Provides a way to describe bioscience organizations on the World Wide Web. It defines metadata terms that can be used in the code of web pages and applications, and builds on top of existing technologies and standards. The goal of the specification is to make it easier to discover, exchange and integrate life science organization profiles across the Internet. Version: 0.3-DRAFT. <h3>Summary of Changes</h3><br>Changes since 0.2-DRAFT<ul><li>added sameAs property as recommended.</li></ul>.",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/Organization/jsonld/Organization_v0.3-DRAFT.json",
-        "https://bioschemas.org/profiles/Organization/0.3-DRAFT"
+        "https://bioschemas.org/profiles/Organization/0.3-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/Organization/jsonld/Organization_v0.3-DRAFT.json"
       ],
       "rdfs:label": "Organization",
       "rdfs:subClassOf": {
@@ -11234,8 +11234,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Protein/0.12-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/Protein/jsonld/Protein_v0.12-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/Protein/jsonld/Protein_v0.12-DRAFT.json",
+        "https://bioschemas.org/profiles/Protein/0.12-DRAFT"
       ]
     },
     {
@@ -14326,8 +14326,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile, based on Biotea model, describing a semantic annotation associated to a piece of text in a ScholarlyArticle in Life Sciences. A SemanticTextAnnotation corresponds to an expression identified in a ScholarlyArticle and associated to an ontology term. Version 0.3-DRAFT. <h3>Summary of Changes</h3><br>Changes since previous draft 0.2-DRAFT-2020_12_03 of the SemanticAnnotation profile: <ul><li>added sameAs property as recommended.</li></ul>",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/SemanticTextAnnotation/jsonld/SemanticTextAnnotation_v0.3-DRAFT.json",
-        "https://bioschemas.org/profiles/SemanticTextAnnotation/0.3-DRAFT"
+        "https://bioschemas.org/profiles/SemanticTextAnnotation/0.3-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/SemanticTextAnnotation/jsonld/SemanticTextAnnotation_v0.3-DRAFT.json"
       ],
       "rdfs:label": "SemanticTextAnnotation",
       "rdfs:subClassOf": {
@@ -15427,8 +15427,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/SequenceRange/0.2-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/SequenceRange/jsonld/SequenceRange_v0.2-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/SequenceRange/jsonld/SequenceRange_v0.2-DRAFT.json",
+        "https://bioschemas.org/profiles/SequenceRange/0.2-DRAFT"
       ]
     },
     {
@@ -16635,8 +16635,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile for describing a name of a biological taxon, which may be valid (zoology) / accepted (botany) or not. This profile povides a way to denote the scientific names of a taxon. The taxon accepted/valid name is linked to the taxon with property scientificName while the synonyms are linked with property alternateScientificName. Version: 0.2-DRAFT. <h3>Summary of Changes</h3><br>Changes since Version 0.1-DRAFT:<ul><li>added sameAs property as recommended.</li></ul>",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/TaxonName/jsonld/TaxonName_v0.2-DRAFT.json",
-        "https://bioschemas.org/profiles/TaxonName/0.2-DRAFT"
+        "https://bioschemas.org/profiles/TaxonName/0.2-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/TaxonName/jsonld/TaxonName_v0.2-DRAFT.json"
       ],
       "rdfs:label": "TaxonName",
       "rdfs:subClassOf": {
@@ -17862,6 +17862,25 @@
       ]
     },
     {
+      "@id": "bioschemasdrafts:socialMedia",
+      "rdfs:comment": "Link to social media websites like twitter or facebook.",
+      "@type": "rdf:Property",
+      "rdfs:label": "socialMedia",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemasdrafts:Event"
+        },
+        {
+          "@id": "bioschemasdrafts:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
       "@id": "bioschemasdrafts:dateModified",
       "rdfs:comment": "The date on which the CreativeWork was most recently modified or when the item\u2019s entry was modified within a DataFeed. \n NOTE: Keywords is not part of Event.",
       "@type": "rdf:Property",
@@ -17880,6 +17899,25 @@
         },
         {
           "@id": "schema:DateTime"
+        }
+      ]
+    },
+    {
+      "@id": "rdf:type",
+      "rdfs:comment": "This is used by validation tools to indentify the profile used. You must use the value specified in the Controlled Vocabulary column. This is used by validation tools to indentify the profile used. You must use the value specified in the Controlled Vocabulary column.",
+      "@type": "rdf:Property",
+      "rdfs:label": "type",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemasdrafts:Event"
+        },
+        {
+          "@id": "bioschemasdrafts:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
         }
       ]
     },
@@ -17903,21 +17941,21 @@
       ]
     },
     {
-      "@id": "bioschemasdrafts:keywords",
-      "rdfs:comment": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas. \n NOTE: Keywords is not part of Event.",
+      "@id": "bioschemasdrafts:attachment",
+      "rdfs:comment": "Any files or related websites which give more information about this event. e.g. flyers, third party sites handling tickets.",
       "@type": "rdf:Property",
-      "rdfs:label": "keywords",
+      "rdfs:label": "attachment",
       "schema:domainIncludes": [
         {
           "@id": "bioschemasdrafts:Event"
         },
         {
-          "@id": "bioschemasdrafts:Person"
+          "@id": "bioschemasdrafts:Organization"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -17947,59 +17985,21 @@
       ]
     },
     {
-      "@id": "bioschemasdrafts:attachment",
-      "rdfs:comment": "Any files or related websites which give more information about this event. e.g. flyers, third party sites handling tickets.",
+      "@id": "bioschemasdrafts:keywords",
+      "rdfs:comment": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas. \n NOTE: Keywords is not part of Event.",
       "@type": "rdf:Property",
-      "rdfs:label": "attachment",
+      "rdfs:label": "keywords",
       "schema:domainIncludes": [
         {
           "@id": "bioschemasdrafts:Event"
         },
         {
-          "@id": "bioschemasdrafts:Organization"
+          "@id": "bioschemasdrafts:Person"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "rdf:type",
-      "rdfs:comment": "This is used by validation tools to indentify the profile used. You must use the value specified in the Controlled Vocabulary column. This is used by validation tools to indentify the profile used. You must use the value specified in the Controlled Vocabulary column.",
-      "@type": "rdf:Property",
-      "rdfs:label": "type",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemasdrafts:Event"
-        },
-        {
-          "@id": "bioschemasdrafts:Organization"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemasdrafts:socialMedia",
-      "rdfs:comment": "Link to social media websites like twitter or facebook.",
-      "@type": "rdf:Property",
-      "rdfs:label": "socialMedia",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemasdrafts:Event"
-        },
-        {
-          "@id": "bioschemasdrafts:Organization"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ]
     },
