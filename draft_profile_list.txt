@@ -3,7 +3,7 @@ bioschemas	Course	schema:Course	Profile	0.10-DRAFT	https://github.com/BioSchemas
 bioschemas	CourseInstance	schema:CourseInstance	Profile	0.9-DRAFT	https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v0.9-DRAFT.json
 bioschemasdrafts	Gene	schema:Gene	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.1-DRAFT.json
 bioschemas	TrainingMaterial	schema:LearningResource	Profile	1.1-DRAFT	https://github.com/Bioschemas/specifications/tree/master/TrainingMaterial/jsonld/TrainingMaterial_v1.1-DRAFT.json
-bioschemas	ChemicalSubstance	schema:ChemicalSubstance	Profile	0.5-DRAFT	https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.5-DRAFT.json
+bioschemas	ChemicalSubstance	schema:ChemicalSubstance	Profile	0.5-DRAFT	https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.5-DRAFT.json
 bioschemas	ComputationalTool	schema:SoftwareApplication	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/ComputationalTool/jsonld/ComputationalTool_v1.1-DRAFT.json
 bioschemas	DataCatalog	schema:DataCatalog	Profile	0.4-DRAFT	https://github.com/BioSchemas/specifications/tree/master/DataCatalog/jsonld/DataCatalog_v0.4-DRAFT.json
 bioschemas	Dataset	schema:Dataset	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/Dataset/jsonld/Dataset_v1.1-DRAFT.json
