@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "01/12/2023, 16:06:25",
+    "@dateModified": "02/17/2023, 09:45:16",
     "dwc": "http://rs.tdwg.org/dwc/terms/"
   },
   "@graph": [
@@ -326,8 +326,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/ChemicalSubstance/0.4-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.4-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.4-RELEASE.json",
+        "https://bioschemas.org/profiles/ChemicalSubstance/0.4-RELEASE"
       ]
     },
     {
@@ -1275,8 +1275,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Taxon/0.6-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.6-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.6-RELEASE.json",
+        "https://bioschemas.org/profiles/Taxon/0.6-RELEASE"
       ]
     },
     {
@@ -2747,8 +2747,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/Protein_v0.11-RELEASE.json",
-        "https://bioschemas.org/profiles/Protein/0.11-RELEASE"
+        "https://bioschemas.org/profiles/Protein/0.11-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/Protein_v0.11-RELEASE.json"
       ]
     },
     {
@@ -2974,8 +2974,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/FormalParameter_v1.0-RELEASE.json",
-        "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+        "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/FormalParameter_v1.0-RELEASE.json"
       ]
     },
     {
@@ -4975,7 +4975,7 @@
             "owl:cardinality": "many"
           },
           "conformsTo": {
-            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/DataCatalog/jsonld/DataCatalog_v0.3-RELEASE.json",
+            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/DataCatalog/jsonld/DataCatalog_v0.3-RELEASE-2019_07_01.json",
             "$ref": "#/definitions/conformsDefinition"
           }
         },
@@ -5118,7 +5118,7 @@
                 "oneOf": [
                   {
                     "enum": [
-                      "https://github.com/BioSchemas/specifications/blob/master/DataCatalog/jsonld/DataCatalog_v0.3-RELEASE.json"
+                      "https://github.com/BioSchemas/specifications/blob/master/DataCatalog/jsonld/DataCatalog_v0.3-RELEASE-2019_07_01.json"
                     ]
                   },
                   {
@@ -5136,14 +5136,18 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/DataCatalog/0.3-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/DataCatalog/jsonld/DataCatalog_v0.3-RELEASE.json"
+        "https://bioschemas.org/profiles/DataCatalog/0.3-RELEASE-2019_07_01",
+        "https://github.com/BioSchemas/specifications/blob/master/DataCatalog/jsonld/DataCatalog_v0.3-RELEASE-2019_07_01.json"
       ]
     },
     {
       "@id": "bioschemas:Dataset",
       "@type": "rdfs:Class",
-      "rdfs:comment": "A guide for how to describe datasets in the life-sciences using Schema.org-like annotation.",
+      "rdfs:comment": "A guide for how to describe datasets in the life-sciences using Schema.org-like annotation. Version 1.0-RELEASE. <h3>Summary of Changes</h3> <br>Key changes since 0.3-RELEASE:<ul><li>Updated properties to Schema.org v12.0; various properties added at recommended or optional level, expected types updated. See 0.4-DRAFT for full details</li><li>license now a minimum property</li><li>keywords: Cardinality #501 \u2013 Cardinality is MANY</li><li>distribution: Cardinality #574 \u2013 Cardinality changed to MANY</li><li>datePublished: Increased marginlity #576 \u2013 Now recommended</li><li>publisher: Increased marginlity, Cardinality #576 \u2013 Now recommended with MANY cardinality</li></ul>",
+      "schema:schemaVersion": [
+        "https://bioschemas.org/profiles/Dataset/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v1.0-RELEASE.json"
+      ],
       "rdfs:label": "Dataset",
       "rdfs:subClassOf": {
         "@id": "schema:Dataset"
@@ -5152,60 +5156,10 @@
         "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
         "properties": {
-          "variableMeasured": {
-            "description": "The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue.",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/propertyValue"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/propertyValue"
-                }
-              },
-              {
-                "type": "string"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "includedInDataCatalog": {
-            "description": "A data catalog which contains this dataset.",
+          "alternateName": {
+            "description": " An alias for the item.",
             "oneOf": [
               {
-                "$ref": "#/definitions/dataCatalogObject"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/dataCatalogObject"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "measurementTechnique": {
-            "description": "A technique or technology used in a <a class=\"localLink\" href=\"http://schema.org/Dataset\">Dataset</a> (or <a class=\"localLink\" href=\"http://schema.org/DataDownload\">DataDownload</a>, <a class=\"localLink\" href=\"http://schema.org/DataCatalog\">DataCatalog</a>),\ncorresponding to the method used for measuring the corresponding variable(s) (described using <a class=\"localLink\" href=\"http://schema.org/variableMeasured\">variableMeasured</a>). This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but rather as a high level summary for dataset discovery.<br/><br/>\n\nFor example, if <a class=\"localLink\" href=\"http://schema.org/variableMeasured\">variableMeasured</a> is: molecule concentration, <a class=\"localLink\" href=\"http://schema.org/measurementTechnique\">measurementTechnique</a> could be: \"mass spectrometry\" or \"nmr spectroscopy\" or \"colorimetry\" or \"immunofluorescence\".<br/><br/>\n\nIf the <a class=\"localLink\" href=\"http://schema.org/variableMeasured\">variableMeasured</a> is \"depression rating\", the <a class=\"localLink\" href=\"http://schema.org/measurementTechnique\">measurementTechnique</a> could be \"Zung Scale\" or \"HAM-D\" or \"Beck Depression Inventory\".<br/><br/>\n\nIf there are several <a class=\"localLink\" href=\"http://schema.org/variableMeasured\">variableMeasured</a> properties recorded for some given data object, use a <a class=\"localLink\" href=\"http://schema.org/PropertyValue\">PropertyValue</a> for each <a class=\"localLink\" href=\"http://schema.org/variableMeasured\">variableMeasured</a> and attach the corresponding <a class=\"localLink\" href=\"http://schema.org/measurementTechnique\">measurementTechnique</a>.",
-            "oneOf": [
-              {
-                "type": "string",
-                "format": "uri"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uri"
-                }
-              },
-              {
                 "type": "string"
               },
               {
@@ -5216,66 +5170,19 @@
               }
             ],
             "owl:cardinality": "many"
-          },
-          "distribution": {
-            "description": "A downloadable form of this dataset, at a specific location, in a specific format.",
-            "$ref": "#/definitions/dataDownload",
-            "owl:cardinality": "one"
-          },
-          "description": {
-            "description": "A description of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
-          },
-          "identifier": {
-            "description": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/propertyValue"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/propertyValue"
-                }
-              },
-              {
-                "type": "string"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              {
-                "type": "string",
-                "format": "uri"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uri"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "name": {
-            "description": "The name of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
-          },
-          "url": {
-            "description": "URL of the item.",
-            "type": "string",
-            "format": "uri",
-            "owl:cardinality": "one"
           },
           "citation": {
-            "description": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.",
+            "description": "A citation for a publication that describes the dataset. A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.",
             "anyOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/creativework"
+                }
+              },
               {
                 "type": "string"
               },
@@ -5283,32 +5190,14 @@
                 "type": "array",
                 "items": {
                   "type": "string"
-                }
-              },
-              {
-                "$ref": "#/definitions/creativeWork"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/creativeWork"
                 }
               }
             ],
             "owl:cardinality": "many"
           },
           "creator": {
-            "description": "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
+            "description": "The name of the dataset creator (person or organization). The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
             "anyOf": [
-              {
-                "$ref": "#/definitions/person"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/person"
-                }
-              },
               {
                 "$ref": "#/definitions/organization"
               },
@@ -5317,13 +5206,334 @@
                 "items": {
                   "$ref": "#/definitions/organization"
                 }
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
+                }
               }
             ],
             "owl:cardinality": "many"
           },
-          "keywords": {
-            "description": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
+          "dateCreated": {
+            "description": " The date on which the CreativeWork was created or the item was added to a DataFeed.",
             "oneOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "$ref": "#/definitions/datetime"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "dateModified": {
+            "description": " The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "$ref": "#/definitions/datetime"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "datePublished": {
+            "description": " Date of first broadcast/publication.",
+            "type": "string",
+            "format": "date",
+            "owl:cardinality": "one"
+          },
+          "description": {
+            "description": "A short summary describing a dataset. A description of the item.",
+            "type": "string",
+            "owl:cardinality": "one"
+          },
+          "distribution": {
+            "description": " A downloadable form of this dataset, at a specific location, in a specific format.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/datadownload"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/datadownload"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "hasPart": {
+            "description": " Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense). \nInverse property: [isPartOf](https://schema.org/isPartOf)",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "$ref": "#/definitions/trip"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "identifier": {
+            "description": "CURIEs that can be resolved using [Identifiers.org](https://identifiers.org/) should be used. The identifier property represents any kind of identifier for any kind of [Thing](https://schema.org/Thing), such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](http://schema.org/docs/datamodel.html#identifierBg) for more details.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/propertyvalue"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/propertyvalue"
+                }
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "includedInDataCatalog": {
+            "description": " A data catalog which contains this dataset. Supersedes [includedDataCatalog](https://schema.org/includedDataCatalog), [catalog](https://schema.org/catalog).\nInverse property: [dataset](https://schema.org/dataset)",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/datacatalog"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/datacatalog"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "isAccessibleForFree": {
+            "description": " A flag to signal that the item, event, or place is accessible for free. Supersedes [free](https://schema.org/free).",
+            "type": "boolean",
+            "owl:cardinality": "one"
+          },
+          "isBasedOn": {
+            "description": "Use to link a Dataset to the Study that it was generated from. A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html. \nSupersedes isBasedOnUrl.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/creativework"
+                }
+              },
+              {
+                "$ref": "#/definitions/product"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/product"
+                }
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "isPartOf": {
+            "description": " Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of. Inverse property: [hasPart](https://schema.org/hasPart)",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "keywords": {
+            "description": "Keywords should be drawn from a controlled vocabulary, e.g. [EDAM](https://edamontology.org/), and supplied as a DefinedTerm list. Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/definedterm"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/definedterm"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "license": {
+            "description": "A license under which the dataset is distributed. A license document that applies to this content, typically indicated by URL.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "maintainer": {
+            "description": " A maintainer of a [Dataset](https://schema.org/Dataset), software package ([SoftwareApplication](https://schema.org/SoftwareApplication)), or other [Project](https://schema.org/Project). A maintainer is a [Person](https://schema.org/Person) or [Organization](https://schema.org/Organization) that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on \"upstream\" sources. When [maintainer](https://schema.org/maintainer) is applied to a specific version of something e.g. a particular version or packaging of a [Dataset](https://schema.org/Dataset), it is always possible that the upstream source has a different maintainer. The [isBasedOn](https://schema.org/isBasedOn) property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "measurementTechnique": {
+            "description": " A technique or technology used in a [Dataset](https://schema.org/Dataset) (or [DataDownload](https://schema.org/DataDownload), [DataCatalog](https://schema.org/DataCatalog)), corresponding to the method used for measuring the corresponding variable(s) (described using [variableMeasured](https://schema.org/variableMeasured)). This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but rather as a high level summary for dataset discovery.\n\nFor example, if [variableMeasured](https://schema.org/variableMeasured) is: molecule concentration, [measurementTechnique](https://schema.org/measurementTechnique) could be: \"mass spectrometry\" or \"nmr spectroscopy\" or \"colorimetry\" or \"immunofluorescence\".\n\nIf the [variableMeasured](https://schema.org/variableMeasured) is \"depression rating\", the [measurementTechnique](https://schema.org/measurementTechnique) could be \"Zung Scale\" or \"HAM-D\" or \"Beck Depression Inventory\".\n\nIf there are several [variableMeasured](https://schema.org/variableMeasured) properties recorded for some given data object, use a [PropertyValue](https://schema.org/PropertyValue) for each [variableMeasured](https://schema.org/variableMeasured) and attach the corresponding [measurementTechnique](https://schema.org/measurementTechnique).",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              },
+              {
+                "$ref": "#/definitions/definedterm"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/definedterm"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "name": {
+            "description": "A descriptive name of the dataset. The name of the item.",
+            "type": "string",
+            "owl:cardinality": "one"
+          },
+          "publisher": {
+            "description": " The publisher of the creative work.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "$ref": "#/definitions/person"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "sameAs": {
+            "description": " URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+            "type": "string",
+            "format": "uri",
+            "owl:cardinality": "one"
+          },
+          "url": {
+            "description": "The location of a page describing the dataset. URL of the item.",
+            "type": "string",
+            "format": "uri",
+            "owl:cardinality": "one"
+          },
+          "variableMeasured": {
+            "description": "What does the dataset measure? (e.g., temperature, pressure). The variableMeasured property can indicate (repeated as necessary) the variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/propertyvalue"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/propertyvalue"
+                }
+              },
               {
                 "type": "string"
               },
@@ -5336,148 +5546,90 @@
             ],
             "owl:cardinality": "many"
           },
-          "license": {
-            "description": "A license document that applies to this content, typically indicated by URL.",
-            "oneOf": [
-              {
-                "type": "string"
-              },
-              {
-                "$ref": "#/definitions/creativeWork"
-              }
-            ],
-            "owl:cardinality": "one"
-          },
           "version": {
-            "description": "The version of the CreativeWork embodied by a specified resource.",
+            "description": "The version number for this dataset. The version of the CreativeWork embodied by a specified resource.",
             "oneOf": [
-              {
-                "type": "string"
-              },
               {
                 "type": "number"
+              },
+              {
+                "type": "string"
               }
             ],
             "owl:cardinality": "one"
           },
           "conformsTo": {
-            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v0.3-RELEASE.json",
+            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v1.0-RELEASE.json",
             "$ref": "#/definitions/conformsDefinition"
           }
         },
         "required": [
           "description",
           "identifier",
+          "keywords",
+          "license",
           "name",
           "url",
-          "keywords",
           "conformsTo"
         ],
+        "recommended": [
+          "alternateName",
+          "citation",
+          "creator",
+          "datePublished",
+          "distribution",
+          "includedInDataCatalog",
+          "isBasedOn",
+          "measurementTechnique",
+          "variableMeasured",
+          "version"
+        ],
+        "optional": [
+          "dateCreated",
+          "dateModified",
+          "hasPart",
+          "isAccessibleForFree",
+          "isPartOf",
+          "maintainer",
+          "publisher",
+          "sameAs"
+        ],
         "definitions": {
-          "propertyValue": {
-            "@type": "PropertyValue",
+          "creativework": {
+            "@type": "CreativeWork",
             "type": "object",
             "properties": {
               "name": {
-                "type": "string"
-              },
-              "value": {
                 "type": "string"
               },
               "identifier": {
-                "type": "string"
-              }
-            },
-            "required": []
-          },
-          "dataCatalogObject": {
-            "@type": "DataCatalog",
-            "type": "object",
-            "properties": {
-              "name": {
                 "type": "string"
               },
               "url": {
                 "type": "string",
                 "format": "uri"
+              }
+            },
+            "required": []
+          },
+          "organization": {
+            "@type": "Organization",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "legalName": {
+                "type": "string"
               },
               "description": {
                 "type": "string"
               },
-              "provider": {
-                "anyOf": [
-                  {
-                    "$ref": "#/definitions/person"
-                  },
-                  {
-                    "$ref": "#/definitions/organization"
-                  },
-                  {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/definitions/person"
-                    }
-                  },
-                  {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/definitions/organization"
-                    }
-                  }
-                ]
-              },
-              "keywords": {
-                "oneOf": [
-                  {
-                    "type": "string"
-                  },
-                  {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  }
-                ]
-              }
-            },
-            "required": [
-              "name",
-              "url",
-              "description",
-              "keywords",
-              "provider"
-            ]
-          },
-          "dataDownload": {
-            "@type": "DataDownload",
-            "type": "object",
-            "properties": {
-              "url": {
+              "sameAs": {
                 "type": "string",
                 "format": "uri"
-              },
-              "name": {
-                "type": "string"
-              },
-              "contentUrl": {
-                "type": "string",
-                "format": "uri"
-              },
-              "identifier": {
-                "type": "string"
-              },
-              "version": {
-                "oneOf": [
-                  {
-                    "type": "string"
-                  },
-                  {
-                    "type": "number"
-                  }
-                ]
               }
-            },
-            "required": []
+            }
           },
           "person": {
             "@type": "Person",
@@ -5490,31 +5642,195 @@
                 "type": "string",
                 "format": "uri"
               },
-              "affiliation": {
-                "$ref": "#/definitions/organization"
+              "mainEntityOfPage": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  },
+                  {
+                    "$ref": "#/definitions/creativework"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/creativework"
+                    }
+                  }
+                ]
               }
             },
             "required": [
               "name"
             ]
           },
-          "organization": {
-            "@type": "Organization",
+          "datetime": {
+            "@type": "schema:DateTime",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "datadownload": {
+            "@type": "schema:DataDownload",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "trip": {
+            "@type": "schema:Trip",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "propertyvalue": {
+            "@type": "PropertyValue",
             "type": "object",
             "properties": {
               "name": {
                 "type": "string"
               },
-              "alternateName": {
+              "value": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "number"
+                  }
+                ]
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "valuereference": {
+                "oneOf": [
+                  {
+                    "$ref": "#/definitions/categorycode"
+                  },
+                  {
+                    "type": "array",
+                    "items": [
+                      {
+                        "$ref": "#/definitions/categorycode"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "unitCode": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                ]
+              },
+              "unitText": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "value"
+            ],
+            "recommended": [
+              "valueReference"
+            ],
+            "optional": [
+              "unitCode",
+              "unitText"
+            ]
+          },
+          "categorycode": {
+            "@type": "CategoryCode",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "codeValue": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "codeValue",
+              "url"
+            ]
+          },
+          "datacatalog": {
+            "@type": "bioschemas:DataCatalog",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "product": {
+            "@type": "schema:Product",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "definedterm": {
+            "@type": "DefinedTerm",
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "name": {
+                "type": "string"
+              },
+              "termCode": {
                 "type": "string"
               },
               "identifier": {
                 "type": "string"
+              },
+              "inDefinedTermSet": {
+                "$ref": "#/definitions/definedtermset"
               }
-            }
+            },
+            "required": []
           },
-          "creativeWork": {
-            "@type": "CreativeWork",
+          "definedtermset": {
+            "@type": "DefinedTermSet",
             "type": "object",
             "properties": {
               "name": {
@@ -5539,7 +5855,7 @@
                 "oneOf": [
                   {
                     "enum": [
-                      "https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v0.3-RELEASE.json"
+                      "https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v1.0-RELEASE.json"
                     ]
                   },
                   {
@@ -5555,11 +5871,7 @@
           }
         }
       },
-      "additional_type": "https://bioschemas.org/profiles#nav-release",
-      "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Dataset/0.3-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v0.3-RELEASE.json"
-      ]
+      "additional_type": "https://bioschemas.org/profiles#nav-release"
     },
     {
       "@id": "bioschemas:Sample",
@@ -5665,7 +5977,7 @@
             "owl:cardinality": "one"
           },
           "conformsTo": {
-            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE.json",
+            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE-2018_11_10.json",
             "$ref": "#/definitions/conformsDefinition"
           }
         },
@@ -5794,7 +6106,7 @@
                 "oneOf": [
                   {
                     "enum": [
-                      "https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE.json"
+                      "https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE-2018_11_10.json"
                     ]
                   },
                   {
@@ -5812,8 +6124,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Sample/0.2-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE.json"
+        "https://bioschemas.org/profiles/Sample/0.2-RELEASE-2018_11_10",
+        "https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE-2018_11_10.json"
       ]
     },
     {
@@ -6591,8 +6903,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Specification describing the instance of a course.  This specification can be used in tandem with a Course. A course is used to describe the broad, common aspects of a recurring training event - whereas a course instance is about the specific times and location of when that course is held. <h4>Summary of Changes</h4>    No changes since 0.9-DRAFT of the CourseInstance profile. Version: 1.0-RELEASE (13 September 2022)",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v1.0-RELEASE.json",
-        "https://bioschemas.org/profiles/CourseInstance/1.0-RELEASE"
+        "https://bioschemas.org/profiles/CourseInstance/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v1.0-RELEASE.json"
       ],
       "rdfs:label": "CourseInstance",
       "rdfs:subClassOf": {

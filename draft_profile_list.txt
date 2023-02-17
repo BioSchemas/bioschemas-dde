@@ -1,5 +1,5 @@
 namespace	name	subClassOf	type	version	url
-bioschemas	Course	schema:Course	Profile	0.10-DRAFT-2020_12_08	https://github.com/BioSchemas/specifications/blob/master/Course/jsonld/Course_v0.10-DRAFT.json
+bioschemas	Course	schema:Course	Profile	0.10-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Course/jsonld/Course_v0.10-DRAFT.json
 bioschemas	CourseInstance	schema:CourseInstance	Profile	0.9-DRAFT	https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v0.9-DRAFT.json
 bioschemasdrafts	Gene	schema:Gene	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.1-DRAFT.json
 bioschemas	TrainingMaterial	schema:LearningResource	Profile	1.1-DRAFT	https://github.com/Bioschemas/specifications/tree/master/TrainingMaterial/jsonld/TrainingMaterial_v1.1-DRAFT.json

@@ -7,9 +7,9 @@ bioschemas	Protein	schema:Protein	Profile	0.11-RELEASE	https://github.com/BioSch
 bioschemas	FormalParameter	bioschemastypes:FormalParameter	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/FormalParameter_v1.0-RELEASE.json
 bioschemas	ComputationalTool	schema:SoftwareApplication	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/ComputationalTool/jsonld/ComputationalTool_v1.0-RELEASE.json
 bioschemas	ComputationalWorkflow	bioschemastypes:ComputationalWorkflow	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE.json
-bioschemas	DataCatalog	schema:DataCatalog	Profile	0.3-RELEASE	https://github.com/BioSchemas/specifications/blob/master/DataCatalog/jsonld/DataCatalog_v0.3-RELEASE.json
-bioschemas	Dataset	schema:Dataset	Profile	0.3-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v0.3-RELEASE.json
-bioschemas	Sample	bioschemastypes:Sample	Profile	0.2-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE.json
+bioschemas	DataCatalog	schema:DataCatalog	Profile	0.3-RELEASE-2019_07_01	https://github.com/BioSchemas/specifications/blob/master/DataCatalog/jsonld/DataCatalog_v0.3-RELEASE-2019_07_01.json
+bioschemas	Dataset	schema:Dataset	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v1.0-RELEASE.json
+bioschemas	Sample	bioschemastypes:Sample	Profile	0.2-RELEASE-2018_11_10	https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE-2018_11_10.json
 bioschemas	Course	schema:Course	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Course/jsonld/Course_v1.0-RELEASE.json
 bioschemas	CourseInstance	schema:CourseInstance	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v1.0-RELEASE.json
 bioschemas	TrainingMaterial	schema:LearningResource	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/TrainingMaterial/jsonld/TrainingMaterial_v1.0-RELEASE.json
