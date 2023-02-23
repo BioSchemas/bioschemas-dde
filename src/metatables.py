@@ -116,12 +116,17 @@ def update_spec_table(script_path,eachfile,spec_updated_df):
     if update_needed == True:
         classes_to_update = spec_updated_df['name'].to_list()
         newdf = original_df.loc[~original_df['name'].isin(classes_to_update)]
+        originalist = original_df['name'].tolist()
         for eachclass in classes_to_update:
             updateversiondf = spec_updated_df.loc[spec_updated_df['name']==eachclass]
             updateversion = updateversiondf.iloc[0]['version']
             oldversiondf = original_df.loc[original_df['name']==eachclass]
             if len(oldversiondf)<=0:
                 latestversion = updateversion
+                newdf = pd.concat((newdf,updateversiondf),ignore_index=True)
+            elif eachclass not in originalist:
+                latestversion = updateversion
+                newdf = pd.concat((newdf,updateversiondf),ignore_index=True)
             else:
                 oldversion = oldversiondf.iloc[0]['version']
                 latestversion = compare_versions(updateversion,oldversion)
@@ -136,8 +141,8 @@ def update_spec_table(script_path,eachfile,spec_updated_df):
 def update_tables(script_path):
     updated_df = generate_base_update_table(script_path)
     deprecated = updated_df.loc[updated_df['version'].astype(str).str.contains('DEPRECATED')]
-    draftdf = updated_df.loc[updated_df['version'].astype(str).str.contains('DRAFT')]
-    releasedf = updated_df.loc[updated_df['version'].astype(str).str.contains('RELEASE')]
+    draftdf = updated_df.loc[(updated_df['version'].astype(str).str.contains('DRAFT'))&(~updated_df['version'].astype(str).str.contains('DEPRECATED'))]
+    releasedf = updated_df.loc[(updated_df['version'].astype(str).str.contains('RELEASE'))&(~updated_df['version'].astype(str).str.contains('DEPRECATED'))]
     draft_profile = draftdf.loc[draftdf['type']=='Profile']
     draft_type = draftdf.loc[draftdf['type']=='Type']
     released_profile = releasedf.loc[releasedf['type']=='Profile']
