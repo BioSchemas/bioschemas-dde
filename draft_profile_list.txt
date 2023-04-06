@@ -22,6 +22,7 @@ bioschemasdrafts	ProteinStructure	schema:BioChemEntity	Profile	0.6-DRAFT	https:/
 bioschemas	PublicationIssue	schema:PublicationIssue	Profile	0.3-DRAFT	https://github.com/BioSchemas/specifications/tree/master/PublicationIssue/jsonld/PublicationIssue_v0.3-DRAFT.json
 bioschemas	PublicationVolume	schema:PublicationVolume	Profile	0.3-DRAFT	https://github.com/BioSchemas/specifications/tree/master/PublicationVolume/jsonld/PublicationVolume_v0.3-DRAFT.json
 bioschemas	RNA	bioschemastypes:RNA	Profile	0.2-DRAFT	https://github.com/BioSchemas/specifications/tree/master/RNA/jsonld/RNA_v0.2-DRAFT.json
+bioschemasdrafts	Sample	bioschemastypes:Sample	Profile	0.3-DRAFT	https://github.com/BioSchemas/specifications/tree/master/Sample/jsonld/Sample_v0.3-DRAFT.json
 bioschemas	ScholarlyArticle	schema:ScholarlyArticle	Profile	0.3-DRAFT	https://github.com/BioSchemas/specifications/tree/master/ScholarlyArticle/jsonld/ScholarlyArticle_v0.3-DRAFT.json
 bioschemas	SemanticTextAnnotation	schema:CreativeWork	Profile	0.3-DRAFT	https://github.com/BioSchemas/specifications/tree/master/SemanticTextAnnotation/jsonld/SemanticTextAnnotation_v0.3-DRAFT.json
 bioschemas	SequenceAnnotation	bioschemastypes:SequenceAnnotation	Profile	0.7-DRAFT	https://github.com/BioSchemas/specifications/tree/master/SequenceAnnotation/jsonld/SequenceAnnotation_v0.7-DRAFT.json
