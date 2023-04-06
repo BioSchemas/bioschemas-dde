@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "02/17/2023, 18:21:59"
+    "@dateModified": "04/06/2023, 17:00:31"
   },
   "@graph": [
     {
@@ -34,8 +34,8 @@
       "rdfs:label": "BioChemEntity",
       "schema:additionalType": "https://bioschemas.org/types#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/BioChemEntity/0.7-RELEASE",
-        "https://github.com/BioSchemas/specifications/tree/master/BioChemEntity/jsonld/type/BioChemEntity_v0.7-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/tree/master/BioChemEntity/jsonld/type/BioChemEntity_v0.7-RELEASE.json",
+        "https://bioschemas.org/types/BioChemEntity/0.7-RELEASE"
       ],
       "rdfs:subClassOf": {
         "@id": "schema:Thing"
@@ -76,8 +76,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A discrete unit of inheritance which affects one or more biological traits (Source: https://en.wikipedia.org/wiki/Gene). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype). Note, this version of the type has been added as a pending class in schema.org.",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/Gene/0.3-RELEASE-2019_09_02",
-        "https://github.com/BioSchemas/specifications/tree/master/Gene/jsonld/type/Gene_v0.3-RELEASE-2019_09_02.json"
+        "https://github.com/BioSchemas/specifications/tree/master/Gene/jsonld/type/Gene_v0.3-RELEASE-2019_09_02.json",
+        "https://bioschemas.org/types/Gene/0.3-RELEASE-2019_09_02"
       ],
       "rdfs:label": "Gene",
       "rdfs:subClassOf": {
@@ -118,8 +118,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A FormalParameter is an identified variable used to stand for the actual value(s) that are consumed/produced by a set of steps. Version: 1.0-RELEASE (09 March 2021) ",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/type/FormalParameter_v1.0-RELEASE.json",
-        "https://bioschemas.org/types/FormalParameter/1.0-RELEASE"
+        "https://bioschemas.org/types/FormalParameter/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/type/FormalParameter_v1.0-RELEASE.json"
       ],
       "rdfs:label": "FormalParameter",
       "rdfs:subClassOf": {
@@ -132,8 +132,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A computational workflow consists of an orchestrated and repeatable pattern of activity enabled by the systematic organization of resources into processes that transform materials, provide services, or process information (source Wikipedia.org). It is executed by a computational process and is thus distinct from laboratory or business workflows. version 1.0-RELEASE",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/type/ComputationalWorkflow_v1.0-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/type/ComputationalWorkflow_v1.0-RELEASE.json",
+        "https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE"
       ],
       "rdfs:label": "ComputationalWorkflow",
       "rdfs:subClassOf": {
@@ -883,25 +883,6 @@
       ]
     },
     {
-      "@id": "bioschemastypes:hasBioPolymerSequence",
-      "rdfs:comment": "A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.",
-      "@type": "rdf:Property",
-      "rdfs:label": "hasBioPolymerSequence",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemastypes:Gene"
-        },
-        {
-          "@id": "bioschemastypes:Protein"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        }
-      ]
-    },
-    {
       "@id": "bioschemastypes:potentialUse",
       "rdfs:comment": "Intended use of the BioChemEntity by humans. ",
       "@type": "rdf:Property",
@@ -917,6 +898,25 @@
       "schema:rangeIncludes": [
         {
           "@id": "schema:DefinedTerm"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:hasBioPolymerSequence",
+      "rdfs:comment": "A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.",
+      "@type": "rdf:Property",
+      "rdfs:label": "hasBioPolymerSequence",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypes:Gene"
+        },
+        {
+          "@id": "bioschemastypes:Protein"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
         }
       ]
     },
