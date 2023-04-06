@@ -1,11 +1,11 @@
 namespace	name	subClassOf	type	version	url
-bioschemas	CourseInstance	schema:CourseInstance	Profile	0.9-DRAFT	https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v0.9-DRAFT.json
 bioschemasdrafts	Gene	schema:Gene	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.1-DRAFT.json
 bioschemas	TrainingMaterial	schema:LearningResource	Profile	1.1-DRAFT	https://github.com/Bioschemas/specifications/tree/master/TrainingMaterial/jsonld/TrainingMaterial_v1.1-DRAFT.json
 bioschemas	ChemicalSubstance	schema:ChemicalSubstance	Profile	0.5-DRAFT	https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.5-DRAFT.json
 bioschemas	ComputationalTool	schema:SoftwareApplication	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/ComputationalTool/jsonld/ComputationalTool_v1.1-DRAFT.json
 bioschemasdrafts	ComputationalWorkflow	bioschemastypes:ComputationalWorkflow	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.1-DRAFT.json
 bioschemasdrafts	Course	schema:Course	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/Course/jsonld/Course_v1.1-DRAFT.json
+bioschemasdrafts	CourseInstance	schema:CourseInstance	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/CourseInstance/jsonld/CourseInstance_v1.1-DRAFT.json
 bioschemas	DataCatalog	schema:DataCatalog	Profile	0.4-DRAFT	https://github.com/BioSchemas/specifications/tree/master/DataCatalog/jsonld/DataCatalog_v0.4-DRAFT.json
 bioschemas	Dataset	schema:Dataset	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/Dataset/jsonld/Dataset_v1.1-DRAFT.json
 bioschemasdrafts	Disease	schema:MedicalCondition	Profile	0.2-DRAFT	https://github.com/BioSchemas/specifications/tree/master/Disease/jsonld/Disease_v0.2-DRAFT.json
