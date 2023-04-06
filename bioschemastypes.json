@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "04/06/2023, 17:15:03"
+    "@dateModified": "04/06/2023, 17:36:08"
   },
   "@graph": [
     {
@@ -18,8 +18,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A set of organisms asserted to represent a natural cohesive biological unit. Version: 0.3-RELEASE-2019_11_18. Note that this version of the Taxon type has been added as a pending class to schema.org.",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/type/Taxon_v0.3-RELEASE-2019_11_18.json",
-        "https://bioschemas.org/types/Taxon/0.3-RELEASE-2019_11_18"
+        "https://bioschemas.org/types/Taxon/0.3-RELEASE-2019_11_18",
+        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/type/Taxon_v0.3-RELEASE-2019_11_18.json"
       ],
       "rdfs:label": "Taxon",
       "rdfs:subClassOf": {
@@ -104,8 +104,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Protein is here used in its widest possible definition, as classes of amino acid based molecules. Amyloid-beta Protein in human (UniProt P05067), eukaryota (e.g. an OrthoDB group) or even a single molecule that one can point to are all of type schema:Protein. A protein can thus be a subclass of another protein, e.g. schema:Protein as a UniProt record can have multiple isoforms inside it which would also be schema:Protein. They can be imagined, synthetic, hypothetical or naturally occurring. This version has been added to schema.org as a pending type.",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/Protein/0.3-RELEASE-2019_09_02",
-        "https://github.com/BioSchemas/specifications/tree/master/Protein/jsonld/type/Protein_v0.3-RELEASE-2019_09_02.json"
+        "https://github.com/BioSchemas/specifications/tree/master/Protein/jsonld/type/Protein_v0.3-RELEASE-2019_09_02.json",
+        "https://bioschemas.org/types/Protein/0.3-RELEASE-2019_09_02"
       ],
       "rdfs:label": "Protein",
       "rdfs:subClassOf": {
@@ -118,8 +118,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A FormalParameter is an identified variable used to stand for the actual value(s) that are consumed/produced by a set of steps. Version: 1.0-RELEASE (09 March 2021) ",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/FormalParameter/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/type/FormalParameter_v1.0-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/type/FormalParameter_v1.0-RELEASE.json",
+        "https://bioschemas.org/types/FormalParameter/1.0-RELEASE"
       ],
       "rdfs:label": "FormalParameter",
       "rdfs:subClassOf": {
@@ -883,25 +883,6 @@
       ]
     },
     {
-      "@id": "bioschemastypes:potentialUse",
-      "rdfs:comment": "Intended use of the BioChemEntity by humans. ",
-      "@type": "rdf:Property",
-      "rdfs:label": "potentialUse",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemastypes:ChemicalSubstance"
-        },
-        {
-          "@id": "bioschemastypes:MolecularEntity"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:DefinedTerm"
-        }
-      ]
-    },
-    {
       "@id": "bioschemastypes:chemicalRole",
       "rdfs:comment": "A role played by the BioChemEntity within a chemical context. A role played by the molecular entity within a chemical context.",
       "@type": "rdf:Property",
@@ -936,6 +917,25 @@
       "schema:rangeIncludes": [
         {
           "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:potentialUse",
+      "rdfs:comment": "Intended use of the BioChemEntity by humans. ",
+      "@type": "rdf:Property",
+      "rdfs:label": "potentialUse",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypes:ChemicalSubstance"
+        },
+        {
+          "@id": "bioschemastypes:MolecularEntity"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
         }
       ]
     },
