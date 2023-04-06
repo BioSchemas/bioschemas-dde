@@ -1,0 +1,2 @@
+time,namespace,name,subclassOf,version,url
+2bcf298a-d49c-11ed-9404-190a5e91daf6,bioschams,Course,schema:Course,v1.1-DRAFT,https://github.com/BioSchemas/specifications/tree/master/Course/jsonld/Course_v1.1-DRAFT.json
