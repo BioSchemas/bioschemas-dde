@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "04/06/2023, 17:00:37",
+    "@dateModified": "04/06/2023, 17:15:09",
     "dwc": "http://rs.tdwg.org/dwc/terms/"
   },
   "@graph": [
@@ -968,8 +968,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Gene/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.0-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.0-RELEASE.json",
+        "https://bioschemas.org/profiles/Gene/1.0-RELEASE"
       ]
     },
     {
@@ -2035,8 +2035,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/MolecularEntity/jsonld/MolecularEntity_v0.5-RELEASE.json",
-        "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE"
+        "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/MolecularEntity/jsonld/MolecularEntity_v0.5-RELEASE.json"
       ]
     },
     {
@@ -2747,8 +2747,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Protein/0.11-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/Protein_v0.11-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/Protein_v0.11-RELEASE.json",
+        "https://bioschemas.org/profiles/Protein/0.11-RELEASE"
       ]
     },
     {
@@ -5136,8 +5136,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/DataCatalog/0.3-RELEASE-2019_07_01",
-        "https://github.com/BioSchemas/specifications/blob/master/DataCatalog/jsonld/DataCatalog_v0.3-RELEASE-2019_07_01.json"
+        "https://github.com/BioSchemas/specifications/blob/master/DataCatalog/jsonld/DataCatalog_v0.3-RELEASE-2019_07_01.json",
+        "https://bioschemas.org/profiles/DataCatalog/0.3-RELEASE-2019_07_01"
       ]
     },
     {
@@ -5145,8 +5145,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A guide for how to describe datasets in the life-sciences using Schema.org-like annotation. Version 1.0-RELEASE. <h3>Summary of Changes</h3> <br>Key changes since 0.3-RELEASE:<ul><li>Updated properties to Schema.org v12.0; various properties added at recommended or optional level, expected types updated. See 0.4-DRAFT for full details</li><li>license now a minimum property</li><li>keywords: Cardinality #501 \u2013 Cardinality is MANY</li><li>distribution: Cardinality #574 \u2013 Cardinality changed to MANY</li><li>datePublished: Increased marginlity #576 \u2013 Now recommended</li><li>publisher: Increased marginlity, Cardinality #576 \u2013 Now recommended with MANY cardinality</li></ul>",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Dataset/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v1.0-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v1.0-RELEASE.json",
+        "https://bioschemas.org/profiles/Dataset/1.0-RELEASE"
       ],
       "rdfs:label": "Dataset",
       "rdfs:subClassOf": {
@@ -6903,8 +6903,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Specification describing the instance of a course.  This specification can be used in tandem with a Course. A course is used to describe the broad, common aspects of a recurring training event - whereas a course instance is about the specific times and location of when that course is held. <h4>Summary of Changes</h4>    No changes since 0.9-DRAFT of the CourseInstance profile. Version: 1.0-RELEASE (13 September 2022)",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/CourseInstance/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v1.0-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v1.0-RELEASE.json",
+        "https://bioschemas.org/profiles/CourseInstance/1.0-RELEASE"
       ],
       "rdfs:label": "CourseInstance",
       "rdfs:subClassOf": {

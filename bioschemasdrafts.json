@@ -10,605 +10,11 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "04/06/2023, 17:00:40",
+    "@dateModified": "04/06/2023, 17:15:11",
     "ppeo:hasGrowthFacility": "http://purl.org/ppeo/PPEO.owl#hasGrowthFacility",
     "dwc": "http://rs.tdwg.org/dwc/terms/"
   },
   "@graph": [
-    {
-      "@id": "bioschemasdrafts:CourseInstance",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "Specification describing the instance of a course.  This specification can be used in tandem with a Course. A course is used to describe the broad, common aspects of a recurring training event - whereas a course instance is about the specific times and location of when that course is held. <h4>Summary of Changes</h4>    Changes since previous draft 0.8 of the CourseInstance profile:    <ul>     <li>courseMode - added the BSC Description (made the description more explicit with more examples</li><li>courseMode - removed the Controled Vocabullary</li><li>eventStatus - added the BSC Description with examples</li><li>eventStatus - removed the Controled Vocabullary</li><li>offers - added the BSC Description with examples</li><li>offers - added IOS 8601 for the dates and ISO 4217 for currency in the Controled Vocabullary</li><li>workFeatured - removed 'Inverse property: workFeatured' from the Description</li><li>Changes prepared by Patricia Palagi</li>    </ul> Version: 0.9-DRAFT (16 August 2022)",
-      "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/CourseInstance/0.9-DRAFT",
-        "https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v0.9-DRAFT.json"
-      ],
-      "rdfs:label": "CourseInstance",
-      "rdfs:subClassOf": {
-        "@id": "schema:CourseInstance"
-      },
-      "$validation": {
-        "$schema": "http://json-schema.org/draft-07/schema#",
-        "type": "object",
-        "properties": {
-          "alternateName": {
-            "description": " An alias for the item.",
-            "oneOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "contributor": {
-            "description": "Contributors are those who made non-authorship contributions: e.g., critical review, commentary or revision. A secondary contributor to the CreativeWork or Event.",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/organization"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/organization"
-                }
-              },
-              {
-                "$ref": "#/definitions/person"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/person"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "courseMode": {
-            "description": "The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. 'online', 'onsite' or 'blended'; 'synchronous' or 'asynchronous'; 'full-time' or 'part-time') or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ). \n The medium, means or pace of delivery of the course instance or the mode of study, either as a text label (e.g. 'online', 'onsite', 'hybrid' or 'blended'; 'synchronous' or 'asynchronous'; 'full-time' or 'part-time') or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ). \n Another example of a Glossary of terms as defined by the Bioschemas Training community and published in Zenodo in 2016: https://zenodo.org/record/166378#.YrHnEi8iu-o.",
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              {
-                "type": "string",
-                "format": "uri"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uri"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "description": {
-            "description": "A description of the Course Instance. \n\n(courseInstance) description can be used to override (course) description for specific course instances. A description of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
-          },
-          "duration": {
-            "description": "(CourseInstance) duration can be used to override (Course) duration for specific course instances. The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
-            "$ref": "#/definitions/duration",
-            "owl:cardinality": "one"
-          },
-          "endDate": {
-            "description": " The end date and time of the item (in ISO 8601 date format).",
-            "oneOf": [
-              {
-                "type": "string",
-                "format": "date"
-              },
-              {
-                "$ref": "#/definitions/datetime"
-              }
-            ],
-            "owl:cardinality": "one"
-          },
-          "eventStatus": {
-            "description": "An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled. \n An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled. Used as text label (e.g. 'postponed', 'cancelled', 'date TBC', 'application open' or 'registration closed').",
-            "$ref": "#/definitions/eventstatustype",
-            "owl:cardinality": "one"
-          },
-          "funder": {
-            "description": " A person or organization that supports (sponsors) something through some kind of financial contribution.",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/organization"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/organization"
-                }
-              },
-              {
-                "$ref": "#/definitions/person"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/person"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "image": {
-            "description": " An image of the item. This can be a URL or a fully described ImageObject.",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/imageobject"
-              },
-              {
-                "type": "string",
-                "format": "uri"
-              }
-            ],
-            "owl:cardinality": "one"
-          },
-          "inLanguage": {
-            "description": " The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage. Supersedes language.",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/language"
-              },
-              {
-                "type": "string"
-              }
-            ],
-            "owl:cardinality": "one"
-          },
-          "instructor": {
-            "description": "An instructor can be the main teacher or trainer, as well as a training assistant, or a helper. A person assigned to instruct or provide instructional assistance for the CourseInstance.",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/person"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/person"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "location": {
-            "description": "Location of the Course Instance. If the Course Instance is online, add the connection details as text The location of for example where the event is happening, an organization is located, or where an action takes place.",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/place"
-              },
-              {
-                "$ref": "#/definitions/postaladdress"
-              },
-              {
-                "type": "string"
-              },
-              {
-                "$ref": "#/definitions/virtuallocation"
-              }
-            ],
-            "owl:cardinality": "one"
-          },
-          "maximumAttendeeCapacity": {
-            "description": " The total number of individuals that may attend an event or venue.",
-            "type": "integer",
-            "owl:cardinality": "one"
-          },
-          "name": {
-            "description": "The name of the course.\n\nCourse instance name can be used to override Course name for variations in specific Course instances. Use name from Course unless the Course instance has a different name from the course. The name of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
-          },
-          "offers": {
-            "description": "An offer to provide this item\u2014for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer. Inverse property: itemOffered. \n Bioschemas: The price an attendee would pay to attend this CourseInstance. The price currency can be for instance in 'GBP' (pound sterling) or 'CHF' (Swiss francs).",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/demand"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/demand"
-                }
-              },
-              {
-                "$ref": "#/definitions/offer"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/offer"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "organizer": {
-            "description": " An organizer of an Event.",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/organization"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/organization"
-                }
-              },
-              {
-                "$ref": "#/definitions/person"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/person"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "startDate": {
-            "description": " The start date and time of the item (in ISO 8601 date format).",
-            "oneOf": [
-              {
-                "type": "string",
-                "format": "date"
-              },
-              {
-                "$ref": "#/definitions/datetime"
-              }
-            ],
-            "owl:cardinality": "one"
-          },
-          "subEvent": {
-            "description": "For events within events e.g. guest lecture within a workshop event An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference. Supersedes subEvents.\nInverse property: superEvent.",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/event"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/event"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "superEvent": {
-            "description": "Use to describe the event a course instance takes place within. e.g. Galaxy Workshop during the ISMB Conference.  An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.\nInverse property: subEvent.",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/event"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/event"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "url": {
-            "description": "The preferred URL of this course instance. You must provide this value if it is known URL of the item.",
-            "type": "string",
-            "format": "uri",
-            "owl:cardinality": "one"
-          },
-          "workFeatured": {
-            "description": "A work featured in some event, e.g. exhibited in an ExhibitionEvent. Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent). \n The training material used in this specific course instance, or produced for this course instance. If this is the same for all Course Instances, use hasPart and/or mentions in Course instead",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/creativework"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/creativework"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "conformsTo": {
-            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v0.9-DRAFT.json",
-            "$ref": "#/definitions/conformsDefinition"
-          }
-        },
-        "required": [
-          "courseMode",
-          "location",
-          "conformsTo"
-        ],
-        "recommended": [
-          "endDate",
-          "inLanguage",
-          "instructor",
-          "offers",
-          "startDate",
-          "url"
-        ],
-        "optional": [
-          "alternateName",
-          "contributor",
-          "description",
-          "duration",
-          "eventStatus",
-          "funder",
-          "image",
-          "maximumAttendeeCapacity",
-          "name",
-          "organizer",
-          "subEvent",
-          "superEvent",
-          "workFeatured"
-        ],
-        "definitions": {
-          "organization": {
-            "@type": "Organization",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "legalName": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "sameAs": {
-                "type": "string",
-                "format": "uri"
-              }
-            }
-          },
-          "person": {
-            "@type": "Person",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "url": {
-                "type": "string",
-                "format": "uri"
-              },
-              "mainEntityOfPage": {
-                "anyOf": [
-                  {
-                    "type": "string",
-                    "format": "uri"
-                  },
-                  {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "format": "uri"
-                    }
-                  },
-                  {
-                    "$ref": "#/definitions/creativework"
-                  },
-                  {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/definitions/creativework"
-                    }
-                  }
-                ]
-              }
-            },
-            "required": [
-              "name"
-            ]
-          },
-          "creativework": {
-            "@type": "CreativeWork",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "identifier": {
-                "type": "string"
-              },
-              "url": {
-                "type": "string",
-                "format": "uri"
-              }
-            },
-            "required": []
-          },
-          "duration": {
-            "@type": "schema:Duration",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              }
-            },
-            "required": []
-          },
-          "datetime": {
-            "@type": "schema:DateTime",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              }
-            },
-            "required": []
-          },
-          "eventstatustype": {
-            "@type": "schema:EventStatusType",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              }
-            },
-            "required": []
-          },
-          "imageobject": {
-            "@type": "ImageObject",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "url": {
-                "type": "string",
-                "format": "uri"
-              }
-            },
-            "required": []
-          },
-          "language": {
-            "@type": "schema:Language",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              }
-            },
-            "required": []
-          },
-          "place": {
-            "@type": "Place",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "address": {
-                "oneOf": [
-                  {
-                    "type": "string"
-                  },
-                  {
-                    "$ref": "#/definitions/postaladdress"
-                  }
-                ]
-              },
-              "identifier": {
-                "type": "string"
-              },
-              "url": {
-                "type": "string",
-                "format": "uri"
-              }
-            }
-          },
-          "postaladdress": {
-            "@type": "PostalAddress",
-            "type": "object",
-            "properties": {
-              "addressCountry": {
-                "type": "string"
-              },
-              "addressLocality": {
-                "type": "string"
-              },
-              "addressRegion": {
-                "type": "string"
-              },
-              "postOfficeBoxNumber": {
-                "type": "string"
-              },
-              "postalCode": {
-                "type": "string"
-              },
-              "streetAddress": {
-                "type": "string"
-              }
-            }
-          },
-          "virtuallocation": {
-            "@type": "schema:VirtualLocation",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              }
-            },
-            "required": []
-          },
-          "demand": {
-            "@type": "schema:Demand",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              }
-            },
-            "required": []
-          },
-          "offer": {
-            "@type": "schema:Offer",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              }
-            },
-            "required": []
-          },
-          "event": {
-            "@type": "bioschemas:Event",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              }
-            },
-            "required": []
-          },
-          "conformsDefinition": {
-            "@type": "CreativeWork",
-            "type": "object",
-            "properties": {
-              "identifier": {
-                "description": "The url of the version bioschemas profile that was used. For jsonschema, set @id to the identifier",
-                "oneOf": [
-                  {
-                    "enum": [
-                      "https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v0.9-DRAFT.json"
-                    ]
-                  },
-                  {
-                    "type": "string",
-                    "format": "uri"
-                  }
-                ]
-              }
-            },
-            "required": [
-              "identifier"
-            ]
-          }
-        }
-      },
-      "additional_type": "https://bioschemas.org/profiles#nav-draft"
-    },
     {
       "@id": "bioschemasdrafts:Gene",
       "@type": "rdfs:Class",
@@ -1294,8 +700,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.1-DRAFT.json",
-        "https://bioschemas.org/profiles/Gene/1.1-DRAFT"
+        "https://bioschemas.org/profiles/Gene/1.1-DRAFT",
+        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.1-DRAFT.json"
       ]
     },
     {
@@ -1303,8 +709,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A specification for describing training materials in life sciences. The Life Science Training Materials specification provides a way to describe bioscience training material on the World Wide Web. It defines a set of metadata and vocabularies, built on top of existing technologies and standards, that can be used to represent events in Web pages and applications. The goal of the specification is to make it easier to discover, exchange and integrate life science training material information across the Internet. Version: 1.1-DRAFT. <h3>Summary of Changes</h3><br>Changes since previous draft 0.9-DRAFT-2020_12_08 of the TrainingMaterials profile:<ul><li>added sameAs property as recommended</li></ul>",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/TrainingMaterial/1.1-DRAFT",
-        "https://github.com/Bioschemas/specifications/tree/master/TrainingMaterial/jsonld/TrainingMaterial_v1.1-DRAFT.json"
+        "https://github.com/Bioschemas/specifications/tree/master/TrainingMaterial/jsonld/TrainingMaterial_v1.1-DRAFT.json",
+        "https://bioschemas.org/profiles/TrainingMaterial/1.1-DRAFT"
       ],
       "rdfs:label": "TrainingMaterial",
       "rdfs:subClassOf": {
@@ -2450,8 +1856,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.5-DRAFT.json",
-        "https://bioschemas.org/profiles/ChemicalSubstance/0.5-DRAFT"
+        "https://bioschemas.org/profiles/ChemicalSubstance/0.5-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.5-DRAFT.json"
       ]
     },
     {
@@ -5576,8 +4982,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.1-DRAFT.json",
-        "https://bioschemas.org/profiles/ComputationalWorkflow/1.1-DRAFT"
+        "https://bioschemas.org/profiles/ComputationalWorkflow/1.1-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.1-DRAFT.json"
       ]
     },
     {
@@ -6849,6 +6255,1216 @@
       "schema:schemaVersion": [
         "https://bioschemas.org/profiles/Course/1.1-DRAFT",
         "https://github.com/BioSchemas/specifications/tree/master/Course/jsonld/Course_v1.1-DRAFT.json"
+      ]
+    },
+    {
+      "@id": "bioschemasdrafts:CourseInstance",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "This specification can be used in tandem with a Course. A course is used to describe the broad, common aspects of a recurring training event - whereas a course instance is about the specific times and location of when that course is held. Version 1.1-DRAFT <h4>Summary of Changes</h4>Changes since version 1.0-RELEASE<ul><li>Added sameAs</li><li>modified by Nick and Ginger</li></ul> ",
+      "rdfs:label": "CourseInstance",
+      "rdfs:subClassOf": {
+        "@id": "schema:CourseInstance"
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "courseMode": {
+            "description": "The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. \"online\", \"onsite\" or \"blended\"; \"synchronous\" or \"asynchronous\"; \"full-time\" or \"part-time\") or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "format": "uri",
+                "type": "string"
+              },
+              {
+                "items": {
+                  "format": "uri",
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "instructor": {
+            "description": "A person assigned to instruct or provide instructional assistance for the [[CourseInstance]].",
+            "oneOf": [
+              {
+                "@type": "Person",
+                "properties": {
+                  "mainEntityOfPage": {
+                    "anyOf": [
+                      {
+                        "format": "uri",
+                        "type": "string"
+                      },
+                      {
+                        "items": {
+                          "format": "uri",
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      {
+                        "@type": "CreativeWork",
+                        "properties": {
+                          "identifier": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "url": {
+                            "format": "uri",
+                            "type": "string"
+                          }
+                        },
+                        "required": [],
+                        "type": "object"
+                      },
+                      {
+                        "items": {
+                          "@type": "CreativeWork",
+                          "properties": {
+                            "identifier": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "url": {
+                              "format": "uri",
+                              "type": "string"
+                            }
+                          },
+                          "required": [],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      }
+                    ]
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "format": "uri",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "type": "object"
+              },
+              {
+                "items": {
+                  "@type": "Person",
+                  "properties": {
+                    "mainEntityOfPage": {
+                      "anyOf": [
+                        {
+                          "format": "uri",
+                          "type": "string"
+                        },
+                        {
+                          "items": {
+                            "format": "uri",
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        {
+                          "@type": "CreativeWork",
+                          "properties": {
+                            "identifier": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "url": {
+                              "format": "uri",
+                              "type": "string"
+                            }
+                          },
+                          "required": [],
+                          "type": "object"
+                        },
+                        {
+                          "items": {
+                            "@type": "CreativeWork",
+                            "properties": {
+                              "identifier": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "url": {
+                                "format": "uri",
+                                "type": "string"
+                              }
+                            },
+                            "required": [],
+                            "type": "object"
+                          },
+                          "type": "array"
+                        }
+                      ]
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "format": "uri",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "type": "array"
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "contributor": {
+            "description": "A secondary contributor to the CreativeWork or Event.",
+            "anyOf": [
+              {
+                "@type": "Organization",
+                "properties": {
+                  "description": {
+                    "type": "string"
+                  },
+                  "legalName": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "sameAs": {
+                    "format": "uri",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              {
+                "items": {
+                  "@type": "Organization",
+                  "properties": {
+                    "description": {
+                      "type": "string"
+                    },
+                    "legalName": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "sameAs": {
+                      "format": "uri",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "@type": "Person",
+                "properties": {
+                  "mainEntityOfPage": {
+                    "anyOf": [
+                      {
+                        "format": "uri",
+                        "type": "string"
+                      },
+                      {
+                        "items": {
+                          "format": "uri",
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      {
+                        "@type": "CreativeWork",
+                        "properties": {
+                          "identifier": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "url": {
+                            "format": "uri",
+                            "type": "string"
+                          }
+                        },
+                        "required": [],
+                        "type": "object"
+                      },
+                      {
+                        "items": {
+                          "@type": "CreativeWork",
+                          "properties": {
+                            "identifier": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "url": {
+                              "format": "uri",
+                              "type": "string"
+                            }
+                          },
+                          "required": [],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      }
+                    ]
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "format": "uri",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "type": "object"
+              },
+              {
+                "items": {
+                  "@type": "Person",
+                  "properties": {
+                    "mainEntityOfPage": {
+                      "anyOf": [
+                        {
+                          "format": "uri",
+                          "type": "string"
+                        },
+                        {
+                          "items": {
+                            "format": "uri",
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        {
+                          "@type": "CreativeWork",
+                          "properties": {
+                            "identifier": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "url": {
+                              "format": "uri",
+                              "type": "string"
+                            }
+                          },
+                          "required": [],
+                          "type": "object"
+                        },
+                        {
+                          "items": {
+                            "@type": "CreativeWork",
+                            "properties": {
+                              "identifier": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "url": {
+                                "format": "uri",
+                                "type": "string"
+                              }
+                            },
+                            "required": [],
+                            "type": "object"
+                          },
+                          "type": "array"
+                        }
+                      ]
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "format": "uri",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "type": "array"
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "duration": {
+            "description": "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).",
+            "@type": "schema:Duration",
+            "owl:cardinality": "one",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [],
+            "type": "object"
+          },
+          "endDate": {
+            "description": "The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+            "oneOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "@type": "schema:DateTime",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "eventStatus": {
+            "description": "An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.",
+            "@type": "schema:EventStatusType",
+            "owl:cardinality": "one",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [],
+            "type": "object"
+          },
+          "funder": {
+            "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+            "anyOf": [
+              {
+                "@type": "Organization",
+                "properties": {
+                  "description": {
+                    "type": "string"
+                  },
+                  "legalName": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "sameAs": {
+                    "format": "uri",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              {
+                "items": {
+                  "@type": "Organization",
+                  "properties": {
+                    "description": {
+                      "type": "string"
+                    },
+                    "legalName": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "sameAs": {
+                      "format": "uri",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "@type": "Person",
+                "properties": {
+                  "mainEntityOfPage": {
+                    "anyOf": [
+                      {
+                        "format": "uri",
+                        "type": "string"
+                      },
+                      {
+                        "items": {
+                          "format": "uri",
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      {
+                        "@type": "CreativeWork",
+                        "properties": {
+                          "identifier": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "url": {
+                            "format": "uri",
+                            "type": "string"
+                          }
+                        },
+                        "required": [],
+                        "type": "object"
+                      },
+                      {
+                        "items": {
+                          "@type": "CreativeWork",
+                          "properties": {
+                            "identifier": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "url": {
+                              "format": "uri",
+                              "type": "string"
+                            }
+                          },
+                          "required": [],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      }
+                    ]
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "format": "uri",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "type": "object"
+              },
+              {
+                "items": {
+                  "@type": "Person",
+                  "properties": {
+                    "mainEntityOfPage": {
+                      "anyOf": [
+                        {
+                          "format": "uri",
+                          "type": "string"
+                        },
+                        {
+                          "items": {
+                            "format": "uri",
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        {
+                          "@type": "CreativeWork",
+                          "properties": {
+                            "identifier": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "url": {
+                              "format": "uri",
+                              "type": "string"
+                            }
+                          },
+                          "required": [],
+                          "type": "object"
+                        },
+                        {
+                          "items": {
+                            "@type": "CreativeWork",
+                            "properties": {
+                              "identifier": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "url": {
+                                "format": "uri",
+                                "type": "string"
+                              }
+                            },
+                            "required": [],
+                            "type": "object"
+                          },
+                          "type": "array"
+                        }
+                      ]
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "format": "uri",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "type": "array"
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "inLanguage": {
+            "description": "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].",
+            "oneOf": [
+              {
+                "@type": "schema:Language",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "location": {
+            "description": "The location of, for example, where an event is happening, where an organization is located, or where an action takes place.",
+            "oneOf": [
+              {
+                "@type": "Place",
+                "properties": {
+                  "address": {
+                    "oneOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "@type": "PostalAddress",
+                        "properties": {
+                          "addressCountry": {
+                            "type": "string"
+                          },
+                          "addressLocality": {
+                            "type": "string"
+                          },
+                          "addressRegion": {
+                            "type": "string"
+                          },
+                          "postOfficeBoxNumber": {
+                            "type": "string"
+                          },
+                          "postalCode": {
+                            "type": "string"
+                          },
+                          "streetAddress": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "identifier": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "format": "uri",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              {
+                "@type": "PostalAddress",
+                "properties": {
+                  "addressCountry": {
+                    "type": "string"
+                  },
+                  "addressLocality": {
+                    "type": "string"
+                  },
+                  "addressRegion": {
+                    "type": "string"
+                  },
+                  "postOfficeBoxNumber": {
+                    "type": "string"
+                  },
+                  "postalCode": {
+                    "type": "string"
+                  },
+                  "streetAddress": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "@type": "schema:VirtualLocation",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "maximumAttendeeCapacity": {
+            "description": "The total number of individuals that may attend an event or venue.",
+            "owl:cardinality": "one",
+            "type": "integer"
+          },
+          "offers": {
+            "description": "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.\n      ",
+            "anyOf": [
+              {
+                "@type": "schema:Demand",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              },
+              {
+                "items": {
+                  "@type": "schema:Demand",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [],
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "@type": "schema:Offer",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              },
+              {
+                "items": {
+                  "@type": "schema:Offer",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [],
+                  "type": "object"
+                },
+                "type": "array"
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "organizer": {
+            "description": "An organizer of an Event.",
+            "anyOf": [
+              {
+                "@type": "Organization",
+                "properties": {
+                  "description": {
+                    "type": "string"
+                  },
+                  "legalName": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "sameAs": {
+                    "format": "uri",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              {
+                "items": {
+                  "@type": "Organization",
+                  "properties": {
+                    "description": {
+                      "type": "string"
+                    },
+                    "legalName": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "sameAs": {
+                      "format": "uri",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "@type": "Person",
+                "properties": {
+                  "mainEntityOfPage": {
+                    "anyOf": [
+                      {
+                        "format": "uri",
+                        "type": "string"
+                      },
+                      {
+                        "items": {
+                          "format": "uri",
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      {
+                        "@type": "CreativeWork",
+                        "properties": {
+                          "identifier": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "url": {
+                            "format": "uri",
+                            "type": "string"
+                          }
+                        },
+                        "required": [],
+                        "type": "object"
+                      },
+                      {
+                        "items": {
+                          "@type": "CreativeWork",
+                          "properties": {
+                            "identifier": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "url": {
+                              "format": "uri",
+                              "type": "string"
+                            }
+                          },
+                          "required": [],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      }
+                    ]
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "format": "uri",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "type": "object"
+              },
+              {
+                "items": {
+                  "@type": "Person",
+                  "properties": {
+                    "mainEntityOfPage": {
+                      "anyOf": [
+                        {
+                          "format": "uri",
+                          "type": "string"
+                        },
+                        {
+                          "items": {
+                            "format": "uri",
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        {
+                          "@type": "CreativeWork",
+                          "properties": {
+                            "identifier": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "url": {
+                              "format": "uri",
+                              "type": "string"
+                            }
+                          },
+                          "required": [],
+                          "type": "object"
+                        },
+                        {
+                          "items": {
+                            "@type": "CreativeWork",
+                            "properties": {
+                              "identifier": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "url": {
+                                "format": "uri",
+                                "type": "string"
+                              }
+                            },
+                            "required": [],
+                            "type": "object"
+                          },
+                          "type": "array"
+                        }
+                      ]
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "format": "uri",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "type": "array"
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "startDate": {
+            "description": "The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+            "oneOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "@type": "schema:DateTime",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "subEvent": {
+            "description": "An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.",
+            "oneOf": [
+              {
+                "@type": "bioschemas:Event",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              },
+              {
+                "items": {
+                  "@type": "bioschemas:Event",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [],
+                  "type": "object"
+                },
+                "type": "array"
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "superEvent": {
+            "description": "An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.",
+            "oneOf": [
+              {
+                "@type": "bioschemas:Event",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              },
+              {
+                "items": {
+                  "@type": "bioschemas:Event",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [],
+                  "type": "object"
+                },
+                "type": "array"
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "workFeatured": {
+            "description": "A work featured in some event, e.g. exhibited in an ExhibitionEvent.\n       Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).",
+            "oneOf": [
+              {
+                "@type": "CreativeWork",
+                "properties": {
+                  "identifier": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "format": "uri",
+                    "type": "string"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              },
+              {
+                "items": {
+                  "@type": "CreativeWork",
+                  "properties": {
+                    "identifier": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "format": "uri",
+                      "type": "string"
+                    }
+                  },
+                  "required": [],
+                  "type": "object"
+                },
+                "type": "array"
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "alternateName": {
+            "description": "An alias for the item.",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "description": {
+            "description": "A description of the item.",
+            "owl:cardinality": "one",
+            "type": "string"
+          },
+          "image": {
+            "description": "An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].",
+            "oneOf": [
+              {
+                "@type": "ImageObject",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "format": "uri",
+                    "type": "string"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              },
+              {
+                "format": "uri",
+                "type": "string"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "name": {
+            "description": "The name of the item.",
+            "owl:cardinality": "one",
+            "type": "string"
+          },
+          "sameAs": {
+            "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+            "owl:cardinality": "many",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            ]
+          },
+          "url": {
+            "description": "URL of the item.",
+            "format": "uri",
+            "owl:cardinality": "one",
+            "type": "string"
+          },
+          "conformsTo": {
+            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/tree/master/CourseInstance/jsonld/CourseInstance_v1.1-DRAFT.json",
+            "$ref": "#/definitions/conformsDefinition"
+          }
+        },
+        "required": [
+          "courseMode",
+          "location",
+          "conformsTo"
+        ],
+        "recommended": [
+          "instructor",
+          "endDate",
+          "inLanguage",
+          "offers",
+          "startDate",
+          "sameAs",
+          "url"
+        ],
+        "optional": [
+          "contributor",
+          "duration",
+          "eventStatus",
+          "funder",
+          "maximumAttendeeCapacity",
+          "organizer",
+          "subEvent",
+          "superEvent",
+          "workFeatured",
+          "alternateName",
+          "description",
+          "image",
+          "name"
+        ],
+        "definitions": {
+          "conformsDefinition": {
+            "@type": "CreativeWork",
+            "type": "object",
+            "properties": {
+              "identifier": {
+                "description": "The url of the version bioschemas profile that was used. For jsonschema, set @id to the identifier",
+                "oneOf": [
+                  {
+                    "enum": [
+                      "https://github.com/BioSchemas/specifications/tree/master/CourseInstance/jsonld/CourseInstance_v1.1-DRAFT.json"
+                    ]
+                  },
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "identifier"
+            ]
+          }
+        }
+      },
+      "additional_type": "https://bioschemas.org/profiles#nav-draft",
+      "schema:schemaVersion": [
+        "https://bioschemas.org/profiles/CourseInstance/1.1-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/CourseInstance/jsonld/CourseInstance_v1.1-DRAFT.json"
       ]
     },
     {
@@ -8267,8 +8883,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Disease/0.2-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/Disease/jsonld/Disease_v0.2-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/Disease/jsonld/Disease_v0.2-DRAFT.json",
+        "https://bioschemas.org/profiles/Disease/0.2-DRAFT"
       ]
     },
     {
@@ -9874,8 +10490,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile describing a LabProtocol in Life Sciences. An experimental LabProtocol is a sequence of tasks and operations executed to perform experimental research in biological and biomedical areas. This LabProtocol profile specification presents the markup for describing a LabProtocol type according to Bioschemas. An experimental LabProtocol is a sequence of tasks and operations executed to perform experimental research in biological and biomedical areas. Version 0.7-DRAFT. <h3>Summary of Changes</h3><br>Changes since previous draft 0.5 of the LabProtocols profile: <ul><li>added sameAs property as recommended</li></ul>",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/LabProtocol/0.7-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/LabProtocol/jsonld/LabProtocol_v0.7-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/LabProtocol/jsonld/LabProtocol_v0.7-DRAFT.json",
+        "https://bioschemas.org/profiles/LabProtocol/0.7-DRAFT"
       ],
       "rdfs:label": "LabProtocol",
       "rdfs:subClassOf": {
@@ -11657,8 +12273,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/MolecularEntity/jsonld/MolecularEntity_v0.7-DRAFT.json",
-        "https://bioschemas.org/profiles/MolecularEntity/0.7-DRAFT"
+        "https://bioschemas.org/profiles/MolecularEntity/0.7-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/MolecularEntity/jsonld/MolecularEntity_v0.7-DRAFT.json"
       ]
     },
     {
@@ -12882,8 +13498,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile describing a Phenotype in Life Sciences This Phenotype type specification presents the markup for describing a Phenotype. Version 0.2-DRAFT. <h3>Summary of Changes</h3><br>Changes from Previous Version:<ul><li>isAssociatedWith BioChemEntity switch to recommended and renamed as bioChemAssociation with an improved description</li><li>taxonomicRange switch to recommended</li><li>image switch to optional and many</li><li>additionalType dropped</li><li>additionalProperty description changed</li><li>new property: associatedDisease</li><li>new properties for GO associations: hasMolecularFunction, isInvolvedInBiologicalProcess and isLocatedInSubcellularLocation</li></ul>",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/Phenotype/jsonld/Phenotype_v0.2-DRAFT.json",
-        "https://bioschemas.org/profiles/Phenotype/0.2-DRAFT"
+        "https://bioschemas.org/profiles/Phenotype/0.2-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/Phenotype/jsonld/Phenotype_v0.2-DRAFT.json"
       ],
       "rdfs:label": "Phenotype",
       "rdfs:subClassOf": {
@@ -14245,8 +14861,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "This profile specification presents the BioChemEntity usage when describing a Protein structure. Version 0.6-DRAFT. <h3>Summary of Changes</h3><br>Changes since 0.5-DRAFT-2018_08_15:<ul><li>added sameAs property as recommended</li></ul>",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/ProteinStructure/0.6-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/ProteinStructure/jsonld/ProteinStructure_v0.6-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/ProteinStructure/jsonld/ProteinStructure_v0.6-DRAFT.json",
+        "https://bioschemas.org/profiles/ProteinStructure/0.6-DRAFT"
       ],
       "rdfs:label": "ProteinStructure",
       "rdfs:subClassOf": {
@@ -16467,8 +17083,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile, based on Biotea model, describing a ScholarlyArticle in Life Sciences. A ScholarlyArticle is an article commonly reporting a scientific research, for instance a journal article or thesis. DOI is recommended as official idnetifier (e.g., \"@id\" in JSON-LD) Version 0.3-DRAFT. <h3>Summary of Changes</h3> <br>Changes since previous draft 0.2-DRAFT-2020_12_03 of the ScholarlyArticle profile:<ul><li>added sameAs property as recommended</li></ul>",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/ScholarlyArticle/0.3-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/ScholarlyArticle/jsonld/ScholarlyArticle_v0.3-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/ScholarlyArticle/jsonld/ScholarlyArticle_v0.3-DRAFT.json",
+        "https://bioschemas.org/profiles/ScholarlyArticle/0.3-DRAFT"
       ],
       "rdfs:label": "ScholarlyArticle",
       "rdfs:subClassOf": {
@@ -18429,8 +19045,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/SequenceRange/jsonld/SequenceRange_v0.2-DRAFT.json",
-        "https://bioschemas.org/profiles/SequenceRange/0.2-DRAFT"
+        "https://bioschemas.org/profiles/SequenceRange/0.2-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/SequenceRange/jsonld/SequenceRange_v0.2-DRAFT.json"
       ]
     },
     {
@@ -18438,8 +19054,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": " This Study profile presents the markup when describing a Study. Version: 0.3-DRAFT. <h3>Summary of Changes</h3><br>Changes since 0.2-DRAFT:<ul><li>added sameAs property as recommended.</li></ul>",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/Study/jsonld/Study_v0.3-DRAFT.json",
-        "https://bioschemas.org/profiles/Study/0.3-DRAFT"
+        "https://bioschemas.org/profiles/Study/0.3-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/Study/jsonld/Study_v0.3-DRAFT.json"
       ],
       "rdfs:label": "Study",
       "rdfs:subClassOf": {
@@ -19144,8 +19760,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile for describing a biological taxon This profile aims to denote a taxon by common properties such as its scientific name, taxonomic rank and vernacular names. It is also a means to link to existing taxonomic registers where each taxon has a URI. Version 0.8-DRAFT. <br/><h3>Summary of Changes</h3><br>Changes since 0.7-DRAFT:<ul><li>Change sameAs from optional to recommended.</li></ul>",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Taxon/0.8-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/Taxon/jsonld/Taxon_v0.8-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/Taxon/jsonld/Taxon_v0.8-DRAFT.json",
+        "https://bioschemas.org/profiles/Taxon/0.8-DRAFT"
       ],
       "rdfs:label": "Taxon",
       "rdfs:subClassOf": {
@@ -20895,10 +21511,10 @@
       ]
     },
     {
-      "@id": "bioschemasdrafts:socialMedia",
-      "rdfs:comment": "Link to social media websites like twitter or facebook.",
+      "@id": "bioschemasdrafts:attachment",
+      "rdfs:comment": "Any files or related websites which give more information about this event. e.g. flyers, third party sites handling tickets.",
       "@type": "rdf:Property",
-      "rdfs:label": "socialMedia",
+      "rdfs:label": "attachment",
       "schema:domainIncludes": [
         {
           "@id": "bioschemasdrafts:Event"
@@ -20910,47 +21526,6 @@
       "schema:rangeIncludes": [
         {
           "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemasdrafts:topic",
-      "rdfs:comment": "The scientific topic the event is about. Please use a term from EDAM: Topic.",
-      "@type": "rdf:Property",
-      "rdfs:label": "topic",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemasdrafts:Event"
-        },
-        {
-          "@id": "bioschemasdrafts:Organization"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemasdrafts:dateModified",
-      "rdfs:comment": "The date on which the CreativeWork was most recently modified or when the item\u2019s entry was modified within a DataFeed. \n NOTE: Keywords is not part of Event.",
-      "@type": "rdf:Property",
-      "rdfs:label": "dateModified",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemasdrafts:Event"
-        },
-        {
-          "@id": "bioschemasdrafts:Organization"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Date"
-        },
-        {
-          "@id": "schema:DateTime"
         }
       ]
     },
@@ -20974,10 +21549,10 @@
       ]
     },
     {
-      "@id": "bioschemasdrafts:attachment",
-      "rdfs:comment": "Any files or related websites which give more information about this event. e.g. flyers, third party sites handling tickets.",
+      "@id": "rdf:type",
+      "rdfs:comment": "This is used by validation tools to indentify the profile used. You must use the value specified in the Controlled Vocabulary column. This is used by validation tools to indentify the profile used. You must use the value specified in the Controlled Vocabulary column.",
       "@type": "rdf:Property",
-      "rdfs:label": "attachment",
+      "rdfs:label": "type",
       "schema:domainIncludes": [
         {
           "@id": "bioschemasdrafts:Event"
@@ -20993,10 +21568,10 @@
       ]
     },
     {
-      "@id": "rdf:type",
-      "rdfs:comment": "This is used by validation tools to indentify the profile used. You must use the value specified in the Controlled Vocabulary column. This is used by validation tools to indentify the profile used. You must use the value specified in the Controlled Vocabulary column.",
+      "@id": "bioschemasdrafts:topic",
+      "rdfs:comment": "The scientific topic the event is about. Please use a term from EDAM: Topic.",
       "@type": "rdf:Property",
-      "rdfs:label": "type",
+      "rdfs:label": "topic",
       "schema:domainIncludes": [
         {
           "@id": "bioschemasdrafts:Event"
@@ -21037,14 +21612,52 @@
       ]
     },
     {
+      "@id": "bioschemasdrafts:dateModified",
+      "rdfs:comment": "The date on which the CreativeWork was most recently modified or when the item\u2019s entry was modified within a DataFeed. \n NOTE: Keywords is not part of Event.",
+      "@type": "rdf:Property",
+      "rdfs:label": "dateModified",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemasdrafts:Event"
+        },
+        {
+          "@id": "bioschemasdrafts:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        },
+        {
+          "@id": "schema:DateTime"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemasdrafts:socialMedia",
+      "rdfs:comment": "Link to social media websites like twitter or facebook.",
+      "@type": "rdf:Property",
+      "rdfs:label": "socialMedia",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemasdrafts:Event"
+        },
+        {
+          "@id": "bioschemasdrafts:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
       "@id": "dct:conformsTo",
       "@type": "rdf:Property",
       "rdfs:comment": "Used to state the Bioschemas profile that the markup relates to. The versioned URL of the profile must be used. Note that we use a CURIE in the table here but the full URL for Dublin Core terms must be used in the markup (http://purl.org/dc/terms/conformsTo), see example.",
       "rdfs:label": "conformsTo",
       "schema:domainIncludes": [
-        {
-          "@id": "bioschemasdrafts:CourseInstance"
-        },
         {
           "@id": "bioschemasdrafts:Gene"
         },
@@ -21062,6 +21675,9 @@
         },
         {
           "@id": "bioschemasdrafts:Course"
+        },
+        {
+          "@id": "bioschemasdrafts:CourseInstance"
         },
         {
           "@id": "bioschemasdrafts:DataCatalog"
