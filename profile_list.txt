@@ -1,7 +1,7 @@
 namespace	name	subClassOf	type	version	url
 bioschemas	ChemicalSubstance	schema:ChemicalSubstance	Profile	0.4-RELEASE	https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.4-RELEASE.json
 bioschemas	Gene	schema:Gene	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.0-RELEASE.json
-bioschemas	Taxon	schema:Taxon	Profile	0.6-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v0.6-RELEASE.json
+bioschemas	Taxon	bioschemastypes:Taxon	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v1.0-RELEASE.json
 bioschemas	MolecularEntity	schema:MolecularEntity	Profile	0.5-RELEASE	https://github.com/BioSchemas/specifications/blob/master/MolecularEntity/jsonld/MolecularEntity_v0.5-RELEASE.json
 bioschemas	Protein	schema:Protein	Profile	0.11-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/Protein_v0.11-RELEASE.json
 bioschemas	FormalParameter	bioschemastypes:FormalParameter	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/FormalParameter_v1.0-RELEASE.json
@@ -13,3 +13,4 @@ bioschemas	Sample	bioschemastypes:Sample	Profile	0.2-RELEASE-2018_11_10	https://
 bioschemas	Course	schema:Course	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/Course/jsonld/Course_v1.0-RELEASE.json
 bioschemas	CourseInstance	schema:CourseInstance	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v1.0-RELEASE.json
 bioschemas	TrainingMaterial	schema:LearningResource	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/TrainingMaterial/jsonld/TrainingMaterial_v1.0-RELEASE.json
+bioschemas	TaxonName	bioschemastypes:TaxonName	Profile	1.0-RELEASE	https://github.com/BioSchemas/specifications/blob/master/TaxonName/jsonld/TaxonName_v1.0-RELEASE.json

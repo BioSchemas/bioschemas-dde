@@ -10,6 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
+    "dwc": "http://rs.tdwg.org/dwc/terms/",
     "@dateModified": "05/01/2023, 08:37:38"
   },
   "@graph": [
@@ -665,6 +666,20 @@
         },
         {
           "@id": "schema:DefinedTerm"
+        }
+      ]
+    },
+    {
+      "@id": "dwc:vernacularName",
+      "rdfs:comment": "A vernacular (common) name of the taxon.",
+      "@type": "rdf:Property",
+      "rdfs:label": "vernacularName",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:Taxon"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
         }
       ]
     },
