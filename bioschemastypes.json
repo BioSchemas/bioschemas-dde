@@ -10,16 +10,16 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "04/06/2023, 17:36:08"
+    "@dateModified": "05/01/2023, 08:37:38"
   },
   "@graph": [
     {
       "@id": "bioschemastypes:Taxon",
       "@type": "rdfs:Class",
-      "rdfs:comment": "A set of organisms asserted to represent a natural cohesive biological unit. Version: 0.3-RELEASE-2019_11_18. Note that this version of the Taxon type has been added as a pending class to schema.org.",
+      "rdfs:comment": "A set of organisms asserted to represent a natural cohesive biological unit. Version: 1.0-RELEASE",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/Taxon/0.3-RELEASE-2019_11_18",
-        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/type/Taxon_v0.3-RELEASE-2019_11_18.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/type/Taxon_v1.0-RELEASE.json",
+        "https://bioschemas.org/types/Taxon/1.0-RELEASE"
       ],
       "rdfs:label": "Taxon",
       "rdfs:subClassOf": {
@@ -34,8 +34,8 @@
       "rdfs:label": "BioChemEntity",
       "schema:additionalType": "https://bioschemas.org/types#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/BioChemEntity/jsonld/type/BioChemEntity_v0.7-RELEASE.json",
-        "https://bioschemas.org/types/BioChemEntity/0.7-RELEASE"
+        "https://bioschemas.org/types/BioChemEntity/0.7-RELEASE",
+        "https://github.com/BioSchemas/specifications/tree/master/BioChemEntity/jsonld/type/BioChemEntity_v0.7-RELEASE.json"
       ],
       "rdfs:subClassOf": {
         "@id": "schema:Thing"
@@ -62,8 +62,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A chemical substance is 'a portion of matter of constant composition, composed of molecular entities of the same type or of different types' (source: ChEBI:59999). Version: 0.3-RELEASE-2019_09_02. This version is was released as a pending class as of schema.org version 13",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/type/ChemicalSubstance_v0.3-RELEASE-2019_09_02.json",
-        "https://bioschemas.org/types/ChemicalSubstance/0.3-RELEASE-2019_09_02"
+        "https://bioschemas.org/types/ChemicalSubstance/0.3-RELEASE-2019_09_02",
+        "https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/type/ChemicalSubstance_v0.3-RELEASE-2019_09_02.json"
       ],
       "rdfs:label": "ChemicalSubstance",
       "rdfs:subClassOf": {
@@ -90,8 +90,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity. (Source: ChEBI:23367). Note, this version has been updated to a pending class in schema.org.",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/MolecularEntity/0.3-RELEASE-2019_09_02",
-        "https://github.com/BioSchemas/specifications/tree/master/MolecularEntity/jsonld/type/MolecularEntity_v0.3-RELEASE-2019_09_02.json"
+        "https://github.com/BioSchemas/specifications/tree/master/MolecularEntity/jsonld/type/MolecularEntity_v0.3-RELEASE-2019_09_02.json",
+        "https://bioschemas.org/types/MolecularEntity/0.3-RELEASE-2019_09_02"
       ],
       "rdfs:label": "MolecularEntity",
       "rdfs:subClassOf": {
@@ -132,14 +132,48 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A computational workflow consists of an orchestrated and repeatable pattern of activity enabled by the systematic organization of resources into processes that transform materials, provide services, or process information (source Wikipedia.org). It is executed by a computational process and is thus distinct from laboratory or business workflows. version 1.0-RELEASE",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/type/ComputationalWorkflow_v1.0-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/type/ComputationalWorkflow_v1.0-RELEASE.json",
+        "https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE"
       ],
       "rdfs:label": "ComputationalWorkflow",
       "rdfs:subClassOf": {
         "@id": "schema:SoftwareSourceCode"
       },
       "additional_type": "https://bioschemas.org/types#nav-release"
+    },
+    {
+      "@id": "bioschemastypes:TaxonName",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A name of a biological taxon, may it be valid (zoology) / accepted (botany) or not. Version: 1.0-RELEASE",
+      "schema:schemaVersion": [
+        "https://github.com/BioSchemas/specifications/blob/master/TaxonName/jsonld/type/TaxonName_v1.0-RELEASE.json",
+        "https://bioschemas.org/types/TaxonName/1.0-RELEASE"
+      ],
+      "rdfs:label": "TaxonName",
+      "rdfs:subClassOf": {
+        "@id": "schema:CreativeWork"
+      },
+      "additional_type": "https://bioschemas.org/types#nav-release"
+    },
+    {
+      "@id": "bioschemastypes:childTaxon",
+      "rdfs:comment": "Closest child taxa of the taxon in question.\nInverse property: parentTaxon Direct, most proximate lower-rank child taxa",
+      "@type": "rdf:Property",
+      "rdfs:label": "childTaxon",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypes:Taxon"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Taxon"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
     },
     {
       "@id": "bioschemastypes:parentTaxon",
@@ -162,16 +196,16 @@
       ]
     },
     {
-      "@id": "bioschemastypes:childTaxon",
-      "rdfs:comment": "Closest child taxa of the taxon in question. Inverse property: parentTaxon",
+      "@id": "bioschemastypes:scientificName",
+      "rdfs:comment": "A TaxonName representing the currently valid (zoological) or accepted (botanical) name for that taxon.",
       "@type": "rdf:Property",
-      "rdfs:label": "childTaxon",
+      "rdfs:label": "scientificName",
       "schema:domainIncludes": {
         "@id": "bioschemastypes:Taxon"
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Taxon"
+          "@id": "bioschemastypes:TaxonName"
         },
         {
           "@id": "schema:Text"
@@ -182,30 +216,16 @@
       ]
     },
     {
-      "@id": "bioschemastypes:hasDefinedTerm",
-      "rdfs:comment": "A TaxonName representing the currently valid (zoological) or accepted (botanical) name for that taxon ",
+      "@id": "bioschemastypes:alternateScientificName",
+      "rdfs:comment": "A TaxonName representing a scientific name, with authorship and date information if known, of a synonym of the currently valid (zoological) or accepted (botanical) name.",
       "@type": "rdf:Property",
-      "rdfs:label": "hasDefinedTerm",
+      "rdfs:label": "alternateScientificName",
       "schema:domainIncludes": {
         "@id": "bioschemastypes:Taxon"
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DefinedTerm"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypes:taxonRank",
-      "rdfs:comment": "The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary (e.g. the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs) ",
-      "@type": "rdf:Property",
-      "rdfs:label": "taxonRank",
-      "schema:domainIncludes": {
-        "@id": "bioschemastypes:Taxon"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:PropertyValue"
+          "@id": "bioschemastypes:TaxonName"
         },
         {
           "@id": "schema:Text"
@@ -921,6 +941,31 @@
       ]
     },
     {
+      "@id": "bioschemastypes:taxonRank",
+      "rdfs:comment": "The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary (e.g. the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs) ",
+      "@type": "rdf:Property",
+      "rdfs:label": "taxonRank",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypes:Taxon"
+        },
+        {
+          "@id": "bioschemastypes:TaxonName"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
       "@id": "bioschemastypes:potentialUse",
       "rdfs:comment": "Intended use of the BioChemEntity by humans. ",
       "@type": "rdf:Property",
@@ -971,6 +1016,9 @@
         },
         {
           "@id": "bioschemastypes:ComputationalWorkflow"
+        },
+        {
+          "@id": "bioschemastypes:TaxonName"
         }
       ],
       "schema:rangeIncludes": [
