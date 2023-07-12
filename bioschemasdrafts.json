@@ -10,9 +10,9 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "04/06/2023, 17:36:15",
-    "ppeo:hasGrowthFacility": "http://purl.org/ppeo/PPEO.owl#hasGrowthFacility",
-    "dwc": "http://rs.tdwg.org/dwc/terms/"
+    "@dateModified": "07/12/2023, 15:13:25",
+    "dwc": "http://rs.tdwg.org/dwc/terms/",
+    "ppeo:hasGrowthFacility": "http://purl.org/ppeo/PPEO.owl#hasGrowthFacility"
   },
   "@graph": [
     {
@@ -700,100 +700,83 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.1-DRAFT.json",
-        "https://bioschemas.org/profiles/Gene/1.1-DRAFT"
+        "https://bioschemas.org/profiles/Gene/1.1-DRAFT",
+        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.1-DRAFT.json"
       ]
     },
     {
-      "@id": "bioschemasdrafts:TrainingMaterial",
+      "@id": "bioschemasdrafts:Taxon",
       "@type": "rdfs:Class",
-      "rdfs:comment": "A specification for describing training materials in life sciences. The Life Science Training Materials specification provides a way to describe bioscience training material on the World Wide Web. It defines a set of metadata and vocabularies, built on top of existing technologies and standards, that can be used to represent events in Web pages and applications. The goal of the specification is to make it easier to discover, exchange and integrate life science training material information across the Internet. Version: 1.1-DRAFT. <h3>Summary of Changes</h3><br>Changes since previous draft 0.9-DRAFT-2020_12_08 of the TrainingMaterials profile:<ul><li>added sameAs property as recommended</li></ul>",
+      "rdfs:comment": "Bioschemas profile for describing a biological taxon This profile aims to denote a taxon by common properties such as its scientific name, taxonomic rank and vernacular names. It is also a means to link to existing taxonomic registers where each taxon has a URI. Version 0.8-DRAFT.<br/><h3>Summary of Changes</h3><br>Changes since 0.7-DRAFT:<ul><li>Change sameAs from optional to recommended.</li></ul>",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/TrainingMaterial/1.1-DRAFT",
-        "https://github.com/Bioschemas/specifications/tree/master/TrainingMaterial/jsonld/TrainingMaterial_v1.1-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/Taxon/jsonld/Taxon_v0.8-DRAFT.json",
+        "https://bioschemas.org/profiles/Taxon/0.8-DRAFT"
       ],
-      "rdfs:label": "TrainingMaterial",
+      "rdfs:label": "Taxon",
       "rdfs:subClassOf": {
-        "@id": "schema:LearningResource"
+        "@id": "schema:Taxon"
       },
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
         "properties": {
-          "about": {
-            "description": "The subject of this Training Material. Use the DefinedTerm type to add a\n controlled vocabulary term to describe the topic (such as from the EDAM\n ontology) The subject matter of the content.\n Inverse property: subjectOf.",
+          "additionalType": {
+            "description": "A Taxon type from a well known vocabulary, e.g. DarwinCore http://rs.tdwg.org/dwc/terms/Taxon or http://rs.tdwg.org/ontology/voc/TaxonConcept#TaxonConcept An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
             "oneOf": [
               {
-                "$ref": "#/definitions/thing"
+                "type": "string",
+                "format": "uri"
               },
               {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/thing"
+                  "type": "string",
+                  "format": "uri"
                 }
               }
             ],
             "owl:cardinality": "many"
           },
-          "abstract": {
-            "description": " An abstract is a short description that summarizes a CreativeWork.",
-            "type": "string",
-            "owl:cardinality": "one"
-          },
-          "accessibilitySummary": {
-            "description": " A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as \"short descriptions are present but long descriptions will be needed for non-visual users\" or \"short descriptions are present and no long descriptions are needed.\"",
-            "type": "string",
-            "owl:cardinality": "one"
-          },
-          "audience": {
-            "description": "A succinct description of the intended target audience for your materials: e.g., graduates, postgraduates, clinicians. An intended audience, i.e. a group for whom something was created. Supersedes serviceAudience.",
+          "alternateName": {
+            "description": "Scientific name, with authorship and date information if known, of a synonym of the currently valid (zoological) or accepted (botanical) name. An alias for the item.",
             "oneOf": [
               {
-                "$ref": "#/definitions/audience"
+                "type": "string"
               },
               {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/audience"
+                  "type": "string"
                 }
               }
             ],
             "owl:cardinality": "many"
           },
-          "author": {
-            "description": " Those involved in the preparation, creation and/or presentation of the published work, specifically writing the initial draft The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.",
-            "anyOf": [
+          "alternateScientificName": {
+            "description": " A TaxonName representing a scientific name, with authorship and date information if known, of a synonym of the currently valid (zoological) or accepted (botanical) name",
+            "oneOf": [
               {
-                "$ref": "#/definitions/organization"
+                "$ref": "#/definitions/taxonname"
               },
               {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/organization"
-                }
-              },
-              {
-                "$ref": "#/definitions/person"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/person"
+                  "$ref": "#/definitions/taxonname"
                 }
               }
             ],
             "owl:cardinality": "many"
           },
-          "competencyRequired": {
-            "description": " Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.",
+          "childTaxon": {
+            "description": "Direct, most proximate lower-rank child taxa Closest child taxa of the taxon in question.\nInverse property: parentTaxon",
             "anyOf": [
               {
-                "$ref": "#/definitions/definedterm"
+                "$ref": "#/definitions/taxon"
               },
               {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/definedterm"
+                  "$ref": "#/definitions/taxon"
                 }
               },
               {
@@ -819,91 +802,36 @@
             ],
             "owl:cardinality": "many"
           },
-          "contributor": {
-            "description": "Contributors are those that made non-authorship contributions e.g. critical review, commentary or revision A secondary contributor to the CreativeWork or Event.",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/organization"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/organization"
-                }
-              },
-              {
-                "$ref": "#/definitions/person"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/person"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "creativeWorkStatus": {
-            "description": "The status of a training material. If this is not filled in it will be regarded as Active.\n\nOptions are 'Active', 'Under development', and 'Archived'. The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/definedterm"
-              },
-              {
-                "type": "string"
-              }
-            ],
-            "owl:cardinality": "one"
-          },
-          "dateCreated": {
-            "description": " The date on which the CreativeWork was created or the item was added to a DataFeed.",
-            "oneOf": [
-              {
-                "type": "string",
-                "format": "date"
-              },
-              {
-                "$ref": "#/definitions/datetime"
-              }
-            ],
-            "owl:cardinality": "one"
-          },
-          "dateModified": {
-            "description": " The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.",
-            "oneOf": [
-              {
-                "type": "string",
-                "format": "date"
-              },
-              {
-                "$ref": "#/definitions/datetime"
-              }
-            ],
-            "owl:cardinality": "one"
-          },
-          "datePublished": {
-            "description": " Date of first broadcast/publication.",
-            "oneOf": [
-              {
-                "type": "string",
-                "format": "date"
-              },
-              {
-                "$ref": "#/definitions/datetime"
-              }
-            ],
-            "owl:cardinality": "one"
-          },
           "description": {
             "description": " A description of the item.",
             "type": "string",
             "owl:cardinality": "one"
           },
-          "educationalLevel": {
-            "description": "The students level of ability in the topic being taught. Examples of skill levels include 'beginner', 'intermediate' or 'advanced'. The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.",
+          "disambiguatingDescription": {
+            "description": "Can be used to specify the taxon circumscription retained in this description, e.g. by denoting the scientific works that assert the status of the accepted/valid name and synonyms. A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+            "type": "string",
+            "owl:cardinality": "one"
+          },
+          "vernacularName": {
+            "description": "A vernacular (common) name of the taxon ",
             "oneOf": [
               {
-                "$ref": "#/definitions/definedterm"
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "identifier": {
+            "description": "A PropertyValue should be used to relate the taxon with couterparts identifiers within well known authorities such as GBIF, WoRMS, EoL etc.\nWikidata properties may be used in this respect, e.g.:\nNCBI id (https://www.wikidata.org/entity/P685), \nGBIF id (https://www.wikidata.org/entity/P846),\nEoL id (https://www.wikidata.org/entity/P830), \niNaturalist id (https://www.wikidata.org/entity/P3151), \nWoRMS id (https://www.wikidata.org/entity/P850), \nFishbase id (https://www.wikidata.org/entity/P938),\nTAXREF id (https://www.wikidata.org/entity/P3186),\n...\n The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](http://schema.org/docs/datamodel.html#identifierBg) for more details.\n",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/propertyvalue"
               },
               {
                 "type": "string"
@@ -915,8 +843,21 @@
             ],
             "owl:cardinality": "one"
           },
-          "hasPart": {
-            "description": "A sub-training material or externally referenced training material\n Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).\n Inverse property: isPartOf.",
+          "image": {
+            "description": " An image of the item. This can be a URL or a fully described ImageObject.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/imageobject"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "isBasedOn": {
+            "description": "A CreativeWork, such as a scholarly article, asserting the status of the accepted/valid name and synonyms, retained for the taxon circumscription A resource from which this work is derived or from which it is a modification or adaption. Supersedes, isBasedOnUrl. ",
             "oneOf": [
               {
                 "$ref": "#/definitions/creativework"
@@ -930,8 +871,64 @@
             ],
             "owl:cardinality": "many"
           },
-          "identifier": {
-            "description": "An identifier for this resource such as a DOI or compact URI\n The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.",
+          "mainEntityOfPage": {
+            "description": " Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.\nInverse property: mainEntity.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "name": {
+            "description": "Currently valid (zoological) or accepted (botanical) name for that taxon, with authorship and date information if known. The name of the item.",
+            "type": "string",
+            "owl:cardinality": "one"
+          },
+          "parentTaxon": {
+            "description": "Direct, most proximate higher-rank parent taxon Closest parent taxon of the taxon in question.\nInverse property: childTaxon",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/taxon"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "sameAs": {
+            "description": "URL of third-party webpages describing the same taxon URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "scientificName": {
+            "description": " A TaxonName representing the currently valid (zoological) or accepted (botanical) name for that taxon",
+            "$ref": "#/definitions/taxonname",
+            "owl:cardinality": "one"
+          },
+          "taxonRank": {
+            "description": " The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary (e.g. the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs)",
             "anyOf": [
               {
                 "$ref": "#/definitions/propertyvalue"
@@ -965,186 +962,369 @@
             ],
             "owl:cardinality": "many"
           },
-          "inLanguage": {
-            "description": "Defaults to English if not specified. Please choose a value from [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).\nYou can add multiple languages if the Training Material offers different translations The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage. Supersedes language.",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/language"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/language"
-                }
-              },
-              {
+          "url": {
+            "description": "Link to the webpage associated to this taxon URL of the item.",
+            "type": "string",
+            "format": "uri",
+            "owl:cardinality": "one"
+          },
+          "conformsTo": {
+            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/tree/master/Taxon/jsonld/Taxon_v0.8-DRAFT.json",
+            "$ref": "#/definitions/conformsDefinition"
+          }
+        },
+        "required": [
+          "name",
+          "taxonRank",
+          "conformsTo"
+        ],
+        "recommended": [
+          "parentTaxon",
+          "scientificName",
+          "url",
+          "sameAs"
+        ],
+        "optional": [
+          "additionalType",
+          "alternateName",
+          "alternateScientificName",
+          "childTaxon",
+          "description",
+          "disambiguatingDescription",
+          "vernacularName",
+          "identifier",
+          "image",
+          "isBasedOn",
+          "mainEntityOfPage"
+        ],
+        "definitions": {
+          "taxonname": {
+            "@type": "bioschemastypesdrafts:TaxonName",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "taxon": {
+            "@type": "schema:Taxon",
+            "type": "object",
+            "properties": {
+              "name": {
                 "type": "string"
               },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "taxonRank": {
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/propertyvalue"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/propertyvalue"
+                    }
+                  },
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  }
+                ]
               }
-            ],
-            "owl:cardinality": "many"
+            },
+            "required": [
+              "name",
+              "taxonRank"
+            ]
           },
-          "isPartOf": {
-            "description": "The Course this Training Material was/will be used in. Or a training material this training material is a part of (for example, if this is a module in a book, isPartOf can describe the book).\n\nInverse property: hasPart\n\nIf this varies in CourseInstances, use the workFeatured property  Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.\n Inverse property: hasPart.",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/creativework"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/creativework"
-                }
-              },
-              {
-                "type": "string",
-                "format": "uri"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uri"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "keywords": {
-            "description": " Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/definedterm"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/definedterm"
-                }
-              },
-              {
+          "propertyvalue": {
+            "@type": "schema:PropertyValue",
+            "type": "object",
+            "properties": {
+              "name": {
                 "type": "string"
               },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "value": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "number"
+                  }
+                ]
               },
-              {
-                "type": "string",
-                "format": "uri"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uri"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "learningResourceType": {
-            "description": "This may include things such as video lecture, e-Learning module, or tutorial. The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/definedterm"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/definedterm"
-                }
-              },
-              {
+              "identifier": {
                 "type": "string"
               },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "valuereference": {
+                "oneOf": [
+                  {
+                    "$ref": "#/definitions/categorycode"
+                  },
+                  {
+                    "type": "array",
+                    "items": [
+                      {
+                        "$ref": "#/definitions/categorycode"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "unitCode": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                ]
+              },
+              "unitText": {
+                "type": "string"
               }
+            },
+            "required": [
+              "name",
+              "value"
             ],
-            "owl:cardinality": "many"
+            "recommended": [
+              "valueReference"
+            ],
+            "optional": [
+              "unitCode",
+              "unitText"
+            ]
           },
-          "license": {
-            "description": "If there is a licence it must be added. A license document that applies to this content, typically indicated by URL.",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/creativework"
+          "categorycode": {
+            "@type": "schema:CategoryCode",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
               },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/creativework"
-                }
+              "codeValue": {
+                "type": "string"
               },
-              {
+              "url": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "codeValue",
+              "url"
+            ]
+          },
+          "imageobject": {
+            "@type": "schema:ImageObject",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "url": {
                 "type": "string",
                 "format": "uri"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uri"
-                }
               }
-            ],
-            "owl:cardinality": "many"
+            },
+            "required": []
           },
-          "mentions": {
-            "description": "Datasets, tools, technologies, entities etc, which are referred to by this training material or actively used in this training material. Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.",
+          "creativework": {
+            "@type": "schema:CreativeWork",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": []
+          },
+          "conformsDefinition": {
+            "@type": "CreativeWork",
+            "type": "object",
+            "properties": {
+              "identifier": {
+                "description": "The url of the version bioschemas profile that was used. For jsonschema, set @id to the identifier",
+                "oneOf": [
+                  {
+                    "enum": [
+                      "https://github.com/BioSchemas/specifications/tree/master/Taxon/jsonld/Taxon_v0.8-DRAFT.json"
+                    ]
+                  },
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "identifier"
+            ]
+          }
+        }
+      },
+      "additional_type": "https://bioschemas.org/profiles#nav-draft"
+    },
+    {
+      "@id": "bioschemasdrafts:TaxonName",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Bioschemas profile for describing a name of a biological taxon, which may be valid (zoology) / accepted (botany) or not. This profile povides a way to denote the scientific names of a taxon. The taxon accepted/valid name is linked to the taxon with property scientificName while the synonyms are linked with property alternateScientificName. Version: 0.2-DRAFT. <h3>Summary of Changes</h3><br>Changes since Version 0.1-DRAFT:<ul><li>added sameAs property as recommended.</li></ul>",
+      "schema:schemaVersion": [
+        "https://bioschemas.org/profiles/TaxonName/0.2-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/TaxonName/jsonld/TaxonName_v0.2-DRAFT.json"
+      ],
+      "rdfs:label": "TaxonName",
+      "rdfs:subClassOf": {
+        "@id": "bioschemastypesdrafts:TaxonName"
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "additionalType": {
+            "description": "An equivalent TaxonName type from a well known vocabulary, e.g. TDWG: http://rs.tdwg.org/ontology/voc/TaxonName#TaxonName An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
             "oneOf": [
               {
-                "$ref": "#/definitions/thing"
+                "type": "string",
+                "format": "uri"
               },
               {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/thing"
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "author": {
+            "description": "Authorship and date information associated to this taxon name, formatted as per the numenclatural rules The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "description": {
+            "description": " A description of the item.",
+            "type": "string",
+            "owl:cardinality": "one"
+          },
+          "identifier": {
+            "description": "A PropertyValue should be used to relate the taxon name with counterpart identifiers within well known authorities such as GBIF, WoRMS, EoL etc.\nWikidata properties may be used in this respect, e.g.:\nNCBI id (https://www.wikidata.org/entity/P685), \nGBIF id (https://www.wikidata.org/entity/P846),\nEoL id (https://www.wikidata.org/entity/P830), \niNaturalist id (https://www.wikidata.org/entity/P3151), \nWoRMS id (https://www.wikidata.org/entity/P850), \nFishbase id (https://www.wikidata.org/entity/P938),\nTAXREF id (https://www.wikidata.org/entity/P3186),\n...\n The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/propertyvalue"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "isBasedOn": {
+            "description": "A CreativeWork, such as a scholarly article that coined the name or asserted its status A resource from which this work is derived or from which it is a modification or adaption. Supersedes isBasedOnUrl.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/creativework"
+                }
+              },
+              {
+                "$ref": "#/definitions/product"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/product"
+                }
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
                 }
               }
             ],
             "owl:cardinality": "many"
           },
           "name": {
-            "description": " The name of the item.",
+            "description": "A name of that taxon without authorship and date information The name of the item.",
             "type": "string",
             "owl:cardinality": "one"
           },
-          "recordedAt": {
-            "description": "The course instance or event where this training material was or will be featured. \n\nUse isPartOf to refer to a Course, unless this training material is unique to a specific Course Instance. The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.\nInverse property: recordedIn.",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/event"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/event"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "teaches": {
-            "description": " The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.",
+          "taxonRank": {
+            "description": " The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary \u2013 (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).",
             "anyOf": [
               {
-                "$ref": "#/definitions/definedterm"
+                "$ref": "#/definitions/propertyvalue"
               },
               {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/definedterm"
+                  "$ref": "#/definitions/propertyvalue"
                 }
               },
               {
@@ -1155,47 +1335,26 @@
                 "items": {
                   "type": "string"
                 }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "timeRequired": {
-            "description": "The estimated time it takes to work through this resource.\n\nPlease specify in [ISO 8601 duration format](https://en.wikipedia.org/wiki/ISO_8601). Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.",
-            "$ref": "#/definitions/duration",
-            "owl:cardinality": "one"
-          },
-          "url": {
-            "description": "The preferred URL of the Training Material. You must provide this value if it is known. URL of the item.",
-            "type": "string",
-            "format": "uri",
-            "owl:cardinality": "one"
-          },
-          "version": {
-            "description": "If this training material is versioned, its strongly recommended you use this property to list the version being displayed The version of the CreativeWork embodied by a specified resource.",
-            "oneOf": [
-              {
-                "type": "number"
               },
               {
-                "type": "string"
-              }
-            ],
-            "owl:cardinality": "one"
-          },
-          "workTranslation": {
-            "description": " A work that is a translation of the content of this work. e.g. \u897f\u904a\u8a18 has an English workTranslation \u201cJourney to the West\u201d,a German workTranslation \u201cMonkeys Pilgerfahrt\u201d and a Vietnamese translation T\u00e2y du k\u00fd b\u00ecnh kh\u1ea3o.\nInverse property: translationOfWork.",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/creativework"
+                "type": "string",
+                "format": "uri"
               },
               {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/creativework"
+                  "type": "string",
+                  "format": "uri"
                 }
               }
             ],
             "owl:cardinality": "many"
+          },
+          "url": {
+            "description": "Link to the webpage associated to this taxon URL of the item.",
+            "type": "string",
+            "format": "uri",
+            "owl:cardinality": "one"
           },
           "sameAs": {
             "oneOf": [
@@ -1215,67 +1374,27 @@
             "owl:cardinality": "many"
           },
           "conformsTo": {
-            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/Bioschemas/specifications/tree/master/TrainingMaterial/jsonld/TrainingMaterial_v1.1-DRAFT.json",
+            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/tree/master/TaxonName/jsonld/TaxonName_v0.2-DRAFT.json",
             "$ref": "#/definitions/conformsDefinition"
           }
         },
         "required": [
-          "description",
-          "keywords",
           "name",
           "conformsTo"
         ],
         "recommended": [
-          "about",
-          "abstract",
-          "audience",
           "author",
-          "competencyRequired",
-          "educationalLevel",
-          "identifier",
-          "inLanguage",
-          "learningResourceType",
-          "license",
-          "mentions",
-          "teaches",
-          "timeRequired",
+          "taxonRank",
           "url",
           "sameAs"
         ],
         "optional": [
-          "accessibilitySummary",
-          "contributor",
-          "creativeWorkStatus",
-          "dateCreated",
-          "dateModified",
-          "datePublished",
-          "hasPart",
-          "isPartOf",
-          "recordedAt",
-          "version",
-          "workTranslation"
+          "additionalType",
+          "description",
+          "identifier",
+          "isBasedOn"
         ],
         "definitions": {
-          "thing": {
-            "@type": "schema:Thing",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              }
-            },
-            "required": []
-          },
-          "audience": {
-            "@type": "schema:Audience",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              }
-            },
-            "required": []
-          },
           "organization": {
             "@type": "Organization",
             "type": "object",
@@ -1348,56 +1467,6 @@
               "url": {
                 "type": "string",
                 "format": "uri"
-              }
-            },
-            "required": []
-          },
-          "definedterm": {
-            "@type": "DefinedTerm",
-            "type": "object",
-            "properties": {
-              "url": {
-                "type": "string",
-                "format": "uri"
-              },
-              "name": {
-                "type": "string"
-              },
-              "termCode": {
-                "type": "string"
-              },
-              "identifier": {
-                "type": "string"
-              },
-              "inDefinedTermSet": {
-                "$ref": "#/definitions/definedtermset"
-              }
-            },
-            "required": []
-          },
-          "definedtermset": {
-            "@type": "DefinedTermSet",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "identifier": {
-                "type": "string"
-              },
-              "url": {
-                "type": "string",
-                "format": "uri"
-              }
-            },
-            "required": []
-          },
-          "datetime": {
-            "@type": "schema:DateTime",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
               }
             },
             "required": []
@@ -1487,28 +1556,8 @@
               "url"
             ]
           },
-          "language": {
-            "@type": "schema:Language",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              }
-            },
-            "required": []
-          },
-          "event": {
-            "@type": "bioschemas:Event",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              }
-            },
-            "required": []
-          },
-          "duration": {
-            "@type": "schema:Duration",
+          "product": {
+            "@type": "schema:Product",
             "type": "object",
             "properties": {
               "name": {
@@ -1526,7 +1575,7 @@
                 "oneOf": [
                   {
                     "enum": [
-                      "https://github.com/Bioschemas/specifications/tree/master/TrainingMaterial/jsonld/TrainingMaterial_v1.1-DRAFT.json"
+                      "https://github.com/BioSchemas/specifications/tree/master/TaxonName/jsonld/TaxonName_v0.2-DRAFT.json"
                     ]
                   },
                   {
@@ -1856,8 +1905,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.5-DRAFT.json",
-        "https://bioschemas.org/profiles/ChemicalSubstance/0.5-DRAFT"
+        "https://bioschemas.org/profiles/ChemicalSubstance/0.5-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.5-DRAFT.json"
       ]
     },
     {
@@ -7463,8 +7512,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/CourseInstance/jsonld/CourseInstance_v1.1-DRAFT.json",
-        "https://bioschemas.org/profiles/CourseInstance/1.1-DRAFT"
+        "https://bioschemas.org/profiles/CourseInstance/1.1-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/CourseInstance/jsonld/CourseInstance_v1.1-DRAFT.json"
       ]
     },
     {
@@ -7874,8 +7923,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/DataCatalog/0.4-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/DataCatalog/jsonld/DataCatalog_v0.4-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/DataCatalog/jsonld/DataCatalog_v0.4-DRAFT.json",
+        "https://bioschemas.org/profiles/DataCatalog/0.4-DRAFT"
       ]
     },
     {
@@ -7883,8 +7932,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A guide for how to describe datasets in the life-sciences using Schema.org-like annotation. Version 1.1-DRAFT. <h3>Summary of Changes</h3> <br>Key changes since 1.0-RELEASE:<ul><li>sameAs now recommended.</li></ul>",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/Dataset/jsonld/Dataset_v1.1-DRAFT.json",
-        "https://bioschemas.org/profiles/Dataset/1.1-DRAFT"
+        "https://bioschemas.org/profiles/Dataset/1.1-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/Dataset/jsonld/Dataset_v1.1-DRAFT.json"
       ],
       "rdfs:label": "Dataset",
       "rdfs:subClassOf": {
@@ -8016,7 +8065,7 @@
                 "$ref": "#/definitions/creativework"
               },
               {
-                "$ref": "#/definitions/trip"
+                "$ref": "#/definitions/thing"
               }
             ],
             "owl:cardinality": "one"
@@ -8420,8 +8469,8 @@
             },
             "required": []
           },
-          "trip": {
-            "@type": "schema:Trip",
+          "thing": {
+            "@type": "schema:Thing",
             "type": "object",
             "properties": {
               "name": {
@@ -8883,8 +8932,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Disease/0.2-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/Disease/jsonld/Disease_v0.2-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/Disease/jsonld/Disease_v0.2-DRAFT.json",
+        "https://bioschemas.org/profiles/Disease/0.2-DRAFT"
       ]
     },
     {
@@ -8892,8 +8941,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Specification for describing an event in the Life Sciences Specification for describing a Life Science event. This includes conferences, workshops, meetings, courses, receptions, networking and prizegivings. Version 0.3-DRAFT. <h3>Summary of Changes</h3> Changes since 0.2-DRAFT-2019_06_14<ul><li>added sameAs property as recommended</li></ul>",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/Event/jsonld/Event_v0.3-DRAFT.json",
-        "https://bioschemas.org/profiles/Event/0.3-DRAFT"
+        "https://bioschemas.org/profiles/Event/0.3-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/Event/jsonld/Event_v0.3-DRAFT.json"
       ],
       "rdfs:label": "Event",
       "rdfs:subClassOf": {
@@ -9953,8 +10002,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/FormalParameter/jsonld/FormalParameter_v1.1-DRAFT.json",
-        "https://bioschemas.org/profiles/FormalParameter/1.1-DRAFT"
+        "https://bioschemas.org/profiles/FormalParameter/1.1-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/FormalParameter/jsonld/FormalParameter_v1.1-DRAFT.json"
       ]
     },
     {
@@ -9962,8 +10011,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile, based on Biotea model, describing a Journal in Life Sciences. A Journal is a collection of publication issues, publication volumes or scholarly articles, or possibly, although no commonly, any mix from those mentioned. Version 0.3-DRAFT<h3>Summary of Changes</h3><br>Changes since previous draft 0.2 Journal profile: <ul><li>added sameAs property as recommended</li></ul>",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Journal/0.3-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/Journal/jsonld/Journal_v0.3-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/Journal/jsonld/Journal_v0.3-DRAFT.json",
+        "https://bioschemas.org/profiles/Journal/0.3-DRAFT"
       ],
       "rdfs:label": "Journal",
       "rdfs:subClassOf": {
@@ -12282,8 +12331,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas specification for describing a Organization in the life-science. Provides a way to describe bioscience organizations on the World Wide Web. It defines metadata terms that can be used in the code of web pages and applications, and builds on top of existing technologies and standards. The goal of the specification is to make it easier to discover, exchange and integrate life science organization profiles across the Internet. Version: 0.3-DRAFT. <h3>Summary of Changes</h3><br>Changes since 0.2-DRAFT<ul><li>added sameAs property as recommended.</li></ul>.",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Organization/0.3-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/Organization/jsonld/Organization_v0.3-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/Organization/jsonld/Organization_v0.3-DRAFT.json",
+        "https://bioschemas.org/profiles/Organization/0.3-DRAFT"
       ],
       "rdfs:label": "Organization",
       "rdfs:subClassOf": {
@@ -12940,8 +12989,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A specification for describing people in life sciences The Life Science Person specification provides a way to describe bioscience events on the World Wide Web. It defines a set of metadata and vocabularies, built on top of existing technologies and standards, that can be used to represent the profile information of people in Web pages and applications. The goal of the specification is to make it easier to discover, life science profile information. Version: 0.3-DRAFT. <h3>Summary of Changes</h3><br>Changes since 0.2-DRAFT-2019_07_19:<ul><li>added sameAs property as recommended</li></ul>. ",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Person/0.3-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/Person/jsonld/Person_v0.3-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/Person/jsonld/Person_v0.3-DRAFT.json",
+        "https://bioschemas.org/profiles/Person/0.3-DRAFT"
       ],
       "rdfs:label": "Person",
       "rdfs:subClassOf": {
@@ -14852,8 +14901,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/Protein/jsonld/Protein_v0.12-DRAFT.json",
-        "https://bioschemas.org/profiles/Protein/0.12-DRAFT"
+        "https://bioschemas.org/profiles/Protein/0.12-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/Protein/jsonld/Protein_v0.12-DRAFT.json"
       ]
     },
     {
@@ -15989,8 +16038,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile, based on Biotea model, describing a PublicationVolume in Life Sciences. A PublicationVolume is a collection of publication issues, or scholarly articles, or possibly, although no commonly, any mix from those mentioned. It is commonly part of a Journal. Version 0.3-DRAFT. <h3>Summary of Changes</h3><br>Changes since previous draft 0.2-DRAFT-2020_12_03 of the PublicationVolumen profile: <ul><li>added sameAs property as recommended.</li></ul>",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/PublicationVolume/jsonld/PublicationVolume_v0.3-DRAFT.json",
-        "https://bioschemas.org/profiles/PublicationVolume/0.3-DRAFT"
+        "https://bioschemas.org/profiles/PublicationVolume/0.3-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/PublicationVolume/jsonld/PublicationVolume_v0.3-DRAFT.json"
       ],
       "rdfs:label": "PublicationVolume",
       "rdfs:subClassOf": {
@@ -17657,8 +17706,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/Sample/jsonld/Sample_v0.3-DRAFT.json",
-        "https://bioschemas.org/profiles/Sample/0.3-DRAFT"
+        "https://bioschemas.org/profiles/Sample/0.3-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/Sample/jsonld/Sample_v0.3-DRAFT.json"
       ]
     },
     {
@@ -17666,8 +17715,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile, based on Biotea model, describing a ScholarlyArticle in Life Sciences. A ScholarlyArticle is an article commonly reporting a scientific research, for instance a journal article or thesis. DOI is recommended as official idnetifier (e.g., \"@id\" in JSON-LD) Version 0.3-DRAFT. <h3>Summary of Changes</h3> <br>Changes since previous draft 0.2-DRAFT-2020_12_03 of the ScholarlyArticle profile:<ul><li>added sameAs property as recommended</li></ul>",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/ScholarlyArticle/jsonld/ScholarlyArticle_v0.3-DRAFT.json",
-        "https://bioschemas.org/profiles/ScholarlyArticle/0.3-DRAFT"
+        "https://bioschemas.org/profiles/ScholarlyArticle/0.3-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/ScholarlyArticle/jsonld/ScholarlyArticle_v0.3-DRAFT.json"
       ],
       "rdfs:label": "ScholarlyArticle",
       "rdfs:subClassOf": {
@@ -18527,8 +18576,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile, based on Biotea model, describing a semantic annotation associated to a piece of text in a ScholarlyArticle in Life Sciences. A SemanticTextAnnotation corresponds to an expression identified in a ScholarlyArticle and associated to an ontology term. Version 0.3-DRAFT. <h3>Summary of Changes</h3><br>Changes since previous draft 0.2-DRAFT-2020_12_03 of the SemanticAnnotation profile: <ul><li>added sameAs property as recommended.</li></ul>",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/SemanticTextAnnotation/jsonld/SemanticTextAnnotation_v0.3-DRAFT.json",
-        "https://bioschemas.org/profiles/SemanticTextAnnotation/0.3-DRAFT"
+        "https://bioschemas.org/profiles/SemanticTextAnnotation/0.3-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/SemanticTextAnnotation/jsonld/SemanticTextAnnotation_v0.3-DRAFT.json"
       ],
       "rdfs:label": "SemanticTextAnnotation",
       "rdfs:subClassOf": {
@@ -20339,533 +20388,63 @@
       "additional_type": "https://bioschemas.org/profiles#nav-draft"
     },
     {
-      "@id": "bioschemasdrafts:Taxon",
+      "@id": "bioschemasdrafts:TrainingMaterial",
       "@type": "rdfs:Class",
-      "rdfs:comment": "Bioschemas profile for describing a biological taxon This profile aims to denote a taxon by common properties such as its scientific name, taxonomic rank and vernacular names. It is also a means to link to existing taxonomic registers where each taxon has a URI. Version 0.8-DRAFT. <br/><h3>Summary of Changes</h3><br>Changes since 0.7-DRAFT:<ul><li>Change sameAs from optional to recommended.</li></ul>",
+      "rdfs:comment": "A specification for describing training materials in life sciences. The Life Science Training Materials specification provides a way to describe bioscience training material on the World Wide Web. It defines a set of metadata and vocabularies, built on top of existing technologies and standards, that can be used to represent events in Web pages and applications. The goal of the specification is to make it easier to discover, exchange and integrate life science training material information across the Internet. Version: 1.1-DRAFT. <h3>Summary of Changes</h3><br>Changes since previous draft 0.9-DRAFT-2020_12_08 of the TrainingMaterials profile:<ul><li>added sameAs property as recommended</li></ul>",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Taxon/0.8-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/Taxon/jsonld/Taxon_v0.8-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/TrainingMaterial/jsonld/TrainingMaterial_v1.1-DRAFT.json",
+        "https://bioschemas.org/profiles/TrainingMaterial/1.1-DRAFT"
       ],
-      "rdfs:label": "Taxon",
+      "rdfs:label": "TrainingMaterial",
       "rdfs:subClassOf": {
-        "@id": "schema:Taxon"
+        "@id": "schema:LearningResource"
       },
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
         "properties": {
-          "additionalType": {
-            "description": "A Taxon type from a well known vocabulary, e.g. DarwinCore http://rs.tdwg.org/dwc/terms/Taxon or http://rs.tdwg.org/ontology/voc/TaxonConcept#TaxonConcept An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+          "about": {
+            "description": "The subject of this Training Material. Use the DefinedTerm type to add a\n controlled vocabulary term to describe the topic (such as from the EDAM\n ontology) The subject matter of the content.\n Inverse property: subjectOf.",
             "oneOf": [
               {
-                "type": "string",
-                "format": "uri"
+                "$ref": "#/definitions/thing"
               },
               {
                 "type": "array",
                 "items": {
-                  "type": "string",
-                  "format": "uri"
+                  "$ref": "#/definitions/thing"
                 }
               }
             ],
             "owl:cardinality": "many"
           },
-          "alternateName": {
-            "description": "Scientific name, with authorship and date information if known, of a synonym of the currently valid (zoological) or accepted (botanical) name. An alias for the item.",
-            "oneOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "alternateScientificName": {
-            "description": " A TaxonName representing a scientific name, with authorship and date information if known, of a synonym of the currently valid (zoological) or accepted (botanical) name",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/taxonname"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/taxonname"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "childTaxon": {
-            "description": "Direct, most proximate lower-rank child taxa Closest child taxa of the taxon in question.\nInverse property: parentTaxon",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/taxon"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/taxon"
-                }
-              },
-              {
-                "type": "string"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              {
-                "type": "string",
-                "format": "uri"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uri"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "description": {
-            "description": " A description of the item.",
+          "abstract": {
+            "description": " An abstract is a short description that summarizes a CreativeWork.",
             "type": "string",
             "owl:cardinality": "one"
           },
-          "disambiguatingDescription": {
-            "description": "Can be used to specify the taxon circumscription retained in this description, e.g. by denoting the scientific works that assert the status of the accepted/valid name and synonyms. A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+          "accessibilitySummary": {
+            "description": " A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as \"short descriptions are present but long descriptions will be needed for non-visual users\" or \"short descriptions are present and no long descriptions are needed.\"",
             "type": "string",
             "owl:cardinality": "one"
           },
-          "vernacularName": {
-            "description": "A vernacular (common) name of the taxon ",
+          "audience": {
+            "description": "A succinct description of the intended target audience for your materials: e.g., graduates, postgraduates, clinicians. An intended audience, i.e. a group for whom something was created. Supersedes serviceAudience.",
             "oneOf": [
               {
-                "type": "string"
+                "$ref": "#/definitions/audience"
               },
               {
                 "type": "array",
                 "items": {
-                  "type": "string"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "identifier": {
-            "description": "A PropertyValue should be used to relate the taxon with couterparts identifiers within well known authorities such as GBIF, WoRMS, EoL etc.\nWikidata properties may be used in this respect, e.g.:\nNCBI id (https://www.wikidata.org/entity/P685), \nGBIF id (https://www.wikidata.org/entity/P846),\nEoL id (https://www.wikidata.org/entity/P830), \niNaturalist id (https://www.wikidata.org/entity/P3151), \nWoRMS id (https://www.wikidata.org/entity/P850), \nFishbase id (https://www.wikidata.org/entity/P938),\nTAXREF id (https://www.wikidata.org/entity/P3186),\n...\n The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](http://schema.org/docs/datamodel.html#identifierBg) for more details.\n",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/propertyvalue"
-              },
-              {
-                "type": "string"
-              },
-              {
-                "type": "string",
-                "format": "uri"
-              }
-            ],
-            "owl:cardinality": "one"
-          },
-          "image": {
-            "description": " An image of the item. This can be a URL or a fully described ImageObject.",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/imageobject"
-              },
-              {
-                "type": "string",
-                "format": "uri"
-              }
-            ],
-            "owl:cardinality": "one"
-          },
-          "isBasedOn": {
-            "description": "A CreativeWork, such as a scholarly article, asserting the status of the accepted/valid name and synonyms, retained for the taxon circumscription A resource from which this work is derived or from which it is a modification or adaption. Supersedes, isBasedOnUrl. ",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/creativework"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/creativework"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "mainEntityOfPage": {
-            "description": " Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.\nInverse property: mainEntity.",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/creativework"
-              },
-              {
-                "type": "string",
-                "format": "uri"
-              }
-            ],
-            "owl:cardinality": "one"
-          },
-          "name": {
-            "description": "Currently valid (zoological) or accepted (botanical) name for that taxon, with authorship and date information if known. The name of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
-          },
-          "parentTaxon": {
-            "description": "Direct, most proximate higher-rank parent taxon Closest parent taxon of the taxon in question.\nInverse property: childTaxon",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/taxon"
-              },
-              {
-                "type": "string"
-              },
-              {
-                "type": "string",
-                "format": "uri"
-              }
-            ],
-            "owl:cardinality": "one"
-          },
-          "sameAs": {
-            "description": "URL of third-party webpages describing the same taxon URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
-            "oneOf": [
-              {
-                "type": "string",
-                "format": "uri"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uri"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "scientificName": {
-            "description": " A TaxonName representing the currently valid (zoological) or accepted (botanical) name for that taxon",
-            "$ref": "#/definitions/taxonname",
-            "owl:cardinality": "one"
-          },
-          "taxonRank": {
-            "description": " The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary (e.g. the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs)",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/propertyvalue"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/propertyvalue"
-                }
-              },
-              {
-                "type": "string"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              {
-                "type": "string",
-                "format": "uri"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uri"
-                }
-              }
-            ],
-            "owl:cardinality": "many"
-          },
-          "url": {
-            "description": "Link to the webpage associated to this taxon URL of the item.",
-            "type": "string",
-            "format": "uri",
-            "owl:cardinality": "one"
-          },
-          "conformsTo": {
-            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/tree/master/Taxon/jsonld/Taxon_v0.8-DRAFT.json",
-            "$ref": "#/definitions/conformsDefinition"
-          }
-        },
-        "required": [
-          "name",
-          "taxonRank",
-          "conformsTo"
-        ],
-        "recommended": [
-          "parentTaxon",
-          "scientificName",
-          "url",
-          "sameAs"
-        ],
-        "optional": [
-          "additionalType",
-          "alternateName",
-          "alternateScientificName",
-          "childTaxon",
-          "description",
-          "disambiguatingDescription",
-          "vernacularName",
-          "identifier",
-          "image",
-          "isBasedOn",
-          "mainEntityOfPage"
-        ],
-        "definitions": {
-          "taxonname": {
-            "@type": "bioschemastypesdrafts:TaxonName",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              }
-            },
-            "required": []
-          },
-          "taxon": {
-            "@type": "schema:Taxon",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "taxonRank": {
-                "anyOf": [
-                  {
-                    "$ref": "#/definitions/propertyvalue"
-                  },
-                  {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/definitions/propertyvalue"
-                    }
-                  },
-                  {
-                    "type": "string"
-                  },
-                  {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  {
-                    "type": "string",
-                    "format": "uri"
-                  },
-                  {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "format": "uri"
-                    }
-                  }
-                ]
-              }
-            },
-            "required": [
-              "name",
-              "taxonRank"
-            ]
-          },
-          "propertyvalue": {
-            "@type": "schema:PropertyValue",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "value": {
-                "oneOf": [
-                  {
-                    "type": "string"
-                  },
-                  {
-                    "type": "boolean"
-                  },
-                  {
-                    "type": "number"
-                  }
-                ]
-              },
-              "identifier": {
-                "type": "string"
-              },
-              "valuereference": {
-                "oneOf": [
-                  {
-                    "$ref": "#/definitions/categorycode"
-                  },
-                  {
-                    "type": "array",
-                    "items": [
-                      {
-                        "$ref": "#/definitions/categorycode"
-                      }
-                    ]
-                  }
-                ]
-              },
-              "unitCode": {
-                "oneOf": [
-                  {
-                    "type": "string"
-                  },
-                  {
-                    "type": "string",
-                    "format": "uri"
-                  }
-                ]
-              },
-              "unitText": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "name",
-              "value"
-            ],
-            "recommended": [
-              "valueReference"
-            ],
-            "optional": [
-              "unitCode",
-              "unitText"
-            ]
-          },
-          "categorycode": {
-            "@type": "schema:CategoryCode",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "codeValue": {
-                "type": "string"
-              },
-              "url": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "name",
-              "codeValue",
-              "url"
-            ]
-          },
-          "imageobject": {
-            "@type": "schema:ImageObject",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "url": {
-                "type": "string",
-                "format": "uri"
-              }
-            },
-            "required": []
-          },
-          "creativework": {
-            "@type": "schema:CreativeWork",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "identifier": {
-                "type": "string"
-              },
-              "url": {
-                "type": "string",
-                "format": "uri"
-              }
-            },
-            "required": []
-          },
-          "conformsDefinition": {
-            "@type": "CreativeWork",
-            "type": "object",
-            "properties": {
-              "identifier": {
-                "description": "The url of the version bioschemas profile that was used. For jsonschema, set @id to the identifier",
-                "oneOf": [
-                  {
-                    "enum": [
-                      "https://github.com/BioSchemas/specifications/tree/master/Taxon/jsonld/Taxon_v0.8-DRAFT.json"
-                    ]
-                  },
-                  {
-                    "type": "string",
-                    "format": "uri"
-                  }
-                ]
-              }
-            },
-            "required": [
-              "identifier"
-            ]
-          }
-        }
-      },
-      "additional_type": "https://bioschemas.org/profiles#nav-draft"
-    },
-    {
-      "@id": "bioschemasdrafts:TaxonName",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "Bioschemas profile for describing a name of a biological taxon, which may be valid (zoology) / accepted (botany) or not. This profile povides a way to denote the scientific names of a taxon. The taxon accepted/valid name is linked to the taxon with property scientificName while the synonyms are linked with property alternateScientificName. Version: 0.2-DRAFT. <h3>Summary of Changes</h3><br>Changes since Version 0.1-DRAFT:<ul><li>added sameAs property as recommended.</li></ul>",
-      "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/TaxonName/0.2-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/TaxonName/jsonld/TaxonName_v0.2-DRAFT.json"
-      ],
-      "rdfs:label": "TaxonName",
-      "rdfs:subClassOf": {
-        "@id": "bioschemastypesdrafts:TaxonName"
-      },
-      "$validation": {
-        "$schema": "http://json-schema.org/draft-07/schema#",
-        "type": "object",
-        "properties": {
-          "additionalType": {
-            "description": "An equivalent TaxonName type from a well known vocabulary, e.g. TDWG: http://rs.tdwg.org/ontology/voc/TaxonName#TaxonName An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-            "oneOf": [
-              {
-                "type": "string",
-                "format": "uri"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uri"
+                  "$ref": "#/definitions/audience"
                 }
               }
             ],
             "owl:cardinality": "many"
           },
           "author": {
-            "description": "Authorship and date information associated to this taxon name, formatted as per the numenclatural rules The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.",
+            "description": " Those involved in the preparation, creation and/or presentation of the published work, specifically writing the initial draft The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.",
             "anyOf": [
               {
                 "$ref": "#/definitions/organization"
@@ -20888,46 +20467,25 @@
             ],
             "owl:cardinality": "many"
           },
-          "description": {
-            "description": " A description of the item.",
-            "type": "string",
-            "owl:cardinality": "one"
-          },
-          "identifier": {
-            "description": "A PropertyValue should be used to relate the taxon name with counterpart identifiers within well known authorities such as GBIF, WoRMS, EoL etc.\nWikidata properties may be used in this respect, e.g.:\nNCBI id (https://www.wikidata.org/entity/P685), \nGBIF id (https://www.wikidata.org/entity/P846),\nEoL id (https://www.wikidata.org/entity/P830), \niNaturalist id (https://www.wikidata.org/entity/P3151), \nWoRMS id (https://www.wikidata.org/entity/P850), \nFishbase id (https://www.wikidata.org/entity/P938),\nTAXREF id (https://www.wikidata.org/entity/P3186),\n...\n The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.",
-            "oneOf": [
+          "competencyRequired": {
+            "description": " Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.",
+            "anyOf": [
               {
-                "$ref": "#/definitions/propertyvalue"
+                "$ref": "#/definitions/definedterm"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/definedterm"
+                }
               },
               {
                 "type": "string"
               },
               {
-                "type": "string",
-                "format": "uri"
-              }
-            ],
-            "owl:cardinality": "one"
-          },
-          "isBasedOn": {
-            "description": "A CreativeWork, such as a scholarly article that coined the name or asserted its status A resource from which this work is derived or from which it is a modification or adaption. Supersedes isBasedOnUrl.",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/creativework"
-              },
-              {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/creativework"
-                }
-              },
-              {
-                "$ref": "#/definitions/product"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/product"
+                  "type": "string"
                 }
               },
               {
@@ -20944,13 +20502,119 @@
             ],
             "owl:cardinality": "many"
           },
-          "name": {
-            "description": "A name of that taxon without authorship and date information The name of the item.",
+          "contributor": {
+            "description": "Contributors are those that made non-authorship contributions e.g. critical review, commentary or revision A secondary contributor to the CreativeWork or Event.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "creativeWorkStatus": {
+            "description": "The status of a training material. If this is not filled in it will be regarded as Active.\n\nOptions are 'Active', 'Under development', and 'Archived'. The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/definedterm"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "dateCreated": {
+            "description": " The date on which the CreativeWork was created or the item was added to a DataFeed.",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "$ref": "#/definitions/datetime"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "dateModified": {
+            "description": " The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "$ref": "#/definitions/datetime"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "datePublished": {
+            "description": " Date of first broadcast/publication.",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "$ref": "#/definitions/datetime"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "description": {
+            "description": " A description of the item.",
             "type": "string",
             "owl:cardinality": "one"
           },
-          "taxonRank": {
-            "description": " The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary \u2013 (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).",
+          "educationalLevel": {
+            "description": "The students level of ability in the topic being taught. Examples of skill levels include 'beginner', 'intermediate' or 'advanced'. The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/definedterm"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "hasPart": {
+            "description": "A sub-training material or externally referenced training material\n Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).\n Inverse property: isPartOf.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/creativework"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "identifier": {
+            "description": "An identifier for this resource such as a DOI or compact URI\n The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.",
             "anyOf": [
               {
                 "$ref": "#/definitions/propertyvalue"
@@ -20984,11 +20648,237 @@
             ],
             "owl:cardinality": "many"
           },
+          "inLanguage": {
+            "description": "Defaults to English if not specified. Please choose a value from [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).\nYou can add multiple languages if the Training Material offers different translations The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage. Supersedes language.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/language"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/language"
+                }
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "isPartOf": {
+            "description": "The Course this Training Material was/will be used in. Or a training material this training material is a part of (for example, if this is a module in a book, isPartOf can describe the book).\n\nInverse property: hasPart\n\nIf this varies in CourseInstances, use the workFeatured property  Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.\n Inverse property: hasPart.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/creativework"
+                }
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "keywords": {
+            "description": " Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/definedterm"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/definedterm"
+                }
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "learningResourceType": {
+            "description": "This may include things such as video lecture, e-Learning module, or tutorial. The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/definedterm"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/definedterm"
+                }
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "license": {
+            "description": "If there is a licence it must be added. A license document that applies to this content, typically indicated by URL.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/creativework"
+                }
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "mentions": {
+            "description": "Datasets, tools, technologies, entities etc, which are referred to by this training material or actively used in this training material. Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/thing"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/thing"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "name": {
+            "description": " The name of the item.",
+            "type": "string",
+            "owl:cardinality": "one"
+          },
+          "recordedAt": {
+            "description": "The course instance or event where this training material was or will be featured. \n\nUse isPartOf to refer to a Course, unless this training material is unique to a specific Course Instance. The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.\nInverse property: recordedIn.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/event"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/event"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "teaches": {
+            "description": " The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/definedterm"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/definedterm"
+                }
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "timeRequired": {
+            "description": "The estimated time it takes to work through this resource.\n\nPlease specify in [ISO 8601 duration format](https://en.wikipedia.org/wiki/ISO_8601). Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.",
+            "$ref": "#/definitions/duration",
+            "owl:cardinality": "one"
+          },
           "url": {
-            "description": "Link to the webpage associated to this taxon URL of the item.",
+            "description": "The preferred URL of the Training Material. You must provide this value if it is known. URL of the item.",
             "type": "string",
             "format": "uri",
             "owl:cardinality": "one"
+          },
+          "version": {
+            "description": "If this training material is versioned, its strongly recommended you use this property to list the version being displayed The version of the CreativeWork embodied by a specified resource.",
+            "oneOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "workTranslation": {
+            "description": " A work that is a translation of the content of this work. e.g. \u897f\u904a\u8a18 has an English workTranslation \u201cJourney to the West\u201d,a German workTranslation \u201cMonkeys Pilgerfahrt\u201d and a Vietnamese translation T\u00e2y du k\u00fd b\u00ecnh kh\u1ea3o.\nInverse property: translationOfWork.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/creativework"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
           },
           "sameAs": {
             "oneOf": [
@@ -21004,31 +20894,71 @@
                 }
               }
             ],
-            "description": "URL of additional sources for the dataset",
+            "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
             "owl:cardinality": "many"
           },
           "conformsTo": {
-            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/tree/master/TaxonName/jsonld/TaxonName_v0.2-DRAFT.json",
+            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/tree/master/TrainingMaterial/jsonld/TrainingMaterial_v1.1-DRAFT.json",
             "$ref": "#/definitions/conformsDefinition"
           }
         },
         "required": [
+          "description",
+          "keywords",
           "name",
           "conformsTo"
         ],
         "recommended": [
+          "about",
+          "abstract",
+          "audience",
           "author",
-          "taxonRank",
+          "competencyRequired",
+          "educationalLevel",
+          "identifier",
+          "inLanguage",
+          "learningResourceType",
+          "license",
+          "mentions",
+          "teaches",
+          "timeRequired",
           "url",
           "sameAs"
         ],
         "optional": [
-          "additionalType",
-          "description",
-          "identifier",
-          "isBasedOn"
+          "accessibilitySummary",
+          "contributor",
+          "creativeWorkStatus",
+          "dateCreated",
+          "dateModified",
+          "datePublished",
+          "hasPart",
+          "isPartOf",
+          "recordedAt",
+          "version",
+          "workTranslation"
         ],
         "definitions": {
+          "thing": {
+            "@type": "schema:Thing",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "audience": {
+            "@type": "schema:Audience",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
           "organization": {
             "@type": "Organization",
             "type": "object",
@@ -21101,6 +21031,56 @@
               "url": {
                 "type": "string",
                 "format": "uri"
+              }
+            },
+            "required": []
+          },
+          "definedterm": {
+            "@type": "DefinedTerm",
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "name": {
+                "type": "string"
+              },
+              "termCode": {
+                "type": "string"
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "inDefinedTermSet": {
+                "$ref": "#/definitions/definedtermset"
+              }
+            },
+            "required": []
+          },
+          "definedtermset": {
+            "@type": "DefinedTermSet",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": []
+          },
+          "datetime": {
+            "@type": "schema:DateTime",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
               }
             },
             "required": []
@@ -21190,8 +21170,28 @@
               "url"
             ]
           },
-          "product": {
-            "@type": "schema:Product",
+          "language": {
+            "@type": "schema:Language",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "event": {
+            "@type": "bioschemas:Event",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "duration": {
+            "@type": "schema:Duration",
             "type": "object",
             "properties": {
               "name": {
@@ -21209,7 +21209,7 @@
                 "oneOf": [
                   {
                     "enum": [
-                      "https://github.com/BioSchemas/specifications/tree/master/TaxonName/jsonld/TaxonName_v0.2-DRAFT.json"
+                      "https://github.com/BioSchemas/specifications/tree/master/TrainingMaterial/jsonld/TrainingMaterial_v1.1-DRAFT.json"
                     ]
                   },
                   {
@@ -21238,6 +21238,74 @@
       "schema:rangeIncludes": [
         {
           "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "dwc:vernacularName",
+      "rdfs:comment": "A vernacular (common) name of the taxon.",
+      "@type": "rdf:Property",
+      "rdfs:label": "vernacularName",
+      "schema:domainIncludes": {
+        "@id": "bioschemasdrafts:Taxon"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemasdrafts:scientificName",
+      "rdfs:comment": "A TaxonName representing the currently valid (zoological) or accepted (botanical) name for that taxon.",
+      "@type": "rdf:Property",
+      "rdfs:label": "scientificName",
+      "schema:domainIncludes": {
+        "@id": "bioschemasdrafts:Taxon"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "bioschemastypesdrafts:TaxonName"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemasdrafts:alternateScientificName",
+      "rdfs:comment": "A TaxonName representing a scientific name, with authorship and date information if known, of a synonym of the currently valid (zoological) or accepted (botanical) name.",
+      "@type": "rdf:Property",
+      "rdfs:label": "alternateScientificName",
+      "schema:domainIncludes": {
+        "@id": "bioschemasdrafts:Taxon"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "bioschemastypesdrafts:TaxonName"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemasdrafts:isBasedOn",
+      "rdfs:comment": "A resource from which this work is derived or from which it is a modification or adaption. Supersedes, isBasedOnUrl. \n A CreativeWork, such as a scholarly article, asserting the status of the accepted/valid name and synonyms, retained for the taxon circumscription.",
+      "@type": "rdf:Property",
+      "rdfs:label": "isBasedOn",
+      "schema:domainIncludes": {
+        "@id": "bioschemasdrafts:Taxon"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -22026,74 +22094,6 @@
       ]
     },
     {
-      "@id": "dwc:vernacularName",
-      "rdfs:comment": "A vernacular (common) name of the taxon.",
-      "@type": "rdf:Property",
-      "rdfs:label": "vernacularName",
-      "schema:domainIncludes": {
-        "@id": "bioschemasdrafts:Taxon"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemasdrafts:scientificName",
-      "rdfs:comment": "A TaxonName representing the currently valid (zoological) or accepted (botanical) name for that taxon.",
-      "@type": "rdf:Property",
-      "rdfs:label": "scientificName",
-      "schema:domainIncludes": {
-        "@id": "bioschemasdrafts:Taxon"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "bioschemastypesdrafts:TaxonName"
-        },
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemasdrafts:alternateScientificName",
-      "rdfs:comment": "A TaxonName representing a scientific name, with authorship and date information if known, of a synonym of the currently valid (zoological) or accepted (botanical) name.",
-      "@type": "rdf:Property",
-      "rdfs:label": "alternateScientificName",
-      "schema:domainIncludes": {
-        "@id": "bioschemasdrafts:Taxon"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "bioschemastypesdrafts:TaxonName"
-        },
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemasdrafts:isBasedOn",
-      "rdfs:comment": "A resource from which this work is derived or from which it is a modification or adaption. Supersedes, isBasedOnUrl. \n A CreativeWork, such as a scholarly article, asserting the status of the accepted/valid name and synonyms, retained for the taxon circumscription.",
-      "@type": "rdf:Property",
-      "rdfs:label": "isBasedOn",
-      "schema:domainIncludes": {
-        "@id": "bioschemasdrafts:Taxon"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
-    },
-    {
       "@id": "bioschemasdrafts:topic",
       "rdfs:comment": "The scientific topic the event is about. Please use a term from EDAM: Topic.",
       "@type": "rdf:Property",
@@ -22113,10 +22113,57 @@
       ]
     },
     {
-      "@id": "bioschemasdrafts:socialMedia",
-      "rdfs:comment": "Link to social media websites like twitter or facebook.",
+      "@id": "bioschemasdrafts:dateModified",
+      "rdfs:comment": "The date on which the CreativeWork was most recently modified or when the item\u2019s entry was modified within a DataFeed. \n NOTE: Keywords is not part of Event.",
       "@type": "rdf:Property",
-      "rdfs:label": "socialMedia",
+      "rdfs:label": "dateModified",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemasdrafts:Event"
+        },
+        {
+          "@id": "bioschemasdrafts:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        },
+        {
+          "@id": "schema:DateTime"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemasdrafts:hasSequenceAnnotation",
+      "rdfs:comment": "An annotation on the BioPolymerSequence associated with this BioChemEntity. For genes, it can be used to link to gene sequence annotations such as variants or so.",
+      "@type": "rdf:Property",
+      "rdfs:label": "hasSequenceAnnotation",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemasdrafts:Gene"
+        },
+        {
+          "@id": "bioschemasdrafts:Protein"
+        },
+        {
+          "@id": "bioschemasdrafts:RNA"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "bioschemastypesdrafts:SequenceAnnotation"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemasdrafts:attachment",
+      "rdfs:comment": "Any files or related websites which give more information about this event. e.g. flyers, third party sites handling tickets.",
+      "@type": "rdf:Property",
+      "rdfs:label": "attachment",
       "schema:domainIncludes": [
         {
           "@id": "bioschemasdrafts:Event"
@@ -22151,76 +22198,29 @@
       ]
     },
     {
-      "@id": "bioschemasdrafts:attachment",
-      "rdfs:comment": "Any files or related websites which give more information about this event. e.g. flyers, third party sites handling tickets.",
-      "@type": "rdf:Property",
-      "rdfs:label": "attachment",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemasdrafts:Event"
-        },
-        {
-          "@id": "bioschemasdrafts:Organization"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemasdrafts:hasSequenceAnnotation",
-      "rdfs:comment": "An annotation on the BioPolymerSequence associated with this BioChemEntity. For genes, it can be used to link to gene sequence annotations such as variants or so.",
-      "@type": "rdf:Property",
-      "rdfs:label": "hasSequenceAnnotation",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemasdrafts:Gene"
-        },
-        {
-          "@id": "bioschemasdrafts:Protein"
-        },
-        {
-          "@id": "bioschemasdrafts:RNA"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "bioschemastypesdrafts:SequenceAnnotation"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemasdrafts:dateModified",
-      "rdfs:comment": "The date on which the CreativeWork was most recently modified or when the item\u2019s entry was modified within a DataFeed. \n NOTE: Keywords is not part of Event.",
-      "@type": "rdf:Property",
-      "rdfs:label": "dateModified",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemasdrafts:Event"
-        },
-        {
-          "@id": "bioschemasdrafts:Organization"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Date"
-        },
-        {
-          "@id": "schema:DateTime"
-        }
-      ]
-    },
-    {
       "@id": "rdf:type",
       "rdfs:comment": "This is used by validation tools to indentify the profile used. You must use the value specified in the Controlled Vocabulary column. This is used by validation tools to indentify the profile used. You must use the value specified in the Controlled Vocabulary column.",
       "@type": "rdf:Property",
       "rdfs:label": "type",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemasdrafts:Event"
+        },
+        {
+          "@id": "bioschemasdrafts:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemasdrafts:socialMedia",
+      "rdfs:comment": "Link to social media websites like twitter or facebook.",
+      "@type": "rdf:Property",
+      "rdfs:label": "socialMedia",
       "schema:domainIncludes": [
         {
           "@id": "bioschemasdrafts:Event"
@@ -22245,7 +22245,10 @@
           "@id": "bioschemasdrafts:Gene"
         },
         {
-          "@id": "bioschemasdrafts:TrainingMaterial"
+          "@id": "bioschemasdrafts:Taxon"
+        },
+        {
+          "@id": "bioschemasdrafts:TaxonName"
         },
         {
           "@id": "bioschemasdrafts:ChemicalSubstance"
@@ -22329,10 +22332,7 @@
           "@id": "bioschemasdrafts:Study"
         },
         {
-          "@id": "bioschemasdrafts:Taxon"
-        },
-        {
-          "@id": "bioschemasdrafts:TaxonName"
+          "@id": "bioschemasdrafts:TrainingMaterial"
         }
       ],
       "schema:rangeIncludes": [
