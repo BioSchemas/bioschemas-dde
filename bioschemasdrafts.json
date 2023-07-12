@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "07/12/2023, 15:13:25",
+    "@dateModified": "07/12/2023, 08:21:59",
     "dwc": "http://rs.tdwg.org/dwc/terms/",
     "ppeo:hasGrowthFacility": "http://purl.org/ppeo/PPEO.owl#hasGrowthFacility"
   },
@@ -709,8 +709,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile for describing a biological taxon This profile aims to denote a taxon by common properties such as its scientific name, taxonomic rank and vernacular names. It is also a means to link to existing taxonomic registers where each taxon has a URI. Version 0.8-DRAFT.<br/><h3>Summary of Changes</h3><br>Changes since 0.7-DRAFT:<ul><li>Change sameAs from optional to recommended.</li></ul>",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/Taxon/jsonld/Taxon_v0.8-DRAFT.json",
-        "https://bioschemas.org/profiles/Taxon/0.8-DRAFT"
+        "https://bioschemas.org/profiles/Taxon/0.8-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/Taxon/jsonld/Taxon_v0.8-DRAFT.json"
       ],
       "rdfs:label": "Taxon",
       "rdfs:subClassOf": {
@@ -1202,8 +1202,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile for describing a name of a biological taxon, which may be valid (zoology) / accepted (botany) or not. This profile povides a way to denote the scientific names of a taxon. The taxon accepted/valid name is linked to the taxon with property scientificName while the synonyms are linked with property alternateScientificName. Version: 0.2-DRAFT. <h3>Summary of Changes</h3><br>Changes since Version 0.1-DRAFT:<ul><li>added sameAs property as recommended.</li></ul>",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/TaxonName/0.2-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/TaxonName/jsonld/TaxonName_v0.2-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/TaxonName/jsonld/TaxonName_v0.2-DRAFT.json",
+        "https://bioschemas.org/profiles/TaxonName/0.2-DRAFT"
       ],
       "rdfs:label": "TaxonName",
       "rdfs:subClassOf": {
@@ -1905,8 +1905,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/ChemicalSubstance/0.5-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.5-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.5-DRAFT.json",
+        "https://bioschemas.org/profiles/ChemicalSubstance/0.5-DRAFT"
       ]
     },
     {
@@ -5031,8 +5031,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.1-DRAFT.json",
-        "https://bioschemas.org/profiles/ComputationalWorkflow/1.1-DRAFT"
+        "https://bioschemas.org/profiles/ComputationalWorkflow/1.1-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.1-DRAFT.json"
       ]
     },
     {
@@ -7923,8 +7923,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/DataCatalog/jsonld/DataCatalog_v0.4-DRAFT.json",
-        "https://bioschemas.org/profiles/DataCatalog/0.4-DRAFT"
+        "https://bioschemas.org/profiles/DataCatalog/0.4-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/DataCatalog/jsonld/DataCatalog_v0.4-DRAFT.json"
       ]
     },
     {
@@ -8932,8 +8932,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/Disease/jsonld/Disease_v0.2-DRAFT.json",
-        "https://bioschemas.org/profiles/Disease/0.2-DRAFT"
+        "https://bioschemas.org/profiles/Disease/0.2-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/Disease/jsonld/Disease_v0.2-DRAFT.json"
       ]
     },
     {
@@ -8941,8 +8941,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Specification for describing an event in the Life Sciences Specification for describing a Life Science event. This includes conferences, workshops, meetings, courses, receptions, networking and prizegivings. Version 0.3-DRAFT. <h3>Summary of Changes</h3> Changes since 0.2-DRAFT-2019_06_14<ul><li>added sameAs property as recommended</li></ul>",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Event/0.3-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/Event/jsonld/Event_v0.3-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/Event/jsonld/Event_v0.3-DRAFT.json",
+        "https://bioschemas.org/profiles/Event/0.3-DRAFT"
       ],
       "rdfs:label": "Event",
       "rdfs:subClassOf": {
@@ -10011,8 +10011,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile, based on Biotea model, describing a Journal in Life Sciences. A Journal is a collection of publication issues, publication volumes or scholarly articles, or possibly, although no commonly, any mix from those mentioned. Version 0.3-DRAFT<h3>Summary of Changes</h3><br>Changes since previous draft 0.2 Journal profile: <ul><li>added sameAs property as recommended</li></ul>",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/Journal/jsonld/Journal_v0.3-DRAFT.json",
-        "https://bioschemas.org/profiles/Journal/0.3-DRAFT"
+        "https://bioschemas.org/profiles/Journal/0.3-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/Journal/jsonld/Journal_v0.3-DRAFT.json"
       ],
       "rdfs:label": "Journal",
       "rdfs:subClassOf": {
@@ -10539,8 +10539,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile describing a LabProtocol in Life Sciences. An experimental LabProtocol is a sequence of tasks and operations executed to perform experimental research in biological and biomedical areas. This LabProtocol profile specification presents the markup for describing a LabProtocol type according to Bioschemas. An experimental LabProtocol is a sequence of tasks and operations executed to perform experimental research in biological and biomedical areas. Version 0.7-DRAFT. <h3>Summary of Changes</h3><br>Changes since previous draft 0.5 of the LabProtocols profile: <ul><li>added sameAs property as recommended</li></ul>",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/LabProtocol/0.7-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/LabProtocol/jsonld/LabProtocol_v0.7-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/LabProtocol/jsonld/LabProtocol_v0.7-DRAFT.json",
+        "https://bioschemas.org/profiles/LabProtocol/0.7-DRAFT"
       ],
       "rdfs:label": "LabProtocol",
       "rdfs:subClassOf": {
@@ -16038,8 +16038,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile, based on Biotea model, describing a PublicationVolume in Life Sciences. A PublicationVolume is a collection of publication issues, or scholarly articles, or possibly, although no commonly, any mix from those mentioned. It is commonly part of a Journal. Version 0.3-DRAFT. <h3>Summary of Changes</h3><br>Changes since previous draft 0.2-DRAFT-2020_12_03 of the PublicationVolumen profile: <ul><li>added sameAs property as recommended.</li></ul>",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/PublicationVolume/0.3-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/PublicationVolume/jsonld/PublicationVolume_v0.3-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/PublicationVolume/jsonld/PublicationVolume_v0.3-DRAFT.json",
+        "https://bioschemas.org/profiles/PublicationVolume/0.3-DRAFT"
       ],
       "rdfs:label": "PublicationVolume",
       "rdfs:subClassOf": {
@@ -17706,8 +17706,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Sample/0.3-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/Sample/jsonld/Sample_v0.3-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/Sample/jsonld/Sample_v0.3-DRAFT.json",
+        "https://bioschemas.org/profiles/Sample/0.3-DRAFT"
       ]
     },
     {
@@ -18576,8 +18576,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile, based on Biotea model, describing a semantic annotation associated to a piece of text in a ScholarlyArticle in Life Sciences. A SemanticTextAnnotation corresponds to an expression identified in a ScholarlyArticle and associated to an ontology term. Version 0.3-DRAFT. <h3>Summary of Changes</h3><br>Changes since previous draft 0.2-DRAFT-2020_12_03 of the SemanticAnnotation profile: <ul><li>added sameAs property as recommended.</li></ul>",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/SemanticTextAnnotation/0.3-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/SemanticTextAnnotation/jsonld/SemanticTextAnnotation_v0.3-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/SemanticTextAnnotation/jsonld/SemanticTextAnnotation_v0.3-DRAFT.json",
+        "https://bioschemas.org/profiles/SemanticTextAnnotation/0.3-DRAFT"
       ],
       "rdfs:label": "SemanticTextAnnotation",
       "rdfs:subClassOf": {
@@ -19580,8 +19580,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/SequenceAnnotation/jsonld/SequenceAnnotation_v0.7-DRAFT.json",
-        "https://bioschemas.org/profiles/SequenceAnnotation/0.7-DRAFT"
+        "https://bioschemas.org/profiles/SequenceAnnotation/0.7-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/SequenceAnnotation/jsonld/SequenceAnnotation_v0.7-DRAFT.json"
       ]
     },
     {
@@ -20392,8 +20392,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A specification for describing training materials in life sciences. The Life Science Training Materials specification provides a way to describe bioscience training material on the World Wide Web. It defines a set of metadata and vocabularies, built on top of existing technologies and standards, that can be used to represent events in Web pages and applications. The goal of the specification is to make it easier to discover, exchange and integrate life science training material information across the Internet. Version: 1.1-DRAFT. <h3>Summary of Changes</h3><br>Changes since previous draft 0.9-DRAFT-2020_12_08 of the TrainingMaterials profile:<ul><li>added sameAs property as recommended</li></ul>",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/TrainingMaterial/jsonld/TrainingMaterial_v1.1-DRAFT.json",
-        "https://bioschemas.org/profiles/TrainingMaterial/1.1-DRAFT"
+        "https://bioschemas.org/profiles/TrainingMaterial/1.1-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/TrainingMaterial/jsonld/TrainingMaterial_v1.1-DRAFT.json"
       ],
       "rdfs:label": "TrainingMaterial",
       "rdfs:subClassOf": {
@@ -22094,91 +22094,6 @@
       ]
     },
     {
-      "@id": "bioschemasdrafts:topic",
-      "rdfs:comment": "The scientific topic the event is about. Please use a term from EDAM: Topic.",
-      "@type": "rdf:Property",
-      "rdfs:label": "topic",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemasdrafts:Event"
-        },
-        {
-          "@id": "bioschemasdrafts:Organization"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemasdrafts:dateModified",
-      "rdfs:comment": "The date on which the CreativeWork was most recently modified or when the item\u2019s entry was modified within a DataFeed. \n NOTE: Keywords is not part of Event.",
-      "@type": "rdf:Property",
-      "rdfs:label": "dateModified",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemasdrafts:Event"
-        },
-        {
-          "@id": "bioschemasdrafts:Organization"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Date"
-        },
-        {
-          "@id": "schema:DateTime"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemasdrafts:hasSequenceAnnotation",
-      "rdfs:comment": "An annotation on the BioPolymerSequence associated with this BioChemEntity. For genes, it can be used to link to gene sequence annotations such as variants or so.",
-      "@type": "rdf:Property",
-      "rdfs:label": "hasSequenceAnnotation",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemasdrafts:Gene"
-        },
-        {
-          "@id": "bioschemasdrafts:Protein"
-        },
-        {
-          "@id": "bioschemasdrafts:RNA"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "bioschemastypesdrafts:SequenceAnnotation"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemasdrafts:attachment",
-      "rdfs:comment": "Any files or related websites which give more information about this event. e.g. flyers, third party sites handling tickets.",
-      "@type": "rdf:Property",
-      "rdfs:label": "attachment",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemasdrafts:Event"
-        },
-        {
-          "@id": "bioschemasdrafts:Organization"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
       "@id": "bioschemasdrafts:keywords",
       "rdfs:comment": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas. \n NOTE: Keywords is not part of Event.",
       "@type": "rdf:Property",
@@ -22217,10 +22132,95 @@
       ]
     },
     {
+      "@id": "bioschemasdrafts:hasSequenceAnnotation",
+      "rdfs:comment": "An annotation on the BioPolymerSequence associated with this BioChemEntity. For genes, it can be used to link to gene sequence annotations such as variants or so.",
+      "@type": "rdf:Property",
+      "rdfs:label": "hasSequenceAnnotation",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemasdrafts:Gene"
+        },
+        {
+          "@id": "bioschemasdrafts:Protein"
+        },
+        {
+          "@id": "bioschemasdrafts:RNA"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "bioschemastypesdrafts:SequenceAnnotation"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemasdrafts:dateModified",
+      "rdfs:comment": "The date on which the CreativeWork was most recently modified or when the item\u2019s entry was modified within a DataFeed. \n NOTE: Keywords is not part of Event.",
+      "@type": "rdf:Property",
+      "rdfs:label": "dateModified",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemasdrafts:Event"
+        },
+        {
+          "@id": "bioschemasdrafts:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        },
+        {
+          "@id": "schema:DateTime"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemasdrafts:attachment",
+      "rdfs:comment": "Any files or related websites which give more information about this event. e.g. flyers, third party sites handling tickets.",
+      "@type": "rdf:Property",
+      "rdfs:label": "attachment",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemasdrafts:Event"
+        },
+        {
+          "@id": "bioschemasdrafts:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
       "@id": "bioschemasdrafts:socialMedia",
       "rdfs:comment": "Link to social media websites like twitter or facebook.",
       "@type": "rdf:Property",
       "rdfs:label": "socialMedia",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemasdrafts:Event"
+        },
+        {
+          "@id": "bioschemasdrafts:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemasdrafts:topic",
+      "rdfs:comment": "The scientific topic the event is about. Please use a term from EDAM: Topic.",
+      "@type": "rdf:Property",
+      "rdfs:label": "topic",
       "schema:domainIncludes": [
         {
           "@id": "bioschemasdrafts:Event"
