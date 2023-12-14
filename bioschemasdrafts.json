@@ -21448,6 +21448,34 @@
       ]
     },
     {
+      "@id": "bioschemasdrafts:codeRepository",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Link to the source code repository of the tool.",
+      "rdfs:label": "codeRepository",
+      "schema:domainIncludes": {
+        "@id": "bioschemasdrafts:ComputationalTool"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemasdrafts:programmingLanguage",
+      "rdfs:comment": "The main programming language(s) used to build or execute the tool. Please use terms from the ‘Programming language’ table in the Bio.Tools documentation.",
+      "@type": "rdf:Property",
+      "rdfs:label": "programmingLanguage",
+      "schema:domainIncludes": {
+        "@id": "bioschemasdrafts:ComputationalTool"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:ComputerLanguage"
+        }
+      ]
+    },
+    {
       "@id": "bioschemasdrafts:applicationSubCategory",
       "@type": "rdf:Property",
       "rdfs:comment": "Subcategory of the application. \"A URL to the subcategory of ComputationalWorkflow. Note that the applicationCategory is implicitly Workflow. Example: \"applicationCategory\": \"http://edamontology.org/topic_3948\"",
