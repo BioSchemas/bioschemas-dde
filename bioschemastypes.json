@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "07/12/2023, 15:13:08"
+    "@dateModified": "12/21/2023, 19:17:16"
   },
   "@graph": [
     {
@@ -49,8 +49,8 @@
       "rdfs:label": "BioSample",
       "schema:additionalType": "https://bioschemas.org/types#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/BioSample/jsonld/type/BioSample_v0.1-RELEASE.json",
-        "https://bioschemas.org/types/BioSample/0.1-RELEASE"
+        "https://bioschemas.org/types/BioSample/0.1-RELEASE",
+        "https://github.com/BioSchemas/specifications/tree/master/BioSample/jsonld/type/BioSample_v0.1-RELEASE.json"
       ],
       "rdfs:subClassOf": {
         "@id": "schema:BioChemEntity"
@@ -90,8 +90,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity. (Source: ChEBI:23367). Note, this version has been updated to a pending class in schema.org.",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/MolecularEntity/jsonld/type/MolecularEntity_v0.3-RELEASE-2019_09_02.json",
-        "https://bioschemas.org/types/MolecularEntity/0.3-RELEASE-2019_09_02"
+        "https://bioschemas.org/types/MolecularEntity/0.3-RELEASE-2019_09_02",
+        "https://github.com/BioSchemas/specifications/tree/master/MolecularEntity/jsonld/type/MolecularEntity_v0.3-RELEASE-2019_09_02.json"
       ],
       "rdfs:label": "MolecularEntity",
       "rdfs:subClassOf": {
@@ -118,8 +118,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A FormalParameter is an identified variable used to stand for the actual value(s) that are consumed/produced by a set of steps. Version: 1.0-RELEASE (09 March 2021) ",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/type/FormalParameter_v1.0-RELEASE.json",
-        "https://bioschemas.org/types/FormalParameter/1.0-RELEASE"
+        "https://bioschemas.org/types/FormalParameter/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/type/FormalParameter_v1.0-RELEASE.json"
       ],
       "rdfs:label": "FormalParameter",
       "rdfs:subClassOf": {
@@ -146,8 +146,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A name of a biological taxon, may it be valid (zoology) / accepted (botany) or not. Version: 1.0-RELEASE",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/TaxonName/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/TaxonName/jsonld/type/TaxonName_v1.0-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/TaxonName/jsonld/type/TaxonName_v1.0-RELEASE.json",
+        "https://bioschemas.org/types/TaxonName/1.0-RELEASE"
       ],
       "rdfs:label": "TaxonName",
       "rdfs:subClassOf": {
@@ -903,27 +903,21 @@
       ]
     },
     {
-      "@id": "bioschemastypes:taxonRank",
-      "rdfs:comment": "The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary (e.g. the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs) ",
+      "@id": "bioschemastypes:hasBioPolymerSequence",
+      "rdfs:comment": "A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.",
       "@type": "rdf:Property",
-      "rdfs:label": "taxonRank",
+      "rdfs:label": "hasBioPolymerSequence",
       "schema:domainIncludes": [
         {
-          "@id": "bioschemastypes:Taxon"
+          "@id": "bioschemastypes:Gene"
         },
         {
-          "@id": "bioschemastypes:TaxonName"
+          "@id": "bioschemastypes:Protein"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
-        },
-        {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
     },
@@ -966,21 +960,27 @@
       ]
     },
     {
-      "@id": "bioschemastypes:hasBioPolymerSequence",
-      "rdfs:comment": "A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.",
+      "@id": "bioschemastypes:taxonRank",
+      "rdfs:comment": "The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary (e.g. the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs) ",
       "@type": "rdf:Property",
-      "rdfs:label": "hasBioPolymerSequence",
+      "rdfs:label": "taxonRank",
       "schema:domainIncludes": [
         {
-          "@id": "bioschemastypes:Gene"
+          "@id": "bioschemastypes:Taxon"
         },
         {
-          "@id": "bioschemastypes:Protein"
+          "@id": "bioschemastypes:TaxonName"
         }
       ],
       "schema:rangeIncludes": [
         {
+          "@id": "schema:PropertyValue"
+        },
+        {
           "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
         }
       ]
     },
