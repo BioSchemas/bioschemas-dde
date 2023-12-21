@@ -13,7 +13,6 @@ bioschemasdrafts	Disease	schema:MedicalCondition	Profile	0.2-DRAFT	https://githu
 bioschemas	Event	schema:Event	Profile	0.3-DRAFT	https://github.com/BioSchemas/specifications/tree/master/Event/jsonld/Event_v0.3-DRAFT.json
 bioschemas	FormalParameter	bioschemastypes:FormalParameter	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/FormalParameter/jsonld/FormalParameter_v1.1-DRAFT.json
 bioschemas	Journal	schema:CreativeWorkSeries	Profile	0.3-DRAFT	https://github.com/BioSchemas/specifications/tree/master/Journal/jsonld/Journal_v0.3-DRAFT.json
-bioschemas	LabProtocol	bioschemastypes:LabProtocol	Profile	0.7-DRAFT	https://github.com/BioSchemas/specifications/tree/master/LabProtocol/jsonld/LabProtocol_v0.7-DRAFT.json
 bioschemas	MolecularEntity	schema:MolecularEntity	Profile	0.7-DRAFT	https://github.com/BioSchemas/specifications/tree/master/MolecularEntity/jsonld/MolecularEntity_v0.7-DRAFT.json
 bioschemas	Organization	schema:Organization	Profile	0.3-DRAFT	https://github.com/BioSchemas/specifications/tree/master/Organization/jsonld/Organization_v0.3-DRAFT.json
 bioschemas	Person	schema:Person	Profile	0.3-DRAFT	https://github.com/BioSchemas/specifications/tree/master/Person/jsonld/Person_v0.3-DRAFT.json
@@ -31,3 +30,4 @@ bioschemas	SequenceRange	bioschemastypes:SequenceStructure	Profile	0.2-DRAFT	htt
 bioschemas	Study	bioschemastypes:Study	Profile	0.3-DRAFT	https://github.com/BioSchemas/specifications/tree/master/Study/jsonld/Study_v0.3-DRAFT.json
 bioschemas	TrainingMaterial	schema:LearningResource	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/TrainingMaterial/jsonld/TrainingMaterial_v1.1-DRAFT.json
 bioschemasdrafts	DefinedTerm	schema:DefinedTerm	Profile	0.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/DefinedTerm/jsonld/DefinedTerm_v0.1-DRAFT.jsonld
+bioschemasdrafts	LabProtocol	bioschemastypes:LabProtocol	Profile	0.8-DRAFT	https://github.com/BioSchemas/specifications/tree/master/LabProtocol/jsonld/LabProtocol_v0.8-DRAFT.json
