@@ -29,5 +29,5 @@ bioschemas	SequenceAnnotation	bioschemastypes:SequenceAnnotation	Profile	0.7-DRA
 bioschemas	SequenceRange	bioschemastypes:SequenceStructure	Profile	0.2-DRAFT	https://github.com/BioSchemas/specifications/tree/master/SequenceRange/jsonld/SequenceRange_v0.2-DRAFT.json
 bioschemas	Study	bioschemastypes:Study	Profile	0.3-DRAFT	https://github.com/BioSchemas/specifications/tree/master/Study/jsonld/Study_v0.3-DRAFT.json
 bioschemas	TrainingMaterial	schema:LearningResource	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/TrainingMaterial/jsonld/TrainingMaterial_v1.1-DRAFT.json
-bioschemasdrafts	DefinedTerm	schema:DefinedTerm	Profile	0.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/DefinedTerm/jsonld/DefinedTerm_v0.1-DRAFT.jsonld
+bioschemasdrafts	DefinedTerm	schema:DefinedTerm	Profile	0.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/DefinedTerm/jsonld/DefinedTerm_v0.1-DRAFT.json
 bioschemasdrafts	LabProtocol	bioschemastypes:LabProtocol	Profile	0.8-DRAFT	https://github.com/BioSchemas/specifications/tree/master/LabProtocol/jsonld/LabProtocol_v0.8-DRAFT.json
