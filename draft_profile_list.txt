@@ -2,6 +2,7 @@ namespace	name	subClassOf	type	version	url
 bioschemasdrafts	Gene	schema:Gene	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.1-DRAFT.json
 bioschemasdrafts	Taxon	schema:Taxon	Profile	0.8-DRAFT	https://github.com/BioSchemas/specifications/tree/master/Taxon/jsonld/Taxon_v0.8-DRAFT.json
 bioschemas	TaxonName	bioschemastypes:TaxonName	Profile	0.2-DRAFT	https://github.com/BioSchemas/specifications/tree/master/TaxonName/jsonld/TaxonName_v0.2-DRAFT.json
+bioschemasdrafts	DefinedTerm	schema:DefinedTerm	Profile	0.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/DefinedTerm/jsonld/DefinedTerm_v0.1-DRAFT.json
 bioschemas	ChemicalSubstance	schema:ChemicalSubstance	Profile	0.5-DRAFT	https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.5-DRAFT.json
 bioschemas	ComputationalTool	schema:SoftwareApplication	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/ComputationalTool/jsonld/ComputationalTool_v1.1-DRAFT.json
 bioschemasdrafts	ComputationalWorkflow	bioschemastypes:ComputationalWorkflow	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.1-DRAFT.json
@@ -13,6 +14,7 @@ bioschemasdrafts	Disease	schema:MedicalCondition	Profile	0.2-DRAFT	https://githu
 bioschemas	Event	schema:Event	Profile	0.3-DRAFT	https://github.com/BioSchemas/specifications/tree/master/Event/jsonld/Event_v0.3-DRAFT.json
 bioschemas	FormalParameter	bioschemastypes:FormalParameter	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/FormalParameter/jsonld/FormalParameter_v1.1-DRAFT.json
 bioschemas	Journal	schema:CreativeWorkSeries	Profile	0.3-DRAFT	https://github.com/BioSchemas/specifications/tree/master/Journal/jsonld/Journal_v0.3-DRAFT.json
+bioschemasdrafts	LabProtocol	bioschemastypes:LabProtocol	Profile	0.8-DRAFT	https://github.com/BioSchemas/specifications/tree/master/LabProtocol/jsonld/LabProtocol_v0.8-DRAFT.json
 bioschemas	MolecularEntity	schema:MolecularEntity	Profile	0.7-DRAFT	https://github.com/BioSchemas/specifications/tree/master/MolecularEntity/jsonld/MolecularEntity_v0.7-DRAFT.json
 bioschemas	Organization	schema:Organization	Profile	0.3-DRAFT	https://github.com/BioSchemas/specifications/tree/master/Organization/jsonld/Organization_v0.3-DRAFT.json
 bioschemas	Person	schema:Person	Profile	0.3-DRAFT	https://github.com/BioSchemas/specifications/tree/master/Person/jsonld/Person_v0.3-DRAFT.json
@@ -29,5 +31,3 @@ bioschemas	SequenceAnnotation	bioschemastypes:SequenceAnnotation	Profile	0.7-DRA
 bioschemas	SequenceRange	bioschemastypes:SequenceStructure	Profile	0.2-DRAFT	https://github.com/BioSchemas/specifications/tree/master/SequenceRange/jsonld/SequenceRange_v0.2-DRAFT.json
 bioschemas	Study	bioschemastypes:Study	Profile	0.3-DRAFT	https://github.com/BioSchemas/specifications/tree/master/Study/jsonld/Study_v0.3-DRAFT.json
 bioschemas	TrainingMaterial	schema:LearningResource	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/TrainingMaterial/jsonld/TrainingMaterial_v1.1-DRAFT.json
-bioschemasdrafts	DefinedTerm	schema:DefinedTerm	Profile	0.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/DefinedTerm/jsonld/DefinedTerm_v0.1-DRAFT.json
-bioschemasdrafts	LabProtocol	bioschemastypes:LabProtocol	Profile	0.8-DRAFT	https://github.com/BioSchemas/specifications/tree/master/LabProtocol/jsonld/LabProtocol_v0.8-DRAFT.json
