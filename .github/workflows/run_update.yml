@@ -27,21 +27,8 @@ jobs:
     - name: run table updates
       run: |
         python update_repo_tables.py
-    - name: Commit files
-      id: commit_tables
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "github-actions"
-        git add --all
-        git commit -m "update csv data" -a
-    - name: push changes
-      uses: ad-m/github-push-action@v0.6.0
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: main
     - name: Run spec updates
       run: |
-        sleep 30
         python updated_specs.py
     - name: Commit files
       id: commit_son
