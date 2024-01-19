@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "12/21/2023, 19:17:16"
+    "@dateModified": "01/19/2024, 16:02:50"
   },
   "@graph": [
     {
@@ -18,8 +18,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A set of organisms asserted to represent a natural cohesive biological unit. Version: 1.0-RELEASE",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/Taxon/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/type/Taxon_v1.0-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/type/Taxon_v1.0-RELEASE.json",
+        "https://bioschemas.org/types/Taxon/1.0-RELEASE"
       ],
       "rdfs:label": "Taxon",
       "rdfs:subClassOf": {
@@ -49,8 +49,8 @@
       "rdfs:label": "BioSample",
       "schema:additionalType": "https://bioschemas.org/types#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/BioSample/0.1-RELEASE",
-        "https://github.com/BioSchemas/specifications/tree/master/BioSample/jsonld/type/BioSample_v0.1-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/tree/master/BioSample/jsonld/type/BioSample_v0.1-RELEASE.json",
+        "https://bioschemas.org/types/BioSample/0.1-RELEASE"
       ],
       "rdfs:subClassOf": {
         "@id": "schema:BioChemEntity"
@@ -76,8 +76,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A discrete unit of inheritance which affects one or more biological traits (Source: https://en.wikipedia.org/wiki/Gene). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype). Note, this version of the type has been added as a pending class in schema.org.",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/Gene/jsonld/type/Gene_v0.3-RELEASE-2019_09_02.json",
-        "https://bioschemas.org/types/Gene/0.3-RELEASE-2019_09_02"
+        "https://bioschemas.org/types/Gene/0.3-RELEASE-2019_09_02",
+        "https://github.com/BioSchemas/specifications/tree/master/Gene/jsonld/type/Gene_v0.3-RELEASE-2019_09_02.json"
       ],
       "rdfs:label": "Gene",
       "rdfs:subClassOf": {
@@ -104,8 +104,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Protein is here used in its widest possible definition, as classes of amino acid based molecules. Amyloid-beta Protein in human (UniProt P05067), eukaryota (e.g. an OrthoDB group) or even a single molecule that one can point to are all of type schema:Protein. A protein can thus be a subclass of another protein, e.g. schema:Protein as a UniProt record can have multiple isoforms inside it which would also be schema:Protein. They can be imagined, synthetic, hypothetical or naturally occurring. This version has been added to schema.org as a pending type.",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/Protein/jsonld/type/Protein_v0.3-RELEASE-2019_09_02.json",
-        "https://bioschemas.org/types/Protein/0.3-RELEASE-2019_09_02"
+        "https://bioschemas.org/types/Protein/0.3-RELEASE-2019_09_02",
+        "https://github.com/BioSchemas/specifications/tree/master/Protein/jsonld/type/Protein_v0.3-RELEASE-2019_09_02.json"
       ],
       "rdfs:label": "Protein",
       "rdfs:subClassOf": {
@@ -903,44 +903,6 @@
       ]
     },
     {
-      "@id": "bioschemastypes:hasBioPolymerSequence",
-      "rdfs:comment": "A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.",
-      "@type": "rdf:Property",
-      "rdfs:label": "hasBioPolymerSequence",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemastypes:Gene"
-        },
-        {
-          "@id": "bioschemastypes:Protein"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypes:potentialUse",
-      "rdfs:comment": "Intended use of the BioChemEntity by humans. ",
-      "@type": "rdf:Property",
-      "rdfs:label": "potentialUse",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemastypes:ChemicalSubstance"
-        },
-        {
-          "@id": "bioschemastypes:MolecularEntity"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:DefinedTerm"
-        }
-      ]
-    },
-    {
       "@id": "bioschemastypes:chemicalRole",
       "rdfs:comment": "A role played by the BioChemEntity within a chemical context. A role played by the molecular entity within a chemical context.",
       "@type": "rdf:Property",
@@ -981,6 +943,44 @@
         },
         {
           "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:hasBioPolymerSequence",
+      "rdfs:comment": "A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.",
+      "@type": "rdf:Property",
+      "rdfs:label": "hasBioPolymerSequence",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypes:Gene"
+        },
+        {
+          "@id": "bioschemastypes:Protein"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypes:potentialUse",
+      "rdfs:comment": "Intended use of the BioChemEntity by humans. ",
+      "@type": "rdf:Property",
+      "rdfs:label": "potentialUse",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypes:ChemicalSubstance"
+        },
+        {
+          "@id": "bioschemastypes:MolecularEntity"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
         }
       ]
     },

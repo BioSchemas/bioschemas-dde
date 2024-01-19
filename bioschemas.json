@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/view/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/view/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "12/21/2023, 19:17:26",
+    "@dateModified": "01/19/2024, 16:03:00",
     "dwc": "http://rs.tdwg.org/dwc/terms/"
   },
   "@graph": [
@@ -968,8 +968,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Gene/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.0-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.0-RELEASE.json",
+        "https://bioschemas.org/profiles/Gene/1.0-RELEASE"
       ]
     },
     {
@@ -3160,8 +3160,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/FormalParameter_v1.0-RELEASE.json",
-        "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+        "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/FormalParameter_v1.0-RELEASE.json"
       ]
     },
     {
@@ -4012,8 +4012,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/ComputationalTool/jsonld/ComputationalTool_v1.0-RELEASE.json",
-        "https://bioschemas.org/profiles/ComputationalTool/1.0-RELEASE"
+        "https://bioschemas.org/profiles/ComputationalTool/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/ComputationalTool/jsonld/ComputationalTool_v1.0-RELEASE.json"
       ]
     },
     {
@@ -5331,8 +5331,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A guide for how to describe datasets in the life-sciences using Schema.org-like annotation. Version 1.0-RELEASE. <h3>Summary of Changes</h3> <br>Key changes since 0.3-RELEASE:<ul><li>Updated properties to Schema.org v12.0; various properties added at recommended or optional level, expected types updated. See 0.4-DRAFT for full details</li><li>license now a minimum property</li><li>keywords: Cardinality #501 \u2013 Cardinality is MANY</li><li>distribution: Cardinality #574 \u2013 Cardinality changed to MANY</li><li>datePublished: Increased marginlity #576 \u2013 Now recommended</li><li>publisher: Increased marginlity, Cardinality #576 \u2013 Now recommended with MANY cardinality</li></ul>",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v1.0-RELEASE.json",
-        "https://bioschemas.org/profiles/Dataset/1.0-RELEASE"
+        "https://bioschemas.org/profiles/Dataset/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/Dataset/jsonld/Dataset_v1.0-RELEASE.json"
       ],
       "rdfs:label": "Dataset",
       "rdfs:subClassOf": {
@@ -6319,8 +6319,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Specification describing a course.  This specification must be used in tandem with a courseInstance. A course is used to describe the broad, common aspects of a recurring training event - whereas a course instance is about the specific times and location of when that course is held. <h4>Summary of Changes</h4>    No changes since 0.10-DRAFT of the Course profile.</li>         </ul> Version: 1.0-RELEASE (13 September 2022) ",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Course/jsonld/Course_v1.0-RELEASE.json",
-        "https://bioschemas.org/profiles/Course/1.0-RELEASE"
+        "https://bioschemas.org/profiles/Course/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/Course/jsonld/Course_v1.0-RELEASE.json"
       ],
       "rdfs:label": "Course",
       "rdfs:subClassOf": {
@@ -7089,8 +7089,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Specification describing the instance of a course.  This specification can be used in tandem with a Course. A course is used to describe the broad, common aspects of a recurring training event - whereas a course instance is about the specific times and location of when that course is held. <h4>Summary of Changes</h4>    No changes since 0.9-DRAFT of the CourseInstance profile. Version: 1.0-RELEASE (13 September 2022)",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/CourseInstance/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v1.0-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/CourseInstance/jsonld/CourseInstance_v1.0-RELEASE.json",
+        "https://bioschemas.org/profiles/CourseInstance/1.0-RELEASE"
       ],
       "rdfs:label": "CourseInstance",
       "rdfs:subClassOf": {
@@ -7683,8 +7683,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A specification for describing training materials in life sciences. The Life Science Training Materials specification provides a way to describe bioscience training material on the World Wide Web. It defines a set of metadata and vocabularies, built on top of existing technologies and standards, that can be used to represent events in Web pages and applications. The goal of the specification is to make it easier to discover, exchange and integrate life science training material information across the Internet.<h4>Summary of Changes</h4> No changes since 0.9-DRAFT of the TrainingMaterials profile. Version: 1.0-RELEASE",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/TrainingMaterial/jsonld/TrainingMaterial_v1.0-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/TrainingMaterial/jsonld/TrainingMaterial_v1.0-RELEASE.json",
+        "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE"
       ],
       "rdfs:label": "TrainingMaterial",
       "rdfs:subClassOf": {
@@ -8505,8 +8505,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile for describing a name of a biological taxon, which may be valid (zoology) / accepted (botany) or not. This profile povides a way to denote the scientific names of a taxon. The taxon accepted/valid name is linked to the taxon with property scientificName while the synonyms are linked with property alternateScientificName. Version: 1.0-RELEASE. <h3>Summary of Changes</h3><br>Changes since Version 0.2-DRAFT:<ul><li>None. Version 0.2-DRAFT was approved to become a release</li></ul>",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/TaxonName/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/TaxonName/jsonld/TaxonName_v1.0-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/TaxonName/jsonld/TaxonName_v1.0-RELEASE.json",
+        "https://bioschemas.org/profiles/TaxonName/1.0-RELEASE"
       ],
       "rdfs:label": "TaxonName",
       "rdfs:subClassOf": {
