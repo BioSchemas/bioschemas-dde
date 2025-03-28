@@ -61,11 +61,11 @@ def generate_base_context():
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "owl":"http://www.w3.org/2002/07/owl/",
-        "bioschemas":"https://discovery.biothings.io/view/bioschemas/",
-        "bioschemasdrafts":"https://discovery.biothings.io/view/bioschemasdrafts/",
-        "bioschemastypes":"https://discovery.biothings.io/view/bioschemastypes/",
-        "bioschemastypesdrafts":"https://discovery.biothings.io/view/bioschemastypesdrafts/",
-        "bioschemasdeprecated":"https://discovery.biothings.io/view/bioschemasdeprecated/",
+        "bioschemas":"https://discovery.biothings.io/ns/bioschemas/",
+        "bioschemasdrafts":"https://discovery.biothings.io/ns/bioschemasdrafts/",
+        "bioschemastypes":"https://discovery.biothings.io/ns/bioschemastypes/",
+        "bioschemastypesdrafts":"https://discovery.biothings.io/ns/bioschemastypesdrafts/",
+        "bioschemasdeprecated":"https://discovery.biothings.io/ns/bioschemasdeprecated/",
         "dct":"http://purl.org/dc/terms/"
     }
     return allcontext
