@@ -87,7 +87,11 @@ def update_subclass(spec_list,eachurl,cleantext):
     tmpinfo = spec_list.loc[spec_list['url']==eachurl]
     tmpsubclass = tmpinfo.iloc[0]['subClassOf']
     classname = tmpinfo.iloc[0]['name']
-    truesubclass = {"@id": tmpsubclass}
+    if ',' in tmpsubclass:
+        tmpsubclasses = tmpsubclass.split()
+        truesubclass = [{"@id": tmpsubclasses[0]},{"@id": tmpsubclasses[1]}]
+    else:
+        truesubclass = {"@id": tmpsubclass}
     for x in spec_json['@graph']:
         if x['@id']=="bioschemas:"+classname:
             x['rdfs:subClassOf']=truesubclass
