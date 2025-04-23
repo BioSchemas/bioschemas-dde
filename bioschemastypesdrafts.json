@@ -7,7 +7,7 @@
     "bioschemastypes": "https://discovery.biothings.io/ns/bioschemastypes/",
     "bioschemastypesdrafts": "https://discovery.biothings.io/ns/bioschemastypesdrafts/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "03/28/2025, 14:36:14"
+    "@dateModified": "04/23/2025, 10:47:34"
   },
   "@graph": [
     {
@@ -20,8 +20,8 @@
       },
       "additional_type": "https://bioschemas.org/types#nav-draft",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/RNA/0.1-DRAFT-2019_06_21",
-        "https://github.com/BioSchemas/specifications/blob/master/RNA/jsonld/type/RNA_v0.1-DRAFT-2019_06_21.json"
+        "https://github.com/BioSchemas/specifications/blob/master/RNA/jsonld/type/RNA_v0.1-DRAFT-2019_06_21.json",
+        "https://bioschemas.org/types/RNA/0.1-DRAFT-2019_06_21"
       ]
     },
     {
@@ -62,8 +62,8 @@
       },
       "additional_type": "https://bioschemas.org/types#nav-draft",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/BioChemEntity/0.8-DRAFT",
-        "https://github.com/BioSchemas/specifications/blob/master/BioChemEntity/jsonld/type/BioChemEntity_v0.8-DRAFT.jsonld"
+        "https://github.com/BioSchemas/specifications/blob/master/BioChemEntity/jsonld/type/BioChemEntity_v0.8-DRAFT.jsonld",
+        "https://bioschemas.org/types/BioChemEntity/0.8-DRAFT"
       ]
     },
     {
@@ -121,8 +121,8 @@
       },
       "additional_type": "https://bioschemas.org/types#nav-draft",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/SequenceAnnotation/0.1-DRAFT-2019_06_21",
-        "https://github.com/BioSchemas/specifications/tree/master/SequenceAnnotation/jsonld/type/SequenceAnnotation_v0.1-DRAFT-2019_06_21.json"
+        "https://github.com/BioSchemas/specifications/tree/master/SequenceAnnotation/jsonld/type/SequenceAnnotation_v0.1-DRAFT-2019_06_21.json",
+        "https://bioschemas.org/types/SequenceAnnotation/0.1-DRAFT-2019_06_21"
       ]
     },
     {
@@ -135,8 +135,8 @@
       },
       "additional_type": "https://bioschemas.org/types#nav-draft",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/Taxon/0.4-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/Taxon/jsonld/type/Taxon_v0.4-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/Taxon/jsonld/type/Taxon_v0.4-DRAFT.json",
+        "https://bioschemas.org/types/Taxon/0.4-DRAFT"
       ]
     },
     {
@@ -149,8 +149,8 @@
       },
       "additional_type": "https://bioschemas.org/types#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/BioChemStructure/jsonld/type/BioChemStructure_v0.1-DRAFT-2019_06_20.json",
-        "https://bioschemas.org/types/BioChemStructure/0.1-DRAFT-2019_06_20"
+        "https://bioschemas.org/types/BioChemStructure/0.1-DRAFT-2019_06_20",
+        "https://github.com/BioSchemas/specifications/tree/master/BioChemStructure/jsonld/type/BioChemStructure_v0.1-DRAFT-2019_06_20.json"
       ]
     },
     {
@@ -177,8 +177,8 @@
       },
       "additional_type": "https://bioschemas.org/types#nav-draft",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/Enzyme/0.1-DRAFT-2019_06_20",
-        "https://github.com/BioSchemas/specifications/tree/master/Enzyme/jsonld/type/Enzyme_v0.1-DRAFT-2019_06_20.json"
+        "https://github.com/BioSchemas/specifications/tree/master/Enzyme/jsonld/type/Enzyme_v0.1-DRAFT-2019_06_20.json",
+        "https://bioschemas.org/types/Enzyme/0.1-DRAFT-2019_06_20"
       ]
     },
     {
@@ -205,8 +205,8 @@
       },
       "additional_type": "https://bioschemas.org/types#nav-draft",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/SequenceMatchingModel/0.1-DRAFT-2019_06_21",
-        "https://github.com/BioSchemas/specifications/tree/master/SequenceMatchingModel/jsonld/type/SequenceMatchingModel_v0.1-DRAFT-2019_06_21.json"
+        "https://github.com/BioSchemas/specifications/tree/master/SequenceMatchingModel/jsonld/type/SequenceMatchingModel_v0.1-DRAFT-2019_06_21.json",
+        "https://bioschemas.org/types/SequenceMatchingModel/0.1-DRAFT-2019_06_21"
       ]
     },
     {
@@ -214,8 +214,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Protein is here used in its widest possible definition, as classes of amino acid based molecules. Amyloid-beta Protein in human (UniProt P05067), eukaryota (e.g. an OrthoDB group) or even a single molecule that one can point to are all of type schema:Protein. A protein can thus be a subclass of another protein, e.g. schema:Protein as a UniProt record can have multiple isoforms inside it which would also be schema:Protein. They can be imagined, synthetic, hypothetical or naturally occurring. This version has been added to schema.org as a pending type.",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/Protein/0.4-DRAFT",
-        "https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/type/Protein_v0.4-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/type/Protein_v0.4-DRAFT.json",
+        "https://bioschemas.org/types/Protein/0.4-DRAFT"
       ],
       "rdfs:label": "Protein",
       "rdfs:subClassOf": {
@@ -228,14 +228,31 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A discrete unit of inheritance which affects one or more biological traits (Source: https://en.wikipedia.org/wiki/Gene). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype). Note, this version of the type has been added as a pending class in schema.org.",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/Gene/0.4-DRAFT",
-        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/type/Gene_v0.4-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/type/Gene_v0.4-DRAFT.json",
+        "https://bioschemas.org/types/Gene/0.4-DRAFT"
       ],
       "rdfs:label": "Gene",
       "rdfs:subClassOf": {
         "@id": "bioschemastypesdrafts:BioChemEntity"
       },
       "additional_type": "https://bioschemas.org/types#nav-draft"
+    },
+    {
+      "@id": "bioschemastypesdrafts:LabProcess",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "This is an initial draft of the new LabProcess type.\n\nA LabProcess represents the specific application of a LabProtocol to some input (biological material or data) to produce some output (biological material or data).\n\nThis draft was prepared by Florian Wetzels and Lukas Weil, its specification is still up for discussion.",
+      "rdfs:label": "LabProcess",
+      "rdfs:subClassOf": {
+        "@id": "schema:Action"
+      },
+      "schemaVersion": [
+        "https://schema.org/docs/releases.html#v23.0"
+      ],
+      "additional_type": "https://bioschemas.org/types#nav-draft",
+      "schema:schemaVersion": [
+        "https://bioschemas.org/types/LabProcess/0.1-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/LabProcess/jsonld/type/LabProcess_v0.1-DRAFT.jsonld"
+      ]
     },
     {
       "@id": "bioschemastypesdrafts:BioSample",
@@ -1813,6 +1830,34 @@
       ]
     },
     {
+      "@id": "bioschemastypesdrafts:parameterValue",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A parameter value of the experimental process, usually a key-value pair using ontology terms.",
+      "rdfs:label": "parameterValue",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypesdrafts:LabProcess"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:PropertyValue"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypesdrafts:executesLabProtocol",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The lab protocol describes the experimental workflow and its parameters, which is instantiated by this process.",
+      "rdfs:label": "executesLabProtocol",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypesdrafts:LabProcess"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "bioschemastypesdrafts:LabProtocol"
+        }
+      ]
+    },
+    {
       "@id": "bioschemastypesdrafts:anatomicalSystem",
       "@type": "rdf:Property",
       "rdfs:comment": "Indicate the anatomical system from which the sample is collect, e.g. circulatory, digestive, endocrine, immune and other systems.",
@@ -1875,72 +1920,6 @@
       ]
     },
     {
-      "@id": "bioschemastypesdrafts:isMatchedBy",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A model matching this BioChemEntity.",
-      "rdfs:label": "isMatchedBy",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemastypesdrafts:BioChemStructure"
-        },
-        {
-          "@id": "bioschemastypesdrafts:Enzyme"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "bioschemastypesdrafts:SequenceMatchingModel"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypesdrafts:taxonRank",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary \u2013 (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs). ",
-      "rdfs:label": "taxonRank",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemastypesdrafts:TaxonName"
-        },
-        {
-          "@id": "bioschemastypesdrafts:Taxon"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypesdrafts:additionalProperty",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org. Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism. ",
-      "rdfs:label": "additionalProperty",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemastypesdrafts:Study"
-        },
-        {
-          "@id": "bioschemastypesdrafts:Phenotype"
-        },
-        {
-          "@id": "bioschemastypesdrafts:Sample"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:PropertyValue"
-        }
-      ]
-    },
-    {
       "@id": "bioschemastypesdrafts:valueReference",
       "@type": "rdf:Property",
       "rdfs:comment": "A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.",
@@ -1981,13 +1960,88 @@
       ]
     },
     {
-      "@id": "bioschemastypesdrafts:hasAssociatedBioChemEntity",
+      "@id": "bioschemastypesdrafts:sequenceLocation",
       "@type": "rdf:Property",
-      "rdfs:comment": "Used to define the actual protein or RNA.",
-      "rdfs:label": "hasAssociatedBioChemEntity",
+      "rdfs:comment": "A range/position location where this annotation or BioChemEntity is located reagrding another BioChemEntity, for instance a BioChemStructure in a Protein.",
+      "rdfs:label": "sequenceLocation",
       "schema:domainIncludes": [
         {
+          "@id": "bioschemastypesdrafts:SequenceAnnotation"
+        },
+        {
           "@id": "bioschemastypesdrafts:BioChemStructure"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "bioschemastypesdrafts:SequenceRange"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypesdrafts:creationMethod",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Method used to create or obtain this annotation or BioChemEntity; please use PropertyValue if you want to include any evidence.",
+      "rdfs:label": "creationMethod",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypesdrafts:SequenceAnnotation"
+        },
+        {
+          "@id": "bioschemastypesdrafts:BioChemStructure"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypesdrafts:taxonRank",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary \u2013 (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs). ",
+      "rdfs:label": "taxonRank",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypesdrafts:TaxonName"
+        },
+        {
+          "@id": "bioschemastypesdrafts:Taxon"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypesdrafts:hasSequenceAnnotation",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An annotation on the BioPolymerSequence associated with this BioChemEntity.",
+      "rdfs:label": "hasSequenceAnnotation",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypesdrafts:BioChemEntity"
+        },
+        {
+          "@id": "bioschemastypesdrafts:BioChemStructure"
+        },
+        {
+          "@id": "bioschemastypesdrafts:DNA"
         },
         {
           "@id": "bioschemastypesdrafts:Enzyme"
@@ -1995,10 +2049,54 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Protein"
+          "@id": "schema:URL"
         },
         {
+          "@id": "bioschemastypesdrafts:SequenceAnnotation"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypesdrafts:encodesBioChemEntity",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Another BioChemEntity encoded by this one. Inverse property: isEncodedByBioChemEntity.",
+      "rdfs:label": "encodesBioChemEntity",
+      "schema:domainIncludes": [
+        {
           "@id": "bioschemastypesdrafts:RNA"
+        },
+        {
+          "@id": "bioschemastypesdrafts:DNA"
+        },
+        {
+          "@id": "bioschemastypesdrafts:Gene"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "bioschemastypes:BioChemEntity"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypesdrafts:additionalProperty",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org. Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism. ",
+      "rdfs:label": "additionalProperty",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypesdrafts:Study"
+        },
+        {
+          "@id": "bioschemastypesdrafts:Phenotype"
+        },
+        {
+          "@id": "bioschemastypesdrafts:Sample"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -2047,44 +2145,13 @@
       ]
     },
     {
-      "@id": "bioschemastypesdrafts:creationMethod",
+      "@id": "bioschemastypesdrafts:hasAssociatedBioChemEntity",
       "@type": "rdf:Property",
-      "rdfs:comment": "Method used to create or obtain this annotation or BioChemEntity; please use PropertyValue if you want to include any evidence.",
-      "rdfs:label": "creationMethod",
+      "rdfs:comment": "Used to define the actual protein or RNA.",
+      "rdfs:label": "hasAssociatedBioChemEntity",
       "schema:domainIncludes": [
         {
-          "@id": "bioschemastypesdrafts:SequenceAnnotation"
-        },
-        {
           "@id": "bioschemastypesdrafts:BioChemStructure"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypesdrafts:hasSequenceAnnotation",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An annotation on the BioPolymerSequence associated with this BioChemEntity.",
-      "rdfs:label": "hasSequenceAnnotation",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemastypesdrafts:BioChemEntity"
-        },
-        {
-          "@id": "bioschemastypesdrafts:BioChemStructure"
-        },
-        {
-          "@id": "bioschemastypesdrafts:DNA"
         },
         {
           "@id": "bioschemastypesdrafts:Enzyme"
@@ -2092,51 +2159,29 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Protein"
         },
-        {
-          "@id": "bioschemastypesdrafts:SequenceAnnotation"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypesdrafts:sequenceLocation",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A range/position location where this annotation or BioChemEntity is located reagrding another BioChemEntity, for instance a BioChemStructure in a Protein.",
-      "rdfs:label": "sequenceLocation",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemastypesdrafts:SequenceAnnotation"
-        },
-        {
-          "@id": "bioschemastypesdrafts:BioChemStructure"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "bioschemastypesdrafts:SequenceRange"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypesdrafts:encodesBioChemEntity",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Another BioChemEntity encoded by this one. Inverse property: isEncodedByBioChemEntity.",
-      "rdfs:label": "encodesBioChemEntity",
-      "schema:domainIncludes": [
         {
           "@id": "bioschemastypesdrafts:RNA"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypesdrafts:isMatchedBy",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A model matching this BioChemEntity.",
+      "rdfs:label": "isMatchedBy",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypesdrafts:BioChemStructure"
         },
         {
-          "@id": "bioschemastypesdrafts:DNA"
-        },
-        {
-          "@id": "bioschemastypesdrafts:Gene"
+          "@id": "bioschemastypesdrafts:Enzyme"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "bioschemastypes:BioChemEntity"
+          "@id": "bioschemastypesdrafts:SequenceMatchingModel"
         }
       ]
     },
@@ -2193,6 +2238,9 @@
         },
         {
           "@id": "bioschemastypesdrafts:Gene"
+        },
+        {
+          "@id": "bioschemastypesdrafts:LabProcess"
         },
         {
           "@id": "bioschemastypesdrafts:BioSample"

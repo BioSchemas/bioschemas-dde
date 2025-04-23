@@ -15,4 +15,5 @@ bioschemastypesdrafts	Sample	schema:Thing	Type	0.3-DRAFT	https://github.com/BioS
 bioschemas	SequenceMatchingModel	schema:CreativeWork	Type	0.1-DRAFT-2019_06_21	https://github.com/BioSchemas/specifications/tree/master/SequenceMatchingModel/jsonld/type/SequenceMatchingModel_v0.1-DRAFT-2019_06_21.json
 bioschemastypesdrafts	Protein	bioschemastypesdrafts:BioChemEntity	Type	0.4-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/type/Protein_v0.4-DRAFT.json
 bioschemastypesdrafts	Gene	bioschemastypesdrafts:BioChemEntity	Type	0.4-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/type/Gene_v0.4-DRAFT.json
+bioschemastypesdrafts	LabProcess	schema:Action	Type	0.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/LabProcess/jsonld/type/LabProcess_v0.1-DRAFT.jsonld
 bioschemastypesdrafts	BioSample	"bioschemastypesdrafts:Sample,schema:BioChemEntity"	Type	0.2-DRAFT	https://github.com/BioSchemas/specifications/tree/master/BioSample/jsonld/type/BioSample_v0.2-DRAFT.json
