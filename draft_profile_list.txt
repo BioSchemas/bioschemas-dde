@@ -2,9 +2,10 @@ namespace	name	subClassOf	type	version	url
 bioschemasdrafts	Gene	schema:Gene	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.1-DRAFT.json
 bioschemasdrafts	Taxon	schema:Taxon	Profile	0.8-DRAFT	https://github.com/BioSchemas/specifications/tree/master/Taxon/jsonld/Taxon_v0.8-DRAFT.json
 bioschemas	TaxonName	bioschemastypes:TaxonName	Profile	0.2-DRAFT	https://github.com/BioSchemas/specifications/tree/master/TaxonName/jsonld/TaxonName_v0.2-DRAFT.json
-bioschemasdrafts	DefinedTerm	schema:DefinedTerm	Profile	0.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/DefinedTerm/jsonld/DefinedTerm_v0.1-DRAFT.json
+bioschemasdrafts	DefinedTerm	schema:DefinedTerm	Profile	0.2-DRAFT	https://github.com/BioSchemas/specifications/tree/master/DefinedTerm/jsonld/DefinedTerm_v0.2-DRAFT.json
+bioschemasdrafts	DefinedTermSet	schema:DefinedTermSet	Profile	0.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/DefinedTermSet/jsonld/DefinedTermSet_v0.1-DRAFT.json
 bioschemas	ChemicalSubstance	schema:ChemicalSubstance	Profile	0.5-DRAFT	https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.5-DRAFT.json
-bioschemas	ComputationalTool	schema:SoftwareApplication	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/ComputationalTool/jsonld/ComputationalTool_v1.1-DRAFT.json
+bioschemas	ComputationalTool	"schema:SoftwareApplication,schema:SoftwareSourceCode"	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/ComputationalTool/jsonld/ComputationalTool_v1.1-DRAFT.json
 bioschemasdrafts	ComputationalWorkflow	bioschemastypes:ComputationalWorkflow	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.1-DRAFT.json
 bioschemasdrafts	Course	schema:Course	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/Course/jsonld/Course_v1.1-DRAFT.json
 bioschemasdrafts	CourseInstance	schema:CourseInstance	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/CourseInstance/jsonld/CourseInstance_v1.1-DRAFT.json

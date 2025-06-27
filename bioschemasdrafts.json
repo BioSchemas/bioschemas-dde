@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/ns/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/ns/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "01/19/2024, 16:03:04",
+    "@dateModified": "06/27/2025, 09:23:17",
     "dwc": "http://rs.tdwg.org/dwc/terms/",
     "ppeo:hasGrowthFacility": "http://purl.org/ppeo/PPEO.owl#hasGrowthFacility"
   },
@@ -700,8 +700,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Gene/1.1-DRAFT",
-        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.1-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.1-DRAFT.json",
+        "https://bioschemas.org/profiles/Gene/1.1-DRAFT"
       ]
     },
     {
@@ -709,8 +709,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile for describing a biological taxon This profile aims to denote a taxon by common properties such as its scientific name, taxonomic rank and vernacular names. It is also a means to link to existing taxonomic registers where each taxon has a URI. Version 0.8-DRAFT.<br/><h3>Summary of Changes</h3><br>Changes since 0.7-DRAFT:<ul><li>Change sameAs from optional to recommended.</li></ul>",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Taxon/0.8-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/Taxon/jsonld/Taxon_v0.8-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/Taxon/jsonld/Taxon_v0.8-DRAFT.json",
+        "https://bioschemas.org/profiles/Taxon/0.8-DRAFT"
       ],
       "rdfs:label": "Taxon",
       "rdfs:subClassOf": {
@@ -1596,7 +1596,7 @@
     {
       "@id": "bioschemasdrafts:DefinedTerm",
       "@type": "rdfs:Class",
-      "rdfs:comment": "A word, name, acronym, phrase, etc. with a formal definition. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term. This Bioschemas profile specifically helps reusing terms from terminology and ontology services. Version 0.1-DRAFT. <h3>Summary of Changes</h3> None--this is the first draft.",
+      "rdfs:comment": "A word, name, acronym, phrase, etc. with a formal definition. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term. This Bioschemas profile specifically helps reusing terms from terminology and ontology services. Version 0.2-DRAFT. <h3>Summary of Changes</h3> Changes since v0.1 <ul>Include DefinedTermSet profile as expected type for the 'inDefinedTermSet' property.</li></ul>",
       "rdfs:label": "DefinedTerm",
       "rdfs:subClassOf": {
         "@id": "schema:DefinedTerm"
@@ -1606,13 +1606,13 @@
         "type": "object",
         "properties": {
           "termCode": {
-            "description": "A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]",
+            "description": "A code that identifies this DefinedTerm within a DefinedTermSet",
             "type": "string",
             "owl:cardinality": "one"
           },
           "inDefinedTermSet": {
-            "description": "A [[DefinedTermSet]] that contains this term.",
-            "type": "string",
+            "description": "A DefinedTermSet that contains this term.",
+            "$ref": "#/definitions/definedtermset",
             "owl:cardinality": "one"
           },
           "description": {
@@ -1652,7 +1652,7 @@
             "owl:cardinality": "many"
           },
           "conformsTo": {
-            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/tree/master/DefinedTerm/jsonld/DefinedTerm_v0.1-DRAFT.json",
+            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/tree/master/DefinedTerm/jsonld/DefinedTerm_v0.2-DRAFT.json",
             "$ref": "#/definitions/conformsDefinition"
           }
         },
@@ -1669,6 +1669,28 @@
           "description"
         ],
         "definitions": {
+          "definedtermset": {
+            "@type": "DefinedTermSet",
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "name": {
+                "type": "string"
+              },
+              "license": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "url"
+            ]
+          },
           "conformsDefinition": {
             "@type": "CreativeWork",
             "type": "object",
@@ -1678,7 +1700,7 @@
                 "oneOf": [
                   {
                     "enum": [
-                      "https://github.com/BioSchemas/specifications/tree/master/DefinedTerm/jsonld/DefinedTerm_v0.1-DRAFT.json"
+                      "https://github.com/BioSchemas/specifications/tree/master/DefinedTerm/jsonld/DefinedTerm_v0.2-DRAFT.json"
                     ]
                   },
                   {
@@ -1699,8 +1721,426 @@
       ],
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/DefinedTerm/jsonld/DefinedTerm_v0.1-DRAFT.json",
-        "https://bioschemas.org/profiles/DefinedTerm/0.1-DRAFT"
+        "https://bioschemas.org/profiles/DefinedTerm/0.2-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/DefinedTerm/jsonld/DefinedTerm_v0.2-DRAFT.json"
+      ]
+    },
+    {
+      "@id": "bioschemasdrafts:DefinedTermSet",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A guide for how to describe a DefinedTermSet in the sciences using Schema.org-like annotation. Version 0.1-DRAFT\n<p>\n<h4>Summary of Changes:</h4>\nNone -- first draft\n",
+      "rdfs:label": "DefinedTermSet",
+      "rdfs:subClassOf": {
+        "@id": "schema:DefinedTermSet"
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "hasDefinedTerm": {
+            "description": "A Defined Term contained in this term set.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/definedterm"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/definedterm"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "citation": {
+            "description": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/creativework"
+                }
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "conditionsOfAccess": {
+            "description": "Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.\\n\\nFor example \"Available by appointment from the Reading Room\" or \"Accessible only from logged-in accounts \". ",
+            "type": "string",
+            "owl:cardinality": "one"
+          },
+          "creator": {
+            "description": "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "dateCreated": {
+            "description": "The date on which the CreativeWork was created or the item was added to a DataFeed.",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "string",
+                "format": "date-time"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "dateModified": {
+            "description": "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "string",
+                "format": "date-time"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "datePublished": {
+            "description": "Date of first broadcast/publication.",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "string",
+                "format": "date-time"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "isAccessibleForFree": {
+            "description": "A flag to signal that the item, event, or place is accessible for free.",
+            "type": "boolean",
+            "owl:cardinality": "one"
+          },
+          "keywords": {
+            "description": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/definedterm"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/definedterm"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "license": {
+            "description": "A license document that applies to this content, typically indicated by URL.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/creativework"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "maintainer": {
+            "description": "A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on \"upstream\" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.\n      ",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "version": {
+            "description": "The version of the CreativeWork embodied by a specified resource.",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "owl:cardinality": "one"
+          },
+          "alternateName": {
+            "description": "An alias for the item.",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "owl:cardinality": "many"
+          },
+          "description": {
+            "description": "A description of the item.",
+            "type": "string",
+            "owl:cardinality": "one"
+          },
+          "name": {
+            "description": "The name of the item.",
+            "type": "string",
+            "owl:cardinality": "one"
+          },
+          "sameAs": {
+            "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+            "type": "string",
+            "format": "uri",
+            "owl:cardinality": "one"
+          },
+          "url": {
+            "description": "URL of the item.",
+            "type": "string",
+            "format": "uri",
+            "owl:cardinality": "one"
+          },
+          "conformsTo": {
+            "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: https://github.com/BioSchemas/specifications/tree/master/DefinedTermSet/jsonld/DefinedTermSet_v0.1-DRAFT.json",
+            "$ref": "#/definitions/conformsDefinition"
+          }
+        },
+        "required": [
+          "url",
+          "conformsTo"
+        ],
+        "recommended": [
+          "creator",
+          "license",
+          "version",
+          "alternateName",
+          "name",
+          "sameAs"
+        ],
+        "optional": [
+          "hasDefinedTerm",
+          "citation",
+          "conditionsOfAccess",
+          "dateCreated",
+          "dateModified",
+          "datePublished",
+          "isAccessibleForFree",
+          "keywords",
+          "maintainer",
+          "description"
+        ],
+        "definitions": {
+          "creativework": {
+            "@type": "CreativeWork",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": []
+          },
+          "organization": {
+            "@type": "Organization",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "legalName": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "sameAs": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          },
+          "person": {
+            "@type": "Person",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "mainEntityOfPage": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  },
+                  {
+                    "$ref": "#/definitions/creativework"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/creativework"
+                    }
+                  }
+                ]
+              }
+            },
+            "required": [
+              "name"
+            ]
+          },
+          "thing": {
+            "@type": "schema:Thing",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "definedterm": {
+            "@type": "DefinedTerm",
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "name": {
+                "type": "string"
+              },
+              "termCode": {
+                "type": "string"
+              },
+              "identifier": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "conformsDefinition": {
+            "@type": "CreativeWork",
+            "type": "object",
+            "properties": {
+              "identifier": {
+                "description": "The url of the version bioschemas profile that was used. For jsonschema, set @id to the identifier",
+                "oneOf": [
+                  {
+                    "enum": [
+                      "https://github.com/BioSchemas/specifications/tree/master/DefinedTermSet/jsonld/DefinedTermSet_v0.1-DRAFT.json"
+                    ]
+                  },
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "identifier"
+            ]
+          }
+        }
+      },
+      "schemaVersion": [
+        "https://schema.org/docs/releases.html#v29.2"
+      ],
+      "additional_type": "https://bioschemas.org/profiles#nav-draft",
+      "schema:schemaVersion": [
+        "https://github.com/BioSchemas/specifications/tree/master/DefinedTermSet/jsonld/DefinedTermSet_v0.1-DRAFT.json",
+        "https://bioschemas.org/profiles/DefinedTermSet/0.1-DRAFT"
       ]
     },
     {
@@ -1713,6 +2153,7 @@
       },
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
+        "$comment": "Non-JSON Schema descriptors (eg. owl:cardinality, schema:disambiguatingDescription) have been included in the property list for the validation as this is the only place to define constraints on the use of an inherited, predefined property from schema.org or Bioschemas. While JSON-schema validators should ignore these additional descriptors so they should not cause any issues, they are useful for providing clarity on the use of the property.",
         "type": "object",
         "properties": {
           "potentialUse": {
@@ -1732,11 +2173,13 @@
           },
           "chemicalComposition": {
             "description": "The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance. For substances this often cannot be accurately determined, an approximation is acceptable.",
+            "schema:disambiguatingDescription": "For substances this often cannot be accurately determined, an approximation is acceptable.",
             "type": "string",
             "owl:cardinality": "one"
           },
           "chemicalRole": {
-            "description": "A role played by the BioChemEntity or molecular entity within a chemical context.",
+            "description": "A role played by the BioChemEntity within a chemical context.",
+            "schema:disambiguatingDescription": "A role played by the MolecularEntity within a chemical context.",
             "oneOf": [
               {
                 "$ref": "#/definitions/definedTerm"
@@ -1752,6 +2195,7 @@
           },
           "bioChemInteraction": {
             "description": "A BioChemEntity that is know to interact with this item.",
+            "schema:disambiguatingDescription": "Interaction of the MolecularEntity with other BioChemical entities.",
             "oneOf": [
               {
                 "$ref": "#/definitions/bioChemEntity"
@@ -2024,9 +2468,10 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The Life Science Tools specification provides a way to describe bioscience tools and software on the World Wide Web. It defines a set of metadata and vocabularies, built on top of existing technologies and standards, that can be used to represent such tools in Web pages and applications. The goal of the specification is to make it easier to discover. Version 1.1-DRAFT. <h3>Summary of Changes</h3> Changes since the 1.0-RELEASE</p><ul><li>added sameAs property as recommended.</li></ul>",
       "rdfs:label": "ComputationalTool",
-      "rdfs:subClassOf": {
-        "@id": "schema:SoftwareApplication"
-      },
+      "rdfs:subClassOf": [
+        {"@id": "schema:SoftwareApplication"},
+        {"@id": "schema:SoftwareSourceCode"}
+      ],
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
@@ -2885,8 +3330,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/ComputationalTool/1.1-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/ComputationalTool/jsonld/ComputationalTool_v1.1-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/ComputationalTool/jsonld/ComputationalTool_v1.1-DRAFT.json",
+        "https://bioschemas.org/profiles/ComputationalTool/1.1-DRAFT"
       ]
     },
     {
@@ -8042,8 +8487,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "A guide for how to describe datasets in the life-sciences using Schema.org-like annotation. Version 1.1-DRAFT. <h3>Summary of Changes</h3> <br>Key changes since 1.0-RELEASE:<ul><li>sameAs now recommended.</li></ul>",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/Dataset/jsonld/Dataset_v1.1-DRAFT.json",
-        "https://bioschemas.org/profiles/Dataset/1.1-DRAFT"
+        "https://bioschemas.org/profiles/Dataset/1.1-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/Dataset/jsonld/Dataset_v1.1-DRAFT.json"
       ],
       "rdfs:label": "Dataset",
       "rdfs:subClassOf": {
@@ -10121,8 +10566,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile, based on Biotea model, describing a Journal in Life Sciences. A Journal is a collection of publication issues, publication volumes or scholarly articles, or possibly, although no commonly, any mix from those mentioned. Version 0.3-DRAFT<h3>Summary of Changes</h3><br>Changes since previous draft 0.2 Journal profile: <ul><li>added sameAs property as recommended</li></ul>",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Journal/0.3-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/Journal/jsonld/Journal_v0.3-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/Journal/jsonld/Journal_v0.3-DRAFT.json",
+        "https://bioschemas.org/profiles/Journal/0.3-DRAFT"
       ],
       "rdfs:label": "Journal",
       "rdfs:subClassOf": {
@@ -11686,8 +12131,8 @@
       ],
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/LabProtocol/jsonld/LabProtocol_v0.8-DRAFT.json",
-        "https://bioschemas.org/profiles/LabProtocol/0.8-DRAFT"
+        "https://bioschemas.org/profiles/LabProtocol/0.8-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/LabProtocol/jsonld/LabProtocol_v0.8-DRAFT.json"
       ]
     },
     {
@@ -12496,8 +12941,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas specification for describing a Organization in the life-science. Provides a way to describe bioscience organizations on the World Wide Web. It defines metadata terms that can be used in the code of web pages and applications, and builds on top of existing technologies and standards. The goal of the specification is to make it easier to discover, exchange and integrate life science organization profiles across the Internet. Version: 0.3-DRAFT. <h3>Summary of Changes</h3><br>Changes since 0.2-DRAFT<ul><li>added sameAs property as recommended.</li></ul>.",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Organization/0.3-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/Organization/jsonld/Organization_v0.3-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/Organization/jsonld/Organization_v0.3-DRAFT.json",
+        "https://bioschemas.org/profiles/Organization/0.3-DRAFT"
       ],
       "rdfs:label": "Organization",
       "rdfs:subClassOf": {
@@ -15066,8 +15511,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/Protein/jsonld/Protein_v0.12-DRAFT.json",
-        "https://bioschemas.org/profiles/Protein/0.12-DRAFT"
+        "https://bioschemas.org/profiles/Protein/0.12-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/Protein/jsonld/Protein_v0.12-DRAFT.json"
       ]
     },
     {
@@ -16203,8 +16648,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile, based on Biotea model, describing a PublicationVolume in Life Sciences. A PublicationVolume is a collection of publication issues, or scholarly articles, or possibly, although no commonly, any mix from those mentioned. It is commonly part of a Journal. Version 0.3-DRAFT. <h3>Summary of Changes</h3><br>Changes since previous draft 0.2-DRAFT-2020_12_03 of the PublicationVolumen profile: <ul><li>added sameAs property as recommended.</li></ul>",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/PublicationVolume/jsonld/PublicationVolume_v0.3-DRAFT.json",
-        "https://bioschemas.org/profiles/PublicationVolume/0.3-DRAFT"
+        "https://bioschemas.org/profiles/PublicationVolume/0.3-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/PublicationVolume/jsonld/PublicationVolume_v0.3-DRAFT.json"
       ],
       "rdfs:label": "PublicationVolume",
       "rdfs:subClassOf": {
@@ -16683,8 +17128,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": " The parent class for this type has been updated to a pending class in schema.org. Version 0.2-DRAFT. <h3>Summary of Changes</h3>Changes since 0.1-DRAFT-2019_11_15<ul><li>added sameAs property as recommended</li></ul>",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/RNA/jsonld/RNA_v0.2-DRAFT.json",
-        "https://bioschemas.org/profiles/RNA/0.2-DRAFT"
+        "https://bioschemas.org/profiles/RNA/0.2-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/RNA/jsonld/RNA_v0.2-DRAFT.json"
       ],
       "rdfs:label": "RNA",
       "rdfs:subClassOf": {
@@ -17871,8 +18316,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/Sample/jsonld/Sample_v0.3-DRAFT.json",
-        "https://bioschemas.org/profiles/Sample/0.3-DRAFT"
+        "https://bioschemas.org/profiles/Sample/0.3-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/Sample/jsonld/Sample_v0.3-DRAFT.json"
       ]
     },
     {
@@ -22083,10 +22528,10 @@
       ]
     },
     {
-      "@id": "bioschemasdrafts:socialMedia",
-      "rdfs:comment": "Link to social media websites like twitter or facebook.",
+      "@id": "bioschemasdrafts:attachment",
+      "rdfs:comment": "Any files or related websites which give more information about this event. e.g. flyers, third party sites handling tickets.",
       "@type": "rdf:Property",
-      "rdfs:label": "socialMedia",
+      "rdfs:label": "attachment",
       "schema:domainIncludes": [
         {
           "@id": "bioschemasdrafts:Event"
@@ -22096,50 +22541,6 @@
         }
       ],
       "schema:rangeIncludes": [
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "rdf:type",
-      "rdfs:comment": "This is used by validation tools to indentify the profile used. You must use the value specified in the Controlled Vocabulary column. This is used by validation tools to indentify the profile used. You must use the value specified in the Controlled Vocabulary column.",
-      "@type": "rdf:Property",
-      "rdfs:label": "type",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemasdrafts:Event"
-        },
-        {
-          "@id": "bioschemasdrafts:Organization"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemasdrafts:hasSequenceAnnotation",
-      "rdfs:comment": "An annotation on the BioPolymerSequence associated with this BioChemEntity. For genes, it can be used to link to gene sequence annotations such as variants or so.",
-      "@type": "rdf:Property",
-      "rdfs:label": "hasSequenceAnnotation",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemasdrafts:Gene"
-        },
-        {
-          "@id": "bioschemasdrafts:Protein"
-        },
-        {
-          "@id": "bioschemasdrafts:RNA"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "bioschemastypesdrafts:SequenceAnnotation"
-        },
         {
           "@id": "schema:URL"
         }
@@ -22187,6 +22588,50 @@
       ]
     },
     {
+      "@id": "bioschemasdrafts:hasSequenceAnnotation",
+      "rdfs:comment": "An annotation on the BioPolymerSequence associated with this BioChemEntity. For genes, it can be used to link to gene sequence annotations such as variants or so.",
+      "@type": "rdf:Property",
+      "rdfs:label": "hasSequenceAnnotation",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemasdrafts:Gene"
+        },
+        {
+          "@id": "bioschemasdrafts:Protein"
+        },
+        {
+          "@id": "bioschemasdrafts:RNA"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "bioschemastypesdrafts:SequenceAnnotation"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "rdf:type",
+      "rdfs:comment": "This is used by validation tools to indentify the profile used. You must use the value specified in the Controlled Vocabulary column. This is used by validation tools to indentify the profile used. You must use the value specified in the Controlled Vocabulary column.",
+      "@type": "rdf:Property",
+      "rdfs:label": "type",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemasdrafts:Event"
+        },
+        {
+          "@id": "bioschemasdrafts:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
       "@id": "bioschemasdrafts:keywords",
       "rdfs:comment": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas. \n NOTE: Keywords is not part of Event.",
       "@type": "rdf:Property",
@@ -22206,10 +22651,10 @@
       ]
     },
     {
-      "@id": "bioschemasdrafts:attachment",
-      "rdfs:comment": "Any files or related websites which give more information about this event. e.g. flyers, third party sites handling tickets.",
+      "@id": "bioschemasdrafts:socialMedia",
+      "rdfs:comment": "Link to social media websites like twitter or facebook.",
       "@type": "rdf:Property",
-      "rdfs:label": "attachment",
+      "rdfs:label": "socialMedia",
       "schema:domainIncludes": [
         {
           "@id": "bioschemasdrafts:Event"
@@ -22241,6 +22686,9 @@
         },
         {
           "@id": "bioschemasdrafts:DefinedTerm"
+        },
+        {
+          "@id": "bioschemasdrafts:DefinedTermSet"
         },
         {
           "@id": "bioschemasdrafts:ChemicalSubstance"
