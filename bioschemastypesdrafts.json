@@ -7,7 +7,7 @@
     "bioschemastypes": "https://discovery.biothings.io/ns/bioschemastypes/",
     "bioschemastypesdrafts": "https://discovery.biothings.io/ns/bioschemastypesdrafts/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "08/26/2025, 08:33:01"
+    "@dateModified": "03/11/2026, 09:11:56"
   },
   "@graph": [
     {
@@ -93,8 +93,8 @@
       ],
       "additional_type": "https://bioschemas.org/types#nav-draft",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/LabProtocol/0.5-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/LabProtocol/jsonld/type/LabProtocol_v0.5-DRAFT.jsonld"
+        "https://github.com/BioSchemas/specifications/tree/master/LabProtocol/jsonld/type/LabProtocol_v0.5-DRAFT.jsonld",
+        "https://bioschemas.org/types/LabProtocol/0.5-DRAFT"
       ]
     },
     {
@@ -107,8 +107,8 @@
       },
       "additional_type": "https://bioschemas.org/types#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/Phenotype/jsonld/type/Phenotype_v0.3-DRAFT-2020_06_07.json",
-        "https://bioschemas.org/types/Phenotype/0.3-DRAFT-2020_06_07"
+        "https://bioschemas.org/types/Phenotype/0.3-DRAFT-2020_06_07",
+        "https://github.com/BioSchemas/specifications/tree/master/Phenotype/jsonld/type/Phenotype_v0.3-DRAFT-2020_06_07.json"
       ]
     },
     {
@@ -121,8 +121,8 @@
       },
       "additional_type": "https://bioschemas.org/types#nav-draft",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/SequenceAnnotation/0.1-DRAFT-2019_06_21",
-        "https://github.com/BioSchemas/specifications/tree/master/SequenceAnnotation/jsonld/type/SequenceAnnotation_v0.1-DRAFT-2019_06_21.json"
+        "https://github.com/BioSchemas/specifications/tree/master/SequenceAnnotation/jsonld/type/SequenceAnnotation_v0.1-DRAFT-2019_06_21.json",
+        "https://bioschemas.org/types/SequenceAnnotation/0.1-DRAFT-2019_06_21"
       ]
     },
     {
@@ -149,8 +149,8 @@
       },
       "additional_type": "https://bioschemas.org/types#nav-draft",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/BioChemStructure/jsonld/type/BioChemStructure_v0.1-DRAFT-2019_06_20.json",
-        "https://bioschemas.org/types/BioChemStructure/0.1-DRAFT-2019_06_20"
+        "https://bioschemas.org/types/BioChemStructure/0.1-DRAFT-2019_06_20",
+        "https://github.com/BioSchemas/specifications/tree/master/BioChemStructure/jsonld/type/BioChemStructure_v0.1-DRAFT-2019_06_20.json"
       ]
     },
     {
@@ -191,8 +191,8 @@
       },
       "additional_type": "https://bioschemas.org/types#nav-draft",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/Sample/0.3-DRAFT",
-        "https://github.com/BioSchemas/specifications/tree/master/Sample/jsonld/type/Sample_v0.3-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/tree/master/Sample/jsonld/type/Sample_v0.3-DRAFT.json",
+        "https://bioschemas.org/types/Sample/0.3-DRAFT"
       ]
     },
     {
@@ -214,8 +214,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Protein is here used in its widest possible definition, as classes of amino acid based molecules. Amyloid-beta Protein in human (UniProt P05067), eukaryota (e.g. an OrthoDB group) or even a single molecule that one can point to are all of type schema:Protein. A protein can thus be a subclass of another protein, e.g. schema:Protein as a UniProt record can have multiple isoforms inside it which would also be schema:Protein. They can be imagined, synthetic, hypothetical or naturally occurring. This version has been added to schema.org as a pending type.",
       "schema:schemaVersion": [
-        "https://bioschemas.org/types/Protein/0.4-DRAFT",
-        "https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/type/Protein_v0.4-DRAFT.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Protein/jsonld/type/Protein_v0.4-DRAFT.json",
+        "https://bioschemas.org/types/Protein/0.4-DRAFT"
       ],
       "rdfs:label": "Protein",
       "rdfs:subClassOf": {
@@ -269,8 +269,8 @@
         }
       ],
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/tree/master/BioSample/jsonld/type/BioSample_v0.2-DRAFT.json",
-        "https://bioschemas.org/types/BioSample/0.2-DRAFT"
+        "https://bioschemas.org/types/BioSample/0.2-DRAFT",
+        "https://github.com/BioSchemas/specifications/tree/master/BioSample/jsonld/type/BioSample_v0.2-DRAFT.json"
       ],
       "additional_type": "https://bioschemas.org/types#nav-draft"
     },
@@ -1141,6 +1141,12 @@
       "schema:rangeIncludes": [
         {
           "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:DefinedTerm"
         }
       ]
     },
@@ -1164,7 +1170,7 @@
     {
       "@id": "bioschemastypesdrafts:datePublished",
       "@type": "rdf:Property",
-      "rdfs:comment": "The date when the  record of the sample will be made publicly available.",
+      "rdfs:comment": "The date when the record of the sample will be made publicly available.",
       "rdfs:label": "datePublished",
       "schema:domainIncludes": {
         "@id": "bioschemastypesdrafts:Sample"
@@ -1411,7 +1417,7 @@
     {
       "@id": "bioschemastypesdrafts:itemLocation",
       "@type": "rdf:Property",
-      "rdfs:comment": "Current location of the item.",
+      "rdfs:comment": "Current location of the sample.",
       "rdfs:label": "itemLocation",
       "schema:domainIncludes": {
         "@id": "bioschemastypesdrafts:Sample"
@@ -1459,7 +1465,7 @@
     {
       "@id": "bioschemastypesdrafts:sampleType",
       "@type": "rdf:Property",
-      "rdfs:comment": "Indicate the type of sample",
+      "rdfs:comment": "Indicate the type of sample. Note that this is intentionally broad to allow different types of specimens, i.e. cells, rock, sand.",
       "rdfs:label": "sampleType",
       "schema:domainIncludes": {
         "@id": "bioschemastypesdrafts:Sample"
@@ -1486,14 +1492,14 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:QualitativeValue"
+          "@id": "schema:QuantitativeValue"
         }
       ]
     },
     {
       "@id": "bioschemastypesdrafts:sampleProcess",
       "@type": "rdf:Property",
-      "rdfs:comment": "The processing technique that was applied to the sample, methods used to prepare the samples.",
+      "rdfs:comment": "The processing technique that was applied to the sample, methods used to prepare the samples, including SOPs (Standard Operating Procedures).",
       "rdfs:label": "sampleProcess",
       "schema:domainIncludes": {
         "@id": "bioschemastypesdrafts:Sample"
@@ -1501,6 +1507,9 @@
       "schema:rangeIncludes": [
         {
           "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
         }
       ]
     },
@@ -1648,7 +1657,7 @@
     {
       "@id": "bioschemastypesdrafts:hasPart",
       "@type": "rdf:Property",
-      "rdfs:comment": "Describe related items including other resources related to the samples.",
+      "rdfs:comment": "Describe related items including other resources related to the samples. For example a subsample of this sample.",
       "rdfs:label": "hasPart",
       "schema:domainIncludes": {
         "@id": "bioschemastypesdrafts:Sample"
@@ -1674,7 +1683,7 @@
     {
       "@id": "bioschemastypesdrafts:isPartOf",
       "@type": "rdf:Property",
-      "rdfs:comment": "Describe related items including other resources related to the samples.",
+      "rdfs:comment": "Describe related items including other resources related to the samples. For example a supersample of this sample.",
       "rdfs:label": "isPartOf",
       "schema:domainIncludes": {
         "@id": "bioschemastypesdrafts:Sample"
@@ -1956,27 +1965,92 @@
       ]
     },
     {
-      "@id": "bioschemastypesdrafts:scientificName",
+      "@id": "bioschemastypesdrafts:cellType",
       "@type": "rdf:Property",
-      "rdfs:comment": "A TaxonName representing the currently valid (zoological) or accepted (botanical) name for that taxon.",
-      "rdfs:label": "scientificName",
-      "schema:domainIncludes": [
+      "rdfs:comment": "The cell line, lineage or biological/taxonomic classification of a cell.",
+      "rdfs:label": "cellType",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypesdrafts:BioSample"
+      },
+      "schema:rangeIncludes": [
         {
-          "@id": "bioschemastypesdrafts:Taxon"
+          "@id": "schema:Text"
         },
         {
-          "@id": "bioschemastypesdrafts:BioSample"
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypesdrafts:associatedPhenotype",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The relevant defining characteristic(s) expressed by the biological source of a typical sample, usually physical.",
+      "rdfs:label": "associatedPhenotype",
+      "schema:domainIncludes": {
+        "@id": "bioschemastypesdrafts:BioSample"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
+        },
+        {
+          "@id": "schema:DefinedTerm"
+        },
+        {
+          "@id": "bioschemastypesdrafts:Phenotype"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypesdrafts:creationMethod",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Method used to create or obtain this annotation or BioChemEntity; please use PropertyValue if you want to include any evidence.",
+      "rdfs:label": "creationMethod",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypesdrafts:SequenceAnnotation"
+        },
+        {
+          "@id": "bioschemastypesdrafts:BioChemStructure"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "bioschemastypesdrafts:TaxonName"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "bioschemastypesdrafts:additionalProperty",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org. Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism. ",
+      "rdfs:label": "additionalProperty",
+      "schema:domainIncludes": [
+        {
+          "@id": "bioschemastypesdrafts:Study"
+        },
+        {
+          "@id": "bioschemastypesdrafts:Phenotype"
+        },
+        {
+          "@id": "bioschemastypesdrafts:Sample"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -2050,24 +2124,27 @@
       ]
     },
     {
-      "@id": "bioschemastypesdrafts:additionalProperty",
+      "@id": "bioschemastypesdrafts:taxonRank",
       "@type": "rdf:Property",
-      "rdfs:comment": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org. Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism. ",
-      "rdfs:label": "additionalProperty",
+      "rdfs:comment": "The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary \u2013 (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs). ",
+      "rdfs:label": "taxonRank",
       "schema:domainIncludes": [
         {
-          "@id": "bioschemastypesdrafts:Study"
+          "@id": "bioschemastypesdrafts:TaxonName"
         },
         {
-          "@id": "bioschemastypesdrafts:Phenotype"
-        },
-        {
-          "@id": "bioschemastypesdrafts:Sample"
+          "@id": "bioschemastypesdrafts:Taxon"
         }
       ],
       "schema:rangeIncludes": [
         {
           "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
         }
       ]
     },
@@ -2091,21 +2168,21 @@
       ]
     },
     {
-      "@id": "bioschemastypesdrafts:creationMethod",
+      "@id": "bioschemastypesdrafts:scientificName",
       "@type": "rdf:Property",
-      "rdfs:comment": "Method used to create or obtain this annotation or BioChemEntity; please use PropertyValue if you want to include any evidence.",
-      "rdfs:label": "creationMethod",
+      "rdfs:comment": "A TaxonName representing the currently valid (zoological) or accepted (botanical) name for that taxon.",
+      "rdfs:label": "scientificName",
       "schema:domainIncludes": [
         {
-          "@id": "bioschemastypesdrafts:SequenceAnnotation"
+          "@id": "bioschemastypesdrafts:Taxon"
         },
         {
-          "@id": "bioschemastypesdrafts:BioChemStructure"
+          "@id": "bioschemastypesdrafts:BioSample"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "bioschemastypesdrafts:TaxonName"
         },
         {
           "@id": "schema:Text"
@@ -2193,31 +2270,6 @@
         },
         {
           "@id": "schema:Text"
-        }
-      ]
-    },
-    {
-      "@id": "bioschemastypesdrafts:taxonRank",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary \u2013 (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs). ",
-      "rdfs:label": "taxonRank",
-      "schema:domainIncludes": [
-        {
-          "@id": "bioschemastypesdrafts:TaxonName"
-        },
-        {
-          "@id": "bioschemastypesdrafts:Taxon"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
     },
