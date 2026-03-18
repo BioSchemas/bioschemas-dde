@@ -82,16 +82,23 @@ def check_context_url(allcontext,spec_json,tmpnamespace):
     return allcontext
 
 
+def build_subclass_value(tmpsubclass):
+    subclass_names = [x.strip() for x in str(tmpsubclass).split(',') if x.strip()]
+    if len(subclass_names) > 1:
+        return [{"@id": subclass_name} for subclass_name in subclass_names]
+    if len(subclass_names) == 1:
+        return {"@id": subclass_names[0]}
+    return None
+
+
 def update_subclass(spec_list,eachurl,cleantext):
     spec_json = json.loads(cleantext)
     tmpinfo = spec_list.loc[spec_list['url']==eachurl]
     tmpsubclass = tmpinfo.iloc[0]['subClassOf']
     classname = tmpinfo.iloc[0]['name']
-    if ',' in tmpsubclass:
-        tmpsubclasses = tmpsubclass.split()
-        truesubclass = [{"@id": tmpsubclasses[0]},{"@id": tmpsubclasses[1]}]
-    else:
-        truesubclass = {"@id": tmpsubclass}
+    truesubclass = build_subclass_value(tmpsubclass)
+    if truesubclass is None:
+        return spec_json
     for x in spec_json['@graph']:
         if x['@id']=="bioschemas:"+classname:
             x['rdfs:subClassOf']=truesubclass
@@ -343,7 +350,7 @@ def merge_specs(spec_list):
         r = requests.get(rawurl)
         if r.status_code == 200:
             cleantext,tmpnamespace = rename_namespace(spec_list,eachurl,r.text)
-            spec_json = json.loads(cleantext)
+            spec_json = update_subclass(spec_list,eachurl,cleantext)
             allcontext = check_context_url(allcontext,spec_json,tmpnamespace)
             for x in spec_json['@graph']:
                 graphlist.append(x)
