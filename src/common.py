@@ -243,6 +243,24 @@ def remove_NaN_fields(propdef):
     return cleandict
 
 
+def sort_graph_objects(graphlist):
+    def graph_type_order(item):
+        item_type = item.get("@type", "")
+        if item_type == "rdfs:Class":
+            return 0
+        if item_type == "rdf:Property":
+            return 1
+        return 2
+
+    def graph_name(item):
+        item_id = item.get("@id", "")
+        if ":" in item_id:
+            return item_id.split(":", 1)[1].lower()
+        return item_id.lower()
+
+    return sorted(graphlist, key=lambda item: (graph_type_order(item), graph_name(item)))
+
+
 def clean_duplicate_classes(spec_list,graphlist,classlist):
     duplicates = [i for i in set(classlist) if classlist.count(i) > 1]
     nondupes = [x for x in classlist if x not in duplicates]
@@ -343,7 +361,7 @@ def merge_specs(spec_list):
     conformsTo = define_conformsTo(classlist)
     cleangraph.append(conformsTo)
     bioschemas_json['@context'] = allcontext
-    bioschemas_json['@graph']=cleangraph
+    bioschemas_json['@graph']=sort_graph_objects(cleangraph)
     return bioschemas_json
 
 
