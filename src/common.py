@@ -307,8 +307,13 @@ def add_schemaVersion(spec_list,x):
     schemaversions.append(versionurl)
     schemaversions.append(spec_url)
     ## Ensure uniqueness of elements
-    x["schema:schemaVersion"] = list(set(schemaversions))
+    x["schema:schemaVersion"] = sort_schema_versions(schemaversions)
     return x
+
+
+def sort_schema_versions(schema_versions):
+    unique_versions = sorted(set(schema_versions))
+    return unique_versions
 
 
 def add_specification_type(spec_list,x):
