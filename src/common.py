@@ -55,7 +55,16 @@ def rename_namespace(spec_list,eachurl,rawtext):
     return(cleantext, tmpnamespace)
 
         
-def generate_base_context():
+def get_context_exclusions(spec_list):
+    namespace = spec_list.iloc[0]['namespace']
+    if namespace in ['bioschemastypes', 'bioschemastypesdrafts']:
+        return {'bioschemas', 'bioschemasdeprecated', 'bioschemasdrafts'}
+    return set()
+
+
+def generate_base_context(excluded_contexts=None):
+    if excluded_contexts is None:
+        excluded_contexts = set()
     allcontext = {
         "schema": "http://schema.org/",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -68,14 +77,18 @@ def generate_base_context():
         "bioschemasdeprecated":"https://discovery.biothings.io/ns/bioschemasdeprecated/",
         "dct":"http://purl.org/dc/terms/"
     }
+    for context_key in excluded_contexts:
+        allcontext.pop(context_key, None)
     return allcontext
 
 
-def check_context_url(allcontext,spec_json,tmpnamespace):
+def check_context_url(allcontext,spec_json,tmpnamespace,excluded_contexts=None):
+    if excluded_contexts is None:
+        excluded_contexts = set()
     now = datetime.now()
     contextInfo = spec_json['@context']
     for key in list(contextInfo.keys()):
-        if key != tmpnamespace: 
+        if key != tmpnamespace and key not in excluded_contexts:
             if key not in list(allcontext.keys()):
                 allcontext[key] = contextInfo[key]
     allcontext["@dateModified"] = now.strftime("%m/%d/%Y, %H:%M:%S")
@@ -344,14 +357,15 @@ def merge_specs(spec_list):
     graphlist = []
     classlist = []
     propertylist = []
-    allcontext = generate_base_context()
+    excluded_contexts = get_context_exclusions(spec_list)
+    allcontext = generate_base_context(excluded_contexts)
     for eachurl in spec_list['url']:
         rawurl = get_raw_url(eachurl)
         r = requests.get(rawurl)
         if r.status_code == 200:
             cleantext,tmpnamespace = rename_namespace(spec_list,eachurl,r.text)
             spec_json = update_subclass(spec_list,eachurl,cleantext)
-            allcontext = check_context_url(allcontext,spec_json,tmpnamespace)
+            allcontext = check_context_url(allcontext,spec_json,tmpnamespace,excluded_contexts)
             for x in spec_json['@graph']:
                 graphlist.append(x)
                 if x["@type"]=="rdfs:Class":
