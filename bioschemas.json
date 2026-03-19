@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/ns/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/ns/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "03/18/2026, 15:30:34",
+    "@dateModified": "03/19/2026, 11:33:27",
     "dwc": "http://rs.tdwg.org/dwc/terms/"
   },
   "@graph": [
@@ -326,8 +326,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.4-RELEASE.json",
-        "https://bioschemas.org/profiles/ChemicalSubstance/0.4-RELEASE"
+        "https://bioschemas.org/profiles/ChemicalSubstance/0.4-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/ChemicalSubstance/jsonld/ChemicalSubstance_v0.4-RELEASE.json"
       ]
     },
     {
@@ -2095,8 +2095,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/ComputationalWorkflow/jsonld/ComputationalWorkflow_v1.0-RELEASE.json",
+        "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
       ]
     },
     {
@@ -3852,8 +3852,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/DataCatalog/0.3-RELEASE-2019_07_01",
-        "https://github.com/BioSchemas/specifications/blob/master/DataCatalog/jsonld/DataCatalog_v0.3-RELEASE-2019_07_01.json"
+        "https://github.com/BioSchemas/specifications/blob/master/DataCatalog/jsonld/DataCatalog_v0.3-RELEASE-2019_07_01.json",
+        "https://bioschemas.org/profiles/DataCatalog/0.3-RELEASE-2019_07_01"
       ]
     },
     {
@@ -4812,8 +4812,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/FormalParameter_v1.0-RELEASE.json",
-        "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+        "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/FormalParameter/jsonld/FormalParameter_v1.0-RELEASE.json"
       ]
     },
     {
@@ -5454,8 +5454,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.0-RELEASE.json",
-        "https://bioschemas.org/profiles/Gene/1.0-RELEASE"
+        "https://bioschemas.org/profiles/Gene/1.0-RELEASE",
+        "https://github.com/BioSchemas/specifications/blob/master/Gene/jsonld/Gene_v1.0-RELEASE.json"
       ]
     },
     {
@@ -6214,8 +6214,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/MolecularEntity/jsonld/MolecularEntity_v0.5-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/MolecularEntity/jsonld/MolecularEntity_v0.5-RELEASE.json",
+        "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE"
       ]
     },
     {
@@ -6936,7 +6936,7 @@
       "rdfs:comment": "To deliver on the identified use cases for samples, we have identified a minimal set of properties to encapsulate identification, linking, and metadata descriptions. Some of these properties are existing standard schema.org properties, others require Bioschemas extensions. Table 1 outlines the minimal set of properties for the \u2018Sample\u2019 concept and Table 2 shows our recommendations for use of the \u2018PropertyValue\u2019 concept to markup additional characteristics of a sample described within a sample page. We also propose a new concept, \u2018Biomedical Code\u2019, which is a generalisation of the existing \u2018Medical Code\u2019 concept defined in the health-lifesci.schema.org extension.",
       "rdfs:label": "Sample",
       "rdfs:subClassOf": {
-        "@id": "bioschemastypesdrafts:Sample"
+        "@id": "bioschemastypes:Sample"
       },
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
@@ -7181,8 +7181,8 @@
       },
       "additional_type": "https://bioschemas.org/profiles#nav-release",
       "schema:schemaVersion": [
-        "https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE-2018_11_10.json",
-        "https://bioschemas.org/profiles/Sample/0.2-RELEASE-2018_11_10"
+        "https://bioschemas.org/profiles/Sample/0.2-RELEASE-2018_11_10",
+        "https://github.com/BioSchemas/specifications/blob/master/Sample/jsonld/Sample_v0.2-RELEASE-2018_11_10.json"
       ]
     },
     {
@@ -7190,8 +7190,8 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "Bioschemas profile for describing a biological taxon This profile aims to denote a taxon by common properties such as its scientific name, taxonomic rank and vernacular names. It is also a means to link to existing taxonomic registers where each taxon has a URI. Version 1.0-RELEASE.<br/><h3>Summary of Changes</h3><br>Changes since 0.8-DRAFT:<ul><li>None. Version 0.8-DRAFT was the draft approved for release.</li></ul>",
       "schema:schemaVersion": [
-        "https://bioschemas.org/profiles/Taxon/1.0-RELEASE",
-        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v1.0-RELEASE.json"
+        "https://github.com/BioSchemas/specifications/blob/master/Taxon/jsonld/Taxon_v1.0-RELEASE.json",
+        "https://bioschemas.org/profiles/Taxon/1.0-RELEASE"
       ],
       "rdfs:label": "Taxon",
       "rdfs:subClassOf": {

@@ -104,6 +104,69 @@ def build_subclass_value(tmpsubclass):
     return None
 
 
+def get_expected_graph_id(spec_row):
+    if 'DEPRECATED' in spec_row['version']:
+        namespace = 'bioschemasdeprecated'
+    elif spec_row['type'] == 'Profile' and 'RELEASE' in spec_row['version']:
+        namespace = 'bioschemas'
+    elif spec_row['type'] == 'Profile' and 'DRAFT' in spec_row['version']:
+        namespace = 'bioschemasdrafts'
+    elif spec_row['type'] == 'Type' and 'RELEASE' in spec_row['version']:
+        namespace = 'bioschemastypes'
+    elif spec_row['type'] == 'Type' and 'DRAFT' in spec_row['version']:
+        namespace = 'bioschemastypesdrafts'
+    else:
+        namespace = spec_row['namespace']
+    return namespace + ':' + spec_row['name']
+
+
+def normalize_subclass_values(subclass_value):
+    if isinstance(subclass_value, list):
+        values = []
+        for item in subclass_value:
+            if isinstance(item, dict):
+                if '@id' in item:
+                    values.append(item['@id'])
+            elif isinstance(item, str):
+                values.append(item)
+        return sorted(set(values))
+    if isinstance(subclass_value, dict):
+        if '@id' in subclass_value:
+            return [subclass_value['@id']]
+        return []
+    if subclass_value is None or pd.isna(subclass_value):
+        return []
+    if isinstance(subclass_value, str):
+        return sorted(set([x.strip() for x in subclass_value.split(',') if x.strip()]))
+    return []
+
+
+def verify_subclass_values(spec_list, bioschemas_json):
+    class_graph = {
+        item['@id']: item for item in bioschemas_json['@graph']
+        if item.get('@type') == 'rdfs:Class'
+    }
+    mismatches = []
+    for _, spec_row in spec_list.iterrows():
+        expected_id = get_expected_graph_id(spec_row)
+        graph_item = class_graph.get(expected_id)
+        if graph_item is None:
+            mismatches.append({
+                'class': expected_id,
+                'reason': 'missing class in json graph'
+            })
+            continue
+        table_subclass = normalize_subclass_values(spec_row['subClassOf'])
+        json_subclass = normalize_subclass_values(graph_item.get('rdfs:subClassOf'))
+        if table_subclass != json_subclass:
+            mismatches.append({
+                'class': expected_id,
+                'table_subClassOf': table_subclass,
+                'json_subClassOf': json_subclass
+            })
+    return mismatches
+
+
 def update_subclass(spec_list,eachurl,cleantext):
     spec_json = json.loads(cleantext)
     tmpinfo = spec_list.loc[spec_list['url']==eachurl]
@@ -434,6 +497,14 @@ def run_update(script_path,updateall=False):
         for eachfile in updatedlist:
             speclist = read_csv(eachfile,delimiter='\t',header=0)
             bioschemas_json = remove_NaN_fields(merge_specs(speclist))
+            subclass_mismatches = verify_subclass_values(speclist, bioschemas_json)
+            if len(subclass_mismatches) > 0:
+                raise ValueError(
+                    "subClassOf verification failed for "
+                    + eachfile
+                    + ": "
+                    + json.dumps(subclass_mismatches, indent=2)
+                )
             jsonstring = json.dumps(bioschemas_json)
             cleanstring = remove_NaN_fields(jsonstring)
             cleandict = json.loads(cleanstring)
