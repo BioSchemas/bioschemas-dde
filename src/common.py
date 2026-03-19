@@ -231,10 +231,26 @@ def remove_conformsTo(x):
     return x
 
 
+def merge_class_definitions_into_validation(x):
+    class_definitions = x.get('definitions', {})
+    if not class_definitions:
+        return x
+    validation = x.get('$validation')
+    if not validation:
+        return x
+    validation_definitions = validation.get('definitions', {})
+    merged_definitions = dict(class_definitions)
+    merged_definitions.update(validation_definitions)
+    x['$validation']['definitions'] = merged_definitions
+    del x['definitions']
+    return x
+
+
 def add_conformsTo(spec_list,x):
     cleanname = deletenamespace(x)
     spec_info = spec_list.loc[spec_list['name'] == cleanname]
     spec_url = spec_info.iloc[0]['url']
+    x = merge_class_definitions_into_validation(x)
     conformsTodict = {
             "description": "This is used to state the Bioschemas profile that the markup relates to. The identifier can be the url for the version of this bioschemas class on github: "+spec_url,
             "$ref": "#/definitions/conformsDefinition"
@@ -262,7 +278,8 @@ def add_conformsTo(spec_list,x):
         }
     x['$validation']['properties']['conformsTo'] = conformsTodict
     requirementlist = x['$validation']['required']
-    requirementlist.append('conformsTo')
+    if 'conformsTo' not in requirementlist:
+        requirementlist.append('conformsTo')
     x['$validation']['required'] = requirementlist
     try:
         definitiondict = x['$validation']['definitions']
