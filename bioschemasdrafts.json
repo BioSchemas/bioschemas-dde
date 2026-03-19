@@ -10618,65 +10618,63 @@
             "required": [
               "identifier"
             ]
-          }
-        }
-      },
-      "definitions": {
-        "person": {
-          "@type": "Person",
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string"
-            },
-            "alternateName": {
-              "type": "string"
-            },
-            "givenName": {
-              "type": "string"
-            },
-            "familyName": {
-              "type": "string"
-            },
-            "identifier": {
-              "type": "string"
-            },
-            "affiliation": {
-              "oneOf": [
-                {
-                  "$ref": "#/definitions/organization"
-                },
-                {
-                  "type": "array",
-                  "items": {
+          },
+          "person": {
+            "@type": "Person",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "alternateName": {
+                "type": "string"
+              },
+              "givenName": {
+                "type": "string"
+              },
+              "familyName": {
+                "type": "string"
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "affiliation": {
+                "oneOf": [
+                  {
                     "$ref": "#/definitions/organization"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/organization"
+                    }
                   }
-                }
-              ]
+                ]
+              }
             }
-          }
-        },
-        "organization": {
-          "@type": "Organization",
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string"
-            },
-            "alternateName": {
-              "type": "string"
-            },
-            "identifier": {
-              "type": "string"
+          },
+          "organization": {
+            "@type": "Organization",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "alternateName": {
+                "type": "string"
+              },
+              "identifier": {
+                "type": "string"
+              }
             }
-          }
-        },
-        "protocol": {
-          "@type": "bioschemastypesdrafts:LabProtocol",
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string"
+          },
+          "protocol": {
+            "@type": "bioschemastypesdrafts:LabProtocol",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
             }
           }
         }
