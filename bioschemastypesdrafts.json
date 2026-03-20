@@ -7,7 +7,7 @@
     "bioschemastypes": "https://discovery.biothings.io/ns/bioschemastypes/",
     "bioschemastypesdrafts": "https://discovery.biothings.io/ns/bioschemastypesdrafts/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "03/19/2026, 12:46:13"
+    "@dateModified": "03/20/2026, 09:31:56"
   },
   "@graph": [
     {
@@ -373,7 +373,7 @@
     {
       "@id": "bioschemastypesdrafts:anatomicalStructure",
       "@type": "rdf:Property",
-      "rdfs:comment": "Indicate the organ, tissues the sample was collected from.",
+      "rdfs:comment": "Indicate the organ or tissues the sample was collected from.",
       "rdfs:label": "anatomicalStructure",
       "schema:domainIncludes": {
         "@id": "bioschemastypesdrafts:BioSample"
@@ -393,7 +393,7 @@
     {
       "@id": "bioschemastypesdrafts:anatomicalSystem",
       "@type": "rdf:Property",
-      "rdfs:comment": "Indicate the anatomical system from which the sample is collect, e.g. circulatory, digestive, endocrine, immune and other systems.",
+      "rdfs:comment": "Indicate the anatomical system from which the sample was collected, e.g. circulatory, digestive, endocrine, immune and other systems.",
       "rdfs:label": "anatomicalSystem",
       "schema:domainIncludes": {
         "@id": "bioschemastypesdrafts:BioSample"
@@ -752,7 +752,7 @@
     {
       "@id": "bioschemastypesdrafts:contactPoint",
       "@type": "rdf:Property",
-      "rdfs:comment": "Person or organization that can be contacted for more information or support. ",
+      "rdfs:comment": "A person or organization that can be contacted for more information or support.",
       "rdfs:label": "contactPoint",
       "schema:domainIncludes": {
         "@id": "bioschemastypesdrafts:Sample"
@@ -769,7 +769,7 @@
     {
       "@id": "bioschemastypesdrafts:contributor",
       "@type": "rdf:Property",
-      "rdfs:comment": "Person or organization that contributes to the work.",
+      "rdfs:comment": "A person or organization that contributes to the work.",
       "rdfs:label": "contributor",
       "schema:domainIncludes": {
         "@id": "bioschemastypesdrafts:Sample"
@@ -845,7 +845,7 @@
     {
       "@id": "bioschemastypesdrafts:dateModified",
       "@type": "rdf:Property",
-      "rdfs:comment": "Date sample record was last updated.",
+      "rdfs:comment": "The date sample record was last updated.",
       "rdfs:label": "dateModified",
       "schema:domainIncludes": {
         "@id": "bioschemastypesdrafts:Sample"
