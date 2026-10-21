@@ -33,3 +33,4 @@ bioschemas	SequenceRange	bioschemastypesdrafts:SequenceRange	Profile	0.2-DRAFT	h
 bioschemas	Study	bioschemastypesdrafts:Study	Profile	0.3-DRAFT	https://github.com/BioSchemas/specifications/tree/master/Study/jsonld/Study_v0.3-DRAFT.json
 bioschemas	TrainingMaterial	schema:LearningResource	Profile	1.1-DRAFT	https://github.com/BioSchemas/specifications/tree/master/TrainingMaterial/jsonld/TrainingMaterial_v1.1-DRAFT.json
 labprocessTempForRelease	LabProcess	bioschemastypesdrafts:LabProcess	Profile	0.1-DRAFT	https://github.com/BioSchemas/specifications/blob/master/LabProcess/jsonld/LabProcess_v0.1-DRAFT.json
+bioschemasdrafts	BioSample	bioschemastypesdrafts:BioSample	Profile	0.2-DRAFT	https://github.com/BioSchemas/specifications/blob/master/BioSample/jsonld/BioSample_v0.2-DRAFT.json
