@@ -1,2 +1,2 @@
 time,namespace,name,subclassOf,version,url
-9f53b9ca-6108-11ed-94e3-751afaf52cd9,bioschams,BioSample,bioschemastypes:BioSample,v0.1-RELEASE,https://github.com/BioSchemas/specifications/tree/master/BioSample/jsonld/type/BioSample_v0.1-RELEASE.json
+e4930648-cd5a-11f1-b4f8-7ced8de6f5df,bioschams,BioSample,bioschemastypes:BioSample,v0.2-DRAFT,https://github.com/BioSchemas/specifications/tree/master/BioSample/jsonld/BioSample_v0.2-DRAFT.json
