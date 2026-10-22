@@ -10,7 +10,7 @@
     "bioschemastypesdrafts": "https://discovery.biothings.io/ns/bioschemastypesdrafts/",
     "bioschemasdeprecated": "https://discovery.biothings.io/ns/bioschemasdeprecated/",
     "dct": "http://purl.org/dc/terms/",
-    "@dateModified": "10/21/2026, 13:22:51",
+    "@dateModified": "10/22/2026, 07:48:33",
     "dwc": "http://rs.tdwg.org/dwc/terms/",
     "ppeo:hasGrowthFacility": "http://purl.org/ppeo/PPEO.owl#hasGrowthFacility"
   },
@@ -22836,7 +22836,22 @@
           },
           "identifier": {
             "description": "The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.\n        ",
-            "owl:cardinality": "one"
+            "owl:cardinality": "one",
+            "oneOf": [
+              {
+                "@type": "PropertyValue",
+                "type": "object",
+                "properties": {},
+                "required": []
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ]
           },
           "name": {
             "description": "The name of the item.",
